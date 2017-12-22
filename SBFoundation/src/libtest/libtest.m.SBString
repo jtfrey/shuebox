@@ -1,0 +1,121 @@
+#import "SBFoundation.h"
+
+
+const char*   orderingNames[3] = { "descending" , "equal" , "ascending" };
+
+int
+main()
+{
+  SBAutoreleasePool*    ourPool = [[SBAutoreleasePool alloc] init];
+  
+  /*
+    The following string constant is encoded by XCode as UTF8.  The copyright symbol is a two-byte
+    surrogate in UTF8; the trademark symbol and the two Devanagari characters at the end of the
+    string are three-byte surrogates.  All four special characters map to a single UTF16
+    character -- no surrogating necessary.
+    
+    If you're viewing this in a UTF8-capable way, then the string should appear to contain
+    57 code points.  In reality, since it's UTF8, it's actually a sequence of 57 PLUS
+    1 single-surrogate bytes PLUS 3 double-surrogate bytes -- that's 64 bytes.
+    
+    Hopefully when you run this program that'll be confirmed!
+   */
+  SBString*         aString = @"String constants are fun!™  Maybe I should © it, too...ङत";
+  SBString*         ASTRING = @"STRING CONSTANTS ARE FUN!™  MAYBE I SHOULD © IT, TOO...ङत";
+  
+  char*             s = (char*)[(SBStringConst*)aString constCString];
+  unsigned int      i, l = [(SBStringConst*)aString constCStringLength];
+  
+  SBString*         immutableString = [SBString string];
+  SBMutableString*  mutableString = [SBMutableString stringWithFixedCapacity:28];
+  
+  printf("[string-constant class]               = %s\n\n", [[aString class] name] );
+  
+  if ( immutableString ) {
+    printf("[immutableString class]               = %s\n\n", [[immutableString class] name]);
+    
+    SBString*       primarySubString = [aString substringToIndex:15];
+    
+    if ( primarySubString ) {
+      SBString*       secondarySubString = [primarySubString substringFromIndex:7];
+      
+      printf("[primarySubString class]              = %s => `", [[primarySubString class] name]);[primarySubString writeToStream:stdout];printf("`\n");
+      if ( secondarySubString ) {
+        printf("[secondarySubString class]            = %s => `", [[secondarySubString class] name]);[secondarySubString writeToStream:stdout];printf("`\n");
+      }
+    }
+  }
+  if ( mutableString ) {
+    printf("[mutableString class]                 = %s\n", [[mutableString class] name]);
+    
+    [mutableString appendString:ASTRING];
+    printf("[mutableString appendString:ASTRING]  = `"); [mutableString writeToStream:stdout]; printf("`\n");
+    
+    [mutableString deleteCharactersInRange:SBRangeCreate(20,37)];
+    printf("[mutableString delete:[20,57]]        = `"); [mutableString writeToStream:stdout]; printf("`\n\n");
+  }
+  
+  printf(
+      "strlen(aString)                       = %ld\n\n"
+      "[aString constCStringLength]          = %u\n"
+      "[aString constCString]                = `%s`\n"
+      "[aString length]                      = %d\n"
+      "[aString characterAtIndex:25]         = 0x%04hx\n\n",
+      strlen(s),
+      l,
+      s,
+      [aString length],
+      [aString characterAtIndex:25]
+    );
+  printf(
+      "[aString hash] == [utf16 byteHash]    = 0x%08x == 0x%08x\n"
+      "[aString utf32Length]                 = %d\n"
+      "[aString utf32CharacterAtIndex:25]    = 0x%08x\n\n",
+      [aString hash], [aString hashForData:[aString utf16Characters] byteLength:[aString length] * sizeof(UChar)],
+      [aString utf32Length],
+      [aString utf32CharacterAtIndex:25]
+    );
+  
+  printf("aString <=> emptyString               = %s\n", orderingNames[ 1 + [aString compare:mutableString] ] );
+  printf("emptyString <=> aString               = %s\n", orderingNames[ 1 + [mutableString compare:aString] ] );
+  printf("aString <=> ASTRING                   = %s\n", orderingNames[ 1 + [aString compare:ASTRING] ] );
+  printf("aString <=> ASTRING [caseless]        = %s\n\n", orderingNames[ 1 + [aString caseInsensitiveCompare:ASTRING] ] );
+  
+  printf("String const (UTF8) as bytes:\n\n  ");
+  i = 0;
+  while ( l-- ) {
+    printf("%02hhx ", *s++);
+    if ( ++i % 16 == 0 )
+      printf("\n  ");
+  }
+  printf("\n\n");
+
+  [ourPool release];
+  ourPool = [[SBAutoreleasePool alloc] init];
+
+  printf("If we successfully cached the UTF16 form of the string constant, then\n"
+         "the next two values should be equal:\n\n"
+         "[aString utf16Characters]             = %p\n"
+         "[aString utf16Characters]             = %p\n\n",
+         [aString utf16Characters],
+         [aString utf16Characters]
+    );
+
+  [ourPool release];
+  ourPool = [[SBAutoreleasePool alloc] init];
+
+  SBValue*   aValue = [SBValue valueWithNonretainedObject:aString];
+  SBValue*   anotherValue = [SBValue valueWithPointer:"testing"];
+  SBValue*   yetAnotherValue = [SBValue valueWithNonretainedObject:aString];
+
+  if ( aValue ) {
+    [aValue summarizeToStream:stdout];
+    printf("\nnonRetainedObjectValue = %p\n", [aValue nonretainedObjectValue]);
+    printf("aValue = anotherValue    = %d\n", [aValue isEqualToValue:anotherValue]);
+    printf("aValue = yetAnotherValue = %d\n", [aValue isEqualToValue:yetAnotherValue]);
+  }
+
+  [ourPool release];
+  
+  return 0;
+}

@@ -1,0 +1,383 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBObjectCache</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBObjectCache;  name=SBObjectCache-->
+<a name="//apple_ref/occ/cl/SBObjectCache"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBObjectCache">SBObjectCache</a></h1>
+</td></tr></table><hr><p><!-- begin abstract --><p>Generic object caching container
+<!-- end abstract --></p>
+<p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBObjectCache.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>An instance of SBObjectCache is used to retain a fixed number of reference copies of objects
+descendent from a specific Objective-C class.  Each cached reference is assigned an expiration
+time, after which the object will be sent a release message and will be dropped from the
+cache.  If the cache fills, the default behavior is to begin evicting objects by an "oldest
+first" policy; this behavior can be overridden so that addition of new objects will fail until
+an object in the cache explicitly expires.
+</p>
+<p>The SBObjectCache makes use of key-value coding (see SBKeyValueCoding.h) to locate a cached
+object:  consumer code requests a cached object by a key-value pair and the instance of
+SBObjectCache requests the value of that key from each cached object until it finds one with
+a matching value (under the isEqual: method).  This implies that searching the cache is a
+linear operation, O(n).  To accelerate the cache search, SBObjectCache allows consumer code
+to create indexes over a specific key.  Each index is a hash table which maps value to cache
+line under the specific key.
+</p>
+<p>SBObjectCache instances by default listen for the SBObjectCacheFlushNotification and
+SBObjectCacheCleanupNotification notifications broadcast via the default SBNotificationCenter
+and flush or cleanup their cache accordingly.  The flushAllObjectCaches and cleanupAllObjectCaches
+class methods will send these notifications, respectively, and trigger a "global" flush or
+cleanup.  Individual SBObjectCache instances can elect to ignore such "global" requests.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/addObjectToCache:" target="_top">-addObjectToCache:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/addObjectToCache:secondsToLive:" target="_top">-addObjectToCache:secondsToLive:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/cachedObjectForKey:value:" target="_top">-cachedObjectForKey:value:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBObjectCache/cleanupAllObjectCaches" target="_top">+cleanupAllObjectCaches</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/cleanupCache" target="_top">-cleanupCache</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/createCacheIndexForKey:" target="_top">-createCacheIndexForKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/defaultSecondsToLive" target="_top">-defaultSecondsToLive</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBObjectCache/dropAlIndices" target="_top">-dropAlIndices</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/dropAllIndices" target="_top">-dropAllIndices</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/dropCacheIndexForKey:" target="_top">-dropCacheIndexForKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/evictObjectFromCache:" target="_top">-evictObjectFromCache:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/evictOldestLineWhenFull" target="_top">-evictOldestLineWhenFull</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBObjectCache/flushAllObjectCaches" target="_top">+flushAllObjectCaches</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/flushCache" target="_top">-flushCache</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/ignoresCleanupNotifications" target="_top">-ignoresCleanupNotifications</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/ignoresFlushNotifications" target="_top">-ignoresFlushNotifications</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/initWithBaseClass:" target="_top">-initWithBaseClass:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/initWithBaseClass:size:" target="_top">-initWithBaseClass:size:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/setDefaultSecondsToLive:" target="_top">-setDefaultSecondsToLive:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/setEvictOldestLineWhenFull:" target="_top">-setEvictOldestLineWhenFull:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/setIgnoresCleanupNotifications:" target="_top">-setIgnoresCleanupNotifications:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectCache/setIgnoresFlushNotifications:" target="_top">-setIgnoresFlushNotifications:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/addObjectToCache:;   name=SBObjectCache::addObjectToCache: -->
+<a name="//apple_ref/occ/instm/SBObjectCache/addObjectToCache:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="addObjectToCache:">addObjectToCache:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/addObjectToCache //apple_ref/occ/clm/addObjectToCache //apple_ref/occ/intfcm/addObjectToCache //apple_ref/occ/intfm/addObjectToCache //apple_ref/occ/func/addObjectToCache //apple_ref/occ/ftmplt/addObjectToCache //apple_ref/occ/defn/addObjectToCache //apple_ref/occ/macro/addObjectToCache" --><span class="function">addObjectToCache</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/object //apple_ref/occ/data/object" --><span class="var">object</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to add object to the cache with the receiver's default time-to-live.
+</p>
+<p>If the object is already present in the receiver's cache then its expiration
+is extended accordingly.
+</p>
+<p>If the object does not make it into the cache for any reason, NO is returned.
+Otherwise, YES is returned and object is sent the retain message.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/addObjectToCache:secondsToLive:;   name=SBObjectCache::addObjectToCache:secondsToLive: -->
+<a name="//apple_ref/occ/instm/SBObjectCache/addObjectToCache:secondsToLive:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="addObjectToCache:secondsToLive:">addObjectToCache:secondsToLive:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/addObjectToCache //apple_ref/occ/clm/addObjectToCache //apple_ref/occ/intfcm/addObjectToCache //apple_ref/occ/intfm/addObjectToCache //apple_ref/occ/func/addObjectToCache //apple_ref/occ/ftmplt/addObjectToCache //apple_ref/occ/defn/addObjectToCache //apple_ref/occ/macro/addObjectToCache" --><span class="function">addObjectToCache</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">object</span> <!-- a logicalPath="//apple_ref/occ/instm/secondsToLive //apple_ref/occ/clm/secondsToLive //apple_ref/occ/intfcm/secondsToLive //apple_ref/occ/intfm/secondsToLive //apple_ref/occ/func/secondsToLive //apple_ref/occ/ftmplt/secondsToLive //apple_ref/occ/defn/secondsToLive //apple_ref/occ/macro/secondsToLive" --><span class="function">secondsToLive</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/seconds //apple_ref/occ/data/seconds" --><span class="var">seconds</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to add object to the cache using an explicit time-to-live (in seconds)
+versus the receiver's default time-to-live.  Note that a negative value can
+be supplied for seconds, in which case object if already in the receiver's cache
+will be evicted immediately.
+</p>
+<p>If the object is already present in the receiver's cache and a positive
+time-to-live was specified, then its expiration is extended accordingly.
+</p>
+<p>If the object does not make it into the cache for any reason, NO is returned.
+Otherwise, YES is returned and object is sent the retain message.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/cachedObjectForKey:value:;   name=SBObjectCache::cachedObjectForKey:value: -->
+<a name="//apple_ref/occ/instm/SBObjectCache/cachedObjectForKey:value:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="cachedObjectForKey:value:">cachedObjectForKey:value:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/cachedObjectForKey //apple_ref/occ/clm/cachedObjectForKey //apple_ref/occ/intfcm/cachedObjectForKey //apple_ref/occ/intfm/cachedObjectForKey //apple_ref/occ/func/cachedObjectForKey //apple_ref/occ/ftmplt/cachedObjectForKey //apple_ref/occ/defn/cachedObjectForKey //apple_ref/occ/macro/cachedObjectForKey" --><span class="function">cachedObjectForKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">key</span> <!-- a logicalPath="//apple_ref/occ/instm/value //apple_ref/occ/clm/value //apple_ref/occ/intfcm/value //apple_ref/occ/intfm/value //apple_ref/occ/func/value //apple_ref/occ/ftmplt/value //apple_ref/occ/defn/value //apple_ref/occ/macro/value" --><span class="function">value</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempt to locate a cached object which has the given value associated with the
+specified key under key-value coding.  If the receiver contains an index for
+the given key, the index will be consulted; if not, the cache lines are walked
+and the first object with a matching value (under the isEqual: method) is
+returned.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBObjectCache/cleanupAllObjectCaches;   name=SBObjectCache::cleanupAllObjectCaches -->
+<a name="//apple_ref/occ/clm/SBObjectCache/cleanupAllObjectCaches"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="cleanupAllObjectCaches">cleanupAllObjectCaches</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/cleanupAllObjectCaches //apple_ref/occ/data/cleanupAllObjectCaches" --><span class="var">cleanupAllObjectCaches</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Broadcast the SBObjectCacheCleanupNotification via the default SBNotificationCenter; all
+SBObjectCache instances not set to ignore the notification will immediately evict any
+expired objects from themselves.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/cleanupCache;   name=SBObjectCache::cleanupCache -->
+<a name="//apple_ref/occ/instm/SBObjectCache/cleanupCache"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="cleanupCache">cleanupCache</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/cleanupCache //apple_ref/occ/data/cleanupCache" --><span class="var">cleanupCache</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Evict from the receiver's cache any objects whose expiration has passed.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/createCacheIndexForKey:;   name=SBObjectCache::createCacheIndexForKey: -->
+<a name="//apple_ref/occ/instm/SBObjectCache/createCacheIndexForKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="createCacheIndexForKey:">createCacheIndexForKey:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/createCacheIndexForKey //apple_ref/occ/clm/createCacheIndexForKey //apple_ref/occ/intfcm/createCacheIndexForKey //apple_ref/occ/intfm/createCacheIndexForKey //apple_ref/occ/func/createCacheIndexForKey //apple_ref/occ/ftmplt/createCacheIndexForKey //apple_ref/occ/defn/createCacheIndexForKey //apple_ref/occ/macro/createCacheIndexForKey" --><span class="function">createCacheIndexForKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/key //apple_ref/occ/data/key" --><span class="var">key</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Creates an index of the value of key (via key-value coding) for each object in
+the cache.  This index will be consulted by cachedObjectForKey:value: in
+preference to the standard linear search of the cached objects.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/defaultSecondsToLive;   name=SBObjectCache::defaultSecondsToLive -->
+<a name="//apple_ref/occ/instm/SBObjectCache/defaultSecondsToLive"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="defaultSecondsToLive">defaultSecondsToLive</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/defaultSecondsToLive //apple_ref/occ/data/defaultSecondsToLive" --><span class="var">defaultSecondsToLive</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's default time-to-live (in whole seconds) for cached objects.
+The default value for this attribute is 300 seconds (5 minutes).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBObjectCache/dropAlIndices;   name=SBObjectCache::dropAlIndices -->
+<a name="//apple_ref/doc/title:instm/SBObjectCache/dropAlIndices"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dropAlIndices">dropAlIndices</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBObjectCache/dropAllIndices" --><p>dropAllIndices<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/dropAllIndices //apple_ref/occ/data/dropAllIndices" --><span class="var">dropAllIndices</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Remove all indices created for the receiver.  Linear search of the cache will
+be used in all instances (at least until new indices are requested).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/dropAllIndices;   name=SBObjectCache::dropAllIndices -->
+<a name="//apple_ref/occ/instm/SBObjectCache/dropAllIndices"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dropAllIndices">dropAllIndices</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBObjectCache/dropAlIndices" --><p>dropAlIndices<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/dropAllIndices //apple_ref/occ/data/dropAllIndices" --><span class="var">dropAllIndices</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Remove all indices created for the receiver.  Linear search of the cache will
+be used in all instances (at least until new indices are requested).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/dropCacheIndexForKey:;   name=SBObjectCache::dropCacheIndexForKey: -->
+<a name="//apple_ref/occ/instm/SBObjectCache/dropCacheIndexForKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dropCacheIndexForKey:">dropCacheIndexForKey:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/dropCacheIndexForKey //apple_ref/occ/clm/dropCacheIndexForKey //apple_ref/occ/intfcm/dropCacheIndexForKey //apple_ref/occ/intfm/dropCacheIndexForKey //apple_ref/occ/func/dropCacheIndexForKey //apple_ref/occ/ftmplt/dropCacheIndexForKey //apple_ref/occ/defn/dropCacheIndexForKey //apple_ref/occ/macro/dropCacheIndexForKey" --><span class="function">dropCacheIndexForKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If an index exists in the receiver for the specified key, remove it.  The
+cachedObjectForKey:value: method will revert to performing a linear search of
+the cache with respect to the key in question.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/evictObjectFromCache:;   name=SBObjectCache::evictObjectFromCache: -->
+<a name="//apple_ref/occ/instm/SBObjectCache/evictObjectFromCache:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="evictObjectFromCache:">evictObjectFromCache:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/evictObjectFromCache //apple_ref/occ/clm/evictObjectFromCache //apple_ref/occ/intfcm/evictObjectFromCache //apple_ref/occ/intfm/evictObjectFromCache //apple_ref/occ/func/evictObjectFromCache //apple_ref/occ/ftmplt/evictObjectFromCache //apple_ref/occ/defn/evictObjectFromCache //apple_ref/occ/macro/evictObjectFromCache" --><span class="function">evictObjectFromCache</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/object //apple_ref/occ/data/object" --><span class="var">object</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to evict the given object from the receiver's cache if present.  When
+evicted, the cached object is sent the release message.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/evictOldestLineWhenFull;   name=SBObjectCache::evictOldestLineWhenFull -->
+<a name="//apple_ref/occ/instm/SBObjectCache/evictOldestLineWhenFull"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="evictOldestLineWhenFull">evictOldestLineWhenFull</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/evictOldestLineWhenFull //apple_ref/occ/data/evictOldestLineWhenFull" --><span class="var">evictOldestLineWhenFull</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver will evict the oldest cached object to make room for
+newly-added objects when no cache lines are free (the default behavior).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBObjectCache/flushAllObjectCaches;   name=SBObjectCache::flushAllObjectCaches -->
+<a name="//apple_ref/occ/clm/SBObjectCache/flushAllObjectCaches"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="flushAllObjectCaches">flushAllObjectCaches</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/flushAllObjectCaches //apple_ref/occ/data/flushAllObjectCaches" --><span class="var">flushAllObjectCaches</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Broadcast the SBObjectCacheFlushNotification via the default SBNotificationCenter; all
+SBObjectCache instances not set to ignore the notification will immediately flush all
+objects from themselves.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/flushCache;   name=SBObjectCache::flushCache -->
+<a name="//apple_ref/occ/instm/SBObjectCache/flushCache"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="flushCache">flushCache</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/flushCache //apple_ref/occ/data/flushCache" --><span class="var">flushCache</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Evict all objects from the receiver's cache.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/ignoresCleanupNotifications;   name=SBObjectCache::ignoresCleanupNotifications -->
+<a name="//apple_ref/occ/instm/SBObjectCache/ignoresCleanupNotifications"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="ignoresCleanupNotifications">ignoresCleanupNotifications</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/ignoresCleanupNotifications //apple_ref/occ/data/ignoresCleanupNotifications" --><span class="var">ignoresCleanupNotifications</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver will not evict all expired objects from itself when the
+SBObjectCacheCleanupNotification is broadcast via the default SBNotificationCenter.
+</p>
+<p>Default is NO.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/ignoresFlushNotifications;   name=SBObjectCache::ignoresFlushNotifications -->
+<a name="//apple_ref/occ/instm/SBObjectCache/ignoresFlushNotifications"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="ignoresFlushNotifications">ignoresFlushNotifications</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/ignoresFlushNotifications //apple_ref/occ/data/ignoresFlushNotifications" --><span class="var">ignoresFlushNotifications</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver will not flush all objects from itself when the
+SBObjectCacheFlushNotification is broadcast via the default SBNotificationCenter.
+</p>
+<p>Default is NO.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/initWithBaseClass:;   name=SBObjectCache::initWithBaseClass: -->
+<a name="//apple_ref/occ/instm/SBObjectCache/initWithBaseClass:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithBaseClass:">initWithBaseClass:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithBaseClass //apple_ref/occ/clm/initWithBaseClass //apple_ref/occ/intfcm/initWithBaseClass //apple_ref/occ/intfm/initWithBaseClass //apple_ref/occ/func/initWithBaseClass //apple_ref/occ/ftmplt/initWithBaseClass //apple_ref/occ/defn/initWithBaseClass //apple_ref/occ/macro/initWithBaseClass" --><span class="function">initWithBaseClass</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/Class //apple_ref/occ/tdef/Class //apple_ref/occ/tag/Class //apple_ref/occ/econst/Class //apple_ref/occ/struct/Class //apple_ref/occ/clconst/Class //apple_ref/occ/intf/Class" --><span class="type">Class</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/baseClass //apple_ref/occ/data/baseClass" --><span class="var">baseClass</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initialize a newly-allocated SBObjectCache with the default number of cache lines (32).
+All objects added to the cache must be of a class descendent from the given baseClass.
+</p>
+<p>Returns nil if the cache lines could not be allocated.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/initWithBaseClass:size:;   name=SBObjectCache::initWithBaseClass:size: -->
+<a name="//apple_ref/occ/instm/SBObjectCache/initWithBaseClass:size:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithBaseClass:size:">initWithBaseClass:size:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithBaseClass //apple_ref/occ/clm/initWithBaseClass //apple_ref/occ/intfcm/initWithBaseClass //apple_ref/occ/intfm/initWithBaseClass //apple_ref/occ/func/initWithBaseClass //apple_ref/occ/ftmplt/initWithBaseClass //apple_ref/occ/defn/initWithBaseClass //apple_ref/occ/macro/initWithBaseClass" --><span class="function">initWithBaseClass</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/Class //apple_ref/occ/tdef/Class //apple_ref/occ/tag/Class //apple_ref/occ/econst/Class //apple_ref/occ/struct/Class //apple_ref/occ/clconst/Class //apple_ref/occ/intf/Class" --><span class="type">Class</span><!-- /a -->)<span class="param">baseClass</span> <!-- a logicalPath="//apple_ref/occ/instm/size //apple_ref/occ/clm/size //apple_ref/occ/intfcm/size //apple_ref/occ/intfm/size //apple_ref/occ/func/size //apple_ref/occ/ftmplt/size //apple_ref/occ/defn/size //apple_ref/occ/macro/size" --><span class="function">size</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/cacheSize //apple_ref/occ/data/cacheSize" --><span class="var">cacheSize</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initialize a newly-allocated SBObjectCache with the specified number of cache lines.
+All objects added to the cache must be of a class descendent from the given baseClass.
+</p>
+<p>Returns nil if the cache lines could not be allocated.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/setDefaultSecondsToLive:;   name=SBObjectCache::setDefaultSecondsToLive: -->
+<a name="//apple_ref/occ/instm/SBObjectCache/setDefaultSecondsToLive:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setDefaultSecondsToLive:">setDefaultSecondsToLive:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setDefaultSecondsToLive //apple_ref/occ/clm/setDefaultSecondsToLive //apple_ref/occ/intfcm/setDefaultSecondsToLive //apple_ref/occ/intfm/setDefaultSecondsToLive //apple_ref/occ/func/setDefaultSecondsToLive //apple_ref/occ/ftmplt/setDefaultSecondsToLive //apple_ref/occ/defn/setDefaultSecondsToLive //apple_ref/occ/macro/setDefaultSecondsToLive" --><span class="function">setDefaultSecondsToLive</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/seconds //apple_ref/occ/data/seconds" --><span class="var">seconds</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Modifies the default time-to-live (in whole seconds) which should be applied to
+objects entering the cache henceforth.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/setEvictOldestLineWhenFull:;   name=SBObjectCache::setEvictOldestLineWhenFull: -->
+<a name="//apple_ref/occ/instm/SBObjectCache/setEvictOldestLineWhenFull:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setEvictOldestLineWhenFull:">setEvictOldestLineWhenFull:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setEvictOldestLineWhenFull //apple_ref/occ/clm/setEvictOldestLineWhenFull //apple_ref/occ/intfcm/setEvictOldestLineWhenFull //apple_ref/occ/intfm/setEvictOldestLineWhenFull //apple_ref/occ/func/setEvictOldestLineWhenFull //apple_ref/occ/ftmplt/setEvictOldestLineWhenFull //apple_ref/occ/defn/setEvictOldestLineWhenFull //apple_ref/occ/macro/setEvictOldestLineWhenFull" --><span class="function">setEvictOldestLineWhenFull</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/evict //apple_ref/occ/data/evict" --><span class="var">evict</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If evict is NO, then disable the default behavior of evicting the oldest object
+from the cache to make room for newly-added objects when no cache lines are free.
+Instead, no new objects will be added until an existing cache line explicitly
+expires.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/setIgnoresCleanupNotifications:;   name=SBObjectCache::setIgnoresCleanupNotifications: -->
+<a name="//apple_ref/occ/instm/SBObjectCache/setIgnoresCleanupNotifications:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setIgnoresCleanupNotifications:">setIgnoresCleanupNotifications:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setIgnoresCleanupNotifications //apple_ref/occ/clm/setIgnoresCleanupNotifications //apple_ref/occ/intfcm/setIgnoresCleanupNotifications //apple_ref/occ/intfm/setIgnoresCleanupNotifications //apple_ref/occ/func/setIgnoresCleanupNotifications //apple_ref/occ/ftmplt/setIgnoresCleanupNotifications //apple_ref/occ/defn/setIgnoresCleanupNotifications //apple_ref/occ/macro/setIgnoresCleanupNotifications" --><span class="function">setIgnoresCleanupNotifications</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/shouldIgnore //apple_ref/occ/data/shouldIgnore" --><span class="var">shouldIgnore</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If shouldIgnore is YES, then the receiver will not respond to "global" cleanup
+notifications broadcast via the default SBNotificationCenter.
+</p>
+<p>By default, SBObjectCache instances do not ignore "global" cleanup
+notifications.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectCache/setIgnoresFlushNotifications:;   name=SBObjectCache::setIgnoresFlushNotifications: -->
+<a name="//apple_ref/occ/instm/SBObjectCache/setIgnoresFlushNotifications:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setIgnoresFlushNotifications:">setIgnoresFlushNotifications:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setIgnoresFlushNotifications //apple_ref/occ/clm/setIgnoresFlushNotifications //apple_ref/occ/intfcm/setIgnoresFlushNotifications //apple_ref/occ/intfm/setIgnoresFlushNotifications //apple_ref/occ/func/setIgnoresFlushNotifications //apple_ref/occ/ftmplt/setIgnoresFlushNotifications //apple_ref/occ/defn/setIgnoresFlushNotifications //apple_ref/occ/macro/setIgnoresFlushNotifications" --><span class="function">setIgnoresFlushNotifications</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/shouldIgnore //apple_ref/occ/data/shouldIgnore" --><span class="var">shouldIgnore</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If shouldIgnore is YES, then the receiver will not respond to "global" flush
+notifications broadcast via the default SBNotificationCenter.
+</p>
+<p>By default, SBObjectCache instances do not ignore "global" flush
+notifications.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

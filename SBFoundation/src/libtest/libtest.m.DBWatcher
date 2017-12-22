@@ -1,0 +1,45 @@
+#import "SBFoundation.h"
+#import "SBPostgres.h"
+
+@interface DBWatcher : SBObject
+
+- (void) notificationFromDatabase:(SBNotification*)notify;
+
+@end
+
+@implementation DBWatcher
+
+  - (void) notificationFromDatabase:(SBNotification*)notify
+  {
+    printf("Database notification received:  ");
+    [[notify identifier] writeToStream:stdout];
+    printf("\n");
+  }
+
+@end
+
+int
+main()
+{
+  SBAutoreleasePool*      ourPool = [[SBAutoreleasePool alloc] init];
+  SBPostgresDatabase*     ourDB = [[SBPostgresDatabase alloc] initWithConnectionString:@"dbname=template1 user=postgres"];
+  DBWatcher*              watcher = [[DBWatcher alloc] init];
+  
+  if ( ourDB ) {
+    SBPostgresQuery*        ourQuery;
+    SBPostgresQueryResult*  queryResult;
+    
+    printf("Database connection opened successfully!\n\n");
+    
+    [ourDB registerObject:watcher forNotification:@"HELP"];
+    [ourDB registerObject:watcher forNotification:@"FART"];
+    [ourDB registerObject:watcher forNotification:@"BARF"];
+    
+    [ourDB scheduleNotificationInRunLoop:[SBRunLoop currentRunLoop]];
+    
+    [[SBRunLoop currentRunLoop] run];
+    
+    [ourDB release];
+  }
+  return 0;
+}

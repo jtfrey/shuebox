@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBDictionary</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBDictionary;  name=SBDictionary-->
+<a name="//apple_ref/occ/cl/SBDictionary"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBDictionary">SBDictionary</a></h1>
+</td></tr></table><hr><p><!-- begin abstract --><p>Immutable collection of keyed objects
+<!-- end abstract --></p>
+<p><b>Conforms&nbsp;to:</b> <!-- a logicalPath="//apple_ref/occ/intf/SBMutableCopying" -->SBMutableCopying<!-- /a --><br>
+<b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBDictionary.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Instances of the SBDictionary class represent a collection of objects which are keyed by arbitrary
+objects.  The contents of the dictionary are accessed by means of the "key" objects &mdash; which
+are most often SBString objects.
+</p>
+<p>Subclasses of SBDictionary must <i>at least</i> implement the three primary methods:
+</p>
+<ul>
+<li>- (SBUInteger) count</li>
+<li>- (id) objectForKey:(id)aKey</li>
+<li>- (SBEnumerator*) keyEnumerator;</li>
+</ul>
+<p>Any subclass that implements these methods will automatically inherit functional versions
+of the methods in the SBExtendedDictionary category; the default implementations of these methods
+<i>only</i> make use of the three aforementioned primary methods (as well as each other).  Of
+course, subclasses can also override any of the methods in the SBExtendedDictionary category with
+their own optimal implementations.  Subclasses are responsible for providing their own object
+creation methods.
+</p>
+<p>SBDictionary instances are immutable -- their content cannot be modified after they are created.
+If you need a dictionary which allows objects to be added and removed, the SBMutableDictionary
+class is the solution.
+</p>
+<p>Objects added to an SBDictionary are always sent the retain message in order to obtain a
+reference copy.  Keys are always added to an SBDictionary by means of a "copy" message sent to the
+object; the "copy" message is meant to provide an unchanging duplicate of the original key &mdash; for
+classes with mutable/immutable variants, an immutable variant may actually return a reference
+copy.  In all other cases, a new object initialized to be identical to the original is returned.
+When a key-value pair is evicted from an SBDictionary both the key and value object are sent the
+"release" message.
+</p>
+<p>A given key can only have one value associated with it in an SBDictionary.  A value with a duplicate
+key overwrites any previous values.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDictionary/count" target="_top">-count</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDictionary/keyEnumerator" target="_top">-keyEnumerator</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDictionary/objectForKey:" target="_top">-objectForKey:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDictionary/count;   name=SBDictionary::count -->
+<a name="//apple_ref/occ/instm/SBDictionary/count"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="count">count</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/count //apple_ref/occ/data/count" --><span class="var">count</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the number of key-value pairs in the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDictionary/keyEnumerator;   name=SBDictionary::keyEnumerator -->
+<a name="//apple_ref/occ/instm/SBDictionary/keyEnumerator"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="keyEnumerator">keyEnumerator</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBEnumerator //apple_ref/occ/tdef/SBEnumerator //apple_ref/occ/tag/SBEnumerator //apple_ref/occ/econst/SBEnumerator //apple_ref/occ/struct/SBEnumerator //apple_ref/occ/clconst/SBEnumerator //apple_ref/occ/intf/SBEnumerator" --><span class="type">SBEnumerator</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/keyEnumerator //apple_ref/occ/data/keyEnumerator" --><span class="var">keyEnumerator</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an SBEnumerator object that iterates over the keys defined in the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDictionary/objectForKey:;   name=SBDictionary::objectForKey: -->
+<a name="//apple_ref/occ/instm/SBDictionary/objectForKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="objectForKey:">objectForKey:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/objectForKey //apple_ref/occ/clm/objectForKey //apple_ref/occ/intfcm/objectForKey //apple_ref/occ/intfm/objectForKey //apple_ref/occ/func/objectForKey //apple_ref/occ/ftmplt/objectForKey //apple_ref/occ/defn/objectForKey //apple_ref/occ/macro/objectForKey" --><span class="function">objectForKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/aKey //apple_ref/occ/data/aKey" --><span class="var">aKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver contains a key-value pair for which the key is equivalent to aKey (by means of
+the isEqual: message), the associated value is returned.  Otherwise, returns nil.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

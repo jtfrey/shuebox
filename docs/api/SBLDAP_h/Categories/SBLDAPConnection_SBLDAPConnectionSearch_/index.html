@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBLDAPConnection(SBLDAPConnectionSearch)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cat; uid=//apple_ref/occ/cat/SBLDAPConnection(SBLDAPConnectionSearch);  name=SBLDAPConnection(SBLDAPConnectionSearch)-->
+<a name="//apple_ref/occ/cat/SBLDAPConnection(SBLDAPConnectionSearch)"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBLDAPConnection(SBLDAPConnectionSearch)">SBLDAPConnection(SBLDAPConnectionSearch)</a></h1>
+</td></tr></table><hr><p><b>Extends&nbsp;Class:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBLDAPConnection" -->SBLDAPConnection<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBLDAP.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Category which groups LDAP search methods.
+</p>
+<p>Possible return values for all methods are:
+</p>
+<ul>
+<li>SBError:  returned if any error occurred during the search</li>
+<li>SBLDAPSearchResult:  the search produced a single directory entity</li>
+<li>SBArray:  the search produced multiple directory entities</li>
+</ul>
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithAttributeKey:value:" target="_top">-searchWithAttributeKey:value:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithAttributeKey:value:baseDN:" target="_top">-searchWithAttributeKey:value:baseDN:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithAttributeKey:value:baseDN:scope:" target="_top">-searchWithAttributeKey:value:baseDN:scope:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithAttributeKey:value:baseDN:scope:ignoreAttributes:" target="_top">-searchWithAttributeKey:value:baseDN:scope:ignoreAttributes:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithFilter:" target="_top">-searchWithFilter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithFilter:baseDN:" target="_top">-searchWithFilter:baseDN:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithFilter:baseDN:scope:" target="_top">-searchWithFilter:baseDN:scope:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithFilter:baseDN:scope:ignoreAttributes:" target="_top">-searchWithFilter:baseDN:scope:ignoreAttributes:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithAttributeKey:value:;   name=SBLDAPConnection(SBLDAPConnectionSearch)::searchWithAttributeKey:value: -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithAttributeKey:value:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="searchWithAttributeKey:value:">searchWithAttributeKey:value:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/searchWithAttributeKey //apple_ref/occ/clm/searchWithAttributeKey //apple_ref/occ/intfcm/searchWithAttributeKey //apple_ref/occ/intfm/searchWithAttributeKey //apple_ref/occ/func/searchWithAttributeKey //apple_ref/occ/ftmplt/searchWithAttributeKey //apple_ref/occ/defn/searchWithAttributeKey //apple_ref/occ/macro/searchWithAttributeKey" --><span class="function">searchWithAttributeKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">attrKey</span> <!-- a logicalPath="//apple_ref/occ/instm/value //apple_ref/occ/clm/value //apple_ref/occ/intfcm/value //apple_ref/occ/intfm/value //apple_ref/occ/func/value //apple_ref/occ/ftmplt/value //apple_ref/occ/defn/value //apple_ref/occ/macro/value" --><span class="function">value</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/attrValue //apple_ref/occ/data/attrValue" --><span class="var">attrValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The attrKey and attrValue are concatenated to "([attrKey]=[attrValue])" form and the
+searchWithFilter: method is invoked.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithAttributeKey:value:baseDN:;   name=SBLDAPConnection(SBLDAPConnectionSearch)::searchWithAttributeKey:value:baseDN: -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithAttributeKey:value:baseDN:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="searchWithAttributeKey:value:baseDN:">searchWithAttributeKey:value:baseDN:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/searchWithAttributeKey //apple_ref/occ/clm/searchWithAttributeKey //apple_ref/occ/intfcm/searchWithAttributeKey //apple_ref/occ/intfm/searchWithAttributeKey //apple_ref/occ/func/searchWithAttributeKey //apple_ref/occ/ftmplt/searchWithAttributeKey //apple_ref/occ/defn/searchWithAttributeKey //apple_ref/occ/macro/searchWithAttributeKey" --><span class="function">searchWithAttributeKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">attrKey</span> <!-- a logicalPath="//apple_ref/occ/instm/value //apple_ref/occ/clm/value //apple_ref/occ/intfcm/value //apple_ref/occ/intfm/value //apple_ref/occ/func/value //apple_ref/occ/ftmplt/value //apple_ref/occ/defn/value //apple_ref/occ/macro/value" --><span class="function">value</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">attrValue</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/baseDN //apple_ref/occ/clm/baseDN //apple_ref/occ/intfcm/baseDN //apple_ref/occ/intfm/baseDN //apple_ref/occ/func/baseDN //apple_ref/occ/ftmplt/baseDN //apple_ref/occ/defn/baseDN //apple_ref/occ/macro/baseDN" --><span class="function">baseDN</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/baseDN //apple_ref/occ/data/baseDN" --><span class="var">baseDN</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The attrKey and attrValue are concatenated to "([attrKey]=[attrValue])" form and the
+searchWithFilter:baseDN: method is invoked.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithAttributeKey:value:baseDN:scope:;   name=SBLDAPConnection(SBLDAPConnectionSearch)::searchWithAttributeKey:value:baseDN:scope: -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithAttributeKey:value:baseDN:scope:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="searchWithAttributeKey:value:baseDN:scope:">searchWithAttributeKey:value:baseDN:scope:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/searchWithAttributeKey //apple_ref/occ/clm/searchWithAttributeKey //apple_ref/occ/intfcm/searchWithAttributeKey //apple_ref/occ/intfm/searchWithAttributeKey //apple_ref/occ/func/searchWithAttributeKey //apple_ref/occ/ftmplt/searchWithAttributeKey //apple_ref/occ/defn/searchWithAttributeKey //apple_ref/occ/macro/searchWithAttributeKey" --><span class="function">searchWithAttributeKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">attrKey</span> <!-- a logicalPath="//apple_ref/occ/instm/value //apple_ref/occ/clm/value //apple_ref/occ/intfcm/value //apple_ref/occ/intfm/value //apple_ref/occ/func/value //apple_ref/occ/ftmplt/value //apple_ref/occ/defn/value //apple_ref/occ/macro/value" --><span class="function">value</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">attrValue</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/baseDN //apple_ref/occ/clm/baseDN //apple_ref/occ/intfcm/baseDN //apple_ref/occ/intfm/baseDN //apple_ref/occ/func/baseDN //apple_ref/occ/ftmplt/baseDN //apple_ref/occ/defn/baseDN //apple_ref/occ/macro/baseDN" --><span class="function">baseDN</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">baseDN</span> <!-- a logicalPath="//apple_ref/occ/instm/scope //apple_ref/occ/clm/scope //apple_ref/occ/intfcm/scope //apple_ref/occ/intfm/scope //apple_ref/occ/func/scope //apple_ref/occ/ftmplt/scope //apple_ref/occ/defn/scope //apple_ref/occ/macro/scope" --><span class="function">scope</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/scope //apple_ref/occ/data/scope" --><span class="var">scope</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The attrKey and attrValue are concatenated to "([attrKey]=[attrValue])" form and the
+searchWithFilter:baseDN:scope: method is invoked.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithAttributeKey:value:baseDN:scope:ignoreAttributes:;   name=SBLDAPConnection(SBLDAPConnectionSearch)::searchWithAttributeKey:value:baseDN:scope:ignoreAttributes: -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithAttributeKey:value:baseDN:scope:ignoreAttributes:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="searchWithAttributeKey:value:baseDN:scope:ignoreAttributes:">searchWithAttributeKey:value:baseDN:scope:ignoreAttributes:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/searchWithAttributeKey //apple_ref/occ/clm/searchWithAttributeKey //apple_ref/occ/intfcm/searchWithAttributeKey //apple_ref/occ/intfm/searchWithAttributeKey //apple_ref/occ/func/searchWithAttributeKey //apple_ref/occ/ftmplt/searchWithAttributeKey //apple_ref/occ/defn/searchWithAttributeKey //apple_ref/occ/macro/searchWithAttributeKey" --><span class="function">searchWithAttributeKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">attrKey</span> <!-- a logicalPath="//apple_ref/occ/instm/value //apple_ref/occ/clm/value //apple_ref/occ/intfcm/value //apple_ref/occ/intfm/value //apple_ref/occ/func/value //apple_ref/occ/ftmplt/value //apple_ref/occ/defn/value //apple_ref/occ/macro/value" --><span class="function">value</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">attrValue</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/baseDN //apple_ref/occ/clm/baseDN //apple_ref/occ/intfcm/baseDN //apple_ref/occ/intfm/baseDN //apple_ref/occ/func/baseDN //apple_ref/occ/ftmplt/baseDN //apple_ref/occ/defn/baseDN //apple_ref/occ/macro/baseDN" --><span class="function">baseDN</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">baseDN</span> <!-- a logicalPath="//apple_ref/occ/instm/scope //apple_ref/occ/clm/scope //apple_ref/occ/intfcm/scope //apple_ref/occ/intfm/scope //apple_ref/occ/func/scope //apple_ref/occ/ftmplt/scope //apple_ref/occ/defn/scope //apple_ref/occ/macro/scope" --><span class="function">scope</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<span class="param">scope</span> <!-- a logicalPath="//apple_ref/occ/instm/ignoreAttributes //apple_ref/occ/clm/ignoreAttributes //apple_ref/occ/intfcm/ignoreAttributes //apple_ref/occ/intfm/ignoreAttributes //apple_ref/occ/func/ignoreAttributes //apple_ref/occ/ftmplt/ignoreAttributes //apple_ref/occ/defn/ignoreAttributes //apple_ref/occ/macro/ignoreAttributes" --><span class="function">ignoreAttributes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/ignoreAttributes //apple_ref/occ/data/ignoreAttributes" --><span class="var">ignoreAttributes</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The attrKey and attrValue are concatenated to "([attrKey]=[attrValue])" form and the
+searchWithFilter:baseDN:scope:ignoreAttributes: method is invoked.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithFilter:;   name=SBLDAPConnection(SBLDAPConnectionSearch)::searchWithFilter: -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithFilter:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="searchWithFilter:">searchWithFilter:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/searchWithFilter //apple_ref/occ/clm/searchWithFilter //apple_ref/occ/intfcm/searchWithFilter //apple_ref/occ/intfm/searchWithFilter //apple_ref/occ/func/searchWithFilter //apple_ref/occ/ftmplt/searchWithFilter //apple_ref/occ/defn/searchWithFilter //apple_ref/occ/macro/searchWithFilter" --><span class="function">searchWithFilter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/ldapFilter //apple_ref/occ/data/ldapFilter" --><span class="var">ldapFilter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Search the receiver's LDAP directory tree for directory entities matching the provided
+LDAP filter string.  The default base DN for the receiver and subtree scope are implied.
+Attribute values will also be retrieved.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithFilter:baseDN:;   name=SBLDAPConnection(SBLDAPConnectionSearch)::searchWithFilter:baseDN: -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithFilter:baseDN:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="searchWithFilter:baseDN:">searchWithFilter:baseDN:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/searchWithFilter //apple_ref/occ/clm/searchWithFilter //apple_ref/occ/intfcm/searchWithFilter //apple_ref/occ/intfm/searchWithFilter //apple_ref/occ/func/searchWithFilter //apple_ref/occ/ftmplt/searchWithFilter //apple_ref/occ/defn/searchWithFilter //apple_ref/occ/macro/searchWithFilter" --><span class="function">searchWithFilter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">ldapFilter</span> <!-- a logicalPath="//apple_ref/occ/instm/baseDN //apple_ref/occ/clm/baseDN //apple_ref/occ/intfcm/baseDN //apple_ref/occ/intfm/baseDN //apple_ref/occ/func/baseDN //apple_ref/occ/ftmplt/baseDN //apple_ref/occ/defn/baseDN //apple_ref/occ/macro/baseDN" --><span class="function">baseDN</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/baseDN //apple_ref/occ/data/baseDN" --><span class="var">baseDN</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Search the receiver's LDAP directory tree (from the given base DN) for directory entities
+matching the provided LDAP filter string.  Subtree scope is implied.  Attribute values will
+also be retrieved.
+</p>
+<p>If baseDN is nil, the default base DN for the receiver is used.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithFilter:baseDN:scope:;   name=SBLDAPConnection(SBLDAPConnectionSearch)::searchWithFilter:baseDN:scope: -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithFilter:baseDN:scope:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="searchWithFilter:baseDN:scope:">searchWithFilter:baseDN:scope:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/searchWithFilter //apple_ref/occ/clm/searchWithFilter //apple_ref/occ/intfcm/searchWithFilter //apple_ref/occ/intfm/searchWithFilter //apple_ref/occ/func/searchWithFilter //apple_ref/occ/ftmplt/searchWithFilter //apple_ref/occ/defn/searchWithFilter //apple_ref/occ/macro/searchWithFilter" --><span class="function">searchWithFilter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">ldapFilter</span> <!-- a logicalPath="//apple_ref/occ/instm/baseDN //apple_ref/occ/clm/baseDN //apple_ref/occ/intfcm/baseDN //apple_ref/occ/intfm/baseDN //apple_ref/occ/func/baseDN //apple_ref/occ/ftmplt/baseDN //apple_ref/occ/defn/baseDN //apple_ref/occ/macro/baseDN" --><span class="function">baseDN</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">baseDN</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/scope //apple_ref/occ/clm/scope //apple_ref/occ/intfcm/scope //apple_ref/occ/intfm/scope //apple_ref/occ/func/scope //apple_ref/occ/ftmplt/scope //apple_ref/occ/defn/scope //apple_ref/occ/macro/scope" --><span class="function">scope</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/scope //apple_ref/occ/data/scope" --><span class="var">scope</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Search the receiver's LDAP directory tree (from the given base DN) for directory entities
+matching the provided LDAP filter string.  The provided search scope is observed.
+Attribute values will also be retrieved.
+</p>
+<p>If baseDN is nil, the default base DN for the receiver is used.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithFilter:baseDN:scope:ignoreAttributes:;   name=SBLDAPConnection(SBLDAPConnectionSearch)::searchWithFilter:baseDN:scope:ignoreAttributes: -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection(SBLDAPConnectionSearch)/searchWithFilter:baseDN:scope:ignoreAttributes:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="searchWithFilter:baseDN:scope:ignoreAttributes:">searchWithFilter:baseDN:scope:ignoreAttributes:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/searchWithFilter //apple_ref/occ/clm/searchWithFilter //apple_ref/occ/intfcm/searchWithFilter //apple_ref/occ/intfm/searchWithFilter //apple_ref/occ/func/searchWithFilter //apple_ref/occ/ftmplt/searchWithFilter //apple_ref/occ/defn/searchWithFilter //apple_ref/occ/macro/searchWithFilter" --><span class="function">searchWithFilter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">ldapFilter</span> <!-- a logicalPath="//apple_ref/occ/instm/baseDN //apple_ref/occ/clm/baseDN //apple_ref/occ/intfcm/baseDN //apple_ref/occ/intfm/baseDN //apple_ref/occ/func/baseDN //apple_ref/occ/ftmplt/baseDN //apple_ref/occ/defn/baseDN //apple_ref/occ/macro/baseDN" --><span class="function">baseDN</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">baseDN</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/scope //apple_ref/occ/clm/scope //apple_ref/occ/intfcm/scope //apple_ref/occ/intfm/scope //apple_ref/occ/func/scope //apple_ref/occ/ftmplt/scope //apple_ref/occ/defn/scope //apple_ref/occ/macro/scope" --><span class="function">scope</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<span class="param">scope</span> <!-- a logicalPath="//apple_ref/occ/instm/ignoreAttributes //apple_ref/occ/clm/ignoreAttributes //apple_ref/occ/intfcm/ignoreAttributes //apple_ref/occ/intfm/ignoreAttributes //apple_ref/occ/func/ignoreAttributes //apple_ref/occ/ftmplt/ignoreAttributes //apple_ref/occ/defn/ignoreAttributes //apple_ref/occ/macro/ignoreAttributes" --><span class="function">ignoreAttributes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/ignoreAttributes //apple_ref/occ/data/ignoreAttributes" --><span class="var">ignoreAttributes</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Search the receiver's LDAP directory tree (from the given base DN) for directory entities
+matching the provided LDAP filter string.  The provided search scope is observed.
+Attribute values will only be retrieved if ignoreAttributes is NO.
+</p>
+<p>If baseDN is nil, the default base DN for the receiver is used.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

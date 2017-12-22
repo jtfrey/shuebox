@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBCGI.h</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=Header;  uid=//apple_ref/doc/header/SBCGI.h;   name=SBCGI.h -->
+<a name="//apple_ref/doc/header/SBCGI.h"></a>
+<div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBCGI.h">SBCGI.h</a></h1>
+</td></tr></table><hr><p><!-- begin abstract -->Use the links in the table of contents to the left to access the documentation.<br>
+<!-- end abstract --></p>
+<p></p><div class='declaration_indent'>
+</div>
+<p></p><hr><br><a name="HeaderDoc_classes"></a>
+<h2>Classes</h2>
+<dl>
+<dt><tt><a href="Classes/SBCGI/index.html#//apple_ref/occ/cl/SBCGI" target="_top">SBCGI</a></tt></dt>
+<dd><p>CGI handler
+</dd>
+</dl>
+<hr><br><a name="HeaderDoc_functions"></a>
+<h2>Functions</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/func/SBHTTPMethodFromEnv" target="_top">SBHTTPMethodFromEnv</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/SBHTTPMethodFromString" target="_top">SBHTTPMethodFromString</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/SBHTTPMethodToString" target="_top">SBHTTPMethodToString</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=func;  uid=//apple_ref/c/func/SBHTTPMethodFromEnv;   name=SBHTTPMethodFromEnv -->
+<a name="//apple_ref/c/func/SBHTTPMethodFromEnv"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBHTTPMethodFromEnv">SBHTTPMethodFromEnv</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><!-- a logicalPath="//apple_ref/c/cl/SBHTTPMethod //apple_ref/c/tdef/SBHTTPMethod //apple_ref/c/tag/SBHTTPMethod //apple_ref/c/econst/SBHTTPMethod //apple_ref/c/struct/SBHTTPMethod //apple_ref/c/clconst/SBHTTPMethod //apple_ref/c/intf/SBHTTPMethod" --><span class="type">SBHTTPMethod</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/instm/SBHTTPMethodFromEnv //apple_ref/c/clm/SBHTTPMethodFromEnv //apple_ref/c/intfcm/SBHTTPMethodFromEnv //apple_ref/c/intfm/SBHTTPMethodFromEnv //apple_ref/c/func/SBHTTPMethodFromEnv //apple_ref/c/ftmplt/SBHTTPMethodFromEnv //apple_ref/c/defn/SBHTTPMethodFromEnv //apple_ref/c/macro/SBHTTPMethodFromEnv" --><span class="function">SBHTTPMethodFromEnv</span><!-- /a -->(
+    <span class="param">void</span>);  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Similar to SBHTTPMethodFromString() with the string coming from the REQUEST_METHOD environment
+variable.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=func;  uid=//apple_ref/c/func/SBHTTPMethodFromString;   name=SBHTTPMethodFromString -->
+<a name="//apple_ref/c/func/SBHTTPMethodFromString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBHTTPMethodFromString">SBHTTPMethodFromString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><!-- a logicalPath="//apple_ref/c/cl/SBHTTPMethod //apple_ref/c/tdef/SBHTTPMethod //apple_ref/c/tag/SBHTTPMethod //apple_ref/c/econst/SBHTTPMethod //apple_ref/c/struct/SBHTTPMethod //apple_ref/c/clconst/SBHTTPMethod //apple_ref/c/intf/SBHTTPMethod" --><span class="type">SBHTTPMethod</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/instm/SBHTTPMethodFromString //apple_ref/c/clm/SBHTTPMethodFromString //apple_ref/c/intfcm/SBHTTPMethodFromString //apple_ref/c/intfm/SBHTTPMethodFromString //apple_ref/c/func/SBHTTPMethodFromString //apple_ref/c/ftmplt/SBHTTPMethodFromString //apple_ref/c/defn/SBHTTPMethodFromString //apple_ref/c/macro/SBHTTPMethodFromString" --><span class="function">SBHTTPMethodFromString</span><!-- /a -->(
+    <!-- a logicalPath="//apple_ref/c/cl/SBString //apple_ref/c/tdef/SBString //apple_ref/c/tag/SBString //apple_ref/c/econst/SBString //apple_ref/c/struct/SBString //apple_ref/c/clconst/SBString //apple_ref/c/intf/SBString" --><span class="type">SBString</span><!-- /a --> <span class="type">*</span><span class="param">aString</span>);  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Parse aString and return the corresponding integral HTTP method identifier (from SBHTTPMethod).
+If aString does not contain a known HTTP method then kSBHTTPMethodINVALID is returned.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=func;  uid=//apple_ref/c/func/SBHTTPMethodToString;   name=SBHTTPMethodToString -->
+<a name="//apple_ref/c/func/SBHTTPMethodToString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBHTTPMethodToString">SBHTTPMethodToString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><!-- a logicalPath="//apple_ref/c/cl/SBString //apple_ref/c/tdef/SBString //apple_ref/c/tag/SBString //apple_ref/c/econst/SBString //apple_ref/c/struct/SBString //apple_ref/c/clconst/SBString //apple_ref/c/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/c/instm/SBHTTPMethodToString //apple_ref/c/clm/SBHTTPMethodToString //apple_ref/c/intfcm/SBHTTPMethodToString //apple_ref/c/intfm/SBHTTPMethodToString //apple_ref/c/func/SBHTTPMethodToString //apple_ref/c/ftmplt/SBHTTPMethodToString //apple_ref/c/defn/SBHTTPMethodToString //apple_ref/c/macro/SBHTTPMethodToString" --><span class="function">SBHTTPMethodToString</span><!-- /a -->(
+    <!-- a logicalPath="//apple_ref/c/cl/SBHTTPMethod //apple_ref/c/tdef/SBHTTPMethod //apple_ref/c/tag/SBHTTPMethod //apple_ref/c/econst/SBHTTPMethod //apple_ref/c/struct/SBHTTPMethod //apple_ref/c/clconst/SBHTTPMethod //apple_ref/c/intf/SBHTTPMethod" --><span class="type">SBHTTPMethod</span><!-- /a --> <span class="param">method</span>);  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Given an integral HTTP method identifier (from SBHTTPMethod), return an SBString containing
+the textual form of that method.
+<!-- end discussion -->
+<p></p><a name="HeaderDoc_datatypes"></a>
+<h2>Typedefs</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/tdef/SBHTTPMethod" target="_top">SBHTTPMethod</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=tdef;  uid=//apple_ref/c/tdef/SBHTTPMethod;   name=SBHTTPMethod -->
+<a name="//apple_ref/c/tdef/SBHTTPMethod"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBHTTPMethod">SBHTTPMethod</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">typedef</span> <span class="keyword">enum</span> { 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodUnspecified //apple_ref/c/data/kSBHTTPMethodUnspecified" --><span class="var">kSBHTTPMethodUnspecified</span><!-- /a --> = -<span class="number">1</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodGET //apple_ref/c/data/kSBHTTPMethodGET" --><span class="var">kSBHTTPMethodGET</span><!-- /a --> = <span class="number">0</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodPUT //apple_ref/c/data/kSBHTTPMethodPUT" --><span class="var">kSBHTTPMethodPUT</span><!-- /a --> = <span class="number">1</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodPOST //apple_ref/c/data/kSBHTTPMethodPOST" --><span class="var">kSBHTTPMethodPOST</span><!-- /a --> = <span class="number">2</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodDELETE //apple_ref/c/data/kSBHTTPMethodDELETE" --><span class="var">kSBHTTPMethodDELETE</span><!-- /a --> = <span class="number">3</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodCONNECT //apple_ref/c/data/kSBHTTPMethodCONNECT" --><span class="var">kSBHTTPMethodCONNECT</span><!-- /a --> = <span class="number">4</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodOPTIONS //apple_ref/c/data/kSBHTTPMethodOPTIONS" --><span class="var">kSBHTTPMethodOPTIONS</span><!-- /a --> = <span class="number">5</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodTRACE //apple_ref/c/data/kSBHTTPMethodTRACE" --><span class="var">kSBHTTPMethodTRACE</span><!-- /a --> = <span class="number">6</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodPATCH //apple_ref/c/data/kSBHTTPMethodPATCH" --><span class="var">kSBHTTPMethodPATCH</span><!-- /a --> = <span class="number">7</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodPROPFIND //apple_ref/c/data/kSBHTTPMethodPROPFIND" --><span class="var">kSBHTTPMethodPROPFIND</span><!-- /a --> = <span class="number">8</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodPROPPATCH //apple_ref/c/data/kSBHTTPMethodPROPPATCH" --><span class="var">kSBHTTPMethodPROPPATCH</span><!-- /a --> = <span class="number">9</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodMKCOL //apple_ref/c/data/kSBHTTPMethodMKCOL" --><span class="var">kSBHTTPMethodMKCOL</span><!-- /a --> = <span class="number">10</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodCOPY //apple_ref/c/data/kSBHTTPMethodCOPY" --><span class="var">kSBHTTPMethodCOPY</span><!-- /a --> = <span class="number">11</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodMOVE //apple_ref/c/data/kSBHTTPMethodMOVE" --><span class="var">kSBHTTPMethodMOVE</span><!-- /a --> = <span class="number">12</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodLOCK //apple_ref/c/data/kSBHTTPMethodLOCK" --><span class="var">kSBHTTPMethodLOCK</span><!-- /a --> = <span class="number">13</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodUNLOCK //apple_ref/c/data/kSBHTTPMethodUNLOCK" --><span class="var">kSBHTTPMethodUNLOCK</span><!-- /a --> = <span class="number">14</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodVERSION_CONTROL //apple_ref/c/data/kSBHTTPMethodVERSION_CONTROL" --><span class="var">kSBHTTPMethodVERSION_CONTROL</span><!-- /a --> = <span class="number">15</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodCHECKOUT //apple_ref/c/data/kSBHTTPMethodCHECKOUT" --><span class="var">kSBHTTPMethodCHECKOUT</span><!-- /a --> = <span class="number">16</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodUNCHECKOUT //apple_ref/c/data/kSBHTTPMethodUNCHECKOUT" --><span class="var">kSBHTTPMethodUNCHECKOUT</span><!-- /a --> = <span class="number">17</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodCHECKIN //apple_ref/c/data/kSBHTTPMethodCHECKIN" --><span class="var">kSBHTTPMethodCHECKIN</span><!-- /a --> = <span class="number">18</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodUPDATE //apple_ref/c/data/kSBHTTPMethodUPDATE" --><span class="var">kSBHTTPMethodUPDATE</span><!-- /a --> = <span class="number">19</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodLABEL //apple_ref/c/data/kSBHTTPMethodLABEL" --><span class="var">kSBHTTPMethodLABEL</span><!-- /a --> = <span class="number">20</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodREPORT //apple_ref/c/data/kSBHTTPMethodREPORT" --><span class="var">kSBHTTPMethodREPORT</span><!-- /a --> = <span class="number">21</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodMKWORKSPACE //apple_ref/c/data/kSBHTTPMethodMKWORKSPACE" --><span class="var">kSBHTTPMethodMKWORKSPACE</span><!-- /a --> = <span class="number">22</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodMKACTIVITY //apple_ref/c/data/kSBHTTPMethodMKACTIVITY" --><span class="var">kSBHTTPMethodMKACTIVITY</span><!-- /a --> = <span class="number">23</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodBASELINE_CONTROL //apple_ref/c/data/kSBHTTPMethodBASELINE_CONTROL" --><span class="var">kSBHTTPMethodBASELINE_CONTROL</span><!-- /a --> = <span class="number">24</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodMERGE //apple_ref/c/data/kSBHTTPMethodMERGE" --><span class="var">kSBHTTPMethodMERGE</span><!-- /a --> = <span class="number">25</span>, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBHTTPMethodINVALID //apple_ref/c/data/kSBHTTPMethodINVALID" --><span class="var">kSBHTTPMethodINVALID</span><!-- /a --> = <span class="number">26</span> 
+} <!-- a logicalPath="//apple_ref/c/econst/SBHTTPMethod //apple_ref/c/data/SBHTTPMethod" --><span class="var">SBHTTPMethod</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>An enumeration of the (known) HTTP methods to which this class responds.  Includes all of the
+methods defined by the DAV extension of HTTP.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

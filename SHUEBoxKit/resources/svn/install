@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+
+source ../install.inc
+
+$SVNADMIN --fs-type fsfs create $INSTALL_PREFIX &> /dev/null
+if [ $? -ne 0 ]; then
+  exit $?
+fi
+
+install_cleanup
+

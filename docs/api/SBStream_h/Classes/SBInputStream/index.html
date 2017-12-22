@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBInputStream</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBInputStream;  name=SBInputStream-->
+<a name="//apple_ref/occ/cl/SBInputStream"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBInputStream">SBInputStream</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBStream" -->SBStream<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBStream.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Instances of SBInputStream provide a generalized interface to input sources.  The class
+handles in-memory buffers and filesystem paths as input sources.
+</p>
+<p>Subclasses of SBInputStream must implement the methods defined by the SBStream class.
+In addition, the
+</p>
+<p>- (SBUInteger) read:(void*)buffer maxLength:(SBUInteger)length;
+- (BOOL) getBuffer:(void**)buffer length:(SBUInteger*)length;
+- (BOOL) hasBytesAvailable;
+- (void) stream:(SBStream*)aStream handleEvent:(SBStreamEvent)eventCode;
+</p>
+<p>methods should also be overridden.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInputStream/getBuffer:length:" target="_top">-getBuffer:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInputStream/hasBytesAvailable" target="_top">-hasBytesAvailable</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInputStream/initWithData:" target="_top">-initWithData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInputStream/initWithFileAtPath:" target="_top">-initWithFileAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInputStream/initWithFileHandle:" target="_top">-initWithFileHandle:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBInputStream/inputStreamWithData:" target="_top">+inputStreamWithData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBInputStream/inputStreamWithFileAtPath:" target="_top">+inputStreamWithFileAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBInputStream/inputStreamWithFileHandle:" target="_top">+inputStreamWithFileHandle:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInputStream/read:maxLength:" target="_top">-read:maxLength:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInputStream/getBuffer:length:;   name=SBInputStream::getBuffer:length: -->
+<a name="//apple_ref/occ/instm/SBInputStream/getBuffer:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="getBuffer:length:">getBuffer:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/getBuffer //apple_ref/occ/clm/getBuffer //apple_ref/occ/intfcm/getBuffer //apple_ref/occ/intfm/getBuffer //apple_ref/occ/func/getBuffer //apple_ref/occ/ftmplt/getBuffer //apple_ref/occ/defn/getBuffer //apple_ref/occ/macro/getBuffer" --><span class="function">getBuffer</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a --><span class="type">*</span><span class="type">*</span>)<span class="param">buffer</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>For a subclass which uses an internal i/o buffer of some kind, returns (by reference)
+a pointer to that buffer and (by reference) the number of bytes available in it. Returns
+YES if a buffer is available and was assigned, NO otherwise.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInputStream/hasBytesAvailable;   name=SBInputStream::hasBytesAvailable -->
+<a name="//apple_ref/occ/instm/SBInputStream/hasBytesAvailable"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="hasBytesAvailable">hasBytesAvailable</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/hasBytesAvailable //apple_ref/occ/data/hasBytesAvailable" --><span class="var">hasBytesAvailable</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver is in a state whereby the read:maxLength: message may not
+block (there are bytes available to be read).  Subclasses which cannot establish such
+a condition should merely return YES, indicating that the only way to know if data is
+available is to actually perform a read:maxLength: operation. 
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInputStream/initWithData:;   name=SBInputStream::initWithData: -->
+<a name="//apple_ref/occ/instm/SBInputStream/initWithData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithData:">initWithData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithData //apple_ref/occ/clm/initWithData //apple_ref/occ/intfcm/initWithData //apple_ref/occ/intfm/initWithData //apple_ref/occ/func/initWithData //apple_ref/occ/ftmplt/initWithData //apple_ref/occ/defn/initWithData //apple_ref/occ/macro/initWithData" --><span class="function">initWithData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/theData //apple_ref/occ/data/theData" --><span class="var">theData</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes an SBInputStream instance to use theData as its in-memory input source.
+The incoming SBData object is copied by the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInputStream/initWithFileAtPath:;   name=SBInputStream::initWithFileAtPath: -->
+<a name="//apple_ref/occ/instm/SBInputStream/initWithFileAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithFileAtPath:">initWithFileAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithFileAtPath //apple_ref/occ/clm/initWithFileAtPath //apple_ref/occ/intfcm/initWithFileAtPath //apple_ref/occ/intfm/initWithFileAtPath //apple_ref/occ/func/initWithFileAtPath //apple_ref/occ/ftmplt/initWithFileAtPath //apple_ref/occ/defn/initWithFileAtPath //apple_ref/occ/macro/initWithFileAtPath" --><span class="function">initWithFileAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aPath //apple_ref/occ/data/aPath" --><span class="var">aPath</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes an SBInputStream instance to use the given filesystem path, aPath, as its
+input source.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInputStream/initWithFileHandle:;   name=SBInputStream::initWithFileHandle: -->
+<a name="//apple_ref/occ/instm/SBInputStream/initWithFileHandle:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithFileHandle:">initWithFileHandle:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithFileHandle //apple_ref/occ/clm/initWithFileHandle //apple_ref/occ/intfcm/initWithFileHandle //apple_ref/occ/intfm/initWithFileHandle //apple_ref/occ/func/initWithFileHandle //apple_ref/occ/ftmplt/initWithFileHandle //apple_ref/occ/defn/initWithFileHandle //apple_ref/occ/macro/initWithFileHandle" --><span class="function">initWithFileHandle</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBFileHandle //apple_ref/occ/tdef/SBFileHandle //apple_ref/occ/tag/SBFileHandle //apple_ref/occ/econst/SBFileHandle //apple_ref/occ/struct/SBFileHandle //apple_ref/occ/clconst/SBFileHandle //apple_ref/occ/intf/SBFileHandle" --><span class="type">SBFileHandle</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aFileHandle //apple_ref/occ/data/aFileHandle" --><span class="var">aFileHandle</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes an SBInputStream instance to use the given SBFileHandle object, aFileHandle,
+as its input source.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBInputStream/inputStreamWithData:;   name=SBInputStream::inputStreamWithData: -->
+<a name="//apple_ref/occ/clm/SBInputStream/inputStreamWithData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="inputStreamWithData:">inputStreamWithData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/inputStreamWithData //apple_ref/occ/clm/inputStreamWithData //apple_ref/occ/intfcm/inputStreamWithData //apple_ref/occ/intfm/inputStreamWithData //apple_ref/occ/func/inputStreamWithData //apple_ref/occ/ftmplt/inputStreamWithData //apple_ref/occ/defn/inputStreamWithData //apple_ref/occ/macro/inputStreamWithData" --><span class="function">inputStreamWithData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/theData //apple_ref/occ/data/theData" --><span class="var">theData</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a new, autoreleased SBInputStream instance which uses theData as its in-memory
+input source.  The incoming SBData object is copied by the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBInputStream/inputStreamWithFileAtPath:;   name=SBInputStream::inputStreamWithFileAtPath: -->
+<a name="//apple_ref/occ/clm/SBInputStream/inputStreamWithFileAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="inputStreamWithFileAtPath:">inputStreamWithFileAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/inputStreamWithFileAtPath //apple_ref/occ/clm/inputStreamWithFileAtPath //apple_ref/occ/intfcm/inputStreamWithFileAtPath //apple_ref/occ/intfm/inputStreamWithFileAtPath //apple_ref/occ/func/inputStreamWithFileAtPath //apple_ref/occ/ftmplt/inputStreamWithFileAtPath //apple_ref/occ/defn/inputStreamWithFileAtPath //apple_ref/occ/macro/inputStreamWithFileAtPath" --><span class="function">inputStreamWithFileAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aPath //apple_ref/occ/data/aPath" --><span class="var">aPath</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a new, autoreleased SBInputStream instance which uses the given filesystem
+path, aPath, as its input source.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBInputStream/inputStreamWithFileHandle:;   name=SBInputStream::inputStreamWithFileHandle: -->
+<a name="//apple_ref/occ/clm/SBInputStream/inputStreamWithFileHandle:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="inputStreamWithFileHandle:">inputStreamWithFileHandle:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/inputStreamWithFileHandle //apple_ref/occ/clm/inputStreamWithFileHandle //apple_ref/occ/intfcm/inputStreamWithFileHandle //apple_ref/occ/intfm/inputStreamWithFileHandle //apple_ref/occ/func/inputStreamWithFileHandle //apple_ref/occ/ftmplt/inputStreamWithFileHandle //apple_ref/occ/defn/inputStreamWithFileHandle //apple_ref/occ/macro/inputStreamWithFileHandle" --><span class="function">inputStreamWithFileHandle</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBFileHandle //apple_ref/occ/tdef/SBFileHandle //apple_ref/occ/tag/SBFileHandle //apple_ref/occ/econst/SBFileHandle //apple_ref/occ/struct/SBFileHandle //apple_ref/occ/clconst/SBFileHandle //apple_ref/occ/intf/SBFileHandle" --><span class="type">SBFileHandle</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aFileHandle //apple_ref/occ/data/aFileHandle" --><span class="var">aFileHandle</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a new, autoreleased SBInputStream instance which uses the given SBFileHandle
+object, aFileHandle, as its input source.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInputStream/read:maxLength:;   name=SBInputStream::read:maxLength: -->
+<a name="//apple_ref/occ/instm/SBInputStream/read:maxLength:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="read:maxLength:">read:maxLength:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/read //apple_ref/occ/clm/read //apple_ref/occ/intfcm/read //apple_ref/occ/intfm/read //apple_ref/occ/func/read //apple_ref/occ/ftmplt/read //apple_ref/occ/defn/read //apple_ref/occ/macro/read" --><span class="function">read</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a --><span class="type">*</span>)<span class="param">buffer</span> <!-- a logicalPath="//apple_ref/occ/instm/maxLength //apple_ref/occ/clm/maxLength //apple_ref/occ/intfcm/maxLength //apple_ref/occ/intfm/maxLength //apple_ref/occ/func/maxLength //apple_ref/occ/ftmplt/maxLength //apple_ref/occ/defn/maxLength //apple_ref/occ/macro/maxLength" --><span class="function">maxLength</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempt to read a maximum of length octets from the receiver's input source into the
+provided buffer.  Returns the number of octets actually read, or zero if no data
+remains (or there was an error).
+</p>
+<p>If the return value is zero, then the nature of the problem can be determined using
+the streamStatus and streamError messages.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

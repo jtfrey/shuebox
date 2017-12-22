@@ -1,0 +1,49 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2009.09.01.14.32.10;	author frey;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#
+# Resource uninstaller scripts should source this file before
+# executing, e.g.
+#
+#   source ../uninstall-inc
+#
+# $Id$
+#
+
+INSTALL_PREFIX=$1/$2
+
+source ../base.inc
+
+uninstall_cleanup()
+{
+  if [ -d "$INSTALL_PREFIX" ]; then
+    $RM -rf $INSTALL_PREFIX/*
+    exit $?
+  fi
+}
+
+# Initial setup -- make sure the target exists:
+if [ ! -d "$INSTALL_PREFIX" ]; then
+  exit 1 
+fi
+
+@

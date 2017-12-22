@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBException</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBException;  name=SBException-->
+<a name="//apple_ref/occ/cl/SBException"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBException">SBException</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBException.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>An SBException object wraps the information associated with an error condition.  Exceptions
+can be raised ("thrown" in some other languages):  execution immediately returns to the last
+exception block.  An exception block looks like this:
+</p>
+<p>TRY_BEGIN
+:
+code which could produce an exception
+:
+TRY_CATCH(anException)
+:
+code to handle (possibly re-throwing) whatever exception was produced
+the SBException instance that was thrown is accessible in "anException"
+:
+TRY_END
+</p>
+<p>Minimally, an SBException should have an identifier that tersely describes the error
+condition.  A more verbose description can be provided as the reason.  Finally, any
+additional information can be communicated back to exception handlers in the userInfo
+dictionary.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBException/exceptionWithIdentifier:reason:userInfo:" target="_top">+exceptionWithIdentifier:reason:userInfo:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBException/identifier" target="_top">-identifier</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBException/initWithIdentifier:reason:userInfo:" target="_top">-initWithIdentifier:reason:userInfo:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBException/raise" target="_top">-raise</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBException/raise:format:" target="_top">+raise:format:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:clm/SBException/raise:format:..." target="_top">+raise:format:...</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBException/raise:format:arguments:" target="_top">+raise:format:arguments:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBException/reason" target="_top">-reason</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBException/userInfo" target="_top">-userInfo</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBException/exceptionWithIdentifier:reason:userInfo:;   name=SBException::exceptionWithIdentifier:reason:userInfo: -->
+<a name="//apple_ref/occ/clm/SBException/exceptionWithIdentifier:reason:userInfo:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="exceptionWithIdentifier:reason:userInfo:">exceptionWithIdentifier:reason:userInfo:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBException //apple_ref/occ/tdef/SBException //apple_ref/occ/tag/SBException //apple_ref/occ/econst/SBException //apple_ref/occ/struct/SBException //apple_ref/occ/clconst/SBException //apple_ref/occ/intf/SBException" --><span class="type">SBException</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/exceptionWithIdentifier //apple_ref/occ/clm/exceptionWithIdentifier //apple_ref/occ/intfcm/exceptionWithIdentifier //apple_ref/occ/intfm/exceptionWithIdentifier //apple_ref/occ/func/exceptionWithIdentifier //apple_ref/occ/ftmplt/exceptionWithIdentifier //apple_ref/occ/defn/exceptionWithIdentifier //apple_ref/occ/macro/exceptionWithIdentifier" --><span class="function">exceptionWithIdentifier</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">identifier</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/reason //apple_ref/occ/clm/reason //apple_ref/occ/intfcm/reason //apple_ref/occ/intfm/reason //apple_ref/occ/func/reason //apple_ref/occ/ftmplt/reason //apple_ref/occ/defn/reason //apple_ref/occ/macro/reason" --><span class="function">reason</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">reason</span> <!-- a logicalPath="//apple_ref/occ/instm/userInfo //apple_ref/occ/clm/userInfo //apple_ref/occ/intfcm/userInfo //apple_ref/occ/intfm/userInfo //apple_ref/occ/func/userInfo //apple_ref/occ/ftmplt/userInfo //apple_ref/occ/defn/userInfo //apple_ref/occ/macro/userInfo" --><span class="function">userInfo</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/userInfo //apple_ref/occ/data/userInfo" --><span class="var">userInfo</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance of SBException which is initialized with the provided
+identifier, reason, and userInfo.  This method does not actually raise the exception!
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBException/identifier;   name=SBException::identifier -->
+<a name="//apple_ref/occ/instm/SBException/identifier"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="identifier">identifier</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/identifier //apple_ref/occ/data/identifier" --><span class="var">identifier</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's exception identifier.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBException/initWithIdentifier:reason:userInfo:;   name=SBException::initWithIdentifier:reason:userInfo: -->
+<a name="//apple_ref/occ/instm/SBException/initWithIdentifier:reason:userInfo:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithIdentifier:reason:userInfo:">initWithIdentifier:reason:userInfo:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithIdentifier //apple_ref/occ/clm/initWithIdentifier //apple_ref/occ/intfcm/initWithIdentifier //apple_ref/occ/intfm/initWithIdentifier //apple_ref/occ/func/initWithIdentifier //apple_ref/occ/ftmplt/initWithIdentifier //apple_ref/occ/defn/initWithIdentifier //apple_ref/occ/macro/initWithIdentifier" --><span class="function">initWithIdentifier</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">identifier</span> <!-- a logicalPath="//apple_ref/occ/instm/reason //apple_ref/occ/clm/reason //apple_ref/occ/intfcm/reason //apple_ref/occ/intfm/reason //apple_ref/occ/func/reason //apple_ref/occ/ftmplt/reason //apple_ref/occ/defn/reason //apple_ref/occ/macro/reason" --><span class="function">reason</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">reason</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/userInfo //apple_ref/occ/clm/userInfo //apple_ref/occ/intfcm/userInfo //apple_ref/occ/intfm/userInfo //apple_ref/occ/func/userInfo //apple_ref/occ/ftmplt/userInfo //apple_ref/occ/defn/userInfo //apple_ref/occ/macro/userInfo" --><span class="function">userInfo</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/userInfo //apple_ref/occ/data/userInfo" --><span class="var">userInfo</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes a newly-allocated instance of SBException.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBException/raise;   name=SBException::raise -->
+<a name="//apple_ref/occ/instm/SBException/raise"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="raise">raise</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/raise //apple_ref/occ/data/raise" --><span class="var">raise</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Raise the receiver.  Program execution jumps back to the last established exception block
+and resumes in the TRY_CATCH section.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBException/raise:format:;   name=SBException::raise:format: -->
+<a name="//apple_ref/occ/clm/SBException/raise:format:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="raise:format:">raise:format:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:clm/SBException/raise:format:..." --><p>raise:format:...<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/raise //apple_ref/occ/clm/raise //apple_ref/occ/intfcm/raise //apple_ref/occ/intfm/raise //apple_ref/occ/func/raise //apple_ref/occ/ftmplt/raise //apple_ref/occ/defn/raise //apple_ref/occ/macro/raise" --><span class="function">raise</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">identifier</span> <!-- a logicalPath="//apple_ref/occ/instm/format //apple_ref/occ/clm/format //apple_ref/occ/intfcm/format //apple_ref/occ/intfm/format //apple_ref/occ/func/format //apple_ref/occ/ftmplt/format //apple_ref/occ/defn/format //apple_ref/occ/macro/format" --><span class="function">format</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/format //apple_ref/occ/data/format" --><span class="var">format</span><!-- /a -->, ...; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Raise an exception with the given identifier and a reason constructed by a printf-like
+format string and arguments.  The format and arguments are used with SBString's stringWithFormat:arguments:
+method to produce the reason.  The resulting SBException object is immediately raised.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:clm;  uid=//apple_ref/doc/title:clm/SBException/raise:format:...;   name=SBException::raise:format:... -->
+<a name="//apple_ref/doc/title:clm/SBException/raise:format:..."></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="raise:format:...">raise:format:...</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/clm/SBException/raise:format:" --><p>raise:format:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/raise //apple_ref/occ/clm/raise //apple_ref/occ/intfcm/raise //apple_ref/occ/intfm/raise //apple_ref/occ/func/raise //apple_ref/occ/ftmplt/raise //apple_ref/occ/defn/raise //apple_ref/occ/macro/raise" --><span class="function">raise</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">identifier</span> <!-- a logicalPath="//apple_ref/occ/instm/format //apple_ref/occ/clm/format //apple_ref/occ/intfcm/format //apple_ref/occ/intfm/format //apple_ref/occ/func/format //apple_ref/occ/ftmplt/format //apple_ref/occ/defn/format //apple_ref/occ/macro/format" --><span class="function">format</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/format //apple_ref/occ/data/format" --><span class="var">format</span><!-- /a -->, ...; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Raise an exception with the given identifier and a reason constructed by a printf-like
+format string and arguments.  The format and arguments are used with SBString's stringWithFormat:arguments:
+method to produce the reason.  The resulting SBException object is immediately raised.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBException/raise:format:arguments:;   name=SBException::raise:format:arguments: -->
+<a name="//apple_ref/occ/clm/SBException/raise:format:arguments:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="raise:format:arguments:">raise:format:arguments:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/raise //apple_ref/occ/clm/raise //apple_ref/occ/intfcm/raise //apple_ref/occ/intfm/raise //apple_ref/occ/func/raise //apple_ref/occ/ftmplt/raise //apple_ref/occ/defn/raise //apple_ref/occ/macro/raise" --><span class="function">raise</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">identifier</span> <!-- a logicalPath="//apple_ref/occ/instm/format //apple_ref/occ/clm/format //apple_ref/occ/intfcm/format //apple_ref/occ/intfm/format //apple_ref/occ/func/format //apple_ref/occ/ftmplt/format //apple_ref/occ/defn/format //apple_ref/occ/macro/format" --><span class="function">format</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>) <span class="param">format</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/arguments //apple_ref/occ/clm/arguments //apple_ref/occ/intfcm/arguments //apple_ref/occ/intfm/arguments //apple_ref/occ/func/arguments //apple_ref/occ/ftmplt/arguments //apple_ref/occ/defn/arguments //apple_ref/occ/macro/arguments" --><span class="function">arguments</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/va_list //apple_ref/occ/tdef/va_list //apple_ref/occ/tag/va_list //apple_ref/occ/econst/va_list //apple_ref/occ/struct/va_list //apple_ref/occ/clconst/va_list //apple_ref/occ/intf/va_list" --><span class="type">va_list</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/argList //apple_ref/occ/data/argList" --><span class="var">argList</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Raise an exception with the given identifier and a reason constructed by a printf-like
+format string and arguments.  The format and arguments are used with SBString's stringWithFormat:arguments:
+method to produce the reason.  The resulting SBException object is immediately raised.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBException/reason;   name=SBException::reason -->
+<a name="//apple_ref/occ/instm/SBException/reason"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="reason">reason</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/reason //apple_ref/occ/data/reason" --><span class="var">reason</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's reason string.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBException/userInfo;   name=SBException::userInfo -->
+<a name="//apple_ref/occ/instm/SBException/userInfo"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="userInfo">userInfo</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/userInfo //apple_ref/occ/data/userInfo" --><span class="var">userInfo</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's userInfo dictionary.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

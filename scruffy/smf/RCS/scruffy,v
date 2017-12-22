@@ -1,0 +1,74 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2017.04.25.13.57.30;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#!/sbin/sh
+#
+# $Id: scruffy,v 1.3 2011/01/31 21:34:46 root Exp $
+#
+
+. /lib/svc/share/smf_include.sh
+
+SCRUFFY_HOME=/opt/local/SHUEBox/scruffy
+
+cd ${SCRUFFY_HOME}
+
+case "$1" in
+start)
+	# If there's a PID hanging around, make sure it's actually running
+        # before we allow scruffy to abort:
+        if [ -f ${SCRUFFY_HOME}/var/run/scruffy.pid ]; then
+          SCRUFFY_PID=`cat ${SCRUFFY_HOME}/var/run/scruffy.pid`
+          if [ "x${SCRUFFY_PID}" != "x" ]; then
+            SCRUFFY_RUNNING=`ps -p ${SCRUFFY_PID} | grep scruffy | wc -l`
+            if [ ${SCRUFFY_RUNNING} -gt 0 ]; then
+              echo "Scruffy already running with pid ${SCRUFFY_PID}"
+              exit $SMF_EXIT_ERR_FATAL
+            fi
+            # PID hanging around but no such scruffy process; clear the
+            # PID file:
+            echo "PID file was non-empty but no such process running; clearing PID file"
+            echo "" > ${SCRUFFY_HOME}/var/run/scruffy.pid
+          fi
+        fi
+	${SCRUFFY_HOME}/bin/scruffy &
+	if [ $? -ne 0 ]; then
+	  exit $SMF_EXIT_ERR_FATAL
+	fi
+	;;
+stop)
+	if [ -f ${SCRUFFY_HOME}/var/run/scruffy.pid ]; then
+	  kill -INT `cat  ${SCRUFFY_HOME}/var/run/scruffy.pid`
+	else
+	  echo "No PID file found."
+	  exit $SMF_EXIT_ERR_FATAL	
+	fi
+	;;
+refresh)
+	pkill -HUP scruffy
+	;;
+*)
+	echo "Usage: $0 {start|stop|refresh}"
+	exit 1
+	;;
+esac
+
+@

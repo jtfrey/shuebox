@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBNotificationCenter</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBNotificationCenter;  name=SBNotificationCenter-->
+<a name="//apple_ref/occ/cl/SBNotificationCenter"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBNotificationCenter">SBNotificationCenter</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBNotification.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>An SBNotificationCenter acts as a distribution point for inter-object communication.
+A notification is posted by providing its identifier (a unique string), a source object,
+and (optionally) any additional data encapsulated in an SBDictionary object.  Each
+object that has previously registered an interest in notifications having that identifier
+and/or that source object will be notified synchronously by performing the selector that
+was specified at registration time.
+</p>
+<p>There is a default, shared notification center created automatically by a running
+application; this center can be accessed using the defaultNotificationCenter class
+method.  Honestly, you'll probably never need to create your own notification center(s)
+anyway!
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBNotificationCenter/addObserver:selector:identifier:object:" target="_top">-addObserver:selector:identifier:object:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBNotificationCenter/defaultNotificationCenter" target="_top">+defaultNotificationCenter</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBNotificationCenter/postNotification:" target="_top">-postNotification:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBNotificationCenter/postNotificationWithIdentifier:object:" target="_top">-postNotificationWithIdentifier:object:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBNotificationCenter/postNotificationWithIdentifier:object:userInfo:" target="_top">-postNotificationWithIdentifier:object:userInfo:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBNotificationCenter/removeObserver:" target="_top">-removeObserver:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBNotificationCenter/removeObserver:identifier:object:" target="_top">-removeObserver:identifier:object:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBNotificationCenter/addObserver:selector:identifier:object:;   name=SBNotificationCenter::addObserver:selector:identifier:object: -->
+<a name="//apple_ref/occ/instm/SBNotificationCenter/addObserver:selector:identifier:object:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="addObserver:selector:identifier:object:">addObserver:selector:identifier:object:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/addObserver //apple_ref/occ/clm/addObserver //apple_ref/occ/intfcm/addObserver //apple_ref/occ/intfm/addObserver //apple_ref/occ/func/addObserver //apple_ref/occ/ftmplt/addObserver //apple_ref/occ/defn/addObserver //apple_ref/occ/macro/addObserver" --><span class="function">addObserver</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">observer</span> <!-- a logicalPath="//apple_ref/occ/instm/selector //apple_ref/occ/clm/selector //apple_ref/occ/intfcm/selector //apple_ref/occ/intfm/selector //apple_ref/occ/func/selector //apple_ref/occ/ftmplt/selector //apple_ref/occ/defn/selector //apple_ref/occ/macro/selector" --><span class="function">selector</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SEL //apple_ref/occ/tdef/SEL //apple_ref/occ/tag/SEL //apple_ref/occ/econst/SEL //apple_ref/occ/struct/SEL //apple_ref/occ/clconst/SEL //apple_ref/occ/intf/SEL" --><span class="type">SEL</span><!-- /a -->)<span class="param">aSelector</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/identifier //apple_ref/occ/clm/identifier //apple_ref/occ/intfcm/identifier //apple_ref/occ/intfm/identifier //apple_ref/occ/func/identifier //apple_ref/occ/ftmplt/identifier //apple_ref/occ/defn/identifier //apple_ref/occ/macro/identifier" --><span class="function">identifier</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">anIdentifier</span> <!-- a logicalPath="//apple_ref/occ/instm/object //apple_ref/occ/clm/object //apple_ref/occ/intfcm/object //apple_ref/occ/intfm/object //apple_ref/occ/func/object //apple_ref/occ/ftmplt/object //apple_ref/occ/defn/object //apple_ref/occ/macro/object" --><span class="function">object</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/anObject //apple_ref/occ/data/anObject" --><span class="var">anObject</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Register observer as being interested in notifications posted to the receiver with the given
+identifier string and/or source object.  When matching notifications are posted to the
+receiver, aSelector should be sent to observer; aSelector should be a void-typed method that
+takes a single id-type argument, e.g.
+</p>
+<p>- (void) reactToNotification:(id)aNotification
+</p>
+<p>The argument to the method is the SBNotification object that was posted to the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBNotificationCenter/defaultNotificationCenter;   name=SBNotificationCenter::defaultNotificationCenter -->
+<a name="//apple_ref/occ/clm/SBNotificationCenter/defaultNotificationCenter"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="defaultNotificationCenter">defaultNotificationCenter</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBNotificationCenter //apple_ref/occ/tdef/SBNotificationCenter //apple_ref/occ/tag/SBNotificationCenter //apple_ref/occ/econst/SBNotificationCenter //apple_ref/occ/struct/SBNotificationCenter //apple_ref/occ/clconst/SBNotificationCenter //apple_ref/occ/intf/SBNotificationCenter" --><span class="type">SBNotificationCenter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/defaultNotificationCenter //apple_ref/occ/data/defaultNotificationCenter" --><span class="var">defaultNotificationCenter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the default, application-wide notification center.  Do not attempt to release
+or retain the returned object!<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBNotificationCenter/postNotification:;   name=SBNotificationCenter::postNotification: -->
+<a name="//apple_ref/occ/instm/SBNotificationCenter/postNotification:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="postNotification:">postNotification:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/postNotification //apple_ref/occ/clm/postNotification //apple_ref/occ/intfcm/postNotification //apple_ref/occ/intfm/postNotification //apple_ref/occ/func/postNotification //apple_ref/occ/ftmplt/postNotification //apple_ref/occ/defn/postNotification //apple_ref/occ/macro/postNotification" --><span class="function">postNotification</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBNotification //apple_ref/occ/tdef/SBNotification //apple_ref/occ/tag/SBNotification //apple_ref/occ/econst/SBNotification //apple_ref/occ/struct/SBNotification //apple_ref/occ/clconst/SBNotification //apple_ref/occ/intf/SBNotification" --><span class="type">SBNotification</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aNotification //apple_ref/occ/data/aNotification" --><span class="var">aNotification</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Post the given SBNotification to the receiver.  Any objects registered as observers of the
+identifier and/or object source of aNotification will be notified immediately.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBNotificationCenter/postNotificationWithIdentifier:object:;   name=SBNotificationCenter::postNotificationWithIdentifier:object: -->
+<a name="//apple_ref/occ/instm/SBNotificationCenter/postNotificationWithIdentifier:object:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="postNotificationWithIdentifier:object:">postNotificationWithIdentifier:object:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/postNotificationWithIdentifier //apple_ref/occ/clm/postNotificationWithIdentifier //apple_ref/occ/intfcm/postNotificationWithIdentifier //apple_ref/occ/intfm/postNotificationWithIdentifier //apple_ref/occ/func/postNotificationWithIdentifier //apple_ref/occ/ftmplt/postNotificationWithIdentifier //apple_ref/occ/defn/postNotificationWithIdentifier //apple_ref/occ/macro/postNotificationWithIdentifier" --><span class="function">postNotificationWithIdentifier</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">anIdentifier</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/object //apple_ref/occ/clm/object //apple_ref/occ/intfcm/object //apple_ref/occ/intfm/object //apple_ref/occ/func/object //apple_ref/occ/ftmplt/object //apple_ref/occ/defn/object //apple_ref/occ/macro/object" --><span class="function">object</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/anObject //apple_ref/occ/data/anObject" --><span class="var">anObject</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Post an SBNotification for the given identifier string and object.  AnObject may be nil.  Any
+objects registered as observers of the identifier and/or object source of aNotification will
+be notified.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBNotificationCenter/postNotificationWithIdentifier:object:userInfo:;   name=SBNotificationCenter::postNotificationWithIdentifier:object:userInfo: -->
+<a name="//apple_ref/occ/instm/SBNotificationCenter/postNotificationWithIdentifier:object:userInfo:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="postNotificationWithIdentifier:object:userInfo:">postNotificationWithIdentifier:object:userInfo:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/postNotificationWithIdentifier //apple_ref/occ/clm/postNotificationWithIdentifier //apple_ref/occ/intfcm/postNotificationWithIdentifier //apple_ref/occ/intfm/postNotificationWithIdentifier //apple_ref/occ/func/postNotificationWithIdentifier //apple_ref/occ/ftmplt/postNotificationWithIdentifier //apple_ref/occ/defn/postNotificationWithIdentifier //apple_ref/occ/macro/postNotificationWithIdentifier" --><span class="function">postNotificationWithIdentifier</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">anIdentifier</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/object //apple_ref/occ/clm/object //apple_ref/occ/intfcm/object //apple_ref/occ/intfm/object //apple_ref/occ/func/object //apple_ref/occ/ftmplt/object //apple_ref/occ/defn/object //apple_ref/occ/macro/object" --><span class="function">object</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">anObject</span> <!-- a logicalPath="//apple_ref/occ/instm/userInfo //apple_ref/occ/clm/userInfo //apple_ref/occ/intfcm/userInfo //apple_ref/occ/intfm/userInfo //apple_ref/occ/func/userInfo //apple_ref/occ/ftmplt/userInfo //apple_ref/occ/defn/userInfo //apple_ref/occ/macro/userInfo" --><span class="function">userInfo</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/theUserInfo //apple_ref/occ/data/theUserInfo" --><span class="var">theUserInfo</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Post an SBNotification for the given identifier string and object, including the given userInfo
+dictionary.  AnObject and theUserInfo may be nil.  Any objects registered as observers of the
+identifier and/or object source of aNotification will be notified.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBNotificationCenter/removeObserver:;   name=SBNotificationCenter::removeObserver: -->
+<a name="//apple_ref/occ/instm/SBNotificationCenter/removeObserver:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeObserver:">removeObserver:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/removeObserver //apple_ref/occ/clm/removeObserver //apple_ref/occ/intfcm/removeObserver //apple_ref/occ/intfm/removeObserver //apple_ref/occ/func/removeObserver //apple_ref/occ/ftmplt/removeObserver //apple_ref/occ/defn/removeObserver //apple_ref/occ/macro/removeObserver" --><span class="function">removeObserver</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/observer //apple_ref/occ/data/observer" --><span class="var">observer</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Remove all notification registrations made by observer from the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBNotificationCenter/removeObserver:identifier:object:;   name=SBNotificationCenter::removeObserver:identifier:object: -->
+<a name="//apple_ref/occ/instm/SBNotificationCenter/removeObserver:identifier:object:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeObserver:identifier:object:">removeObserver:identifier:object:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/removeObserver //apple_ref/occ/clm/removeObserver //apple_ref/occ/intfcm/removeObserver //apple_ref/occ/intfm/removeObserver //apple_ref/occ/func/removeObserver //apple_ref/occ/ftmplt/removeObserver //apple_ref/occ/defn/removeObserver //apple_ref/occ/macro/removeObserver" --><span class="function">removeObserver</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">observer</span> <!-- a logicalPath="//apple_ref/occ/instm/identifier //apple_ref/occ/clm/identifier //apple_ref/occ/intfcm/identifier //apple_ref/occ/intfm/identifier //apple_ref/occ/func/identifier //apple_ref/occ/ftmplt/identifier //apple_ref/occ/defn/identifier //apple_ref/occ/macro/identifier" --><span class="function">identifier</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">anIdentifier</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/object //apple_ref/occ/clm/object //apple_ref/occ/intfcm/object //apple_ref/occ/intfm/object //apple_ref/occ/func/object //apple_ref/occ/ftmplt/object //apple_ref/occ/defn/object //apple_ref/occ/macro/object" --><span class="function">object</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/anObject //apple_ref/occ/data/anObject" --><span class="var">anObject</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Remove any registration for the given identifier string and/or source object made by observer
+from the receiver.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

@@ -1,0 +1,48 @@
+#
+# Example .htaccess file; configures a directory which will
+# check for a valid ud-nss-auth cookie and if not found will
+# do a file-based Basic authentication.
+#
+# If the AuthUDCookieAuthoritative directive were uncommented
+# the directory would _require_ a valid cookie, period.
+#
+# The AuthUDCookieUpdate* directives are used to automatically
+# refresh the expiration timestamping on the cookie.  This
+# is useful primarily because a directory of static content
+# has no other means of updating a cookie to extend a user's
+# access based on activity alone!  Granted, one could leverage
+# a session cookie for this kind of thing, but this module wants
+# to be as flexible as possible.  Setting the TTL to a number of
+# seconds > 0 enables this feature; the Path and Domain are
+# optional.
+#
+# $Id: htaccess 260 2009-11-10 17:38:33Z frey $
+#
+
+AuthType Basic
+AuthBasicProvider udcookie file
+AuthName "UDCookie Authentication Test"
+
+##
+## authn_udcookie module:
+##
+#AuthUDCookieAuthoritative On
+AuthUDCookieName ud-nss-auth
+AuthUDCookieVerbose On
+AuthUDCookieEntropicSecret "b8fe1a14004fde480179819713badeca"
+AuthUDCookieUpdateTTL 300
+AuthUDCookieUpdatePath /cookietest
+AuthUDCookieUpdateDomain nss.udel.edu
+AuthUDCookieUpdateSecureOnly Off
+
+##
+## File-based basic authn:
+##
+AuthUserFile /opt/apache2/conf-2.2/home.users
+
+##
+## Authorization:
+##
+Satisfy all
+Require user frey
+

@@ -1,0 +1,28 @@
+#import "SBFoundation.h"
+#import "SBHTTPCookie.h"
+
+int
+main()
+{
+  SBAutoreleasePool*    ourPool = [[SBAutoreleasePool alloc] init];
+  SBDictionary*         cookies = [SBHTTPCookie cookiesFromEnv];
+  
+  if ( cookies )
+    [cookies summarizeToStream:stdout];
+  
+  SBHTTPCookie*   aCookie = [[SBHTTPCookie alloc] initWithCookieName:@"ud-dropbox-session"
+                                  andValue:@"frey,128.175.2.26,1248274396,812228387,bcf43d71413ef7ac28c1c4a326c54203"
+                                ];
+                                
+  if ( aCookie ) {
+    [aCookie setTimeToLive:300];
+    [aCookie setBasePath:@"/"];
+    [aCookie setBaseDomain:@".udel.edu"];
+    
+    [[aCookie asString] writeToStream:stdout];
+    
+    [aCookie release];
+  }
+  
+  return 0;
+}

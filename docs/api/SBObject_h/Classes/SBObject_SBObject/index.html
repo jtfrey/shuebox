@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBObject SBObject</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBObject;  name=SBObject SBObject-->
+<a name="//apple_ref/occ/cl/SBObject"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBObjectSBObject">SBObject SBObject</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/Object" -->Object<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBObject.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>SBObject represents the base class of the SBFoundation library.  It extends the GNU "Object" class
+by adding a reference-copying mechanism and autorelease pooling.
+</p>
+<p>Reference copies are shallow copies of an object.  All objects that derive from SBObject implicitly
+have a reference count of 1 when they are instantiated and initialized.  Sending the "retain" message
+to the object increments its reference count; sending the "release" message decrements its reference
+count.  Once an object's reference count reaches zero, it is deallocated and it no longer valid.
+</p>
+<p>Autorelease pooling is a form of garbage collection.  Before any SBFoundation classes are used, at
+least one SBAutoreleasePool object should be allocated and initialized.  When an SBObject-derived
+object is subsequently sent the "autorelease" message, that object is added to the active SBAutoreleasePool.
+When the active SBAutoreleasePool is sent the release message, all autoreleased objects it has collected are
+purged and sent the "release" message.  Most of the classes in this class cluster have class methods to
+allocate and initialize instances that are autoreleased; these are the preferred methods for creating new
+objects.  Consider the following code snippet:
+  </p>
+<pre>
+    void
+    showMACPrefix(
+      SBString*   aString
+    )
+    {
+      [[aString substringToIndex:7] writeToStream:stdout];
+    }
+  </pre>
+<p>The showMACPrefix() function sends the substringToIndex: message to aString, which returns a new
+object.  Without autorelease pools, the showMACPrefix() function would "own" the returned object and
+would be responsible for sending it the "release" message before returning.  However, since all
+instance methods that return new objects will return an autoreleased object (with the notable exception
+of the "copy" and "mutableCopy" methods), showMACPrefix() can execute as shown and when the active
+SBAutoreleasePool is destroyed the substring object will be deallocated.
+</p>
+<p>As it stands, an SBObject has a single instance variable of type SBUInteger.  The GNU Object
+class has no instance variables.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectSBObject/autorelease" target="_top">-autorelease</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectSBObject/dealloc" target="_top">-dealloc</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectSBObject/hash" target="_top">-hash</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectSBObject/hashForData:byteLength:" target="_top">-hashForData:byteLength:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectSBObject/init" target="_top">-init</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectSBObject/referenceCount" target="_top">-referenceCount</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectSBObject/release" target="_top">-release</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectSBObject/retain" target="_top">-retain</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBObjectSBObject/subclassEnumerator" target="_top">+subclassEnumerator</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObjectSBObject/summarizeToStream:" target="_top">-summarizeToStream:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectSBObject/autorelease;   name=SBObject::autorelease -->
+<a name="//apple_ref/occ/instm/SBObjectSBObject/autorelease"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="autorelease">autorelease</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/autorelease //apple_ref/occ/data/autorelease" --><span class="var">autorelease</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Adds the receiver to the application's autorelease pool for later (possible) automatic removal.
+Returns the receiver, so this message can be chained with other messages to the receiver:
+  </p>
+<pre>
+    [[[[SBObject alloc] init] autorelease] summarizeToStream:stdout];
+  </pre>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectSBObject/dealloc;   name=SBObject::dealloc -->
+<a name="//apple_ref/occ/instm/SBObjectSBObject/dealloc"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dealloc">dealloc</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/dealloc //apple_ref/occ/data/dealloc" --><span class="var">dealloc</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>We use this method name in preference to the GNU Object class's "free" method; SBObject's implementation
+merely chains to Object's "free" method.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectSBObject/hash;   name=SBObject::hash -->
+<a name="//apple_ref/occ/instm/SBObjectSBObject/hash"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="hash">hash</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/hash //apple_ref/occ/data/hash" --><span class="var">hash</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>An override of the GNU Object class's hash method.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectSBObject/hashForData:byteLength:;   name=SBObject::hashForData:byteLength: -->
+<a name="//apple_ref/occ/instm/SBObjectSBObject/hashForData:byteLength:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="hashForData:byteLength:">hashForData:byteLength:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/hashForData //apple_ref/occ/clm/hashForData //apple_ref/occ/intfcm/hashForData //apple_ref/occ/intfm/hashForData //apple_ref/occ/func/hashForData //apple_ref/occ/ftmplt/hashForData //apple_ref/occ/defn/hashForData //apple_ref/occ/macro/hashForData" --><span class="function">hashForData</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<span class="param">data</span> <!-- a logicalPath="//apple_ref/occ/instm/byteLength //apple_ref/occ/clm/byteLength //apple_ref/occ/intfcm/byteLength //apple_ref/occ/intfm/byteLength //apple_ref/occ/func/byteLength //apple_ref/occ/ftmplt/byteLength //apple_ref/occ/defn/byteLength //apple_ref/occ/macro/byteLength" --><span class="function">byteLength</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/byteLength //apple_ref/occ/data/byteLength" --><span class="var">byteLength</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Given a byte stream at "data" containing "byteLength" bytes, calculate a hash code.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectSBObject/init;   name=SBObject::init -->
+<a name="//apple_ref/occ/instm/SBObjectSBObject/init"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="init">init</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/init //apple_ref/occ/data/init" --><span class="var">init</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initialize a new instance of SBObject; all this really does is set the receiver's reference count
+to 1.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectSBObject/referenceCount;   name=SBObject::referenceCount -->
+<a name="//apple_ref/occ/instm/SBObjectSBObject/referenceCount"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="referenceCount">referenceCount</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/referenceCount //apple_ref/occ/data/referenceCount" --><span class="var">referenceCount</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the number of "in-play" reference copies of the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectSBObject/release;   name=SBObject::release -->
+<a name="//apple_ref/occ/instm/SBObjectSBObject/release"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="release">release</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/release //apple_ref/occ/data/release" --><span class="var">release</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Release a reference copy of the receiver; the receiver's reference count is decremented.  If the
+reference count has reached zero, the receiver is also sent the "dealloc" message and is no
+longer a valid object.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectSBObject/retain;   name=SBObject::retain -->
+<a name="//apple_ref/occ/instm/SBObjectSBObject/retain"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="retain">retain</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/retain //apple_ref/occ/data/retain" --><span class="var">retain</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a reference copy of the receiver; the receiver's reference count is incremented.  This message can
+be chained with other messages to the receiver:
+  </p>
+<pre>
+    [[[SBObject alloc] init] summarizeToStream:stdout];
+  </pre>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBObjectSBObject/subclassEnumerator;   name=SBObject::subclassEnumerator -->
+<a name="//apple_ref/occ/clm/SBObjectSBObject/subclassEnumerator"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="subclassEnumerator">subclassEnumerator</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBEnumerator //apple_ref/occ/tdef/SBEnumerator //apple_ref/occ/tag/SBEnumerator //apple_ref/occ/econst/SBEnumerator //apple_ref/occ/struct/SBEnumerator //apple_ref/occ/clconst/SBEnumerator //apple_ref/occ/intf/SBEnumerator" --><span class="type">SBEnumerator</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/subclassEnumerator //apple_ref/occ/data/subclassEnumerator" --><span class="var">subclassEnumerator</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>When invoked on any SBObject-descendent class, the resulting SBEnumerator enumerates all
+direct subclasses of the receiver class.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObjectSBObject/summarizeToStream:;   name=SBObject::summarizeToStream: -->
+<a name="//apple_ref/occ/instm/SBObjectSBObject/summarizeToStream:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="summarizeToStream:">summarizeToStream:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/summarizeToStream //apple_ref/occ/clm/summarizeToStream //apple_ref/occ/intfcm/summarizeToStream //apple_ref/occ/intfm/summarizeToStream //apple_ref/occ/func/summarizeToStream //apple_ref/occ/ftmplt/summarizeToStream //apple_ref/occ/defn/summarizeToStream //apple_ref/occ/macro/summarizeToStream" --><span class="function">summarizeToStream</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FILE //apple_ref/occ/tdef/FILE //apple_ref/occ/tag/FILE //apple_ref/occ/econst/FILE //apple_ref/occ/struct/FILE //apple_ref/occ/clconst/FILE //apple_ref/occ/intf/FILE" --><span class="type">FILE</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/stream //apple_ref/occ/data/stream" --><span class="var">stream</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Write a textual, debug-esque description of the receiver to the given stdio stream.  The base
+implementation of this method merely displays:
+  </p>
+<pre>
+    ClassName@ObjectPointer[ReferenceCount]
+  </pre>
+<p>Subclasses should override this method, chaining to their parent and then displaying any
+additional information.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

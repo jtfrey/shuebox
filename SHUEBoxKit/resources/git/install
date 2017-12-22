@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+
+source ../install.inc
+
+( cd $INSTALL_PREFIX ; $GIT init --bare &> /dev/null ; mv ./hooks/post-update.sample ./hooks/post-update ; $GIT update-server-info )
+if [ $? -ne 0 ]; then
+  exit $?
+fi
+
+
+
+install_cleanup
+

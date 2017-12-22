@@ -1,0 +1,329 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBPostgresQuery</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBPostgresQuery;  name=SBPostgresQuery-->
+<a name="//apple_ref/occ/cl/SBPostgresQuery"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBPostgresQuery">SBPostgresQuery</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBPostgres.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Class that wraps a database query.  Includes methods to bind several basic atomic types
+to query parameters.  Also includes the ability to bind some of the SBFoundation classes to
+query parameters:
+</p>
+<ul>
+<li>SBString</li>
+<li>SBNumber</li>
+<li>SBData</li>
+<li>SBDate</li>
+<li>SBDateComponents</li>
+<li>SBInetAddress</li>
+<li>SBMACAddress</li>
+<li>SBUUID</li>
+</ul>
+<p>Essentially, one allocates and initializes a query and then binds data to it.  Once all
+parameters have been bound, the SBPostgresQuery can be:
+</p>
+<ul>
+<li>Used to create a prepared query in the context of the database connection</li>
+<li>Submitted to the database for execution</li>
+</ul>
+<p>Once the query has been prepared, all subsequent bindings _must_ honor the data type
+that was present in the original preparation!
+</p>
+<p>An instance of SBPostgresQuery can be submitted multiple times to multiple
+SBPostgresDatabase objects.  Instances can also be re-used:  previous parameters can be
+scrubbed OR the existing parameters can be adjusted for the next query.  Beware:  reuse
+without resetting the bindings does not allow the object's memory pool to reclaim
+space -- it will continue to allocate more and more memory.  Using the resetParameterBindings
+method is a better choice since it will reset and reuse the memory already allocated by the
+pool for the previous query.
+</p>
+<p>All binding methods (except for bindUTF8StringNoCopy:byteSize:toParameter:) copy the
+intended data into the receiver's memory pool; this is due partly to the fact that we do
+binary (not textual) query execution and some of the data types require additional information
+above and beyond the actual data (e.g. the INET and CIDR types).  It's also important for
+strings since we hold text as UTF-16 internally, and Postgres will only take UTF8!  So it's
+sad that we have to duplicate data for query construction, but in the end we don't have much
+of a choice (could be worse, we could be doing purely textual queries and have to escape
+everything, etc!)
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/bindBoolValue:toParameter:" target="_top">-bindBoolValue:toParameter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/bindDoubleValue:toParameter:" target="_top">-bindDoubleValue:toParameter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/bindFloatValue:toParameter:" target="_top">-bindFloatValue:toParameter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/bindInt2Value:toParameter:" target="_top">-bindInt2Value:toParameter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/bindInt4Value:toParameter:" target="_top">-bindInt4Value:toParameter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/bindInt8Value:toParameter:" target="_top">-bindInt8Value:toParameter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/bindNULLToParameter:" target="_top">-bindNULLToParameter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/bindObject:toParameter:" target="_top">-bindObject:toParameter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/bindUTF8String:byteSize:toParameter:" target="_top">-bindUTF8String:byteSize:toParameter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/bindUTF8StringNoCopy:byteSize:toParameter:" target="_top">-bindUTF8StringNoCopy:byteSize:toParameter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/initWithQueryString:parameterCount:" target="_top">-initWithQueryString:parameterCount:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/parameterCount" target="_top">-parameterCount</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/queryString" target="_top">-queryString</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/resetParameterBindings" target="_top">-resetParameterBindings</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQuery/unprepareInAllDatabases" target="_top">-unprepareInAllDatabases</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/bindBoolValue:toParameter:;   name=SBPostgresQuery::bindBoolValue:toParameter: -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/bindBoolValue:toParameter:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="bindBoolValue:toParameter:">bindBoolValue:toParameter:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/bindBoolValue //apple_ref/occ/clm/bindBoolValue //apple_ref/occ/intfcm/bindBoolValue //apple_ref/occ/intfm/bindBoolValue //apple_ref/occ/func/bindBoolValue //apple_ref/occ/ftmplt/bindBoolValue //apple_ref/occ/defn/bindBoolValue //apple_ref/occ/macro/bindBoolValue" --><span class="function">bindBoolValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<span class="param">value</span> <!-- a logicalPath="//apple_ref/occ/instm/toParameter //apple_ref/occ/clm/toParameter //apple_ref/occ/intfcm/toParameter //apple_ref/occ/intfm/toParameter //apple_ref/occ/func/toParameter //apple_ref/occ/ftmplt/toParameter //apple_ref/occ/defn/toParameter //apple_ref/occ/macro/toParameter" --><span class="function">toParameter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/parameter //apple_ref/occ/data/parameter" --><span class="var">parameter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempt to bind a boolean value to the given parameter.  Parameters are numbered
+in the range [1,parameterCount].
+</p>
+<p>Returns NO if the value could not be bound to the specified parameter.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/bindDoubleValue:toParameter:;   name=SBPostgresQuery::bindDoubleValue:toParameter: -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/bindDoubleValue:toParameter:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="bindDoubleValue:toParameter:">bindDoubleValue:toParameter:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/bindDoubleValue //apple_ref/occ/clm/bindDoubleValue //apple_ref/occ/intfcm/bindDoubleValue //apple_ref/occ/intfm/bindDoubleValue //apple_ref/occ/func/bindDoubleValue //apple_ref/occ/ftmplt/bindDoubleValue //apple_ref/occ/defn/bindDoubleValue //apple_ref/occ/macro/bindDoubleValue" --><span class="function">bindDoubleValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/double //apple_ref/occ/tdef/double //apple_ref/occ/tag/double //apple_ref/occ/econst/double //apple_ref/occ/struct/double //apple_ref/occ/clconst/double //apple_ref/occ/intf/double" --><span class="type">double</span><!-- /a -->)<span class="param">value</span> <!-- a logicalPath="//apple_ref/occ/instm/toParameter //apple_ref/occ/clm/toParameter //apple_ref/occ/intfcm/toParameter //apple_ref/occ/intfm/toParameter //apple_ref/occ/func/toParameter //apple_ref/occ/ftmplt/toParameter //apple_ref/occ/defn/toParameter //apple_ref/occ/macro/toParameter" --><span class="function">toParameter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/parameter //apple_ref/occ/data/parameter" --><span class="var">parameter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempt to bind a double-precision floating point value to the given parameter.
+Parameters are numbered in the range [1,parameterCount].
+</p>
+<p>Returns NO if the value could not be bound to the specified parameter.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/bindFloatValue:toParameter:;   name=SBPostgresQuery::bindFloatValue:toParameter: -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/bindFloatValue:toParameter:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="bindFloatValue:toParameter:">bindFloatValue:toParameter:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/bindFloatValue //apple_ref/occ/clm/bindFloatValue //apple_ref/occ/intfcm/bindFloatValue //apple_ref/occ/intfm/bindFloatValue //apple_ref/occ/func/bindFloatValue //apple_ref/occ/ftmplt/bindFloatValue //apple_ref/occ/defn/bindFloatValue //apple_ref/occ/macro/bindFloatValue" --><span class="function">bindFloatValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/float //apple_ref/occ/tdef/float //apple_ref/occ/tag/float //apple_ref/occ/econst/float //apple_ref/occ/struct/float //apple_ref/occ/clconst/float //apple_ref/occ/intf/float" --><span class="type">float</span><!-- /a -->)<span class="param">value</span> <!-- a logicalPath="//apple_ref/occ/instm/toParameter //apple_ref/occ/clm/toParameter //apple_ref/occ/intfcm/toParameter //apple_ref/occ/intfm/toParameter //apple_ref/occ/func/toParameter //apple_ref/occ/ftmplt/toParameter //apple_ref/occ/defn/toParameter //apple_ref/occ/macro/toParameter" --><span class="function">toParameter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/parameter //apple_ref/occ/data/parameter" --><span class="var">parameter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempt to bind a single-precision floating point value to the given parameter.
+Parameters are numbered in the range [1,parameterCount].
+</p>
+<p>Returns NO if the value could not be bound to the specified parameter.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/bindInt2Value:toParameter:;   name=SBPostgresQuery::bindInt2Value:toParameter: -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/bindInt2Value:toParameter:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="bindInt2Value:toParameter:">bindInt2Value:toParameter:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/bindInt2Value //apple_ref/occ/clm/bindInt2Value //apple_ref/occ/intfcm/bindInt2Value //apple_ref/occ/intfm/bindInt2Value //apple_ref/occ/func/bindInt2Value //apple_ref/occ/ftmplt/bindInt2Value //apple_ref/occ/defn/bindInt2Value //apple_ref/occ/macro/bindInt2Value" --><span class="function">bindInt2Value</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int16_t //apple_ref/occ/tdef/int16_t //apple_ref/occ/tag/int16_t //apple_ref/occ/econst/int16_t //apple_ref/occ/struct/int16_t //apple_ref/occ/clconst/int16_t //apple_ref/occ/intf/int16_t" --><span class="type">int16_t</span><!-- /a -->)<span class="param">value</span> <!-- a logicalPath="//apple_ref/occ/instm/toParameter //apple_ref/occ/clm/toParameter //apple_ref/occ/intfcm/toParameter //apple_ref/occ/intfm/toParameter //apple_ref/occ/func/toParameter //apple_ref/occ/ftmplt/toParameter //apple_ref/occ/defn/toParameter //apple_ref/occ/macro/toParameter" --><span class="function">toParameter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/parameter //apple_ref/occ/data/parameter" --><span class="var">parameter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempt to bind a two-byte integer value to the given parameter.  Parameters are
+numbered in the range [1,parameterCount].
+</p>
+<p>Returns NO if the value could not be bound to the specified parameter.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/bindInt4Value:toParameter:;   name=SBPostgresQuery::bindInt4Value:toParameter: -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/bindInt4Value:toParameter:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="bindInt4Value:toParameter:">bindInt4Value:toParameter:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/bindInt4Value //apple_ref/occ/clm/bindInt4Value //apple_ref/occ/intfcm/bindInt4Value //apple_ref/occ/intfm/bindInt4Value //apple_ref/occ/func/bindInt4Value //apple_ref/occ/ftmplt/bindInt4Value //apple_ref/occ/defn/bindInt4Value //apple_ref/occ/macro/bindInt4Value" --><span class="function">bindInt4Value</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int32_t //apple_ref/occ/tdef/int32_t //apple_ref/occ/tag/int32_t //apple_ref/occ/econst/int32_t //apple_ref/occ/struct/int32_t //apple_ref/occ/clconst/int32_t //apple_ref/occ/intf/int32_t" --><span class="type">int32_t</span><!-- /a -->)<span class="param">value</span> <!-- a logicalPath="//apple_ref/occ/instm/toParameter //apple_ref/occ/clm/toParameter //apple_ref/occ/intfcm/toParameter //apple_ref/occ/intfm/toParameter //apple_ref/occ/func/toParameter //apple_ref/occ/ftmplt/toParameter //apple_ref/occ/defn/toParameter //apple_ref/occ/macro/toParameter" --><span class="function">toParameter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/parameter //apple_ref/occ/data/parameter" --><span class="var">parameter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempt to bind a four-byte integer value to the given parameter.  Parameters are
+numbered in the range [1,parameterCount].
+</p>
+<p>Returns NO if the value could not be bound to the specified parameter.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/bindInt8Value:toParameter:;   name=SBPostgresQuery::bindInt8Value:toParameter: -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/bindInt8Value:toParameter:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="bindInt8Value:toParameter:">bindInt8Value:toParameter:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/bindInt8Value //apple_ref/occ/clm/bindInt8Value //apple_ref/occ/intfcm/bindInt8Value //apple_ref/occ/intfm/bindInt8Value //apple_ref/occ/func/bindInt8Value //apple_ref/occ/ftmplt/bindInt8Value //apple_ref/occ/defn/bindInt8Value //apple_ref/occ/macro/bindInt8Value" --><span class="function">bindInt8Value</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int64_t //apple_ref/occ/tdef/int64_t //apple_ref/occ/tag/int64_t //apple_ref/occ/econst/int64_t //apple_ref/occ/struct/int64_t //apple_ref/occ/clconst/int64_t //apple_ref/occ/intf/int64_t" --><span class="type">int64_t</span><!-- /a -->)<span class="param">value</span> <!-- a logicalPath="//apple_ref/occ/instm/toParameter //apple_ref/occ/clm/toParameter //apple_ref/occ/intfcm/toParameter //apple_ref/occ/intfm/toParameter //apple_ref/occ/func/toParameter //apple_ref/occ/ftmplt/toParameter //apple_ref/occ/defn/toParameter //apple_ref/occ/macro/toParameter" --><span class="function">toParameter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/parameter //apple_ref/occ/data/parameter" --><span class="var">parameter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempt to bind an eight-byte integer value to the given parameter.  Parameters are
+numbered in the range [1,parameterCount].
+</p>
+<p>Returns NO if the value could not be bound to the specified parameter.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/bindNULLToParameter:;   name=SBPostgresQuery::bindNULLToParameter: -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/bindNULLToParameter:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="bindNULLToParameter:">bindNULLToParameter:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/bindNULLToParameter //apple_ref/occ/clm/bindNULLToParameter //apple_ref/occ/intfcm/bindNULLToParameter //apple_ref/occ/intfm/bindNULLToParameter //apple_ref/occ/func/bindNULLToParameter //apple_ref/occ/ftmplt/bindNULLToParameter //apple_ref/occ/defn/bindNULLToParameter //apple_ref/occ/macro/bindNULLToParameter" --><span class="function">bindNULLToParameter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/parameter //apple_ref/occ/data/parameter" --><span class="var">parameter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempt to reset the given parameter to a NULL value. Parameters are numbered in the
+range [1,parameterCount].<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/bindObject:toParameter:;   name=SBPostgresQuery::bindObject:toParameter: -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/bindObject:toParameter:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="bindObject:toParameter:">bindObject:toParameter:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/bindObject //apple_ref/occ/clm/bindObject //apple_ref/occ/intfcm/bindObject //apple_ref/occ/intfm/bindObject //apple_ref/occ/func/bindObject //apple_ref/occ/ftmplt/bindObject //apple_ref/occ/defn/bindObject //apple_ref/occ/macro/bindObject" --><span class="function">bindObject</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">object</span> <!-- a logicalPath="//apple_ref/occ/instm/toParameter //apple_ref/occ/clm/toParameter //apple_ref/occ/intfcm/toParameter //apple_ref/occ/intfm/toParameter //apple_ref/occ/func/toParameter //apple_ref/occ/ftmplt/toParameter //apple_ref/occ/defn/toParameter //apple_ref/occ/macro/toParameter" --><span class="function">toParameter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/parameter //apple_ref/occ/data/parameter" --><span class="var">parameter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempt to bind the data represented by an SBFoundation object to the given parameter.
+This method recognizes the following SBFoundation classes:
+</p>
+<ul>
+<li>SBString</li>
+<li>SBNumber</li>
+<li>SBData</li>
+<li>SBDate</li>
+<li>SBDateComponents</li>
+<li>SBInetAddress</li>
+<li>SBMACAddress</li>
+<li>SBUUID</li>
+</ul>
+<p>Parameters are numbered in the range [1,parameterCount].
+</p>
+<p>Returns NO if the value could not be bound to the specified parameter.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/bindUTF8String:byteSize:toParameter:;   name=SBPostgresQuery::bindUTF8String:byteSize:toParameter: -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/bindUTF8String:byteSize:toParameter:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="bindUTF8String:byteSize:toParameter:">bindUTF8String:byteSize:toParameter:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/bindUTF8String //apple_ref/occ/clm/bindUTF8String //apple_ref/occ/intfcm/bindUTF8String //apple_ref/occ/intfm/bindUTF8String //apple_ref/occ/func/bindUTF8String //apple_ref/occ/ftmplt/bindUTF8String //apple_ref/occ/defn/bindUTF8String //apple_ref/occ/macro/bindUTF8String" --><span class="function">bindUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<span class="param">string</span> <!-- a logicalPath="//apple_ref/occ/instm/byteSize //apple_ref/occ/clm/byteSize //apple_ref/occ/intfcm/byteSize //apple_ref/occ/intfm/byteSize //apple_ref/occ/func/byteSize //apple_ref/occ/ftmplt/byteSize //apple_ref/occ/defn/byteSize //apple_ref/occ/macro/byteSize" --><span class="function">byteSize</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<span class="param">byteSize</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/toParameter //apple_ref/occ/clm/toParameter //apple_ref/occ/intfcm/toParameter //apple_ref/occ/intfm/toParameter //apple_ref/occ/func/toParameter //apple_ref/occ/ftmplt/toParameter //apple_ref/occ/defn/toParameter //apple_ref/occ/macro/toParameter" --><span class="function">toParameter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/parameter //apple_ref/occ/data/parameter" --><span class="var">parameter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempt to bind a string of UTF8 characters to the given parameter.  The byteSize
+should not count any terminating NUL characters in string; passing zero for the
+byteSize indicates that string is NUL terminated and strlen() should be used to
+determine the length.
+</p>
+<p>Parameters are numbered in the range [1,parameterCount].
+</p>
+<p>Returns NO if the value could not be bound to the specified parameter.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/bindUTF8StringNoCopy:byteSize:toParameter:;   name=SBPostgresQuery::bindUTF8StringNoCopy:byteSize:toParameter: -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/bindUTF8StringNoCopy:byteSize:toParameter:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="bindUTF8StringNoCopy:byteSize:toParameter:">bindUTF8StringNoCopy:byteSize:toParameter:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/bindUTF8StringNoCopy //apple_ref/occ/clm/bindUTF8StringNoCopy //apple_ref/occ/intfcm/bindUTF8StringNoCopy //apple_ref/occ/intfm/bindUTF8StringNoCopy //apple_ref/occ/func/bindUTF8StringNoCopy //apple_ref/occ/ftmplt/bindUTF8StringNoCopy //apple_ref/occ/defn/bindUTF8StringNoCopy //apple_ref/occ/macro/bindUTF8StringNoCopy" --><span class="function">bindUTF8StringNoCopy</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<span class="param">string</span> <!-- a logicalPath="//apple_ref/occ/instm/byteSize //apple_ref/occ/clm/byteSize //apple_ref/occ/intfcm/byteSize //apple_ref/occ/intfm/byteSize //apple_ref/occ/func/byteSize //apple_ref/occ/ftmplt/byteSize //apple_ref/occ/defn/byteSize //apple_ref/occ/macro/byteSize" --><span class="function">byteSize</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<span class="param">byteSize</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/toParameter //apple_ref/occ/clm/toParameter //apple_ref/occ/intfcm/toParameter //apple_ref/occ/intfm/toParameter //apple_ref/occ/func/toParameter //apple_ref/occ/ftmplt/toParameter //apple_ref/occ/defn/toParameter //apple_ref/occ/macro/toParameter" --><span class="function">toParameter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/parameter //apple_ref/occ/data/parameter" --><span class="var">parameter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempt to bind a string of UTF8 characters to the given parameter.  The byteSize
+should not count any terminating NUL characters in string; passing zero for the
+byteSize indicates that string is NUL terminated and strlen() should be used to
+determine the length.  The string is _not_ copied into a memory buffer supplied by
+the receiver's pool -- the parameter is bound directly to the string pointer.
+</p>
+<p>Parameters are numbered in the range [1,parameterCount].
+</p>
+<p>Returns NO if the value could not be bound to the specified parameter.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/initWithQueryString:parameterCount:;   name=SBPostgresQuery::initWithQueryString:parameterCount: -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/initWithQueryString:parameterCount:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithQueryString:parameterCount:">initWithQueryString:parameterCount:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithQueryString //apple_ref/occ/clm/initWithQueryString //apple_ref/occ/intfcm/initWithQueryString //apple_ref/occ/intfm/initWithQueryString //apple_ref/occ/func/initWithQueryString //apple_ref/occ/ftmplt/initWithQueryString //apple_ref/occ/defn/initWithQueryString //apple_ref/occ/macro/initWithQueryString" --><span class="function">initWithQueryString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">queryString</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/parameterCount //apple_ref/occ/clm/parameterCount //apple_ref/occ/intfcm/parameterCount //apple_ref/occ/intfm/parameterCount //apple_ref/occ/func/parameterCount //apple_ref/occ/ftmplt/parameterCount //apple_ref/occ/defn/parameterCount //apple_ref/occ/macro/parameterCount" --><span class="function">parameterCount</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/parameterCount //apple_ref/occ/data/parameterCount" --><span class="var">parameterCount</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Initialize a newly-allocated query object to use the given query string which contains
+parameterCount parameter substitutions.  The query string itself is documented in the
+Postgres documentation:  substitutable parameters are indicated in the SQL by the use
+of "$1", "$2", etc.
+</p>
+<p>Note that the query string and parameter count _can not_ be adjusted once the instance
+has been initialized.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/parameterCount;   name=SBPostgresQuery::parameterCount -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/parameterCount"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="parameterCount">parameterCount</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/parameterCount //apple_ref/occ/data/parameterCount" --><span class="var">parameterCount</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the number of substitutable parameters in the SQL query wrapped by the
+receiver.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/queryString;   name=SBPostgresQuery::queryString -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/queryString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="queryString">queryString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/queryString //apple_ref/occ/data/queryString" --><span class="var">queryString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the UTF8-encoded query string wrapped by the receiver.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/resetParameterBindings;   name=SBPostgresQuery::resetParameterBindings -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/resetParameterBindings"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="resetParameterBindings">resetParameterBindings</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/resetParameterBindings //apple_ref/occ/data/resetParameterBindings" --><span class="var">resetParameterBindings</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Invoke this method after executing the receiver in order to discard all of the data
+which was bound to it.  Behind the scenes this merely drains the receiver's memory
+pool and resets the parameter arrays in preparation for another round of binding
+parameter data to the receiver.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQuery/unprepareInAllDatabases;   name=SBPostgresQuery::unprepareInAllDatabases -->
+<a name="//apple_ref/occ/instm/SBPostgresQuery/unprepareInAllDatabases"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="unprepareInAllDatabases">unprepareInAllDatabases</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/unprepareInAllDatabases //apple_ref/occ/data/unprepareInAllDatabases" --><span class="var">unprepareInAllDatabases</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Broadcasts a notification to all databases against which the receiver was prepared so
+that the databases can drop their reference to the receiver.
+</p>
+<p>Send this message whenever you have finished using a prepared query and are about to
+release it.<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

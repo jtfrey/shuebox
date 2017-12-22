@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+
+source ../install.inc
+
+FILES="index.php resources"
+
+$TAR -cf - $FILES | $TAR -C $INSTALL_PREFIX -xf - &> /dev/null 
+if [ $? -ne 0 ]; then
+  exit $?
+fi
+
+install_cleanup
+

@@ -1,0 +1,37 @@
+#import "SBFoundation.h"
+
+int
+main()
+{
+  SBAutoreleasePool*    ourPool = [[SBAutoreleasePool alloc] init];
+  SBScanner*            aScanner = [SBScanner scannerWithString:@"0xA      29    \n\n-3.14159\nGarbage we don't care about."];
+  
+  unsigned int          col1;
+  int                   col2;
+  double                col3;
+  SBString*             col4 = nil;
+  
+  if ( [aScanner scanHexInt:&col1] ) {
+    if ( [aScanner scanInt:&col2] ) {
+      if ( [aScanner scanDouble:&col3] ) {
+        if ( [aScanner scanUpToString:@"." intoString:&col4] ) {
+          printf("%u %d %lg ", col1, col2, col3);
+          [col4 writeToStream:stdout];
+          printf("\n");
+        } else {
+          printf("Failed to scan col4.\n");
+        }
+      } else {
+        printf("Failed to scan col3.\n");
+      }
+    } else {
+      printf("Failed to scan col2.\n");
+    }
+  } else {
+    printf("Failed to scan col1.\n");
+  }
+  
+  [ourPool release];
+  
+  return 0;
+}

@@ -1,0 +1,325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBInetAddress</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBInetAddress;  name=SBInetAddress-->
+<a name="//apple_ref/occ/cl/SBInetAddress"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBInetAddress">SBInetAddress</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBInetAddress.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>SBInetAddress objects are used to wrap IPv4 and IPv6 address information.  This
+encompasses both host address as well as networks (e.g. a CIDR).
+</p>
+<p>Instances can be instantiated from:
+</p>
+<ul>
+<li>a byte array containing the binary address</li>
+<li>a byte array with an explicit prefix length</li>
+<li>a sockaddr structure (AF_INET or AF_INET6)</li>
+<li>a string containing an appropriate textual form for the address/CIDR</li>
+</ul>
+<p>Both C strings and SBString objects can be parsed.
+</p>
+<p>Do not directly allocate or initialize instances of SBInetAddress; this class
+represents the top of a private class cluster.  Instead, use the inetAddressWith...
+class methods to create instances.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInetAddress/addressFamily" target="_top">-addressFamily</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInetAddress/byteLength" target="_top">-byteLength</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInetAddress/compareToInetAddress:" target="_top">-compareToInetAddress:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInetAddress/copyAddressBytes:length:" target="_top">-copyAddressBytes:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInetAddress/copyMaskedAddressBytes:length:" target="_top">-copyMaskedAddressBytes:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInetAddress/inetAddressAsData" target="_top">-inetAddressAsData</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInetAddress/inetAddressAsString" target="_top">-inetAddressAsString</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBInetAddress/inetAddressWithCString:" target="_top">+inetAddressWithCString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBInetAddress/inetAddressWithIPv4Bytes:" target="_top">+inetAddressWithIPv4Bytes:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBInetAddress/inetAddressWithIPv4Bytes:prefixLength:" target="_top">+inetAddressWithIPv4Bytes:prefixLength:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBInetAddress/inetAddressWithIPv6Bytes:" target="_top">+inetAddressWithIPv6Bytes:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBInetAddress/inetAddressWithIPv6Bytes:prefixLength:" target="_top">+inetAddressWithIPv6Bytes:prefixLength:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBInetAddress/inetAddressWithSockAddr:" target="_top">+inetAddressWithSockAddr:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBInetAddress/inetAddressWithString:" target="_top">+inetAddressWithString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInetAddress/isEqualToInetAddress:" target="_top">-isEqualToInetAddress:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBInetAddress/isEqualToInetAddress:Compare" target="_top">-isEqualToInetAddress:
+
+Compare</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInetAddress/prefixBitLength" target="_top">-prefixBitLength</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInetAddress/setSockAddr:byteSize:" target="_top">-setSockAddr:byteSize:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBInetAddress/totalBitLength" target="_top">-totalBitLength</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInetAddress/addressFamily;   name=SBInetAddress::addressFamily -->
+<a name="//apple_ref/occ/instm/SBInetAddress/addressFamily"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="addressFamily">addressFamily</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddressFamily //apple_ref/occ/tdef/SBInetAddressFamily //apple_ref/occ/tag/SBInetAddressFamily //apple_ref/occ/econst/SBInetAddressFamily //apple_ref/occ/struct/SBInetAddressFamily //apple_ref/occ/clconst/SBInetAddressFamily //apple_ref/occ/intf/SBInetAddressFamily" --><span class="type">SBInetAddressFamily</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/addressFamily //apple_ref/occ/data/addressFamily" --><span class="var">addressFamily</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns a constant from the SBInetAddressFamily which indicates what kind of Internet
+address is represented by the receiver.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInetAddress/byteLength;   name=SBInetAddress::byteLength -->
+<a name="//apple_ref/occ/instm/SBInetAddress/byteLength"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="byteLength">byteLength</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/byteLength //apple_ref/occ/data/byteLength" --><span class="var">byteLength</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the number of bytes necessary to hold the receiver's Internet address.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInetAddress/compareToInetAddress:;   name=SBInetAddress::compareToInetAddress: -->
+<a name="//apple_ref/occ/instm/SBInetAddress/compareToInetAddress:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="compareToInetAddress:">compareToInetAddress:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBComparisonResult //apple_ref/occ/tdef/SBComparisonResult //apple_ref/occ/tag/SBComparisonResult //apple_ref/occ/econst/SBComparisonResult //apple_ref/occ/struct/SBComparisonResult //apple_ref/occ/clconst/SBComparisonResult //apple_ref/occ/intf/SBComparisonResult" --><span class="type">SBComparisonResult</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/compareToInetAddress //apple_ref/occ/clm/compareToInetAddress //apple_ref/occ/intfcm/compareToInetAddress //apple_ref/occ/intfm/compareToInetAddress //apple_ref/occ/func/compareToInetAddress //apple_ref/occ/ftmplt/compareToInetAddress //apple_ref/occ/defn/compareToInetAddress //apple_ref/occ/macro/compareToInetAddress" --><span class="function">compareToInetAddress</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/anotherAddress //apple_ref/occ/data/anotherAddress" --><span class="var">anotherAddress</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Compare the receiver to another SBInetAddress, returning a value from the SBComparisonResult
+enumartion to indicate the ordering of the two addresses (ascending, descending, same).<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInetAddress/copyAddressBytes:length:;   name=SBInetAddress::copyAddressBytes:length: -->
+<a name="//apple_ref/occ/instm/SBInetAddress/copyAddressBytes:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="copyAddressBytes:length:">copyAddressBytes:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/copyAddressBytes //apple_ref/occ/clm/copyAddressBytes //apple_ref/occ/intfcm/copyAddressBytes //apple_ref/occ/intfm/copyAddressBytes //apple_ref/occ/func/copyAddressBytes //apple_ref/occ/ftmplt/copyAddressBytes //apple_ref/occ/defn/copyAddressBytes //apple_ref/occ/macro/copyAddressBytes" --><span class="function">copyAddressBytes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a --><span class="type">*</span>)<span class="param">buffer</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Copies at most "length" bytes of the recevier's address to the provided
+memory buffer.  If length is larger than the receiver's required byte count,
+then only those many bytes are copied and the rest of buffer is untouched.
+</p>
+<p>Returns the actual number of bytes copied to buffer.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInetAddress/copyMaskedAddressBytes:length:;   name=SBInetAddress::copyMaskedAddressBytes:length: -->
+<a name="//apple_ref/occ/instm/SBInetAddress/copyMaskedAddressBytes:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="copyMaskedAddressBytes:length:">copyMaskedAddressBytes:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/copyMaskedAddressBytes //apple_ref/occ/clm/copyMaskedAddressBytes //apple_ref/occ/intfcm/copyMaskedAddressBytes //apple_ref/occ/intfm/copyMaskedAddressBytes //apple_ref/occ/func/copyMaskedAddressBytes //apple_ref/occ/ftmplt/copyMaskedAddressBytes //apple_ref/occ/defn/copyMaskedAddressBytes //apple_ref/occ/macro/copyMaskedAddressBytes" --><span class="function">copyMaskedAddressBytes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a --><span class="type">*</span>)<span class="param">buffer</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Copies at most "length" bytes of the recevier's address to the provided
+memory buffer.  If length is larger than the receiver's required byte count,
+then only those many bytes are copied and the rest of buffer is untouched.
+</p>
+<p>This method actually respects the prefixLength and zeroes any bits outside
+that range as it copies them into the destination buffer.
+</p>
+<p>Returns the actual number of bytes copied to buffer.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInetAddress/inetAddressAsData;   name=SBInetAddress::inetAddressAsData -->
+<a name="//apple_ref/occ/instm/SBInetAddress/inetAddressAsData"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="inetAddressAsData">inetAddressAsData</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/inetAddressAsData //apple_ref/occ/data/inetAddressAsData" --><span class="var">inetAddressAsData</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an SBData object that contains the receiver's Internet address.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInetAddress/inetAddressAsString;   name=SBInetAddress::inetAddressAsString -->
+<a name="//apple_ref/occ/instm/SBInetAddress/inetAddressAsString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="inetAddressAsString">inetAddressAsString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/inetAddressAsString //apple_ref/occ/data/inetAddressAsString" --><span class="var">inetAddressAsString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an SBString object that contains a textual rendition of the
+receiver's Internet address.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBInetAddress/inetAddressWithCString:;   name=SBInetAddress::inetAddressWithCString: -->
+<a name="//apple_ref/occ/clm/SBInetAddress/inetAddressWithCString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="inetAddressWithCString:">inetAddressWithCString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/inetAddressWithCString //apple_ref/occ/clm/inetAddressWithCString //apple_ref/occ/intfcm/inetAddressWithCString //apple_ref/occ/intfm/inetAddressWithCString //apple_ref/occ/func/inetAddressWithCString //apple_ref/occ/ftmplt/inetAddressWithCString //apple_ref/occ/defn/inetAddressWithCString //apple_ref/occ/macro/inetAddressWithCString" --><span class="function">inetAddressWithCString</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/cString //apple_ref/occ/data/cString" --><span class="var">cString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempt to parse an Internet address from a nul-terminated C string.  The address can
+have a suffix of "/[0-9]+" which provides the significant bit count (prefix length)
+that should be applied to the parsed address.  The parsed address may be either IPv4
+or IPv6 format; the parsing is accomplished using the inet_pton() function -- see its
+manual page for more information.
+</p>
+<p>For IPv4 addresses, the form of "address/netmask" is also valid, e.g.
+</p>
+<p>128.175.13.92/255.255.255.192<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBInetAddress/inetAddressWithIPv4Bytes:;   name=SBInetAddress::inetAddressWithIPv4Bytes: -->
+<a name="//apple_ref/occ/clm/SBInetAddress/inetAddressWithIPv4Bytes:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="inetAddressWithIPv4Bytes:">inetAddressWithIPv4Bytes:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/inetAddressWithIPv4Bytes //apple_ref/occ/clm/inetAddressWithIPv4Bytes //apple_ref/occ/intfcm/inetAddressWithIPv4Bytes //apple_ref/occ/intfm/inetAddressWithIPv4Bytes //apple_ref/occ/func/inetAddressWithIPv4Bytes //apple_ref/occ/ftmplt/inetAddressWithIPv4Bytes //apple_ref/occ/defn/inetAddressWithIPv4Bytes //apple_ref/occ/macro/inetAddressWithIPv4Bytes" --><span class="function">inetAddressWithIPv4Bytes</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/bytes //apple_ref/occ/data/bytes" --><span class="var">bytes</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Create an autoreleased object which wraps the IPv4 address provided in binary
+form -- an array of four bytes.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBInetAddress/inetAddressWithIPv4Bytes:prefixLength:;   name=SBInetAddress::inetAddressWithIPv4Bytes:prefixLength: -->
+<a name="//apple_ref/occ/clm/SBInetAddress/inetAddressWithIPv4Bytes:prefixLength:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="inetAddressWithIPv4Bytes:prefixLength:">inetAddressWithIPv4Bytes:prefixLength:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/inetAddressWithIPv4Bytes //apple_ref/occ/clm/inetAddressWithIPv4Bytes //apple_ref/occ/intfcm/inetAddressWithIPv4Bytes //apple_ref/occ/intfm/inetAddressWithIPv4Bytes //apple_ref/occ/func/inetAddressWithIPv4Bytes //apple_ref/occ/ftmplt/inetAddressWithIPv4Bytes //apple_ref/occ/defn/inetAddressWithIPv4Bytes //apple_ref/occ/macro/inetAddressWithIPv4Bytes" --><span class="function">inetAddressWithIPv4Bytes</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<span class="param">bytes</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/prefixLength //apple_ref/occ/clm/prefixLength //apple_ref/occ/intfcm/prefixLength //apple_ref/occ/intfm/prefixLength //apple_ref/occ/func/prefixLength //apple_ref/occ/ftmplt/prefixLength //apple_ref/occ/defn/prefixLength //apple_ref/occ/macro/prefixLength" --><span class="function">prefixLength</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/prefixLength //apple_ref/occ/data/prefixLength" --><span class="var">prefixLength</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Create an autoreleased object which wraps the IPv4 address provided in binary
+form -- an array of four bytes.  Only the leading prefixLength bits are
+considered significant.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBInetAddress/inetAddressWithIPv6Bytes:;   name=SBInetAddress::inetAddressWithIPv6Bytes: -->
+<a name="//apple_ref/occ/clm/SBInetAddress/inetAddressWithIPv6Bytes:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="inetAddressWithIPv6Bytes:">inetAddressWithIPv6Bytes:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/inetAddressWithIPv6Bytes //apple_ref/occ/clm/inetAddressWithIPv6Bytes //apple_ref/occ/intfcm/inetAddressWithIPv6Bytes //apple_ref/occ/intfm/inetAddressWithIPv6Bytes //apple_ref/occ/func/inetAddressWithIPv6Bytes //apple_ref/occ/ftmplt/inetAddressWithIPv6Bytes //apple_ref/occ/defn/inetAddressWithIPv6Bytes //apple_ref/occ/macro/inetAddressWithIPv6Bytes" --><span class="function">inetAddressWithIPv6Bytes</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/bytes //apple_ref/occ/data/bytes" --><span class="var">bytes</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Create an autoreleased object which wraps the IPv6 address provided in binary
+form -- an array of sixteen bytes.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBInetAddress/inetAddressWithIPv6Bytes:prefixLength:;   name=SBInetAddress::inetAddressWithIPv6Bytes:prefixLength: -->
+<a name="//apple_ref/occ/clm/SBInetAddress/inetAddressWithIPv6Bytes:prefixLength:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="inetAddressWithIPv6Bytes:prefixLength:">inetAddressWithIPv6Bytes:prefixLength:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/inetAddressWithIPv6Bytes //apple_ref/occ/clm/inetAddressWithIPv6Bytes //apple_ref/occ/intfcm/inetAddressWithIPv6Bytes //apple_ref/occ/intfm/inetAddressWithIPv6Bytes //apple_ref/occ/func/inetAddressWithIPv6Bytes //apple_ref/occ/ftmplt/inetAddressWithIPv6Bytes //apple_ref/occ/defn/inetAddressWithIPv6Bytes //apple_ref/occ/macro/inetAddressWithIPv6Bytes" --><span class="function">inetAddressWithIPv6Bytes</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<span class="param">bytes</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/prefixLength //apple_ref/occ/clm/prefixLength //apple_ref/occ/intfcm/prefixLength //apple_ref/occ/intfm/prefixLength //apple_ref/occ/func/prefixLength //apple_ref/occ/ftmplt/prefixLength //apple_ref/occ/defn/prefixLength //apple_ref/occ/macro/prefixLength" --><span class="function">prefixLength</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/prefixLength //apple_ref/occ/data/prefixLength" --><span class="var">prefixLength</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Create an autoreleased object which wraps the IPv6 address provided in binary
+form -- an array of sixteen bytes.  Only the leading prefixLength bits are
+considered significant.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBInetAddress/inetAddressWithSockAddr:;   name=SBInetAddress::inetAddressWithSockAddr: -->
+<a name="//apple_ref/occ/clm/SBInetAddress/inetAddressWithSockAddr:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="inetAddressWithSockAddr:">inetAddressWithSockAddr:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/inetAddressWithSockAddr //apple_ref/occ/clm/inetAddressWithSockAddr //apple_ref/occ/intfcm/inetAddressWithSockAddr //apple_ref/occ/intfm/inetAddressWithSockAddr //apple_ref/occ/func/inetAddressWithSockAddr //apple_ref/occ/ftmplt/inetAddressWithSockAddr //apple_ref/occ/defn/inetAddressWithSockAddr //apple_ref/occ/macro/inetAddressWithSockAddr" --><span class="function">inetAddressWithSockAddr</span><!-- /a -->:(<span class="keyword">struct</span> <!-- a logicalPath="//apple_ref/occ/cl/sockaddr //apple_ref/occ/tdef/sockaddr //apple_ref/occ/tag/sockaddr //apple_ref/occ/econst/sockaddr //apple_ref/occ/struct/sockaddr //apple_ref/occ/clconst/sockaddr //apple_ref/occ/intf/sockaddr" --><span class="type">sockaddr</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/sockAddr //apple_ref/occ/data/sockAddr" --><span class="var">sockAddr</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Given an (externally initialized) sockaddr data structure, create an autoreleased
+object which wraps the Internet address contained in that struct.  Since the sockaddr
+structure allows for both IPv4 and IPv6 addresses, the returned object is created
+according to the address family indicated in sockAddr.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBInetAddress/inetAddressWithString:;   name=SBInetAddress::inetAddressWithString: -->
+<a name="//apple_ref/occ/clm/SBInetAddress/inetAddressWithString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="inetAddressWithString:">inetAddressWithString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/inetAddressWithString //apple_ref/occ/clm/inetAddressWithString //apple_ref/occ/intfcm/inetAddressWithString //apple_ref/occ/intfm/inetAddressWithString //apple_ref/occ/func/inetAddressWithString //apple_ref/occ/ftmplt/inetAddressWithString //apple_ref/occ/defn/inetAddressWithString //apple_ref/occ/macro/inetAddressWithString" --><span class="function">inetAddressWithString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Same behavior as inetAddressWithCString: but operates on the content of an SBString
+object.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInetAddress/isEqualToInetAddress:;   name=SBInetAddress::isEqualToInetAddress: -->
+<a name="//apple_ref/occ/instm/SBInetAddress/isEqualToInetAddress:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isEqualToInetAddress:">isEqualToInetAddress:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBInetAddress/isEqualToInetAddress:Compare" --><p>isEqualToInetAddress:  Compare<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/isEqualToInetAddress //apple_ref/occ/clm/isEqualToInetAddress //apple_ref/occ/intfcm/isEqualToInetAddress //apple_ref/occ/intfm/isEqualToInetAddress //apple_ref/occ/func/isEqualToInetAddress //apple_ref/occ/ftmplt/isEqualToInetAddress //apple_ref/occ/defn/isEqualToInetAddress //apple_ref/occ/macro/isEqualToInetAddress" --><span class="function">isEqualToInetAddress</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/anotherAddress //apple_ref/occ/data/anotherAddress" --><span class="var">anotherAddress</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the receiver to another SBInetAddress; returns TRUE if the addresses are equivalent.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBInetAddress/isEqualToInetAddress:Compare;   name=SBInetAddress::isEqualToInetAddress:
+
+Compare -->
+<a name="//apple_ref/doc/title:instm/SBInetAddress/isEqualToInetAddress:Compare"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isEqualToInetAddress:Compare">isEqualToInetAddress:
+
+Compare</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBInetAddress/isEqualToInetAddress:" --><p>isEqualToInetAddress:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/isEqualToInetAddress //apple_ref/occ/clm/isEqualToInetAddress //apple_ref/occ/intfcm/isEqualToInetAddress //apple_ref/occ/intfm/isEqualToInetAddress //apple_ref/occ/func/isEqualToInetAddress //apple_ref/occ/ftmplt/isEqualToInetAddress //apple_ref/occ/defn/isEqualToInetAddress //apple_ref/occ/macro/isEqualToInetAddress" --><span class="function">isEqualToInetAddress</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/anotherAddress //apple_ref/occ/data/anotherAddress" --><span class="var">anotherAddress</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the receiver to another SBInetAddress; returns TRUE if the addresses are equivalent.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInetAddress/prefixBitLength;   name=SBInetAddress::prefixBitLength -->
+<a name="//apple_ref/occ/instm/SBInetAddress/prefixBitLength"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="prefixBitLength">prefixBitLength</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/prefixBitLength //apple_ref/occ/data/prefixBitLength" --><span class="var">prefixBitLength</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the number of network-significant bits in the receiver.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInetAddress/setSockAddr:byteSize:;   name=SBInetAddress::setSockAddr:byteSize: -->
+<a name="//apple_ref/occ/instm/SBInetAddress/setSockAddr:byteSize:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setSockAddr:byteSize:">setSockAddr:byteSize:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setSockAddr //apple_ref/occ/clm/setSockAddr //apple_ref/occ/intfcm/setSockAddr //apple_ref/occ/intfm/setSockAddr //apple_ref/occ/func/setSockAddr //apple_ref/occ/ftmplt/setSockAddr //apple_ref/occ/defn/setSockAddr //apple_ref/occ/macro/setSockAddr" --><span class="function">setSockAddr</span><!-- /a -->:(<span class="keyword">struct</span> <!-- a logicalPath="//apple_ref/occ/cl/sockaddr //apple_ref/occ/tdef/sockaddr //apple_ref/occ/tag/sockaddr //apple_ref/occ/econst/sockaddr //apple_ref/occ/struct/sockaddr //apple_ref/occ/clconst/sockaddr //apple_ref/occ/intf/sockaddr" --><span class="type">sockaddr</span><!-- /a --><span class="type">*</span>)<span class="param">sockAddr</span> <!-- a logicalPath="//apple_ref/occ/instm/byteSize //apple_ref/occ/clm/byteSize //apple_ref/occ/intfcm/byteSize //apple_ref/occ/intfm/byteSize //apple_ref/occ/func/byteSize //apple_ref/occ/ftmplt/byteSize //apple_ref/occ/defn/byteSize //apple_ref/occ/macro/byteSize" --><span class="function">byteSize</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/byteSize //apple_ref/occ/data/byteSize" --><span class="var">byteSize</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Initializes the provided sockaddr data structure to contain the receiver's
+Internet address.  The byteSize is used to determine whether the provided
+sockaddr structure is large enough to hold the receiver's address -- we
+don't just blindly copy into sockAddr, in other words.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBInetAddress/totalBitLength;   name=SBInetAddress::totalBitLength -->
+<a name="//apple_ref/occ/instm/SBInetAddress/totalBitLength"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="totalBitLength">totalBitLength</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/totalBitLength //apple_ref/occ/data/totalBitLength" --><span class="var">totalBitLength</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the total number of bits in the receiver's Internet address.</p><!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

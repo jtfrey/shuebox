@@ -1,0 +1,41 @@
+#import "SBFoundation.h"
+#import "SBUDUser.h"
+#import "SBObjectCache.h"
+#import "SBException.h"
+
+extern SBObjectCache* __SBUDUserCache;
+
+int
+main()
+{
+  SBAutoreleasePool*      basePool = [[SBAutoreleasePool alloc] init];
+  
+  SBUDUser*	me;
+  SBUDUser*	you;
+  SBUDUser* meToo;
+
+  me = [SBUDUser udUserWithUserIdentifier:@"frey"];
+  you = [SBUDUser udUserWithUserIdentifier:@"cash"];
+  meToo = [SBUDUser udUserWithEmplid:@"19516"];
+    
+TRY_BEGIN
+
+  [basePool release];
+  basePool = [[SBAutoreleasePool alloc] init];
+  
+  [__SBUDUserCache summarizeToStream:stdout];
+  
+  [SBObjectCache flushAllObjectCaches];
+  
+  [__SBUDUserCache summarizeToStream:stdout];
+
+TRY_CATCH(exception)
+
+  fprintf(stderr, "\n\nException caught %p\n", exception);
+
+TRY_END
+  
+  return 0;
+}
+
+

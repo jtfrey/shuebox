@@ -1,0 +1,78 @@
+head	1.3;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2012.04.03.15.10.23;	author frey;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2009.09.01.14.32.04;	author frey;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2009.09.01.14.22.10;	author frey;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.3
+log
+@Added GIT path
+@
+text
+@#
+# Shared variable definitions, etc.
+#
+# $Id: base.inc,v 1.2 2009/09/01 14:32:04 frey Exp frey $
+#
+
+# Preserve user- and group-owner permission bits:
+umask 007
+
+MKDIR=/usr/bin/mkdir
+CP=/usr/bin/cp
+TAR=/usr/sfw/bin/gtar
+RM=/usr/bin/rm
+CHOWN=/usr/bin/chown
+CHGRP=/usr/bin/chgrp
+CHMOD=/usr/bin/chmod
+SVNADMIN=/opt/local/bin/svnadmin
+GIT=/opt/local/git/1/bin/git
+
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d4 1
+a4 1
+# $Id: base.inc,v 1.1 2009/09/01 14:22:10 frey Exp frey $
+d18 1
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d4 1
+a4 1
+# $Id$
+a9 2
+INSTALL_PREFIX=$1/$2
+
+@

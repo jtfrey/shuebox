@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBStream</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBStream;  name=SBStream-->
+<a name="//apple_ref/occ/cl/SBStream"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBStream">SBStream</a></h1>
+</td></tr></table><hr><p><b>Conforms&nbsp;to:</b> <!-- a logicalPath="//apple_ref/occ/intf/SBStreamDelegate" -->SBStreamDelegate<!-- /a --><br>
+<b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBStream.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>An SBStream is an abstract base class for input and output streams.  Instances of
+this class should never be instantiated -- use the appropriate methods of
+SBInputStream or SBOutputStream.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBStream/close" target="_top">-close</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBStream/delegate" target="_top">-delegate</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBStream/open" target="_top">-open</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBStream/propertyForKey:" target="_top">-propertyForKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBStream/removeFromRunLoop:forMode:" target="_top">-removeFromRunLoop:forMode:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBStream/scheduleInRunLoop:forMode:" target="_top">-scheduleInRunLoop:forMode:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBStream/setDelegate:" target="_top">-setDelegate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBStream/setProperty:forKey:" target="_top">-setProperty:forKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBStream/streamError" target="_top">-streamError</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBStream/streamStatus" target="_top">-streamStatus</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBStream/close;   name=SBStream::close -->
+<a name="//apple_ref/occ/instm/SBStream/close"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="close">close</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/close //apple_ref/occ/data/close" --><span class="var">close</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Finalize a stream -- for a memory-based stream this may entail releasing its backing
+buffer; for a file-based stream, the file descriptor will be closed.
+</p>
+<p>Subclasses of SBInputStream/SBOutputStream must override this method.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBStream/delegate;   name=SBStream::delegate -->
+<a name="//apple_ref/occ/instm/SBStream/delegate"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="delegate">delegate</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->&lt;<span class="param">SBStreamDelegate</span>&gt;) <!-- a logicalPath="//apple_ref/occ/econst/delegate //apple_ref/occ/data/delegate" --><span class="var">delegate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's delegate object, which will receive stream:handleEvent: messages
+as the receiver transitions between states.
+</p>
+<p>Subclasses of SBInputStream/SBOutputStream must override this method.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBStream/open;   name=SBStream::open -->
+<a name="//apple_ref/occ/instm/SBStream/open"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="open">open</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/open //apple_ref/occ/data/open" --><span class="var">open</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempt to prepare the i/o stream for reading or writing.  Check the streamStatus
+to verify that the stream is in the SBStreamStatusOpen state after invoking this
+method; the status will be SBStreamStatusError if an error was encountered.
+</p>
+<p>Subclasses of SBInputStream/SBOutputStream must override this method.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBStream/propertyForKey:;   name=SBStream::propertyForKey: -->
+<a name="//apple_ref/occ/instm/SBStream/propertyForKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="propertyForKey:">propertyForKey:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/propertyForKey //apple_ref/occ/clm/propertyForKey //apple_ref/occ/intfcm/propertyForKey //apple_ref/occ/intfm/propertyForKey //apple_ref/occ/func/propertyForKey //apple_ref/occ/ftmplt/propertyForKey //apple_ref/occ/defn/propertyForKey //apple_ref/occ/macro/propertyForKey" --><span class="function">propertyForKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aKey //apple_ref/occ/data/aKey" --><span class="var">aKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a stream property as identified by aKey or nil if the property is undefined for
+the receiver.  Different kinds of streams respond to different keys.
+</p>
+<p>Subclasses of SBInputStream/SBOutputStream should override this method to respond to
+applicable keys.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBStream/removeFromRunLoop:forMode:;   name=SBStream::removeFromRunLoop:forMode: -->
+<a name="//apple_ref/occ/instm/SBStream/removeFromRunLoop:forMode:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeFromRunLoop:forMode:">removeFromRunLoop:forMode:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/removeFromRunLoop //apple_ref/occ/clm/removeFromRunLoop //apple_ref/occ/intfcm/removeFromRunLoop //apple_ref/occ/intfm/removeFromRunLoop //apple_ref/occ/func/removeFromRunLoop //apple_ref/occ/ftmplt/removeFromRunLoop //apple_ref/occ/defn/removeFromRunLoop //apple_ref/occ/macro/removeFromRunLoop" --><span class="function">removeFromRunLoop</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRunLoop //apple_ref/occ/tdef/SBRunLoop //apple_ref/occ/tag/SBRunLoop //apple_ref/occ/econst/SBRunLoop //apple_ref/occ/struct/SBRunLoop //apple_ref/occ/clconst/SBRunLoop //apple_ref/occ/intf/SBRunLoop" --><span class="type">SBRunLoop</span><!-- /a --><span class="type">*</span>)<span class="param">theRunLoop</span> <!-- a logicalPath="//apple_ref/occ/instm/forMode //apple_ref/occ/clm/forMode //apple_ref/occ/intfcm/forMode //apple_ref/occ/intfm/forMode //apple_ref/occ/func/forMode //apple_ref/occ/ftmplt/forMode //apple_ref/occ/defn/forMode //apple_ref/occ/macro/forMode" --><span class="function">forMode</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aMode //apple_ref/occ/data/aMode" --><span class="var">aMode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver is scheduled for processing when theRunLoop is given time
+in aMode, remove it.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBStream/scheduleInRunLoop:forMode:;   name=SBStream::scheduleInRunLoop:forMode: -->
+<a name="//apple_ref/occ/instm/SBStream/scheduleInRunLoop:forMode:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scheduleInRunLoop:forMode:">scheduleInRunLoop:forMode:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/scheduleInRunLoop //apple_ref/occ/clm/scheduleInRunLoop //apple_ref/occ/intfcm/scheduleInRunLoop //apple_ref/occ/intfm/scheduleInRunLoop //apple_ref/occ/func/scheduleInRunLoop //apple_ref/occ/ftmplt/scheduleInRunLoop //apple_ref/occ/defn/scheduleInRunLoop //apple_ref/occ/macro/scheduleInRunLoop" --><span class="function">scheduleInRunLoop</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRunLoop //apple_ref/occ/tdef/SBRunLoop //apple_ref/occ/tag/SBRunLoop //apple_ref/occ/econst/SBRunLoop //apple_ref/occ/struct/SBRunLoop //apple_ref/occ/clconst/SBRunLoop //apple_ref/occ/intf/SBRunLoop" --><span class="type">SBRunLoop</span><!-- /a --><span class="type">*</span>)<span class="param">theRunLoop</span> <!-- a logicalPath="//apple_ref/occ/instm/forMode //apple_ref/occ/clm/forMode //apple_ref/occ/intfcm/forMode //apple_ref/occ/intfm/forMode //apple_ref/occ/func/forMode //apple_ref/occ/ftmplt/forMode //apple_ref/occ/defn/forMode //apple_ref/occ/macro/forMode" --><span class="function">forMode</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aMode //apple_ref/occ/data/aMode" --><span class="var">aMode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Schedule the receiver to be afforded asynchronous i/o operation when
+theRunLoop is given time in aMode.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBStream/setDelegate:;   name=SBStream::setDelegate: -->
+<a name="//apple_ref/occ/instm/SBStream/setDelegate:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setDelegate:">setDelegate:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setDelegate //apple_ref/occ/clm/setDelegate //apple_ref/occ/intfcm/setDelegate //apple_ref/occ/intfm/setDelegate //apple_ref/occ/func/setDelegate //apple_ref/occ/ftmplt/setDelegate //apple_ref/occ/defn/setDelegate //apple_ref/occ/macro/setDelegate" --><span class="function">setDelegate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->&lt;<span class="param">SBStreamDelegate</span>&gt;)<!-- a logicalPath="//apple_ref/occ/econst/delegate //apple_ref/occ/data/delegate" --><span class="var">delegate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>@dicussion
+Sets the receiver's delegate object, which will receive stream:handleEvent: messages
+as the receiver transitions between states.
+</p>
+<p>Subclasses of SBInputStream/SBOutputStream must override this method.  Subclasses'
+implementations must observe the rule that setting the delegate to nil equates to
+making the receiver itself the delegate!<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBStream/setProperty:forKey:;   name=SBStream::setProperty:forKey: -->
+<a name="//apple_ref/occ/instm/SBStream/setProperty:forKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setProperty:forKey:">setProperty:forKey:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setProperty //apple_ref/occ/clm/setProperty //apple_ref/occ/intfcm/setProperty //apple_ref/occ/intfm/setProperty //apple_ref/occ/func/setProperty //apple_ref/occ/ftmplt/setProperty //apple_ref/occ/defn/setProperty //apple_ref/occ/macro/setProperty" --><span class="function">setProperty</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">property</span> <!-- a logicalPath="//apple_ref/occ/instm/forKey //apple_ref/occ/clm/forKey //apple_ref/occ/intfcm/forKey //apple_ref/occ/intfm/forKey //apple_ref/occ/func/forKey //apple_ref/occ/ftmplt/forKey //apple_ref/occ/defn/forKey //apple_ref/occ/macro/forKey" --><span class="function">forKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aKey //apple_ref/occ/data/aKey" --><span class="var">aKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to assign a value to a stream property as identified by aKey.  Returns YES if
+the property was changed, NO if the property could not be changed or the receiver
+does not respond to aKey.
+</p>
+<p>Subclasses of SBInputStream/SBOutputStream should override this method to respond to
+applicable keys.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBStream/streamError;   name=SBStream::streamError -->
+<a name="//apple_ref/occ/instm/SBStream/streamError"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="streamError">streamError</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/streamError //apple_ref/occ/data/streamError" --><span class="var">streamError</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the last-registered SBError associated with the receiver.
+</p>
+<p>Subclasses of SBInputStream/SBOutputStream must override this method.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBStream/streamStatus;   name=SBStream::streamStatus -->
+<a name="//apple_ref/occ/instm/SBStream/streamStatus"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="streamStatus">streamStatus</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBStreamStatus //apple_ref/occ/tdef/SBStreamStatus //apple_ref/occ/tag/SBStreamStatus //apple_ref/occ/econst/SBStreamStatus //apple_ref/occ/struct/SBStreamStatus //apple_ref/occ/clconst/SBStreamStatus //apple_ref/occ/intf/SBStreamStatus" --><span class="type">SBStreamStatus</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/streamStatus //apple_ref/occ/data/streamStatus" --><span class="var">streamStatus</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's current status.
+</p>
+<p>Subclasses of SBInputStream/SBOutputStream must override this method.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

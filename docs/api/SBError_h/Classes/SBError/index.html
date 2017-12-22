@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBError</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBError;  name=SBError-->
+<a name="//apple_ref/occ/cl/SBError"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBError">SBError</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBError.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>An instance of SBError is used to pass richer exception information back to a calling
+routine.  All errors have a "domain" which describes the layer of the system which
+produced the error (POSIX function call, SBFoundation routine, etc).  The error code
+is a signed integer (the errno from a POSIX failure, for example).  Any additional
+bits of information that explain the error further are contained in an SBDictionary
+associated with the SBError object.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBError/code" target="_top">-code</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBError/domain" target="_top">-domain</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBError/emailErrorSummaryWithMailer:" target="_top">-emailErrorSummaryWithMailer:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBError/errorWithDomain:code:supportingData:" target="_top">+errorWithDomain:code:supportingData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBError/errorWithDomain:code:supportingObjectsAndKeys:" target="_top">+errorWithDomain:code:supportingObjectsAndKeys:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:clm/SBError/errorWithDomain:code:supportingObjectsAndKeys:..." target="_top">+errorWithDomain:code:supportingObjectsAndKeys:...</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBError/foundationErrorWithCode:supportingData:" target="_top">+foundationErrorWithCode:supportingData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBError/initWithDomain:code:supportingData:" target="_top">-initWithDomain:code:supportingData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBError/posixErrorWithCode:supportingData:" target="_top">+posixErrorWithCode:supportingData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBError/supportingData" target="_top">-supportingData</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBError/writeErrorSummaryToStream:" target="_top">-writeErrorSummaryToStream:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBError/code;   name=SBError::code -->
+<a name="//apple_ref/occ/instm/SBError/code"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="code">code</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBInteger //apple_ref/occ/tdef/SBInteger //apple_ref/occ/tag/SBInteger //apple_ref/occ/econst/SBInteger //apple_ref/occ/struct/SBInteger //apple_ref/occ/clconst/SBInteger //apple_ref/occ/intf/SBInteger" --><span class="type">SBInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/code //apple_ref/occ/data/code" --><span class="var">code</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's error code.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBError/domain;   name=SBError::domain -->
+<a name="//apple_ref/occ/instm/SBError/domain"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="domain">domain</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/domain //apple_ref/occ/data/domain" --><span class="var">domain</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's error domain string.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBError/emailErrorSummaryWithMailer:;   name=SBError::emailErrorSummaryWithMailer: -->
+<a name="//apple_ref/occ/instm/SBError/emailErrorSummaryWithMailer:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="emailErrorSummaryWithMailer:">emailErrorSummaryWithMailer:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/emailErrorSummaryWithMailer //apple_ref/occ/clm/emailErrorSummaryWithMailer //apple_ref/occ/intfcm/emailErrorSummaryWithMailer //apple_ref/occ/intfm/emailErrorSummaryWithMailer //apple_ref/occ/func/emailErrorSummaryWithMailer //apple_ref/occ/ftmplt/emailErrorSummaryWithMailer //apple_ref/occ/defn/emailErrorSummaryWithMailer //apple_ref/occ/macro/emailErrorSummaryWithMailer" --><span class="function">emailErrorSummaryWithMailer</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBMailer //apple_ref/occ/tdef/SBMailer //apple_ref/occ/tag/SBMailer //apple_ref/occ/econst/SBMailer //apple_ref/occ/struct/SBMailer //apple_ref/occ/clconst/SBMailer //apple_ref/occ/intf/SBMailer" --><span class="type">SBMailer</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aMailer //apple_ref/occ/data/aMailer" --><span class="var">aMailer</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Uses the provided SBMailer to send an email containing the error summary.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBError/errorWithDomain:code:supportingData:;   name=SBError::errorWithDomain:code:supportingData: -->
+<a name="//apple_ref/occ/clm/SBError/errorWithDomain:code:supportingData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="errorWithDomain:code:supportingData:">errorWithDomain:code:supportingData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/errorWithDomain //apple_ref/occ/clm/errorWithDomain //apple_ref/occ/intfcm/errorWithDomain //apple_ref/occ/intfm/errorWithDomain //apple_ref/occ/func/errorWithDomain //apple_ref/occ/ftmplt/errorWithDomain //apple_ref/occ/defn/errorWithDomain //apple_ref/occ/macro/errorWithDomain" --><span class="function">errorWithDomain</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">domain</span> <!-- a logicalPath="//apple_ref/occ/instm/code //apple_ref/occ/clm/code //apple_ref/occ/intfcm/code //apple_ref/occ/intfm/code //apple_ref/occ/func/code //apple_ref/occ/ftmplt/code //apple_ref/occ/defn/code //apple_ref/occ/macro/code" --><span class="function">code</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInteger //apple_ref/occ/tdef/SBInteger //apple_ref/occ/tag/SBInteger //apple_ref/occ/econst/SBInteger //apple_ref/occ/struct/SBInteger //apple_ref/occ/clconst/SBInteger //apple_ref/occ/intf/SBInteger" --><span class="type">SBInteger</span><!-- /a -->)<span class="param">code</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/supportingData //apple_ref/occ/clm/supportingData //apple_ref/occ/intfcm/supportingData //apple_ref/occ/intfm/supportingData //apple_ref/occ/func/supportingData //apple_ref/occ/ftmplt/supportingData //apple_ref/occ/defn/supportingData //apple_ref/occ/macro/supportingData" --><span class="function">supportingData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/data //apple_ref/occ/data/data" --><span class="var">data</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance which wraps an error in the specified domain with the
+provided code and supporting data.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBError/errorWithDomain:code:supportingObjectsAndKeys:;   name=SBError::errorWithDomain:code:supportingObjectsAndKeys: -->
+<a name="//apple_ref/occ/clm/SBError/errorWithDomain:code:supportingObjectsAndKeys:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="errorWithDomain:code:supportingObjectsAndKeys:">errorWithDomain:code:supportingObjectsAndKeys:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:clm/SBError/errorWithDomain:code:supportingObjectsAndKeys:..." --><p>errorWithDomain:code:supportingObjectsAndKeys:...<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/errorWithDomain //apple_ref/occ/clm/errorWithDomain //apple_ref/occ/intfcm/errorWithDomain //apple_ref/occ/intfm/errorWithDomain //apple_ref/occ/func/errorWithDomain //apple_ref/occ/ftmplt/errorWithDomain //apple_ref/occ/defn/errorWithDomain //apple_ref/occ/macro/errorWithDomain" --><span class="function">errorWithDomain</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">domain</span> <!-- a logicalPath="//apple_ref/occ/instm/code //apple_ref/occ/clm/code //apple_ref/occ/intfcm/code //apple_ref/occ/intfm/code //apple_ref/occ/func/code //apple_ref/occ/ftmplt/code //apple_ref/occ/defn/code //apple_ref/occ/macro/code" --><span class="function">code</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInteger //apple_ref/occ/tdef/SBInteger //apple_ref/occ/tag/SBInteger //apple_ref/occ/econst/SBInteger //apple_ref/occ/struct/SBInteger //apple_ref/occ/clconst/SBInteger //apple_ref/occ/intf/SBInteger" --><span class="type">SBInteger</span><!-- /a -->)<span class="param">code</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/supportingObjectsAndKeys //apple_ref/occ/clm/supportingObjectsAndKeys //apple_ref/occ/intfcm/supportingObjectsAndKeys //apple_ref/occ/intfm/supportingObjectsAndKeys //apple_ref/occ/func/supportingObjectsAndKeys //apple_ref/occ/ftmplt/supportingObjectsAndKeys //apple_ref/occ/defn/supportingObjectsAndKeys //apple_ref/occ/macro/supportingObjectsAndKeys" --><span class="function">supportingObjectsAndKeys</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/firstObject //apple_ref/occ/data/firstObject" --><span class="var">firstObject</span><!-- /a -->,...; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance which wraps an error in the specified domain with the
+provided code and supporting data per a list of objects and keys that will be automatically
+turned into a SBDictionary.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:clm;  uid=//apple_ref/doc/title:clm/SBError/errorWithDomain:code:supportingObjectsAndKeys:...;   name=SBError::errorWithDomain:code:supportingObjectsAndKeys:... -->
+<a name="//apple_ref/doc/title:clm/SBError/errorWithDomain:code:supportingObjectsAndKeys:..."></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="errorWithDomain:code:supportingObjectsAndKeys:...">errorWithDomain:code:supportingObjectsAndKeys:...</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/clm/SBError/errorWithDomain:code:supportingObjectsAndKeys:" --><p>errorWithDomain:code:supportingObjectsAndKeys:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/errorWithDomain //apple_ref/occ/clm/errorWithDomain //apple_ref/occ/intfcm/errorWithDomain //apple_ref/occ/intfm/errorWithDomain //apple_ref/occ/func/errorWithDomain //apple_ref/occ/ftmplt/errorWithDomain //apple_ref/occ/defn/errorWithDomain //apple_ref/occ/macro/errorWithDomain" --><span class="function">errorWithDomain</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">domain</span> <!-- a logicalPath="//apple_ref/occ/instm/code //apple_ref/occ/clm/code //apple_ref/occ/intfcm/code //apple_ref/occ/intfm/code //apple_ref/occ/func/code //apple_ref/occ/ftmplt/code //apple_ref/occ/defn/code //apple_ref/occ/macro/code" --><span class="function">code</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInteger //apple_ref/occ/tdef/SBInteger //apple_ref/occ/tag/SBInteger //apple_ref/occ/econst/SBInteger //apple_ref/occ/struct/SBInteger //apple_ref/occ/clconst/SBInteger //apple_ref/occ/intf/SBInteger" --><span class="type">SBInteger</span><!-- /a -->)<span class="param">code</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/supportingObjectsAndKeys //apple_ref/occ/clm/supportingObjectsAndKeys //apple_ref/occ/intfcm/supportingObjectsAndKeys //apple_ref/occ/intfm/supportingObjectsAndKeys //apple_ref/occ/func/supportingObjectsAndKeys //apple_ref/occ/ftmplt/supportingObjectsAndKeys //apple_ref/occ/defn/supportingObjectsAndKeys //apple_ref/occ/macro/supportingObjectsAndKeys" --><span class="function">supportingObjectsAndKeys</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/firstObject //apple_ref/occ/data/firstObject" --><span class="var">firstObject</span><!-- /a -->,...; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance which wraps an error in the specified domain with the
+provided code and supporting data per a list of objects and keys that will be automatically
+turned into a SBDictionary.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBError/foundationErrorWithCode:supportingData:;   name=SBError::foundationErrorWithCode:supportingData: -->
+<a name="//apple_ref/occ/clm/SBError/foundationErrorWithCode:supportingData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="foundationErrorWithCode:supportingData:">foundationErrorWithCode:supportingData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/foundationErrorWithCode //apple_ref/occ/clm/foundationErrorWithCode //apple_ref/occ/intfcm/foundationErrorWithCode //apple_ref/occ/intfm/foundationErrorWithCode //apple_ref/occ/func/foundationErrorWithCode //apple_ref/occ/ftmplt/foundationErrorWithCode //apple_ref/occ/defn/foundationErrorWithCode //apple_ref/occ/macro/foundationErrorWithCode" --><span class="function">foundationErrorWithCode</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInteger //apple_ref/occ/tdef/SBInteger //apple_ref/occ/tag/SBInteger //apple_ref/occ/econst/SBInteger //apple_ref/occ/struct/SBInteger //apple_ref/occ/clconst/SBInteger //apple_ref/occ/intf/SBInteger" --><span class="type">SBInteger</span><!-- /a -->)<span class="param">code</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/supportingData //apple_ref/occ/clm/supportingData //apple_ref/occ/intfcm/supportingData //apple_ref/occ/intfm/supportingData //apple_ref/occ/func/supportingData //apple_ref/occ/ftmplt/supportingData //apple_ref/occ/defn/supportingData //apple_ref/occ/macro/supportingData" --><span class="function">supportingData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/data //apple_ref/occ/data/data" --><span class="var">data</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance which wraps an error in the SBFoundationErrorDomain with
+the provided code and supporting data.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBError/initWithDomain:code:supportingData:;   name=SBError::initWithDomain:code:supportingData: -->
+<a name="//apple_ref/occ/instm/SBError/initWithDomain:code:supportingData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithDomain:code:supportingData:">initWithDomain:code:supportingData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithDomain //apple_ref/occ/clm/initWithDomain //apple_ref/occ/intfcm/initWithDomain //apple_ref/occ/intfm/initWithDomain //apple_ref/occ/func/initWithDomain //apple_ref/occ/ftmplt/initWithDomain //apple_ref/occ/defn/initWithDomain //apple_ref/occ/macro/initWithDomain" --><span class="function">initWithDomain</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">domain</span> <!-- a logicalPath="//apple_ref/occ/instm/code //apple_ref/occ/clm/code //apple_ref/occ/intfcm/code //apple_ref/occ/intfm/code //apple_ref/occ/func/code //apple_ref/occ/ftmplt/code //apple_ref/occ/defn/code //apple_ref/occ/macro/code" --><span class="function">code</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInteger //apple_ref/occ/tdef/SBInteger //apple_ref/occ/tag/SBInteger //apple_ref/occ/econst/SBInteger //apple_ref/occ/struct/SBInteger //apple_ref/occ/clconst/SBInteger //apple_ref/occ/intf/SBInteger" --><span class="type">SBInteger</span><!-- /a -->)<span class="param">code</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/supportingData //apple_ref/occ/clm/supportingData //apple_ref/occ/intfcm/supportingData //apple_ref/occ/intfm/supportingData //apple_ref/occ/func/supportingData //apple_ref/occ/ftmplt/supportingData //apple_ref/occ/defn/supportingData //apple_ref/occ/macro/supportingData" --><span class="function">supportingData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/data //apple_ref/occ/data/data" --><span class="var">data</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes a newly-allocated instance.  The domain must be a non-nil, non-zero-length
+SBString object, otherwise the instance is released and nil is returned.
+</p>
+<p>The domain string and data dictionary are sent the "copy" message to retain an immutable
+copy for the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBError/posixErrorWithCode:supportingData:;   name=SBError::posixErrorWithCode:supportingData: -->
+<a name="//apple_ref/occ/clm/SBError/posixErrorWithCode:supportingData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="posixErrorWithCode:supportingData:">posixErrorWithCode:supportingData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/posixErrorWithCode //apple_ref/occ/clm/posixErrorWithCode //apple_ref/occ/intfcm/posixErrorWithCode //apple_ref/occ/intfm/posixErrorWithCode //apple_ref/occ/func/posixErrorWithCode //apple_ref/occ/ftmplt/posixErrorWithCode //apple_ref/occ/defn/posixErrorWithCode //apple_ref/occ/macro/posixErrorWithCode" --><span class="function">posixErrorWithCode</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInteger //apple_ref/occ/tdef/SBInteger //apple_ref/occ/tag/SBInteger //apple_ref/occ/econst/SBInteger //apple_ref/occ/struct/SBInteger //apple_ref/occ/clconst/SBInteger //apple_ref/occ/intf/SBInteger" --><span class="type">SBInteger</span><!-- /a -->)<span class="param">code</span> <!-- a logicalPath="//apple_ref/occ/instm/supportingData //apple_ref/occ/clm/supportingData //apple_ref/occ/intfcm/supportingData //apple_ref/occ/intfm/supportingData //apple_ref/occ/func/supportingData //apple_ref/occ/ftmplt/supportingData //apple_ref/occ/defn/supportingData //apple_ref/occ/macro/supportingData" --><span class="function">supportingData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/data //apple_ref/occ/data/data" --><span class="var">data</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance which wraps an error in the SBPOSIXErrorDomain with
+the provided code and supporting data.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBError/supportingData;   name=SBError::supportingData -->
+<a name="//apple_ref/occ/instm/SBError/supportingData"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="supportingData">supportingData</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/supportingData //apple_ref/occ/data/supportingData" --><span class="var">supportingData</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's supportingData dictionary.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBError/writeErrorSummaryToStream:;   name=SBError::writeErrorSummaryToStream: -->
+<a name="//apple_ref/occ/instm/SBError/writeErrorSummaryToStream:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="writeErrorSummaryToStream:">writeErrorSummaryToStream:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/writeErrorSummaryToStream //apple_ref/occ/clm/writeErrorSummaryToStream //apple_ref/occ/intfcm/writeErrorSummaryToStream //apple_ref/occ/intfm/writeErrorSummaryToStream //apple_ref/occ/func/writeErrorSummaryToStream //apple_ref/occ/ftmplt/writeErrorSummaryToStream //apple_ref/occ/defn/writeErrorSummaryToStream //apple_ref/occ/macro/writeErrorSummaryToStream" --><span class="function">writeErrorSummaryToStream</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FILE //apple_ref/occ/tdef/FILE //apple_ref/occ/tag/FILE //apple_ref/occ/econst/FILE //apple_ref/occ/struct/FILE //apple_ref/occ/clconst/FILE //apple_ref/occ/intf/FILE" --><span class="type">FILE</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/stream //apple_ref/occ/data/stream" --><span class="var">stream</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Presents a formatted TTY display of the error.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

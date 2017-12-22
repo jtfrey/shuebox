@@ -1,0 +1,32 @@
+#import "SBFoundation.h"
+
+int
+main()
+{
+  char*                   bytes = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789π©µ¶™®†∆«»≤≥";
+  SBAutoreleasePool*      pool = [[SBAutoreleasePool alloc] init];
+  SBData*                 buffer = [SBData dataWithBytes:bytes length:strlen(bytes)];
+  SBData*                 result = nil;
+  SBFileHandle*           StdOut = [SBFileHandle fileHandleWithStandardOutput];
+  SBFileHandle*           StdIn = [SBFileHandle fileHandleWithStandardInput];
+  
+  [StdOut writeData:buffer]; printf("\n");
+  
+  result = [StdIn readDataOfLength:4];
+  if ( result )
+    [result summarizeToStream:stdout];
+    
+  StdIn = [SBFileHandle fileHandleForUpdatingAtPath:@"test.txt"];
+  if ( StdIn ) {
+    result = [StdIn readDataToEndOfFile];
+    if ( result )
+      [result summarizeToStream:stdout];
+  }
+  
+  //
+  // Clear out autorelease:
+  //
+  [pool release];
+  
+  return 0;
+}

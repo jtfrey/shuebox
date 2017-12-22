@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBString.h</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=Header;  uid=//apple_ref/doc/header/SBString.h;   name=SBString.h -->
+<a name="//apple_ref/doc/header/SBString.h"></a>
+<div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBString.h">SBString.h</a></h1>
+</td></tr></table><hr><p></p><dl><b>Includes:</b> <!-- a logicalPath="//apple_ref/doc/header/utypes.h" -->"unicode/utypes.h"<!-- /a --><br>
+</dl><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>SBString represents the public interface to an entire cluster of classes devoted to the
+task of representing and processing textual data.  The size of this class is impressive, due
+mainly to the fact that text processing is a terribly complex beast.
+</p>
+<p><b>Implementation Details</b>
+</p>
+<blockquote>
+A little inside info, the actual class cluster under SBString looks like this:
+<ul>
+<li>SBString
+<ul>
+<li>SBStringConst</li>
+<li>SBStringSubString</li>
+<li>SBConcreteString
+<ul>
+<li>SBConcreteStringSubString</li>
+</ul>
+<p></li>
+<li>SBMutableString
+</p>
+<ul>
+<li>SBConcreteMutableString</li>
+</ul>
+<p></li>
+</ul>
+<p></li>
+</ul>
+<p>The two sub-string classes are present because the content of an immutable string
+cannot change, so a substring can refer directly to the original characters rather
+than making a copy of them in memory.  SBString will return SBStringSubString objects from
+its substring* methods; an SBStringSubString object retains a reference to the parent
+string object and modifies the characterAtIndex: method to call-through to the parent's
+method with a properly-modified offset (according to the range with which the
+SBStringSubString was initialized).  The SBConcreteStringSubString object is a subclass
+of SBConcreteString which also retains a reference to the parent string but sends itself
+the initWithUncopiedCharacters:length:freeWhenDone: message with the applicable region 
+of the parent strings' UTF-16 buffer.
+</blockquote>
+
+<p><b>String Compare and Search</b>
+</p>
+<blockquote>
+String comparison and search operations make use of the ICU comparator and search
+facilities in order to provide locale-dependent, full-featured text analysis
+capabilities.  In particular:
+<ul>
+<li>Case-insensitive OR case-sensitive character testing</li>
+<li>Diacritic-insensitive OR diacritic-sensitive character testing</li>
+<li>Value-sensitive OR character-sensitive numerical sub-string testing</li>
+<li>Literal or canonical character testing</li>
+<li>Anchored searching</li>
+<li>From-end (backwards) searching</li>
+</ul>
+<p>String comparison operations are optimized on a per-encoding basis; compare:
+methods which are invoked with a mix of UTF-8 and UTF-16 encoded string classes
+setup character iterators for the strings' native encodings (rather than
+transcoding to UTF-16 and working directly with full strings).  Searching,
+however, requires the UTF-16 encoding, and thus UTF-8-native string classes
+will transcode to UTF-16 when used in any search-oriented methods.
+</p>
+<p>Future optimizations include introducing a UTF-32-native character iterator for use
+with compare: methods &mdash; right now, the UTF-16 transcoded form is used.  Since none of the
+build-in classes actually use UTF-32 representation, this optimization is somewhat moot,
+though.  At this point, anchored searches are made so only after the actual search has
+been performed through the full string &mdash; ICU does not easily allow for producing a
+fully-anchored search.  I know &mdash; I tried using a break iterator set to mark the start
+and end of the string as the only boundaries, but:
+</p>
+<ol>
+<li>Despite the break iterator's treating S[0] as the first and only boundary,
+the Search API wouldn't honor a match at that boundary as being a match (it's not
+clear why this is so...bug?)</li>
+<li>For backwards searching, the Search API wants to match the localtion of the beginning
+of the found sub-string to a break iterator boundary.  However, since the boundaries
+being provided were the S[0] and S[len(S)] positions, the Search API would discard
+the match (for reverse search, shouldn't the logical choice be to test the _end_ of
+the found sub-string against the end boundary?)</li>
+</ol>
+</blockquote>
+
+<p><b>String Constants</b>
+</p>
+<blockquote>
+The SBStringConst class is used to represent UTF-8 encoded static strings that are
+built-in at compile time; such strings appear in source code using the @"string" format.
+SBStringConst instances provide all of the SBString methods, so to your code they'll
+look like any other immutable string object.  However, behind the scenes any of the
+more exotic SBString methods may require the SBStringConst to transcode its UTF-8 data
+to UTF-16.
+
+The concrete SBString implementations all will cache their UTF-8 transcoded form the
+first time the utf8Characters method is called, so that subsequent calls will return the
+cached data (though for SBMutableString classes the cache will be dumped when the
+receiver is modified in any way).  SBStringConst objects, being immutable strings,
+likewise optimize this conversion by lazily doing a UTF-16 transcode when necessary, caching
+the UTF-16 form thereafter.
+
+In the future the caching could be further refined by introducing some sort of temporal
+time-out mechanism to automatically discard transcoded forms that have not been needed for
+some time.
+</blockquote><!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_classes"></a>
+<h2>Classes</h2>
+<dl>
+<dt><tt><a href="Classes/SBMutableString/index.html#//apple_ref/occ/cl/SBMutableString" target="_top">SBMutableString</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Classes/SBString/index.html#//apple_ref/occ/cl/SBString" target="_top">SBString</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Classes/SBStringConst/index.html#//apple_ref/occ/cl/SBStringConst" target="_top">SBStringConst</a></tt></dt>
+<dd></dd>
+</dl>
+<a name="HeaderDoc_categories"></a>
+<h2>Categories</h2>
+<dl>
+<dt><tt><a href="Categories/SBMutableString_SBMutableStringCreation_/index.html#//apple_ref/occ/cat/SBMutableString(SBMutableStringCreation)" target="_top">SBMutableString(SBMutableStringCreation)</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Categories/SBMutableString_SBMutableStringExtensions_/index.html#//apple_ref/occ/cat/SBMutableString(SBMutableStringExtensions)" target="_top">SBMutableString(SBMutableStringExtensions)</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Categories/SBString_SBStringCreation_/index.html#//apple_ref/occ/cat/SBString(SBStringCreation)" target="_top">SBString(SBStringCreation)</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Categories/SBString_SBStringExtensions_/index.html#//apple_ref/occ/cat/SBString(SBStringExtensions)" target="_top">SBString(SBStringExtensions)</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Categories/SBString_SBStringPathExtensions_/index.html#//apple_ref/occ/cat/SBString(SBStringPathExtensions)" target="_top">SBString(SBStringPathExtensions)</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><br><a name="HeaderDoc_functions"></a>
+<h2>Functions</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/func/SBFullUserName" target="_top">SBFullUserName</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/SBHomeDirectory" target="_top">SBHomeDirectory</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/SBHomeDirectoryForUser" target="_top">SBHomeDirectoryForUser</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/SBUserName" target="_top">SBUserName</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=func;  uid=//apple_ref/c/func/SBFullUserName;   name=SBFullUserName -->
+<a name="//apple_ref/c/func/SBFullUserName"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBFullUserName">SBFullUserName</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/instm/SBFullUserName //apple_ref/occ/clm/SBFullUserName //apple_ref/occ/intfcm/SBFullUserName //apple_ref/occ/intfm/SBFullUserName //apple_ref/occ/func/SBFullUserName //apple_ref/occ/ftmplt/SBFullUserName //apple_ref/occ/defn/SBFullUserName //apple_ref/occ/macro/SBFullUserName" --><span class="function">SBFullUserName</span><!-- /a -->();  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an SBString containing the full name (GECOS) of the current user.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=func;  uid=//apple_ref/c/func/SBHomeDirectory;   name=SBHomeDirectory -->
+<a name="//apple_ref/c/func/SBHomeDirectory"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBHomeDirectory">SBHomeDirectory</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/instm/SBHomeDirectory //apple_ref/occ/clm/SBHomeDirectory //apple_ref/occ/intfcm/SBHomeDirectory //apple_ref/occ/intfm/SBHomeDirectory //apple_ref/occ/func/SBHomeDirectory //apple_ref/occ/ftmplt/SBHomeDirectory //apple_ref/occ/defn/SBHomeDirectory //apple_ref/occ/macro/SBHomeDirectory" --><span class="function">SBHomeDirectory</span><!-- /a -->();  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an SBString containing the path to the current user's home
+directory.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=func;  uid=//apple_ref/c/func/SBHomeDirectoryForUser;   name=SBHomeDirectoryForUser -->
+<a name="//apple_ref/c/func/SBHomeDirectoryForUser"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBHomeDirectoryForUser">SBHomeDirectoryForUser</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/instm/SBHomeDirectoryForUser //apple_ref/occ/clm/SBHomeDirectoryForUser //apple_ref/occ/intfcm/SBHomeDirectoryForUser //apple_ref/occ/intfm/SBHomeDirectoryForUser //apple_ref/occ/func/SBHomeDirectoryForUser //apple_ref/occ/ftmplt/SBHomeDirectoryForUser //apple_ref/occ/defn/SBHomeDirectoryForUser //apple_ref/occ/macro/SBHomeDirectoryForUser" --><span class="function">SBHomeDirectoryForUser</span><!-- /a -->(
+    <!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --> <span class="type">*</span><span class="param">userName</span>);  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an SBString containging the path to the specified user's home
+directory.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=func;  uid=//apple_ref/c/func/SBUserName;   name=SBUserName -->
+<a name="//apple_ref/c/func/SBUserName"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBUserName">SBUserName</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/instm/SBUserName //apple_ref/occ/clm/SBUserName //apple_ref/occ/intfcm/SBUserName //apple_ref/occ/intfm/SBUserName //apple_ref/occ/func/SBUserName //apple_ref/occ/ftmplt/SBUserName //apple_ref/occ/defn/SBUserName //apple_ref/occ/macro/SBUserName" --><span class="function">SBUserName</span><!-- /a -->();  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an SBString containing the username of the current user.</p><!-- end discussion -->
+<p></p><a name="HeaderDoc_datatypes"></a>
+<h2>Typedefs</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/tdef/SBStringNativeEncoding" target="_top">SBStringNativeEncoding</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/tdef/SBStringSearchOptions" target="_top">SBStringSearchOptions</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=tdef;  uid=//apple_ref/c/tdef/SBStringNativeEncoding;   name=SBStringNativeEncoding -->
+<a name="//apple_ref/c/tdef/SBStringNativeEncoding"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBStringNativeEncoding">SBStringNativeEncoding</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">typedef</span> <!-- a logicalPath="//apple_ref/c/cl/SBUInteger //apple_ref/c/tdef/SBUInteger //apple_ref/c/tag/SBUInteger //apple_ref/c/econst/SBUInteger //apple_ref/c/struct/SBUInteger //apple_ref/c/clconst/SBUInteger //apple_ref/c/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/SBStringNativeEncoding //apple_ref/c/data/SBStringNativeEncoding" --><span class="var">SBStringNativeEncoding</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>All SBString-descendent classes define a class and instance method which return a value
+from this enumeration as a hint w.r.t. how they natively represent their character data.
+</p>
+<p>Used internally by the class cluster to optimize operations that require specific UTF
+encoding formats (e.g. most of the ICU functions work with UTF16 characters only).
+</p>
+<p>See the SBString nativeEncoding methods for more information.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=tdef;  uid=//apple_ref/c/tdef/SBStringSearchOptions;   name=SBStringSearchOptions -->
+<a name="//apple_ref/c/tdef/SBStringSearchOptions"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBStringSearchOptions">SBStringSearchOptions</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">typedef</span> <!-- a logicalPath="//apple_ref/c/cl/SBUInteger //apple_ref/c/tdef/SBUInteger //apple_ref/c/tag/SBUInteger //apple_ref/c/econst/SBUInteger //apple_ref/c/struct/SBUInteger //apple_ref/c/clconst/SBUInteger //apple_ref/c/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/SBStringSearchOptions //apple_ref/c/data/SBStringSearchOptions" --><span class="var">SBStringSearchOptions</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Type used to pass bitwise-OR'ed string search flags to SBString methods.  A
+value of 0 implies no special options.<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

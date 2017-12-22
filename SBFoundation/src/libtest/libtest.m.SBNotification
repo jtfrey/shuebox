@@ -1,0 +1,90 @@
+#import "SBFoundation.h"
+
+@interface Example : SBObject
+{
+}
+
+- (void) notify1:(SBNotification*)aNotify;
+- (void) notify2:(SBNotification*)aNotify;
+- (void) notify3:(SBNotification*)aNotify;
+
+@end
+
+@implementation Example
+
+  - (void) notify1:(SBNotification*)aNotify
+  {
+    SBString*     identifier = [aNotify identifier];
+    id            object = [aNotify object];
+    
+    printf("%p[1] Caught the notification: [%p] `", self, object);
+    if ( identifier ) [identifier writeToStream:stdout];
+    printf("`\n");
+  }
+
+  - (void) notify2:(SBNotification*)aNotify
+  {
+    SBString*     identifier = [aNotify identifier];
+    id            object = [aNotify object];
+    
+    printf("%p[2] Caught the notification: [%p] `", self, object);
+    if ( identifier ) [identifier writeToStream:stdout];
+    printf("`\n");
+  }
+
+  - (void) notify3:(SBNotification*)aNotify
+  {
+    SBString*     identifier = [aNotify identifier];
+    id            object = [aNotify object];
+    
+    printf("%p[3] Caught the notification: [%p] `", self, object);
+    if ( identifier ) [identifier writeToStream:stdout];
+    printf("`\n");
+  }
+
+@end
+
+//
+#pragma mark -
+//
+
+int
+main()
+{
+  SBAutoreleasePool*      pool = [[SBAutoreleasePool alloc] init];
+  SBNotificationCenter*   nCenter = [SBNotificationCenter defaultNotificationCenter];
+  Example*                object = [[Example alloc] init];
+  Example*                otherObject = [[Example alloc] init];
+  
+  printf("Registered %p[1]:  ANotification, object = %p\n", object, nCenter);
+  [nCenter addObserver:object selector:@selector(notify1:) identifier:@"ANotification" object:nCenter];
+  printf("Registered %p[2]:  ANotification\n", object);
+  [nCenter addObserver:object selector:@selector(notify2:) identifier:@"ANotification" object:nil];
+  printf("Registered %p[3]:  all notifications\n", object, nCenter);
+  [nCenter addObserver:object selector:@selector(notify3:) identifier:nil object:nil];
+  printf("Registered %p[1]:  ANotification, object = %p\n\n", otherObject, object);
+  [nCenter addObserver:otherObject selector:@selector(notify1:) identifier:@"ANotification" object:object];
+  
+  [nCenter summarizeToStream:stdout];
+  
+  printf("\n\nANotification, no specific object:\n");
+  [nCenter postNotificationWithIdentifier:@"ANotification" object:nil];
+  printf("===\n\n");
+  printf("ANotification, object = %p:\n", object);
+  [nCenter postNotificationWithIdentifier:@"ANotification" object:object];
+  printf("===\n\n");
+  printf("ANotification, object = %p:\n", nCenter);
+  [nCenter postNotificationWithIdentifier:@"ANotification" object:nCenter];
+  printf("===\n\n");
+  printf("NotANotification, object = %p:\n", object);
+  [nCenter postNotificationWithIdentifier:@"NotANotification" object:object];
+  printf("===\n\n");
+  printf("[no identifier], object = %p:\n", object);
+  [nCenter postNotificationWithIdentifier:nil object:object];
+  printf("===\n\n");
+  printf("[no identifier], object = %p:\n", nil);
+  [nCenter postNotificationWithIdentifier:nil object:nil];
+  
+  [pool release];
+  return 0;
+}

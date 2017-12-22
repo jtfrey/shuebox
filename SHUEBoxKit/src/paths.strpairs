@@ -1,0 +1,9 @@
+#
+# Default SHUEBox paths:
+#
+
+'zfs-fs-prefix' = 'shuebox/collaborations'
+'resource-bundle' = '/opt/local/SHUEBox/SHUEBoxKit/resources'
+'apache-confs' = '/opt/local/apache2/current/conf/collaborations'
+'apachectl' = '/opt/local/apache2/current/bin/apachectl'
+'tmp-path' = '/opt/local/SHUEBox/tmp'

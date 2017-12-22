@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBDateFormatter</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBDateFormatter;  name=SBDateFormatter-->
+<a name="//apple_ref/occ/cl/SBDateFormatter"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBDateFormatter">SBDateFormatter</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBDateFormatter.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>An SBDateFormatter is used to generate textual representations of an SBDate's timestamp (formatting)
+and to analyze textual forms, calculating a timestamp from them which can be represented by an
+SBDate object (parsing).
+</p>
+<p>An SBDateFormatter can use an alternate (other than default) localization scheme by sending it the
+setLocale: message with an instance of SBLocale.  This most notably will affect the names of months
+and the days of the week, as well as the ordering of date fields.  For example, the "en_US" locale
+will produce the following formatted date:
+  </p>
+<pre>
+    April 24, 2009 2:16:05 PM EDT
+  </pre>
+<p>while a British locale like "en_GB" produces:
+  </p>
+<pre>
+    24 April 2009 14:16:05 EDT
+  </pre>
+<p>Non-English locales (French, German, Spanish) will produce localized month and day names as well as
+altered field ordering/delimiting.
+</p>
+<p>An SBDateFormatter can be configured in one of two ways:
+</p>
+<ul>
+<li>Simple style directives:  long, medium, and short size</li>
+<li>A template string with place-fillers for the calendar fields</li>
+</ul>
+<p>See the following page for information on the styles and the format of template strings:
+</p>
+<p>http://icu-project.org/apiref/icu4c/udat_8h.html
+</p>
+<p>It's best to avoid template strings since they do not directly provide any localization support
+for field ordering -- e.g. using a template like "yyyy-MM-dd" can be confusing in some locales
+since the numerical month and day may be expected to be in reversed sequence.  That is to say,
+does the following string produced with that template
+  </p>
+<pre>
+    2008-01-03
+  </pre>
+<p>represent January 3 or March 1, 2008?  In an internationalized application it's impossible to
+tell for sure without knowing the order presented in the template itself.  This may not be a
+big deal for log files, but it becomes a very big deal w.r.t. presenting an intuitive
+internationalized user interface.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBDateFormatter/dateFormatter" target="_top">+dateFormatter</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDateFormatter/dateFromString:" target="_top">-dateFromString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDateFormatter/dateStyle" target="_top">-dateStyle</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDateFormatter/init" target="_top">-init</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDateFormatter/locale" target="_top">-locale</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDateFormatter/pattern" target="_top">-pattern</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDateFormatter/setDateStyle:" target="_top">-setDateStyle:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBDateFormatter/setDateStyle:Modify" target="_top">-setDateStyle:
+
+Modify</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDateFormatter/setLocale:" target="_top">-setLocale:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDateFormatter/setPattern:" target="_top">-setPattern:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDateFormatter/setTimeStyle:" target="_top">-setTimeStyle:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBDateFormatter/setTimeStyle:Modify" target="_top">-setTimeStyle:
+
+Modify</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDateFormatter/stringFromDate:" target="_top">-stringFromDate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDateFormatter/timeStyle" target="_top">-timeStyle</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBDateFormatter/dateFormatter;   name=SBDateFormatter::dateFormatter -->
+<a name="//apple_ref/occ/clm/SBDateFormatter/dateFormatter"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dateFormatter">dateFormatter</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBDateFormatter //apple_ref/occ/tdef/SBDateFormatter //apple_ref/occ/tag/SBDateFormatter //apple_ref/occ/econst/SBDateFormatter //apple_ref/occ/struct/SBDateFormatter //apple_ref/occ/clconst/SBDateFormatter //apple_ref/occ/intf/SBDateFormatter" --><span class="type">SBDateFormatter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/dateFormatter //apple_ref/occ/data/dateFormatter" --><span class="var">dateFormatter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an autoreleased SBDateFormatter initialized to default locale and date formatting
+properties.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDateFormatter/dateFromString:;   name=SBDateFormatter::dateFromString: -->
+<a name="//apple_ref/occ/instm/SBDateFormatter/dateFromString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dateFromString:">dateFromString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/dateFromString //apple_ref/occ/clm/dateFromString //apple_ref/occ/intfcm/dateFromString //apple_ref/occ/intfm/dateFromString //apple_ref/occ/func/dateFromString //apple_ref/occ/ftmplt/dateFromString //apple_ref/occ/defn/dateFromString //apple_ref/occ/macro/dateFromString" --><span class="function">dateFromString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempts to parse aString using the receiver's date- and time-formatting properties.  If
+successful, returns an SBDate object containing the parsed date and time.  Returns nil
+if aString could not be parsed properly.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDateFormatter/dateStyle;   name=SBDateFormatter::dateStyle -->
+<a name="//apple_ref/occ/instm/SBDateFormatter/dateStyle"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dateStyle">dateStyle</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/UDateFormatStyle //apple_ref/occ/tdef/UDateFormatStyle //apple_ref/occ/tag/UDateFormatStyle //apple_ref/occ/econst/UDateFormatStyle //apple_ref/occ/struct/UDateFormatStyle //apple_ref/occ/clconst/UDateFormatStyle //apple_ref/occ/intf/UDateFormatStyle" --><span class="type">UDateFormatStyle</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/dateStyle //apple_ref/occ/data/dateStyle" --><span class="var">dateStyle</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the receiver's style for the year/month/day portion of a date.  If a template string
+has been set using the setPattern: method, the returned value is moot since it won't actually
+influence formatting/parsing.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDateFormatter/init;   name=SBDateFormatter::init -->
+<a name="//apple_ref/occ/instm/SBDateFormatter/init"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="init">init</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/init //apple_ref/occ/data/init" --><span class="var">init</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes an SBDateFormatter to use default locale and date formatting properties.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDateFormatter/locale;   name=SBDateFormatter::locale -->
+<a name="//apple_ref/occ/instm/SBDateFormatter/locale"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="locale">locale</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBLocale //apple_ref/occ/tdef/SBLocale //apple_ref/occ/tag/SBLocale //apple_ref/occ/econst/SBLocale //apple_ref/occ/struct/SBLocale //apple_ref/occ/clconst/SBLocale //apple_ref/occ/intf/SBLocale" --><span class="type">SBLocale</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/locale //apple_ref/occ/data/locale" --><span class="var">locale</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the locale which the receiver will use to parse/format dates.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDateFormatter/pattern;   name=SBDateFormatter::pattern -->
+<a name="//apple_ref/occ/instm/SBDateFormatter/pattern"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="pattern">pattern</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/pattern //apple_ref/occ/data/pattern" --><span class="var">pattern</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the template string that the receiver will use to format/parse dates.  Returns
+nil if none has been set.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDateFormatter/setDateStyle:;   name=SBDateFormatter::setDateStyle: -->
+<a name="//apple_ref/occ/instm/SBDateFormatter/setDateStyle:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setDateStyle:">setDateStyle:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBDateFormatter/setDateStyle:Modify" --><p>setDateStyle:  Modify<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setDateStyle //apple_ref/occ/clm/setDateStyle //apple_ref/occ/intfcm/setDateStyle //apple_ref/occ/intfm/setDateStyle //apple_ref/occ/func/setDateStyle //apple_ref/occ/ftmplt/setDateStyle //apple_ref/occ/defn/setDateStyle //apple_ref/occ/macro/setDateStyle" --><span class="function">setDateStyle</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/UDateFormatStyle //apple_ref/occ/tdef/UDateFormatStyle //apple_ref/occ/tag/UDateFormatStyle //apple_ref/occ/econst/UDateFormatStyle //apple_ref/occ/struct/UDateFormatStyle //apple_ref/occ/clconst/UDateFormatStyle //apple_ref/occ/intf/UDateFormatStyle" --><span class="type">UDateFormatStyle</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/style //apple_ref/occ/data/style" --><span class="var">style</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the receiver's style for the year/month/day portion of a date.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBDateFormatter/setDateStyle:Modify;   name=SBDateFormatter::setDateStyle:
+
+Modify -->
+<a name="//apple_ref/doc/title:instm/SBDateFormatter/setDateStyle:Modify"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setDateStyle:Modify">setDateStyle:
+
+Modify</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBDateFormatter/setDateStyle:" --><p>setDateStyle:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setDateStyle //apple_ref/occ/clm/setDateStyle //apple_ref/occ/intfcm/setDateStyle //apple_ref/occ/intfm/setDateStyle //apple_ref/occ/func/setDateStyle //apple_ref/occ/ftmplt/setDateStyle //apple_ref/occ/defn/setDateStyle //apple_ref/occ/macro/setDateStyle" --><span class="function">setDateStyle</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/UDateFormatStyle //apple_ref/occ/tdef/UDateFormatStyle //apple_ref/occ/tag/UDateFormatStyle //apple_ref/occ/econst/UDateFormatStyle //apple_ref/occ/struct/UDateFormatStyle //apple_ref/occ/clconst/UDateFormatStyle //apple_ref/occ/intf/UDateFormatStyle" --><span class="type">UDateFormatStyle</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/style //apple_ref/occ/data/style" --><span class="var">style</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the receiver's style for the year/month/day portion of a date.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDateFormatter/setLocale:;   name=SBDateFormatter::setLocale: -->
+<a name="//apple_ref/occ/instm/SBDateFormatter/setLocale:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setLocale:">setLocale:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setLocale //apple_ref/occ/clm/setLocale //apple_ref/occ/intfcm/setLocale //apple_ref/occ/intfm/setLocale //apple_ref/occ/func/setLocale //apple_ref/occ/ftmplt/setLocale //apple_ref/occ/defn/setLocale //apple_ref/occ/macro/setLocale" --><span class="function">setLocale</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBLocale //apple_ref/occ/tdef/SBLocale //apple_ref/occ/tag/SBLocale //apple_ref/occ/econst/SBLocale //apple_ref/occ/struct/SBLocale //apple_ref/occ/clconst/SBLocale //apple_ref/occ/intf/SBLocale" --><span class="type">SBLocale</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/locale //apple_ref/occ/data/locale" --><span class="var">locale</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Sets the receiver to begin formatting/parsing dates with respect to a specific locale.  Pass
+nil to use the default locale.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDateFormatter/setPattern:;   name=SBDateFormatter::setPattern: -->
+<a name="//apple_ref/occ/instm/SBDateFormatter/setPattern:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setPattern:">setPattern:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setPattern //apple_ref/occ/clm/setPattern //apple_ref/occ/intfcm/setPattern //apple_ref/occ/intfm/setPattern //apple_ref/occ/func/setPattern //apple_ref/occ/ftmplt/setPattern //apple_ref/occ/defn/setPattern //apple_ref/occ/macro/setPattern" --><span class="function">setPattern</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/pattern //apple_ref/occ/data/pattern" --><span class="var">pattern</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Set the receiver to format/parse dates according to a fixed form specified in a template
+string (pattern).  E.g. @"yyyy-MM-dd HH:mm:ssZZZ"
+</p>
+<p>See the ICU documentation for full documentation.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDateFormatter/setTimeStyle:;   name=SBDateFormatter::setTimeStyle: -->
+<a name="//apple_ref/occ/instm/SBDateFormatter/setTimeStyle:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setTimeStyle:">setTimeStyle:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBDateFormatter/setTimeStyle:Modify" --><p>setTimeStyle:  Modify<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setTimeStyle //apple_ref/occ/clm/setTimeStyle //apple_ref/occ/intfcm/setTimeStyle //apple_ref/occ/intfm/setTimeStyle //apple_ref/occ/func/setTimeStyle //apple_ref/occ/ftmplt/setTimeStyle //apple_ref/occ/defn/setTimeStyle //apple_ref/occ/macro/setTimeStyle" --><span class="function">setTimeStyle</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/UDateFormatStyle //apple_ref/occ/tdef/UDateFormatStyle //apple_ref/occ/tag/UDateFormatStyle //apple_ref/occ/econst/UDateFormatStyle //apple_ref/occ/struct/UDateFormatStyle //apple_ref/occ/clconst/UDateFormatStyle //apple_ref/occ/intf/UDateFormatStyle" --><span class="type">UDateFormatStyle</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/style //apple_ref/occ/data/style" --><span class="var">style</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the receiver's style for the hour/minute/second/timezone portion of a date.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBDateFormatter/setTimeStyle:Modify;   name=SBDateFormatter::setTimeStyle:
+
+Modify -->
+<a name="//apple_ref/doc/title:instm/SBDateFormatter/setTimeStyle:Modify"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setTimeStyle:Modify">setTimeStyle:
+
+Modify</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBDateFormatter/setTimeStyle:" --><p>setTimeStyle:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setTimeStyle //apple_ref/occ/clm/setTimeStyle //apple_ref/occ/intfcm/setTimeStyle //apple_ref/occ/intfm/setTimeStyle //apple_ref/occ/func/setTimeStyle //apple_ref/occ/ftmplt/setTimeStyle //apple_ref/occ/defn/setTimeStyle //apple_ref/occ/macro/setTimeStyle" --><span class="function">setTimeStyle</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/UDateFormatStyle //apple_ref/occ/tdef/UDateFormatStyle //apple_ref/occ/tag/UDateFormatStyle //apple_ref/occ/econst/UDateFormatStyle //apple_ref/occ/struct/UDateFormatStyle //apple_ref/occ/clconst/UDateFormatStyle //apple_ref/occ/intf/UDateFormatStyle" --><span class="type">UDateFormatStyle</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/style //apple_ref/occ/data/style" --><span class="var">style</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the receiver's style for the hour/minute/second/timezone portion of a date.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDateFormatter/stringFromDate:;   name=SBDateFormatter::stringFromDate: -->
+<a name="//apple_ref/occ/instm/SBDateFormatter/stringFromDate:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringFromDate:">stringFromDate:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/stringFromDate //apple_ref/occ/clm/stringFromDate //apple_ref/occ/intfcm/stringFromDate //apple_ref/occ/intfm/stringFromDate //apple_ref/occ/func/stringFromDate //apple_ref/occ/ftmplt/stringFromDate //apple_ref/occ/defn/stringFromDate //apple_ref/occ/macro/stringFromDate" --><span class="function">stringFromDate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aDate //apple_ref/occ/data/aDate" --><span class="var">aDate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns a string containing the given SBDate formatted according to the receiver's date-
+and time-formatting properties.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDateFormatter/timeStyle;   name=SBDateFormatter::timeStyle -->
+<a name="//apple_ref/occ/instm/SBDateFormatter/timeStyle"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="timeStyle">timeStyle</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/UDateFormatStyle //apple_ref/occ/tdef/UDateFormatStyle //apple_ref/occ/tag/UDateFormatStyle //apple_ref/occ/econst/UDateFormatStyle //apple_ref/occ/struct/UDateFormatStyle //apple_ref/occ/clconst/UDateFormatStyle //apple_ref/occ/intf/UDateFormatStyle" --><span class="type">UDateFormatStyle</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/timeStyle //apple_ref/occ/data/timeStyle" --><span class="var">timeStyle</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the receiver's style for the hour/minute/second/timezone portion of a date.  If a
+template string has been set using the setPattern: method, the returned value is moot since
+it won't actually influence formatting/parsing.<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

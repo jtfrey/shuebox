@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1">
+<!--
+
+  $Id: scruffy.xml,v 1.1 2017/04/25 13:57:34 root Exp $
+
+-->
+<service_bundle type='manifest' name='SHUEBox "Scruffy"'>
+<service
+	name='site/application/shuebox/scruffy'
+	type='service'
+	version='1'>
+
+        <create_default_instance enabled='false' />
+
+        <single_instance />
+
+	<dependency name='filesystem-local'
+	    grouping='require_all'
+	    restart_on='none'
+	    type='service'>
+	    <service_fmri
+		value='svc:/system/filesystem/local:default'/>
+	</dependency>
+
+	<dependency name='maintenance-database'
+	    grouping='require_all'
+	    restart_on='error'
+	    type='service'>
+	    <service_fmri
+	        value='svc:/site/application/database/postgresql:v93'/>
+	</dependency>
+
+	<exec_method
+		type='method'
+		name='start'
+		exec='/opt/local/SHUEBox/scruffy/smf/scruffy start'
+		timeout_seconds='60'>
+	</exec_method>
+
+
+	<exec_method
+		type='method'
+		name='stop'
+		exec='/opt/local/SHUEBox/scruffy/smf/scruffy stop'
+		timeout_seconds='60' />
+
+	<exec_method
+		type='method'
+		name='refresh'
+		exec='/opt/local/SHUEBox/scruffy/smf/scruffy refresh'
+		timeout_seconds='60' />
+
+	<property_group name='startd' type='framework'>
+		<propval name='ignore_error' type='astring'
+                                value='signal' />
+	</property_group>
+
+
+	<stability value='Evolving' />
+
+	<template>
+		<common_name>
+			<loctext xml:lang='C'>
+				SHUEBox Maintenance Daemon
+			</loctext>
+		</common_name>
+	</template>
+</service>
+</service_bundle>

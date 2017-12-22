@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBCharacterSet</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBCharacterSet;  name=SBCharacterSet-->
+<a name="//apple_ref/occ/cl/SBCharacterSet"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBCharacterSet">SBCharacterSet</a></h1>
+</td></tr></table><hr><p><b>Conforms&nbsp;to:</b> <!-- a logicalPath="//apple_ref/occ/intf/SBMutableCopying" -->SBMutableCopying<!-- /a --><br>
+<b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBCharacterSet.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Class which wraps an immutable ICU Unicode character set.  See the ICU documentation at:
+</p>
+<p>http://icu-project.org/apiref/icu4c/uset_8h.html
+</p>
+<p>A character set thus created has a fixed membership; see SBMutableCharacterSet if you need
+to dynamically add/remove characters from a character set.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBCharacterSet/bitmapRepresentation" target="_top">-bitmapRepresentation</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBCharacterSet/characterSetWithBitmapRepresentation:" target="_top">+characterSetWithBitmapRepresentation:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBCharacterSet/characterSetWithCharactersInString:" target="_top">+characterSetWithCharactersInString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBCharacterSet/characterSetWithRange:" target="_top">+characterSetWithRange:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBCharacterSet/invertedSet" target="_top">-invertedSet</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBCharacterSet/isSupersetOfSet:" target="_top">-isSupersetOfSet:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBCharacterSet/utf16CharacterIsMember:" target="_top">-utf16CharacterIsMember:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBCharacterSet/utf16CharacterIsMember:Returns" target="_top">-utf16CharacterIsMember:
+
+Returns</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBCharacterSet/utf32CharacterIsMember:" target="_top">-utf32CharacterIsMember:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBCharacterSet/utf32CharacterIsMember:Returns" target="_top">-utf32CharacterIsMember:
+
+Returns</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBCharacterSet/bitmapRepresentation;   name=SBCharacterSet::bitmapRepresentation -->
+<a name="//apple_ref/occ/instm/SBCharacterSet/bitmapRepresentation"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="bitmapRepresentation">bitmapRepresentation</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/bitmapRepresentation //apple_ref/occ/data/bitmapRepresentation" --><span class="var">bitmapRepresentation</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an SBData object which contains a binary represenation of the character
+set.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBCharacterSet/characterSetWithBitmapRepresentation:;   name=SBCharacterSet::characterSetWithBitmapRepresentation: -->
+<a name="//apple_ref/occ/clm/SBCharacterSet/characterSetWithBitmapRepresentation:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="characterSetWithBitmapRepresentation:">characterSetWithBitmapRepresentation:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/characterSetWithBitmapRepresentation //apple_ref/occ/clm/characterSetWithBitmapRepresentation //apple_ref/occ/intfcm/characterSetWithBitmapRepresentation //apple_ref/occ/intfm/characterSetWithBitmapRepresentation //apple_ref/occ/func/characterSetWithBitmapRepresentation //apple_ref/occ/ftmplt/characterSetWithBitmapRepresentation //apple_ref/occ/defn/characterSetWithBitmapRepresentation //apple_ref/occ/macro/characterSetWithBitmapRepresentation" --><span class="function">characterSetWithBitmapRepresentation</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aBitmap //apple_ref/occ/data/aBitmap" --><span class="var">aBitmap</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an autoreleased character set initialized from the given binary
+representation (wrapped by an SBData object).<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBCharacterSet/characterSetWithCharactersInString:;   name=SBCharacterSet::characterSetWithCharactersInString: -->
+<a name="//apple_ref/occ/clm/SBCharacterSet/characterSetWithCharactersInString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="characterSetWithCharactersInString:">characterSetWithCharactersInString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/characterSetWithCharactersInString //apple_ref/occ/clm/characterSetWithCharactersInString //apple_ref/occ/intfcm/characterSetWithCharactersInString //apple_ref/occ/intfm/characterSetWithCharactersInString //apple_ref/occ/func/characterSetWithCharactersInString //apple_ref/occ/ftmplt/characterSetWithCharactersInString //apple_ref/occ/defn/characterSetWithCharactersInString //apple_ref/occ/macro/characterSetWithCharactersInString" --><span class="function">characterSetWithCharactersInString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an autoreleased character set which contains all unique Unicode code
+points in the given string.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBCharacterSet/characterSetWithRange:;   name=SBCharacterSet::characterSetWithRange: -->
+<a name="//apple_ref/occ/clm/SBCharacterSet/characterSetWithRange:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="characterSetWithRange:">characterSetWithRange:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/characterSetWithRange //apple_ref/occ/clm/characterSetWithRange //apple_ref/occ/intfcm/characterSetWithRange //apple_ref/occ/intfm/characterSetWithRange //apple_ref/occ/func/characterSetWithRange //apple_ref/occ/ftmplt/characterSetWithRange //apple_ref/occ/defn/characterSetWithRange //apple_ref/occ/macro/characterSetWithRange" --><span class="function">characterSetWithRange</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/aRange //apple_ref/occ/data/aRange" --><span class="var">aRange</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an autoreleased character set which contains all Unicode code points
+in the given range.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBCharacterSet/invertedSet;   name=SBCharacterSet::invertedSet -->
+<a name="//apple_ref/occ/instm/SBCharacterSet/invertedSet"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="invertedSet">invertedSet</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/invertedSet //apple_ref/occ/data/invertedSet" --><span class="var">invertedSet</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an autoreleased copy of the receiver which has had its Unicode code point
+membership inverted.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBCharacterSet/isSupersetOfSet:;   name=SBCharacterSet::isSupersetOfSet: -->
+<a name="//apple_ref/occ/instm/SBCharacterSet/isSupersetOfSet:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isSupersetOfSet:">isSupersetOfSet:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/isSupersetOfSet //apple_ref/occ/clm/isSupersetOfSet //apple_ref/occ/intfcm/isSupersetOfSet //apple_ref/occ/intfm/isSupersetOfSet //apple_ref/occ/func/isSupersetOfSet //apple_ref/occ/ftmplt/isSupersetOfSet //apple_ref/occ/defn/isSupersetOfSet //apple_ref/occ/macro/isSupersetOfSet" --><span class="function">isSupersetOfSet</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherCharSet //apple_ref/occ/data/otherCharSet" --><span class="var">otherCharSet</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns YES if the receiver contains all Unicode code points also present in
+otherCharSet.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBCharacterSet/utf16CharacterIsMember:;   name=SBCharacterSet::utf16CharacterIsMember: -->
+<a name="//apple_ref/occ/instm/SBCharacterSet/utf16CharacterIsMember:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="utf16CharacterIsMember:">utf16CharacterIsMember:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBCharacterSet/utf16CharacterIsMember:Returns" --><p>utf16CharacterIsMember:  Returns<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/utf16CharacterIsMember //apple_ref/occ/clm/utf16CharacterIsMember //apple_ref/occ/intfcm/utf16CharacterIsMember //apple_ref/occ/intfm/utf16CharacterIsMember //apple_ref/occ/func/utf16CharacterIsMember //apple_ref/occ/ftmplt/utf16CharacterIsMember //apple_ref/occ/defn/utf16CharacterIsMember //apple_ref/occ/macro/utf16CharacterIsMember" --><span class="function">utf16CharacterIsMember</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/UChar //apple_ref/occ/tdef/UChar //apple_ref/occ/tag/UChar //apple_ref/occ/econst/UChar //apple_ref/occ/struct/UChar //apple_ref/occ/clconst/UChar //apple_ref/occ/intf/UChar" --><span class="type">UChar</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/aCharacter //apple_ref/occ/data/aCharacter" --><span class="var">aCharacter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>YES if the given UTF-16 character is contained in the receiver's set.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBCharacterSet/utf16CharacterIsMember:Returns;   name=SBCharacterSet::utf16CharacterIsMember:
+
+Returns -->
+<a name="//apple_ref/doc/title:instm/SBCharacterSet/utf16CharacterIsMember:Returns"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="utf16CharacterIsMember:Returns">utf16CharacterIsMember:
+
+Returns</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBCharacterSet/utf16CharacterIsMember:" --><p>utf16CharacterIsMember:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/utf16CharacterIsMember //apple_ref/occ/clm/utf16CharacterIsMember //apple_ref/occ/intfcm/utf16CharacterIsMember //apple_ref/occ/intfm/utf16CharacterIsMember //apple_ref/occ/func/utf16CharacterIsMember //apple_ref/occ/ftmplt/utf16CharacterIsMember //apple_ref/occ/defn/utf16CharacterIsMember //apple_ref/occ/macro/utf16CharacterIsMember" --><span class="function">utf16CharacterIsMember</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/UChar //apple_ref/occ/tdef/UChar //apple_ref/occ/tag/UChar //apple_ref/occ/econst/UChar //apple_ref/occ/struct/UChar //apple_ref/occ/clconst/UChar //apple_ref/occ/intf/UChar" --><span class="type">UChar</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/aCharacter //apple_ref/occ/data/aCharacter" --><span class="var">aCharacter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>YES if the given UTF-16 character is contained in the receiver's set.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBCharacterSet/utf32CharacterIsMember:;   name=SBCharacterSet::utf32CharacterIsMember: -->
+<a name="//apple_ref/occ/instm/SBCharacterSet/utf32CharacterIsMember:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="utf32CharacterIsMember:">utf32CharacterIsMember:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBCharacterSet/utf32CharacterIsMember:Returns" --><p>utf32CharacterIsMember:  Returns<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/utf32CharacterIsMember //apple_ref/occ/clm/utf32CharacterIsMember //apple_ref/occ/intfcm/utf32CharacterIsMember //apple_ref/occ/intfm/utf32CharacterIsMember //apple_ref/occ/func/utf32CharacterIsMember //apple_ref/occ/ftmplt/utf32CharacterIsMember //apple_ref/occ/defn/utf32CharacterIsMember //apple_ref/occ/macro/utf32CharacterIsMember" --><span class="function">utf32CharacterIsMember</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/UChar32 //apple_ref/occ/tdef/UChar32 //apple_ref/occ/tag/UChar32 //apple_ref/occ/econst/UChar32 //apple_ref/occ/struct/UChar32 //apple_ref/occ/clconst/UChar32 //apple_ref/occ/intf/UChar32" --><span class="type">UChar32</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/aCharacter //apple_ref/occ/data/aCharacter" --><span class="var">aCharacter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>YES if the given UTF-32 character is contained in the receiver's set.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBCharacterSet/utf32CharacterIsMember:Returns;   name=SBCharacterSet::utf32CharacterIsMember:
+
+Returns -->
+<a name="//apple_ref/doc/title:instm/SBCharacterSet/utf32CharacterIsMember:Returns"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="utf32CharacterIsMember:Returns">utf32CharacterIsMember:
+
+Returns</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBCharacterSet/utf32CharacterIsMember:" --><p>utf32CharacterIsMember:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/utf32CharacterIsMember //apple_ref/occ/clm/utf32CharacterIsMember //apple_ref/occ/intfcm/utf32CharacterIsMember //apple_ref/occ/intfm/utf32CharacterIsMember //apple_ref/occ/func/utf32CharacterIsMember //apple_ref/occ/ftmplt/utf32CharacterIsMember //apple_ref/occ/defn/utf32CharacterIsMember //apple_ref/occ/macro/utf32CharacterIsMember" --><span class="function">utf32CharacterIsMember</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/UChar32 //apple_ref/occ/tdef/UChar32 //apple_ref/occ/tag/UChar32 //apple_ref/occ/econst/UChar32 //apple_ref/occ/struct/UChar32 //apple_ref/occ/clconst/UChar32 //apple_ref/occ/intf/UChar32" --><span class="type">UChar32</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/aCharacter //apple_ref/occ/data/aCharacter" --><span class="var">aCharacter</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>YES if the given UTF-32 character is contained in the receiver's set.</p><!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

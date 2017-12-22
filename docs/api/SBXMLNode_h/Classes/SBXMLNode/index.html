@@ -1,0 +1,488 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBXMLNode</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBXMLNode;  name=SBXMLNode-->
+<a name="//apple_ref/occ/cl/SBXMLNode"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBXMLNode">SBXMLNode</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBXMLNode.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The root of a class cluster that is used to represent XML document pieces.  An
+SBXMLNode has a distinct sub-type ("kind") that identifies what sub-class models
+it, etc.
+</p>
+<p>All SBXMLNode objects have a subordinate relationship with a parent SBXMLNode, with
+the exception of SBXMLDocumentNode objects.  An SBXMLNode also has an index that
+identifies its position among any sibling nodes.
+</p>
+<p>The value of an SBXMLNode is subject to its kind.  For example, a node of type
+kSBXMLNodeKindAttribute stores its attribute value in this property as an SBString.
+</p>
+<p>SBXMLNode instances should not be allocated directly.  Always use the class factory
+methods to ensure that the appropriate SBXMLNode subclass is used.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/attributeNodeWithName:stringValue:" target="_top">+attributeNodeWithName:stringValue:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/attributeNodeWithName:stringValue:namespaceURI:" target="_top">+attributeNodeWithName:stringValue:namespaceURI:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/childNodeAtIndex:" target="_top">-childNodeAtIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/childNodeCount" target="_top">-childNodeCount</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/childNodes" target="_top">-childNodes</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/commentNodeWithStringValue:" target="_top">+commentNodeWithStringValue:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/detachFromParent" target="_top">-detachFromParent</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/documentNode" target="_top">+documentNode</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/documentNodeWithRootElement:" target="_top">+documentNodeWithRootElement:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:" target="_top">+elementNodeWithName:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:childNode:attributes:namespaceURI:" target="_top">+elementNodeWithName:childNode:attributes:namespaceURI:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:childNodes:attributes:namespaceURI:" target="_top">+elementNodeWithName:childNodes:attributes:namespaceURI:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:namespaceURI:" target="_top">+elementNodeWithName:namespaceURI:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:stringValue:" target="_top">+elementNodeWithName:stringValue:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:stringValue:namespaceURI:" target="_top">+elementNodeWithName:stringValue:namespaceURI:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/firstChild" target="_top">-firstChild</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/firstChildOfKind:" target="_top">-firstChildOfKind:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/namespaceNodeWithPrefix:stringValue:" target="_top">+namespaceNodeWithPrefix:stringValue:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/nextNode" target="_top">-nextNode</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/nextSiblingNode" target="_top">-nextSiblingNode</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/nodeIndex" target="_top">-nodeIndex</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/nodeKind" target="_top">-nodeKind</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/nodeName" target="_top">-nodeName</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/nodesForXPath:" target="_top">-nodesForXPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/nodeValue" target="_top">-nodeValue</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/parentNode" target="_top">-parentNode</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/previousNode" target="_top">-previousNode</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/previousSiblingNode" target="_top">-previousSiblingNode</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/processingInstructionNodeWithName:stringValue:" target="_top">+processingInstructionNodeWithName:stringValue:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/rootDocument" target="_top">-rootDocument</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/setNodeName:" target="_top">-setNodeName:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/setNodeValue:" target="_top">-setNodeValue:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/setStringValueOfNode:" target="_top">-setStringValueOfNode:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBXMLNode/stringValueOfNode" target="_top">-stringValueOfNode</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBXMLNode/textNodeWithStringValue:" target="_top">+textNodeWithStringValue:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/attributeNodeWithName:stringValue:;   name=SBXMLNode::attributeNodeWithName:stringValue: -->
+<a name="//apple_ref/occ/clm/SBXMLNode/attributeNodeWithName:stringValue:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="attributeNodeWithName:stringValue:">attributeNodeWithName:stringValue:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/attributeNodeWithName //apple_ref/occ/clm/attributeNodeWithName //apple_ref/occ/intfcm/attributeNodeWithName //apple_ref/occ/intfm/attributeNodeWithName //apple_ref/occ/func/attributeNodeWithName //apple_ref/occ/ftmplt/attributeNodeWithName //apple_ref/occ/defn/attributeNodeWithName //apple_ref/occ/macro/attributeNodeWithName" --><span class="function">attributeNodeWithName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">attribName</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/stringValue //apple_ref/occ/clm/stringValue //apple_ref/occ/intfcm/stringValue //apple_ref/occ/intfm/stringValue //apple_ref/occ/func/stringValue //apple_ref/occ/ftmplt/stringValue //apple_ref/occ/defn/stringValue //apple_ref/occ/macro/stringValue" --><span class="function">stringValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/stringValue //apple_ref/occ/data/stringValue" --><span class="var">stringValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an XML attribute node with the given unqualified name.  The node is assigned the
+specified stringValue.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/attributeNodeWithName:stringValue:namespaceURI:;   name=SBXMLNode::attributeNodeWithName:stringValue:namespaceURI: -->
+<a name="//apple_ref/occ/clm/SBXMLNode/attributeNodeWithName:stringValue:namespaceURI:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="attributeNodeWithName:stringValue:namespaceURI:">attributeNodeWithName:stringValue:namespaceURI:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/attributeNodeWithName //apple_ref/occ/clm/attributeNodeWithName //apple_ref/occ/intfcm/attributeNodeWithName //apple_ref/occ/intfm/attributeNodeWithName //apple_ref/occ/func/attributeNodeWithName //apple_ref/occ/ftmplt/attributeNodeWithName //apple_ref/occ/defn/attributeNodeWithName //apple_ref/occ/macro/attributeNodeWithName" --><span class="function">attributeNodeWithName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">attribName</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/stringValue //apple_ref/occ/clm/stringValue //apple_ref/occ/intfcm/stringValue //apple_ref/occ/intfm/stringValue //apple_ref/occ/func/stringValue //apple_ref/occ/ftmplt/stringValue //apple_ref/occ/defn/stringValue //apple_ref/occ/macro/stringValue" --><span class="function">stringValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">stringValue</span> <!-- a logicalPath="//apple_ref/occ/instm/namespaceURI //apple_ref/occ/clm/namespaceURI //apple_ref/occ/intfcm/namespaceURI //apple_ref/occ/intfm/namespaceURI //apple_ref/occ/func/namespaceURI //apple_ref/occ/ftmplt/namespaceURI //apple_ref/occ/defn/namespaceURI //apple_ref/occ/macro/namespaceURI" --><span class="function">namespaceURI</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/namespaceURI //apple_ref/occ/data/namespaceURI" --><span class="var">namespaceURI</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an XML attribute node with the given name qualified by the namespace URI.  The node
+is assigned the specified stringValue.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/childNodeAtIndex:;   name=SBXMLNode::childNodeAtIndex: -->
+<a name="//apple_ref/occ/instm/SBXMLNode/childNodeAtIndex:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="childNodeAtIndex:">childNodeAtIndex:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBXMLNode //apple_ref/occ/tdef/SBXMLNode //apple_ref/occ/tag/SBXMLNode //apple_ref/occ/econst/SBXMLNode //apple_ref/occ/struct/SBXMLNode //apple_ref/occ/clconst/SBXMLNode //apple_ref/occ/intf/SBXMLNode" --><span class="type">SBXMLNode</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/childNodeAtIndex //apple_ref/occ/clm/childNodeAtIndex //apple_ref/occ/intfcm/childNodeAtIndex //apple_ref/occ/intfm/childNodeAtIndex //apple_ref/occ/func/childNodeAtIndex //apple_ref/occ/ftmplt/childNodeAtIndex //apple_ref/occ/defn/childNodeAtIndex //apple_ref/occ/macro/childNodeAtIndex" --><span class="function">childNodeAtIndex</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the direct child node of the receiver with the given index in the
+sibling chain.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/childNodeCount;   name=SBXMLNode::childNodeCount -->
+<a name="//apple_ref/occ/instm/SBXMLNode/childNodeCount"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="childNodeCount">childNodeCount</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/childNodeCount //apple_ref/occ/data/childNodeCount" --><span class="var">childNodeCount</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the number of direct child nodes associated with the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/childNodes;   name=SBXMLNode::childNodes -->
+<a name="//apple_ref/occ/instm/SBXMLNode/childNodes"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="childNodes">childNodes</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/childNodes //apple_ref/occ/data/childNodes" --><span class="var">childNodes</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an array of the direct child nodes associated with the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/commentNodeWithStringValue:;   name=SBXMLNode::commentNodeWithStringValue: -->
+<a name="//apple_ref/occ/clm/SBXMLNode/commentNodeWithStringValue:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="commentNodeWithStringValue:">commentNodeWithStringValue:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/commentNodeWithStringValue //apple_ref/occ/clm/commentNodeWithStringValue //apple_ref/occ/intfcm/commentNodeWithStringValue //apple_ref/occ/intfm/commentNodeWithStringValue //apple_ref/occ/func/commentNodeWithStringValue //apple_ref/occ/ftmplt/commentNodeWithStringValue //apple_ref/occ/defn/commentNodeWithStringValue //apple_ref/occ/macro/commentNodeWithStringValue" --><span class="function">commentNodeWithStringValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/stringValue //apple_ref/occ/data/stringValue" --><span class="var">stringValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an XML comment node with the content given by stringValue.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/detachFromParent;   name=SBXMLNode::detachFromParent -->
+<a name="//apple_ref/occ/instm/SBXMLNode/detachFromParent"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="detachFromParent">detachFromParent</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/detachFromParent //apple_ref/occ/data/detachFromParent" --><span class="var">detachFromParent</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Remove the receiver from its parent node.  The receiver becomes unassociated with
+any SBXMLDocument, etc.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/documentNode;   name=SBXMLNode::documentNode -->
+<a name="//apple_ref/occ/clm/SBXMLNode/documentNode"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="documentNode">documentNode</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/documentNode //apple_ref/occ/data/documentNode" --><span class="var">documentNode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an empty XML document node (see SBXMLDocument).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/documentNodeWithRootElement:;   name=SBXMLNode::documentNodeWithRootElement: -->
+<a name="//apple_ref/occ/clm/SBXMLNode/documentNodeWithRootElement:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="documentNodeWithRootElement:">documentNodeWithRootElement:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/documentNodeWithRootElement //apple_ref/occ/clm/documentNodeWithRootElement //apple_ref/occ/intfcm/documentNodeWithRootElement //apple_ref/occ/intfm/documentNodeWithRootElement //apple_ref/occ/func/documentNodeWithRootElement //apple_ref/occ/ftmplt/documentNodeWithRootElement //apple_ref/occ/defn/documentNodeWithRootElement //apple_ref/occ/macro/documentNodeWithRootElement" --><span class="function">documentNodeWithRootElement</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBXMLElement //apple_ref/occ/tdef/SBXMLElement //apple_ref/occ/tag/SBXMLElement //apple_ref/occ/econst/SBXMLElement //apple_ref/occ/struct/SBXMLElement //apple_ref/occ/clconst/SBXMLElement //apple_ref/occ/intf/SBXMLElement" --><span class="type">SBXMLElement</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/docElement //apple_ref/occ/data/docElement" --><span class="var">docElement</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an XML document node (see SBXMLDocument) with docElement as its
+root element.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:;   name=SBXMLNode::elementNodeWithName: -->
+<a name="//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="elementNodeWithName:">elementNodeWithName:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/elementNodeWithName //apple_ref/occ/clm/elementNodeWithName //apple_ref/occ/intfcm/elementNodeWithName //apple_ref/occ/intfm/elementNodeWithName //apple_ref/occ/func/elementNodeWithName //apple_ref/occ/ftmplt/elementNodeWithName //apple_ref/occ/defn/elementNodeWithName //apple_ref/occ/macro/elementNodeWithName" --><span class="function">elementNodeWithName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/nodeName //apple_ref/occ/data/nodeName" --><span class="var">nodeName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an XML element node (see SBXMLElement) with the given unqualified name.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:childNode:attributes:namespaceURI:;   name=SBXMLNode::elementNodeWithName:childNode:attributes:namespaceURI: -->
+<a name="//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:childNode:attributes:namespaceURI:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="elementNodeWithName:childNode:attributes:namespaceURI:">elementNodeWithName:childNode:attributes:namespaceURI:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/elementNodeWithName //apple_ref/occ/clm/elementNodeWithName //apple_ref/occ/intfcm/elementNodeWithName //apple_ref/occ/intfm/elementNodeWithName //apple_ref/occ/func/elementNodeWithName //apple_ref/occ/ftmplt/elementNodeWithName //apple_ref/occ/defn/elementNodeWithName //apple_ref/occ/macro/elementNodeWithName" --><span class="function">elementNodeWithName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">nodeName</span> <!-- a logicalPath="//apple_ref/occ/instm/childNode //apple_ref/occ/clm/childNode //apple_ref/occ/intfcm/childNode //apple_ref/occ/intfm/childNode //apple_ref/occ/func/childNode //apple_ref/occ/ftmplt/childNode //apple_ref/occ/defn/childNode //apple_ref/occ/macro/childNode" --><span class="function">childNode</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBXMLNode //apple_ref/occ/tdef/SBXMLNode //apple_ref/occ/tag/SBXMLNode //apple_ref/occ/econst/SBXMLNode //apple_ref/occ/struct/SBXMLNode //apple_ref/occ/clconst/SBXMLNode //apple_ref/occ/intf/SBXMLNode" --><span class="type">SBXMLNode</span><!-- /a --><span class="type">*</span>)<span class="param">childNode</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/attributes //apple_ref/occ/clm/attributes //apple_ref/occ/intfcm/attributes //apple_ref/occ/intfm/attributes //apple_ref/occ/func/attributes //apple_ref/occ/ftmplt/attributes //apple_ref/occ/defn/attributes //apple_ref/occ/macro/attributes" --><span class="function">attributes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>)<span class="param">attributes</span> <!-- a logicalPath="//apple_ref/occ/instm/namespaceURI //apple_ref/occ/clm/namespaceURI //apple_ref/occ/intfcm/namespaceURI //apple_ref/occ/intfm/namespaceURI //apple_ref/occ/func/namespaceURI //apple_ref/occ/ftmplt/namespaceURI //apple_ref/occ/defn/namespaceURI //apple_ref/occ/macro/namespaceURI" --><span class="function">namespaceURI</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/namespaceURI //apple_ref/occ/data/namespaceURI" --><span class="var">namespaceURI</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an XML element node (see SBXMLElement) with the given name qualified
+by the namespace URI.  The node is configured to have the given set of attributes
+and a single childNode.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:childNodes:attributes:namespaceURI:;   name=SBXMLNode::elementNodeWithName:childNodes:attributes:namespaceURI: -->
+<a name="//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:childNodes:attributes:namespaceURI:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="elementNodeWithName:childNodes:attributes:namespaceURI:">elementNodeWithName:childNodes:attributes:namespaceURI:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/elementNodeWithName //apple_ref/occ/clm/elementNodeWithName //apple_ref/occ/intfcm/elementNodeWithName //apple_ref/occ/intfm/elementNodeWithName //apple_ref/occ/func/elementNodeWithName //apple_ref/occ/ftmplt/elementNodeWithName //apple_ref/occ/defn/elementNodeWithName //apple_ref/occ/macro/elementNodeWithName" --><span class="function">elementNodeWithName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --> <span class="type">*</span>)<span class="param">nodeName</span> <!-- a logicalPath="//apple_ref/occ/instm/childNodes //apple_ref/occ/clm/childNodes //apple_ref/occ/intfcm/childNodes //apple_ref/occ/intfm/childNodes //apple_ref/occ/func/childNodes //apple_ref/occ/ftmplt/childNodes //apple_ref/occ/defn/childNodes //apple_ref/occ/macro/childNodes" --><span class="function">childNodes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>)<span class="param">childNodes</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/attributes //apple_ref/occ/clm/attributes //apple_ref/occ/intfcm/attributes //apple_ref/occ/intfm/attributes //apple_ref/occ/func/attributes //apple_ref/occ/ftmplt/attributes //apple_ref/occ/defn/attributes //apple_ref/occ/macro/attributes" --><span class="function">attributes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>)<span class="param">attributes</span> <!-- a logicalPath="//apple_ref/occ/instm/namespaceURI //apple_ref/occ/clm/namespaceURI //apple_ref/occ/intfcm/namespaceURI //apple_ref/occ/intfm/namespaceURI //apple_ref/occ/func/namespaceURI //apple_ref/occ/ftmplt/namespaceURI //apple_ref/occ/defn/namespaceURI //apple_ref/occ/macro/namespaceURI" --><span class="function">namespaceURI</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/namespaceURI //apple_ref/occ/data/namespaceURI" --><span class="var">namespaceURI</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an XML element node (see SBXMLElement) with the given name qualified
+by the namespace URI.  The node is configured to have the given set of attributes
+and the children specified by the childNodes array.  The children will be ordered
+as they appear in the childNodes array.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:namespaceURI:;   name=SBXMLNode::elementNodeWithName:namespaceURI: -->
+<a name="//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:namespaceURI:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="elementNodeWithName:namespaceURI:">elementNodeWithName:namespaceURI:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/elementNodeWithName //apple_ref/occ/clm/elementNodeWithName //apple_ref/occ/intfcm/elementNodeWithName //apple_ref/occ/intfm/elementNodeWithName //apple_ref/occ/func/elementNodeWithName //apple_ref/occ/ftmplt/elementNodeWithName //apple_ref/occ/defn/elementNodeWithName //apple_ref/occ/macro/elementNodeWithName" --><span class="function">elementNodeWithName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">nodeName</span> <!-- a logicalPath="//apple_ref/occ/instm/namespaceURI //apple_ref/occ/clm/namespaceURI //apple_ref/occ/intfcm/namespaceURI //apple_ref/occ/intfm/namespaceURI //apple_ref/occ/func/namespaceURI //apple_ref/occ/ftmplt/namespaceURI //apple_ref/occ/defn/namespaceURI //apple_ref/occ/macro/namespaceURI" --><span class="function">namespaceURI</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/namespaceURI //apple_ref/occ/data/namespaceURI" --><span class="var">namespaceURI</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an XML element node (see SBXMLElement) with the given name qualified
+by the namespace URI.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:stringValue:;   name=SBXMLNode::elementNodeWithName:stringValue: -->
+<a name="//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:stringValue:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="elementNodeWithName:stringValue:">elementNodeWithName:stringValue:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/elementNodeWithName //apple_ref/occ/clm/elementNodeWithName //apple_ref/occ/intfcm/elementNodeWithName //apple_ref/occ/intfm/elementNodeWithName //apple_ref/occ/func/elementNodeWithName //apple_ref/occ/ftmplt/elementNodeWithName //apple_ref/occ/defn/elementNodeWithName //apple_ref/occ/macro/elementNodeWithName" --><span class="function">elementNodeWithName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">nodeName</span> <!-- a logicalPath="//apple_ref/occ/instm/stringValue //apple_ref/occ/clm/stringValue //apple_ref/occ/intfcm/stringValue //apple_ref/occ/intfm/stringValue //apple_ref/occ/func/stringValue //apple_ref/occ/ftmplt/stringValue //apple_ref/occ/defn/stringValue //apple_ref/occ/macro/stringValue" --><span class="function">stringValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/stringValue //apple_ref/occ/data/stringValue" --><span class="var">stringValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an XML element node (see SBXMLElement) with the given unqualified name.
+The value of the node is set to stringValue.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:stringValue:namespaceURI:;   name=SBXMLNode::elementNodeWithName:stringValue:namespaceURI: -->
+<a name="//apple_ref/occ/clm/SBXMLNode/elementNodeWithName:stringValue:namespaceURI:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="elementNodeWithName:stringValue:namespaceURI:">elementNodeWithName:stringValue:namespaceURI:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/elementNodeWithName //apple_ref/occ/clm/elementNodeWithName //apple_ref/occ/intfcm/elementNodeWithName //apple_ref/occ/intfm/elementNodeWithName //apple_ref/occ/func/elementNodeWithName //apple_ref/occ/ftmplt/elementNodeWithName //apple_ref/occ/defn/elementNodeWithName //apple_ref/occ/macro/elementNodeWithName" --><span class="function">elementNodeWithName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">nodeName</span> <!-- a logicalPath="//apple_ref/occ/instm/stringValue //apple_ref/occ/clm/stringValue //apple_ref/occ/intfcm/stringValue //apple_ref/occ/intfm/stringValue //apple_ref/occ/func/stringValue //apple_ref/occ/ftmplt/stringValue //apple_ref/occ/defn/stringValue //apple_ref/occ/macro/stringValue" --><span class="function">stringValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">stringValue</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/namespaceURI //apple_ref/occ/clm/namespaceURI //apple_ref/occ/intfcm/namespaceURI //apple_ref/occ/intfm/namespaceURI //apple_ref/occ/func/namespaceURI //apple_ref/occ/ftmplt/namespaceURI //apple_ref/occ/defn/namespaceURI //apple_ref/occ/macro/namespaceURI" --><span class="function">namespaceURI</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/namespaceURI //apple_ref/occ/data/namespaceURI" --><span class="var">namespaceURI</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an XML element node (see SBXMLElement) with the given name qualified
+by the namespace URI.  The value of the node is set to stringValue.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/firstChild;   name=SBXMLNode::firstChild -->
+<a name="//apple_ref/occ/instm/SBXMLNode/firstChild"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="firstChild">firstChild</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBXMLNode //apple_ref/occ/tdef/SBXMLNode //apple_ref/occ/tag/SBXMLNode //apple_ref/occ/econst/SBXMLNode //apple_ref/occ/struct/SBXMLNode //apple_ref/occ/clconst/SBXMLNode //apple_ref/occ/intf/SBXMLNode" --><span class="type">SBXMLNode</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/firstChild //apple_ref/occ/data/firstChild" --><span class="var">firstChild</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the direct child node of the receiver at index 0.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/firstChildOfKind:;   name=SBXMLNode::firstChildOfKind: -->
+<a name="//apple_ref/occ/instm/SBXMLNode/firstChildOfKind:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="firstChildOfKind:">firstChildOfKind:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBXMLNode //apple_ref/occ/tdef/SBXMLNode //apple_ref/occ/tag/SBXMLNode //apple_ref/occ/econst/SBXMLNode //apple_ref/occ/struct/SBXMLNode //apple_ref/occ/clconst/SBXMLNode //apple_ref/occ/intf/SBXMLNode" --><span class="type">SBXMLNode</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/firstChildOfKind //apple_ref/occ/clm/firstChildOfKind //apple_ref/occ/intfcm/firstChildOfKind //apple_ref/occ/intfm/firstChildOfKind //apple_ref/occ/func/firstChildOfKind //apple_ref/occ/ftmplt/firstChildOfKind //apple_ref/occ/defn/firstChildOfKind //apple_ref/occ/macro/firstChildOfKind" --><span class="function">firstChildOfKind</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBXMLNodeKind //apple_ref/occ/tdef/SBXMLNodeKind //apple_ref/occ/tag/SBXMLNodeKind //apple_ref/occ/econst/SBXMLNodeKind //apple_ref/occ/struct/SBXMLNodeKind //apple_ref/occ/clconst/SBXMLNodeKind //apple_ref/occ/intf/SBXMLNodeKind" --><span class="type">SBXMLNodeKind</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/nodeKind //apple_ref/occ/data/nodeKind" --><span class="var">nodeKind</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the lowest-index direct child node of the receiver that is of nodeKind.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/namespaceNodeWithPrefix:stringValue:;   name=SBXMLNode::namespaceNodeWithPrefix:stringValue: -->
+<a name="//apple_ref/occ/clm/SBXMLNode/namespaceNodeWithPrefix:stringValue:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="namespaceNodeWithPrefix:stringValue:">namespaceNodeWithPrefix:stringValue:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/namespaceNodeWithPrefix //apple_ref/occ/clm/namespaceNodeWithPrefix //apple_ref/occ/intfcm/namespaceNodeWithPrefix //apple_ref/occ/intfm/namespaceNodeWithPrefix //apple_ref/occ/func/namespaceNodeWithPrefix //apple_ref/occ/ftmplt/namespaceNodeWithPrefix //apple_ref/occ/defn/namespaceNodeWithPrefix //apple_ref/occ/macro/namespaceNodeWithPrefix" --><span class="function">namespaceNodeWithPrefix</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">prefix</span> <!-- a logicalPath="//apple_ref/occ/instm/stringValue //apple_ref/occ/clm/stringValue //apple_ref/occ/intfcm/stringValue //apple_ref/occ/intfm/stringValue //apple_ref/occ/func/stringValue //apple_ref/occ/ftmplt/stringValue //apple_ref/occ/defn/stringValue //apple_ref/occ/macro/stringValue" --><span class="function">stringValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/stringValue //apple_ref/occ/data/stringValue" --><span class="var">stringValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an XML namespace node for a namespace URI (as stringValue) with the given prefix.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/nextNode;   name=SBXMLNode::nextNode -->
+<a name="//apple_ref/occ/instm/SBXMLNode/nextNode"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="nextNode">nextNode</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBXMLNode //apple_ref/occ/tdef/SBXMLNode //apple_ref/occ/tag/SBXMLNode //apple_ref/occ/econst/SBXMLNode //apple_ref/occ/struct/SBXMLNode //apple_ref/occ/clconst/SBXMLNode //apple_ref/occ/intf/SBXMLNode" --><span class="type">SBXMLNode</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/nextNode //apple_ref/occ/data/nextNode" --><span class="var">nextNode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver is the last child of its parent, then the next sibling of the
+parent node is returned.  Otherwise, if the receiver has child nodes then the first
+child of the receiver is returned.  Failing that, the next sibling of the receiver
+is returned.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/nextSiblingNode;   name=SBXMLNode::nextSiblingNode -->
+<a name="//apple_ref/occ/instm/SBXMLNode/nextSiblingNode"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="nextSiblingNode">nextSiblingNode</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBXMLNode //apple_ref/occ/tdef/SBXMLNode //apple_ref/occ/tag/SBXMLNode //apple_ref/occ/econst/SBXMLNode //apple_ref/occ/struct/SBXMLNode //apple_ref/occ/clconst/SBXMLNode //apple_ref/occ/intf/SBXMLNode" --><span class="type">SBXMLNode</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/nextSiblingNode //apple_ref/occ/data/nextSiblingNode" --><span class="var">nextSiblingNode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver has a parent node, return the parent's child node that occurs
+after the receiver in the list of siblings.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/nodeIndex;   name=SBXMLNode::nodeIndex -->
+<a name="//apple_ref/occ/instm/SBXMLNode/nodeIndex"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="nodeIndex">nodeIndex</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/nodeIndex //apple_ref/occ/data/nodeIndex" --><span class="var">nodeIndex</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's index within its parent's array of children (i.e. its
+index in its chain of siblings).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/nodeKind;   name=SBXMLNode::nodeKind -->
+<a name="//apple_ref/occ/instm/SBXMLNode/nodeKind"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="nodeKind">nodeKind</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBXMLNodeKind //apple_ref/occ/tdef/SBXMLNodeKind //apple_ref/occ/tag/SBXMLNodeKind //apple_ref/occ/econst/SBXMLNodeKind //apple_ref/occ/struct/SBXMLNodeKind //apple_ref/occ/clconst/SBXMLNodeKind //apple_ref/occ/intf/SBXMLNodeKind" --><span class="type">SBXMLNodeKind</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/nodeKind //apple_ref/occ/data/nodeKind" --><span class="var">nodeKind</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's XML node kind. 
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/nodeName;   name=SBXMLNode::nodeName -->
+<a name="//apple_ref/occ/instm/SBXMLNode/nodeName"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="nodeName">nodeName</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/nodeName //apple_ref/occ/data/nodeName" --><span class="var">nodeName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the name of the receiver node.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/nodesForXPath:;   name=SBXMLNode::nodesForXPath: -->
+<a name="//apple_ref/occ/instm/SBXMLNode/nodesForXPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="nodesForXPath:">nodesForXPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/nodesForXPath //apple_ref/occ/clm/nodesForXPath //apple_ref/occ/intfcm/nodesForXPath //apple_ref/occ/intfm/nodesForXPath //apple_ref/occ/func/nodesForXPath //apple_ref/occ/ftmplt/nodesForXPath //apple_ref/occ/defn/nodesForXPath //apple_ref/occ/macro/nodesForXPath" --><span class="function">nodesForXPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/xPath //apple_ref/occ/data/xPath" --><span class="var">xPath</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Evaluates the given XML xpath relative to the receiver node and returns an array
+containing the affected XML nodes.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/nodeValue;   name=SBXMLNode::nodeValue -->
+<a name="//apple_ref/occ/instm/SBXMLNode/nodeValue"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="nodeValue">nodeValue</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/nodeValue //apple_ref/occ/data/nodeValue" --><span class="var">nodeValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the value associated with the receiver node.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/parentNode;   name=SBXMLNode::parentNode -->
+<a name="//apple_ref/occ/instm/SBXMLNode/parentNode"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="parentNode">parentNode</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBXMLNode //apple_ref/occ/tdef/SBXMLNode //apple_ref/occ/tag/SBXMLNode //apple_ref/occ/econst/SBXMLNode //apple_ref/occ/struct/SBXMLNode //apple_ref/occ/clconst/SBXMLNode //apple_ref/occ/intf/SBXMLNode" --><span class="type">SBXMLNode</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/parentNode //apple_ref/occ/data/parentNode" --><span class="var">parentNode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the parent node of the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/previousNode;   name=SBXMLNode::previousNode -->
+<a name="//apple_ref/occ/instm/SBXMLNode/previousNode"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="previousNode">previousNode</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBXMLNode //apple_ref/occ/tdef/SBXMLNode //apple_ref/occ/tag/SBXMLNode //apple_ref/occ/econst/SBXMLNode //apple_ref/occ/struct/SBXMLNode //apple_ref/occ/clconst/SBXMLNode //apple_ref/occ/intf/SBXMLNode" --><span class="type">SBXMLNode</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/previousNode //apple_ref/occ/data/previousNode" --><span class="var">previousNode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver is the first child of its parent, then the parent node is
+returned.  Otherwise, if the previous sibling has children, the last direct child
+of that sibling is returned.  Failing that, the previous sibling itself is
+returned.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/previousSiblingNode;   name=SBXMLNode::previousSiblingNode -->
+<a name="//apple_ref/occ/instm/SBXMLNode/previousSiblingNode"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="previousSiblingNode">previousSiblingNode</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBXMLNode //apple_ref/occ/tdef/SBXMLNode //apple_ref/occ/tag/SBXMLNode //apple_ref/occ/econst/SBXMLNode //apple_ref/occ/struct/SBXMLNode //apple_ref/occ/clconst/SBXMLNode //apple_ref/occ/intf/SBXMLNode" --><span class="type">SBXMLNode</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/previousSiblingNode //apple_ref/occ/data/previousSiblingNode" --><span class="var">previousSiblingNode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver has a parent node, return the parent's child node that occurs
+before the receiver in the list of siblings.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/processingInstructionNodeWithName:stringValue:;   name=SBXMLNode::processingInstructionNodeWithName:stringValue: -->
+<a name="//apple_ref/occ/clm/SBXMLNode/processingInstructionNodeWithName:stringValue:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="processingInstructionNodeWithName:stringValue:">processingInstructionNodeWithName:stringValue:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/processingInstructionNodeWithName //apple_ref/occ/clm/processingInstructionNodeWithName //apple_ref/occ/intfcm/processingInstructionNodeWithName //apple_ref/occ/intfm/processingInstructionNodeWithName //apple_ref/occ/func/processingInstructionNodeWithName //apple_ref/occ/ftmplt/processingInstructionNodeWithName //apple_ref/occ/defn/processingInstructionNodeWithName //apple_ref/occ/macro/processingInstructionNodeWithName" --><span class="function">processingInstructionNodeWithName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">piName</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/stringValue //apple_ref/occ/clm/stringValue //apple_ref/occ/intfcm/stringValue //apple_ref/occ/intfm/stringValue //apple_ref/occ/func/stringValue //apple_ref/occ/ftmplt/stringValue //apple_ref/occ/defn/stringValue //apple_ref/occ/macro/stringValue" --><span class="function">stringValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/stringValue //apple_ref/occ/data/stringValue" --><span class="var">stringValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an XML processing instruction node with the given unqualified name.  The node is assigned the
+specified stringValue.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/rootDocument;   name=SBXMLNode::rootDocument -->
+<a name="//apple_ref/occ/instm/SBXMLNode/rootDocument"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rootDocument">rootDocument</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBXMLDocument //apple_ref/occ/tdef/SBXMLDocument //apple_ref/occ/tag/SBXMLDocument //apple_ref/occ/econst/SBXMLDocument //apple_ref/occ/struct/SBXMLDocument //apple_ref/occ/clconst/SBXMLDocument //apple_ref/occ/intf/SBXMLDocument" --><span class="type">SBXMLDocument</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/rootDocument //apple_ref/occ/data/rootDocument" --><span class="var">rootDocument</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Traces back through the chain of parent nodes starting at the receiver until
+the SBXMLDocument that contains the receiver is found and returns it.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/setNodeName:;   name=SBXMLNode::setNodeName: -->
+<a name="//apple_ref/occ/instm/SBXMLNode/setNodeName:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setNodeName:">setNodeName:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setNodeName //apple_ref/occ/clm/setNodeName //apple_ref/occ/intfcm/setNodeName //apple_ref/occ/intfm/setNodeName //apple_ref/occ/func/setNodeName //apple_ref/occ/ftmplt/setNodeName //apple_ref/occ/defn/setNodeName //apple_ref/occ/macro/setNodeName" --><span class="function">setNodeName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/nodeName //apple_ref/occ/data/nodeName" --><span class="var">nodeName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Sets the name of the receiver node.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/setNodeValue:;   name=SBXMLNode::setNodeValue: -->
+<a name="//apple_ref/occ/instm/SBXMLNode/setNodeValue:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setNodeValue:">setNodeValue:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setNodeValue //apple_ref/occ/clm/setNodeValue //apple_ref/occ/intfcm/setNodeValue //apple_ref/occ/intfm/setNodeValue //apple_ref/occ/func/setNodeValue //apple_ref/occ/ftmplt/setNodeValue //apple_ref/occ/defn/setNodeValue //apple_ref/occ/macro/setNodeValue" --><span class="function">setNodeValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/nodeValue //apple_ref/occ/data/nodeValue" --><span class="var">nodeValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Sets the value associated with the receiver node.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/setStringValueOfNode:;   name=SBXMLNode::setStringValueOfNode: -->
+<a name="//apple_ref/occ/instm/SBXMLNode/setStringValueOfNode:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setStringValueOfNode:">setStringValueOfNode:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setStringValueOfNode //apple_ref/occ/clm/setStringValueOfNode //apple_ref/occ/intfcm/setStringValueOfNode //apple_ref/occ/intfm/setStringValueOfNode //apple_ref/occ/func/setStringValueOfNode //apple_ref/occ/ftmplt/setStringValueOfNode //apple_ref/occ/defn/setStringValueOfNode //apple_ref/occ/macro/setStringValueOfNode" --><span class="function">setStringValueOfNode</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/stringValue //apple_ref/occ/data/stringValue" --><span class="var">stringValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Set the value of the receiver node using the given stringValue.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBXMLNode/stringValueOfNode;   name=SBXMLNode::stringValueOfNode -->
+<a name="//apple_ref/occ/instm/SBXMLNode/stringValueOfNode"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringValueOfNode">stringValueOfNode</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/stringValueOfNode //apple_ref/occ/data/stringValueOfNode" --><span class="var">stringValueOfNode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Return the value of the receiver node if it is an SBString.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBXMLNode/textNodeWithStringValue:;   name=SBXMLNode::textNodeWithStringValue: -->
+<a name="//apple_ref/occ/clm/SBXMLNode/textNodeWithStringValue:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="textNodeWithStringValue:">textNodeWithStringValue:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/textNodeWithStringValue //apple_ref/occ/clm/textNodeWithStringValue //apple_ref/occ/intfcm/textNodeWithStringValue //apple_ref/occ/intfm/textNodeWithStringValue //apple_ref/occ/func/textNodeWithStringValue //apple_ref/occ/ftmplt/textNodeWithStringValue //apple_ref/occ/defn/textNodeWithStringValue //apple_ref/occ/macro/textNodeWithStringValue" --><span class="function">textNodeWithStringValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/stringValue //apple_ref/occ/data/stringValue" --><span class="var">stringValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an XML text node with the content given by stringValue.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

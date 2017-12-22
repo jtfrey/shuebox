@@ -1,0 +1,59 @@
+#import "SBFoundation.h"
+#import "SBCGI.h"
+
+@interface SBString(SBStringIntegerComparison)
+
+- (SBComparisonResult) compareByIntValue:(SBString*)otherString;
+
+@end
+
+@implementation SBString(SBStringIntegerComparison)
+
+  - (SBComparisonResult) compareByIntValue:(SBString*)otherString
+  {
+    int       myValue = [self intValue];
+    int       itsValue = [otherString intValue];
+    
+    if ( myValue == itsValue )
+      return SBOrderSame;
+    if ( myValue < itsValue )
+      return SBOrderAscending;
+    return SBOrderDescending;
+  }
+
+@end
+
+int
+main()
+{
+  SBAutoreleasePool*      pool = [[SBAutoreleasePool alloc] init];
+  SBOrderedSet*           aSet = [[SBOrderedSet alloc] initWithSelector:@selector(compareByIntValue:)];
+  
+  [aSet addObject:@"12"];
+  [aSet addObject:@"1"];
+  [aSet addObject:@"-8"];
+  [aSet addObject:@"1"];
+  [aSet addObject:@"3"];
+  [aSet addObject:@"2"];
+  
+  [aSet summarizeToStream:stdout];
+  
+  SBCGI*    cgi = [[SBCGI alloc] init];
+  SBDictionary*   d = [cgi queryArguments];
+  
+  if ( d ) {
+    [d summarizeToStream:stdout];
+  }
+  
+  SBMIMEType*   theType = [SBMIMEType mimeTypeWithString:@"text/html; charset=utf8;       bytes=8;  barf=\"yes\""];
+  
+  if ( theType )
+    [theType summarizeToStream:stdout];
+  
+  //
+  // Clear out autorelease:
+  //
+  [pool release];
+  
+  return 0;
+}

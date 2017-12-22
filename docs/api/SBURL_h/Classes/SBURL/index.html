@@ -1,0 +1,356 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBURL</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBURL;  name=SBURL-->
+<a name="//apple_ref/occ/cl/SBURL"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBURL">SBURL</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBURL.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Instances of SBURL break a string containing a URL into its component pieces
+(host name and port, scheme, etc).  The individual pieces may then be accessed
+using simple accessor methods.  A URL decomposes at first into
+</p>
+<p><scheme>:<resource specifier>
+</p>
+<p>The resource specifier then further decomposes in a scheme-specific way; the
+generic pieces of the resource specifier are
+</p>
+<p>((user)(:password)@)(hostname(:port))/(uri)
+</p>
+<p>The SBURL class also implements a very basic URL resource retrieval
+mechanism on top of the cURL library.  Basically, you can ask for the resource
+and/or any HTTP headers associated with the URL and you'll get back an SBData
+and/or SBMutableDictionary object, respectively.  The retrieval is not
+asynchronous so the calls will block while the cURL retrieves the URL.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/host" target="_top">-host</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/initWithFilePath:" target="_top">-initWithFilePath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/initWithScheme:host:uri:" target="_top">-initWithScheme:host:uri:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/initWithString:" target="_top">-initWithString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/isFilePathURL" target="_top">-isFilePathURL</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/loadResourceData:" target="_top">-loadResourceData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBURL/loadResourceData:" target="_top">-loadResourceData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/loadResourceData:headers:" target="_top">-loadResourceData:headers:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/loadResourceHeaders:" target="_top">-loadResourceHeaders:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/password" target="_top">-password</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/port" target="_top">-port</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/resourceSpecifier" target="_top">-resourceSpecifier</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/scheme" target="_top">-scheme</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/uri" target="_top">-uri</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBURL/urlWithFilePath:" target="_top">+urlWithFilePath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBURL/urlWithScheme:host:uri:" target="_top">+urlWithScheme:host:uri:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBURL/urlWithString:" target="_top">+urlWithString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBURL/user" target="_top">-user</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/host;   name=SBURL::host -->
+<a name="//apple_ref/occ/instm/SBURL/host"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="host">host</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/host //apple_ref/occ/data/host" --><span class="var">host</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a string containing the host that was found in the receiver's resource
+specifier, or nil if no host was included in the originating URL.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/initWithFilePath:;   name=SBURL::initWithFilePath: -->
+<a name="//apple_ref/occ/instm/SBURL/initWithFilePath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithFilePath:">initWithFilePath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithFilePath //apple_ref/occ/clm/initWithFilePath //apple_ref/occ/intfcm/initWithFilePath //apple_ref/occ/intfm/initWithFilePath //apple_ref/occ/func/initWithFilePath //apple_ref/occ/ftmplt/initWithFilePath //apple_ref/occ/defn/initWithFilePath //apple_ref/occ/macro/initWithFilePath" --><span class="function">initWithFilePath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/filepath //apple_ref/occ/data/filepath" --><span class="var">filepath</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Convenience method which calls-through as
+</p>
+<p>... initWithScheme:SBURLFileScheme host:nil uri:filepath]
+</p>
+<p>If the provided filepath begins with a character other than '/', then the path
+is taken to be relative to an arbitrary (but implicit) root path.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/initWithScheme:host:uri:;   name=SBURL::initWithScheme:host:uri: -->
+<a name="//apple_ref/occ/instm/SBURL/initWithScheme:host:uri:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithScheme:host:uri:">initWithScheme:host:uri:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithScheme //apple_ref/occ/clm/initWithScheme //apple_ref/occ/intfcm/initWithScheme //apple_ref/occ/intfm/initWithScheme //apple_ref/occ/func/initWithScheme //apple_ref/occ/ftmplt/initWithScheme //apple_ref/occ/defn/initWithScheme //apple_ref/occ/macro/initWithScheme" --><span class="function">initWithScheme</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">scheme</span> <!-- a logicalPath="//apple_ref/occ/instm/host //apple_ref/occ/clm/host //apple_ref/occ/intfcm/host //apple_ref/occ/intfm/host //apple_ref/occ/func/host //apple_ref/occ/ftmplt/host //apple_ref/occ/defn/host //apple_ref/occ/macro/host" --><span class="function">host</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">host</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/uri //apple_ref/occ/clm/uri //apple_ref/occ/intfcm/uri //apple_ref/occ/intfm/uri //apple_ref/occ/func/uri //apple_ref/occ/ftmplt/uri //apple_ref/occ/defn/uri //apple_ref/occ/macro/uri" --><span class="function">uri</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/uri //apple_ref/occ/data/uri" --><span class="var">uri</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes a newly-allocated instance according to the basic URL components
+provided.  Only the scheme is required to be non-nil:  the URI with scheme
+"file" and a nil host and uri is "file:///" and is perfectly valid.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/initWithString:;   name=SBURL::initWithString: -->
+<a name="//apple_ref/occ/instm/SBURL/initWithString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithString:">initWithString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithString //apple_ref/occ/clm/initWithString //apple_ref/occ/intfcm/initWithString //apple_ref/occ/intfm/initWithString //apple_ref/occ/func/initWithString //apple_ref/occ/ftmplt/initWithString //apple_ref/occ/defn/initWithString //apple_ref/occ/macro/initWithString" --><span class="function">initWithString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/urlString //apple_ref/occ/data/urlString" --><span class="var">urlString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes a newly-allocated instance by parsing the given urlString.  If urlString
+was not recognizable as a URL, the instance is released and nil is returned.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/isFilePathURL;   name=SBURL::isFilePathURL -->
+<a name="//apple_ref/occ/instm/SBURL/isFilePathURL"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isFilePathURL">isFilePathURL</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isFilePathURL //apple_ref/occ/data/isFilePathURL" --><span class="var">isFilePathURL</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver contains a URL in the "file" scheme.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/loadResourceData:;   name=SBURL::loadResourceData: -->
+<a name="//apple_ref/occ/instm/SBURL/loadResourceData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="loadResourceData:">loadResourceData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/loadResourceData //apple_ref/occ/clm/loadResourceData //apple_ref/occ/intfcm/loadResourceData //apple_ref/occ/intfm/loadResourceData //apple_ref/occ/func/loadResourceData //apple_ref/occ/ftmplt/loadResourceData //apple_ref/occ/defn/loadResourceData //apple_ref/occ/macro/loadResourceData" --><span class="function">loadResourceData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBMutableData //apple_ref/occ/tdef/SBMutableData //apple_ref/occ/tag/SBMutableData //apple_ref/occ/econst/SBMutableData //apple_ref/occ/struct/SBMutableData //apple_ref/occ/clconst/SBMutableData //apple_ref/occ/intf/SBMutableData" --><span class="type">SBMutableData</span><!-- /a --><span class="type">*</span><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/data //apple_ref/occ/data/data" --><span class="var">data</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Convenience method that calls-through as
+</p>
+<p>.. loadResourceData:data headers:NULL];
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBURL/loadResourceData:;   name=SBURL::loadResourceData: -->
+<a name="//apple_ref/doc/title:instm/SBURL/loadResourceData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="loadResourceData:">loadResourceData:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBURL/loadResourceData:headers:" --><p>loadResourceData:headers:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/loadResourceData //apple_ref/occ/clm/loadResourceData //apple_ref/occ/intfcm/loadResourceData //apple_ref/occ/intfm/loadResourceData //apple_ref/occ/func/loadResourceData //apple_ref/occ/ftmplt/loadResourceData //apple_ref/occ/defn/loadResourceData //apple_ref/occ/macro/loadResourceData" --><span class="function">loadResourceData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBMutableData //apple_ref/occ/tdef/SBMutableData //apple_ref/occ/tag/SBMutableData //apple_ref/occ/econst/SBMutableData //apple_ref/occ/struct/SBMutableData //apple_ref/occ/clconst/SBMutableData //apple_ref/occ/intf/SBMutableData" --><span class="type">SBMutableData</span><!-- /a --><span class="type">*</span><span class="type">*</span>)<span class="param">data</span> <!-- a logicalPath="//apple_ref/occ/instm/headers //apple_ref/occ/clm/headers //apple_ref/occ/intfcm/headers //apple_ref/occ/intfm/headers //apple_ref/occ/func/headers //apple_ref/occ/ftmplt/headers //apple_ref/occ/defn/headers //apple_ref/occ/macro/headers" --><span class="function">headers</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBMutableDictionary //apple_ref/occ/tdef/SBMutableDictionary //apple_ref/occ/tag/SBMutableDictionary //apple_ref/occ/econst/SBMutableDictionary //apple_ref/occ/struct/SBMutableDictionary //apple_ref/occ/clconst/SBMutableDictionary //apple_ref/occ/intf/SBMutableDictionary" --><span class="type">SBMutableDictionary</span><!-- /a --><span class="type">*</span><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/headers //apple_ref/occ/data/headers" --><span class="var">headers</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to load the resource data (and/or HTTP headers) associated with the receiver's
+URL.
+</p>
+<p>The "data" argument is a pointer to an SBMutableData instance -- the instance can a nil
+object, e.g.
+</p>
+<p>SBMutableData*       myData = nil;
+</p>
+<p>[aURL loadResourceData:&myData headers:NULL];
+</p>
+<p>in which case the loadResourceData: method will allocate an SBData object and
+return it at myData.  You can also allocate your own SBData instance and use
+it, e.g.
+</p>
+<p>SBMutableData*       myData = [[SBMutableData alloc] init];
+</p>
+<p>[aURL loadResourceData:&myData headers:NULL];
+</p>
+<p>If "data" is NULL then the receiver will _not_ attempt to retrieve the data associated
+with the resource (e.g. an HTTP HEADER request is performed instead).
+</p>
+<p>The "headers" argument works exactly like the "data" argument.  Pass NULL if you don't
+want the headers or a pointer to an SBMutableDictionary instance.  Again, the instance
+can be nil if you want loadResourceData:headers: to allocate the dictionary for you.
+</p>
+<p>An SBError object will be returned if the retrieval fails for any reason; if the
+retrieval was successful, nil is returned.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/loadResourceData:headers:;   name=SBURL::loadResourceData:headers: -->
+<a name="//apple_ref/occ/instm/SBURL/loadResourceData:headers:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="loadResourceData:headers:">loadResourceData:headers:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBURL/loadResourceData:" --><p>loadResourceData:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/loadResourceData //apple_ref/occ/clm/loadResourceData //apple_ref/occ/intfcm/loadResourceData //apple_ref/occ/intfm/loadResourceData //apple_ref/occ/func/loadResourceData //apple_ref/occ/ftmplt/loadResourceData //apple_ref/occ/defn/loadResourceData //apple_ref/occ/macro/loadResourceData" --><span class="function">loadResourceData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBMutableData //apple_ref/occ/tdef/SBMutableData //apple_ref/occ/tag/SBMutableData //apple_ref/occ/econst/SBMutableData //apple_ref/occ/struct/SBMutableData //apple_ref/occ/clconst/SBMutableData //apple_ref/occ/intf/SBMutableData" --><span class="type">SBMutableData</span><!-- /a --><span class="type">*</span><span class="type">*</span>)<span class="param">data</span> <!-- a logicalPath="//apple_ref/occ/instm/headers //apple_ref/occ/clm/headers //apple_ref/occ/intfcm/headers //apple_ref/occ/intfm/headers //apple_ref/occ/func/headers //apple_ref/occ/ftmplt/headers //apple_ref/occ/defn/headers //apple_ref/occ/macro/headers" --><span class="function">headers</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBMutableDictionary //apple_ref/occ/tdef/SBMutableDictionary //apple_ref/occ/tag/SBMutableDictionary //apple_ref/occ/econst/SBMutableDictionary //apple_ref/occ/struct/SBMutableDictionary //apple_ref/occ/clconst/SBMutableDictionary //apple_ref/occ/intf/SBMutableDictionary" --><span class="type">SBMutableDictionary</span><!-- /a --><span class="type">*</span><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/headers //apple_ref/occ/data/headers" --><span class="var">headers</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to load the resource data (and/or HTTP headers) associated with the receiver's
+URL.
+</p>
+<p>The "data" argument is a pointer to an SBMutableData instance -- the instance can a nil
+object, e.g.
+</p>
+<p>SBMutableData*       myData = nil;
+</p>
+<p>[aURL loadResourceData:&myData headers:NULL];
+</p>
+<p>in which case the loadResourceData: method will allocate an SBData object and
+return it at myData.  You can also allocate your own SBData instance and use
+it, e.g.
+</p>
+<p>SBMutableData*       myData = [[SBMutableData alloc] init];
+</p>
+<p>[aURL loadResourceData:&myData headers:NULL];
+</p>
+<p>If "data" is NULL then the receiver will _not_ attempt to retrieve the data associated
+with the resource (e.g. an HTTP HEADER request is performed instead).
+</p>
+<p>The "headers" argument works exactly like the "data" argument.  Pass NULL if you don't
+want the headers or a pointer to an SBMutableDictionary instance.  Again, the instance
+can be nil if you want loadResourceData:headers: to allocate the dictionary for you.
+</p>
+<p>An SBError object will be returned if the retrieval fails for any reason; if the
+retrieval was successful, nil is returned.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/loadResourceHeaders:;   name=SBURL::loadResourceHeaders: -->
+<a name="//apple_ref/occ/instm/SBURL/loadResourceHeaders:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="loadResourceHeaders:">loadResourceHeaders:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/loadResourceHeaders //apple_ref/occ/clm/loadResourceHeaders //apple_ref/occ/intfcm/loadResourceHeaders //apple_ref/occ/intfm/loadResourceHeaders //apple_ref/occ/func/loadResourceHeaders //apple_ref/occ/ftmplt/loadResourceHeaders //apple_ref/occ/defn/loadResourceHeaders //apple_ref/occ/macro/loadResourceHeaders" --><span class="function">loadResourceHeaders</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBMutableDictionary //apple_ref/occ/tdef/SBMutableDictionary //apple_ref/occ/tag/SBMutableDictionary //apple_ref/occ/econst/SBMutableDictionary //apple_ref/occ/struct/SBMutableDictionary //apple_ref/occ/clconst/SBMutableDictionary //apple_ref/occ/intf/SBMutableDictionary" --><span class="type">SBMutableDictionary</span><!-- /a --><span class="type">*</span><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/headers //apple_ref/occ/data/headers" --><span class="var">headers</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Convenience method that calls-through as
+</p>
+<p>.. loadResourceData:NULL headers:headers];
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/password;   name=SBURL::password -->
+<a name="//apple_ref/occ/instm/SBURL/password"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="password">password</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/password //apple_ref/occ/data/password" --><span class="var">password</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a string containing the password that was found in the receiver's resource
+specifier, or nil if no password was included in the originating URL.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/port;   name=SBURL::port -->
+<a name="//apple_ref/occ/instm/SBURL/port"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="port">port</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBNumber //apple_ref/occ/tdef/SBNumber //apple_ref/occ/tag/SBNumber //apple_ref/occ/econst/SBNumber //apple_ref/occ/struct/SBNumber //apple_ref/occ/clconst/SBNumber //apple_ref/occ/intf/SBNumber" --><span class="type">SBNumber</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/port //apple_ref/occ/data/port" --><span class="var">port</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an SBNumber containing the port number that was found in the receiver's resource
+specifier, or nil if no port number was included in the originating URL.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/resourceSpecifier;   name=SBURL::resourceSpecifier -->
+<a name="//apple_ref/occ/instm/SBURL/resourceSpecifier"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="resourceSpecifier">resourceSpecifier</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/resourceSpecifier //apple_ref/occ/data/resourceSpecifier" --><span class="var">resourceSpecifier</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a string containing the resource specifier portion of the receiver's URL.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/scheme;   name=SBURL::scheme -->
+<a name="//apple_ref/occ/instm/SBURL/scheme"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scheme">scheme</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/scheme //apple_ref/occ/data/scheme" --><span class="var">scheme</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a string containing the scheme portion of the receiver's URL.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/uri;   name=SBURL::uri -->
+<a name="//apple_ref/occ/instm/SBURL/uri"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="uri">uri</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/uri //apple_ref/occ/data/uri" --><span class="var">uri</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a string containing the URI that was found in the receiver's resource
+specifier, or nil if the originating URL contained no URI.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBURL/urlWithFilePath:;   name=SBURL::urlWithFilePath: -->
+<a name="//apple_ref/occ/clm/SBURL/urlWithFilePath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="urlWithFilePath:">urlWithFilePath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/urlWithFilePath //apple_ref/occ/clm/urlWithFilePath //apple_ref/occ/intfcm/urlWithFilePath //apple_ref/occ/intfm/urlWithFilePath //apple_ref/occ/func/urlWithFilePath //apple_ref/occ/ftmplt/urlWithFilePath //apple_ref/occ/defn/urlWithFilePath //apple_ref/occ/macro/urlWithFilePath" --><span class="function">urlWithFilePath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/filepath //apple_ref/occ/data/filepath" --><span class="var">filepath</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Convenience method which calls-through as
+</p>
+<p>... initWithScheme:SBURLFileScheme host:nil uri:filepath]
+</p>
+<p>If the provided filepath begins with a character other than '/', then the path
+is taken to be relative to an arbitrary (but implicit) root path.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBURL/urlWithScheme:host:uri:;   name=SBURL::urlWithScheme:host:uri: -->
+<a name="//apple_ref/occ/clm/SBURL/urlWithScheme:host:uri:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="urlWithScheme:host:uri:">urlWithScheme:host:uri:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/urlWithScheme //apple_ref/occ/clm/urlWithScheme //apple_ref/occ/intfcm/urlWithScheme //apple_ref/occ/intfm/urlWithScheme //apple_ref/occ/func/urlWithScheme //apple_ref/occ/ftmplt/urlWithScheme //apple_ref/occ/defn/urlWithScheme //apple_ref/occ/macro/urlWithScheme" --><span class="function">urlWithScheme</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">scheme</span> <!-- a logicalPath="//apple_ref/occ/instm/host //apple_ref/occ/clm/host //apple_ref/occ/intfcm/host //apple_ref/occ/intfm/host //apple_ref/occ/func/host //apple_ref/occ/ftmplt/host //apple_ref/occ/defn/host //apple_ref/occ/macro/host" --><span class="function">host</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">host</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/uri //apple_ref/occ/clm/uri //apple_ref/occ/intfcm/uri //apple_ref/occ/intfm/uri //apple_ref/occ/func/uri //apple_ref/occ/ftmplt/uri //apple_ref/occ/defn/uri //apple_ref/occ/macro/uri" --><span class="function">uri</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/uri //apple_ref/occ/data/uri" --><span class="var">uri</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance initialized according to the basic URL components
+provided.  Only the scheme is required to be non-nil:  the URI with scheme
+"file" and a nil host and uri is "file:///" and is perfectly valid.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBURL/urlWithString:;   name=SBURL::urlWithString: -->
+<a name="//apple_ref/occ/clm/SBURL/urlWithString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="urlWithString:">urlWithString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/urlWithString //apple_ref/occ/clm/urlWithString //apple_ref/occ/intfcm/urlWithString //apple_ref/occ/intfm/urlWithString //apple_ref/occ/func/urlWithString //apple_ref/occ/ftmplt/urlWithString //apple_ref/occ/defn/urlWithString //apple_ref/occ/macro/urlWithString" --><span class="function">urlWithString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/urlString //apple_ref/occ/data/urlString" --><span class="var">urlString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance initialized by parsing the given urlString.
+If urlString was not recognizable as a URL, nil is returned.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBURL/user;   name=SBURL::user -->
+<a name="//apple_ref/occ/instm/SBURL/user"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="user">user</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/user //apple_ref/occ/data/user" --><span class="var">user</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a string containing the user that was found in the receiver's resource
+specifier, or nil if no user was included in the originating URL.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBTimer</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBTimer;  name=SBTimer-->
+<a name="//apple_ref/occ/cl/SBTimer"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBTimer">SBTimer</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBTimer.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>You use the SBTimer class to create timer objects or, more simply, timers.  A timer waits until a certain time
+interval has elapsed and then fires, sending a specified message to a target object.
+</p>
+<p>Timers work in conjunction with run loops.  To use a timer effectively, you should be aware of how run loops
+operate — see SBRunLoop.  Note in particular that run loops retain their timers, so you can release a timer
+after you have added it to a run loop.
+</p>
+<p>A timer is not a real-time mechanism; it fires only when one of the run loop modes to which the timer has been
+added is running and able to check if the timer’s firing time has passed.  Because of the various input sources
+a typical run loop manages, the effective resolution of the time interval for a timer is limited.  If a timer’s
+firing time occurs during a long callout or while the run loop is in a mode that is not monitoring the timer,
+the timer does not fire until the next time the run loop checks the timer.  Therefore, the actual time at which
+the timer fires potentially can be a significant period of time after the scheduled firing time.
+</p>
+<p>REPEATING TIMERS
+</p>
+<p>You specify whether a timer is repeating or non-repeating at creation time.  A non-repeating timer fires once and
+then invalidates itself automatically, thereby preventing the timer from firing again.  By contrast, a repeating
+timer fires and then reschedules itself on the same run loop.
+</p>
+<p>A repeating timer always schedules itself based on the scheduled firing time, as opposed to the actual firing time.
+For example, if a timer is scheduled to fire at a particular time and every 5 seconds after that, the scheduled
+firing time will always fall on the original 5 second time intervals, even if the actual firing time gets delayed.
+If the firing time is delayed so far that it passes one or more of the scheduled firing times, the timer is fired
+only once for that time period; the timer is then rescheduled, after firing, for the next scheduled firing time in
+the future.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTimer/fire" target="_top">-fire</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTimer/fireDate" target="_top">-fireDate</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTimer/initWithFireDate:interval:target:selector:userInfo:repeats:" target="_top">-initWithFireDate:interval:target:selector:userInfo:repeats:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTimer/invalidate" target="_top">-invalidate</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTimer/isValid" target="_top">-isValid</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBTimer/scheduledTimerWithFireDate:target:selector:userInfo:" target="_top">+scheduledTimerWithFireDate:target:selector:userInfo:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBTimer/scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:" target="_top">+scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTimer/setFireDate:" target="_top">-setFireDate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTimer/timeInterval" target="_top">-timeInterval</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBTimer/timerWithFireDate:target:selector:userInfo:" target="_top">+timerWithFireDate:target:selector:userInfo:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBTimer/timerWithTimeInterval:target:selector:userInfo:repeats:" target="_top">+timerWithTimeInterval:target:selector:userInfo:repeats:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTimer/userInfo" target="_top">-userInfo</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTimer/fire;   name=SBTimer::fire -->
+<a name="//apple_ref/occ/instm/SBTimer/fire"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fire">fire</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/fire //apple_ref/occ/data/fire" --><span class="var">fire</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver is scheduled, fire it immediately (regardless of the scheduled time) and
+reschedule if it repeates.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTimer/fireDate;   name=SBTimer::fireDate -->
+<a name="//apple_ref/occ/instm/SBTimer/fireDate"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fireDate">fireDate</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/fireDate //apple_ref/occ/data/fireDate" --><span class="var">fireDate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the date and time at which the receiver will next fire.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTimer/initWithFireDate:interval:target:selector:userInfo:repeats:;   name=SBTimer::initWithFireDate:interval:target:selector:userInfo:repeats: -->
+<a name="//apple_ref/occ/instm/SBTimer/initWithFireDate:interval:target:selector:userInfo:repeats:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithFireDate:interval:target:selector:userInfo:repeats:">initWithFireDate:interval:target:selector:userInfo:repeats:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithFireDate //apple_ref/occ/clm/initWithFireDate //apple_ref/occ/intfcm/initWithFireDate //apple_ref/occ/intfm/initWithFireDate //apple_ref/occ/func/initWithFireDate //apple_ref/occ/ftmplt/initWithFireDate //apple_ref/occ/defn/initWithFireDate //apple_ref/occ/macro/initWithFireDate" --><span class="function">initWithFireDate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>)<span class="param">aDate</span> <!-- a logicalPath="//apple_ref/occ/instm/interval //apple_ref/occ/clm/interval //apple_ref/occ/intfcm/interval //apple_ref/occ/intfm/interval //apple_ref/occ/func/interval //apple_ref/occ/ftmplt/interval //apple_ref/occ/defn/interval //apple_ref/occ/macro/interval" --><span class="function">interval</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBTimeInterval //apple_ref/occ/tdef/SBTimeInterval //apple_ref/occ/tag/SBTimeInterval //apple_ref/occ/econst/SBTimeInterval //apple_ref/occ/struct/SBTimeInterval //apple_ref/occ/clconst/SBTimeInterval //apple_ref/occ/intf/SBTimeInterval" --><span class="type">SBTimeInterval</span><!-- /a --><span class="type">*</span>)<span class="param">theTimeInterval</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/target //apple_ref/occ/clm/target //apple_ref/occ/intfcm/target //apple_ref/occ/intfm/target //apple_ref/occ/func/target //apple_ref/occ/ftmplt/target //apple_ref/occ/defn/target //apple_ref/occ/macro/target" --><span class="function">target</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">target</span> <!-- a logicalPath="//apple_ref/occ/instm/selector //apple_ref/occ/clm/selector //apple_ref/occ/intfcm/selector //apple_ref/occ/intfm/selector //apple_ref/occ/func/selector //apple_ref/occ/ftmplt/selector //apple_ref/occ/defn/selector //apple_ref/occ/macro/selector" --><span class="function">selector</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SEL //apple_ref/occ/tdef/SEL //apple_ref/occ/tag/SEL //apple_ref/occ/econst/SEL //apple_ref/occ/struct/SEL //apple_ref/occ/clconst/SEL //apple_ref/occ/intf/SEL" --><span class="type">SEL</span><!-- /a -->)<span class="param">selector</span> <!-- a logicalPath="//apple_ref/occ/instm/userInfo //apple_ref/occ/clm/userInfo //apple_ref/occ/intfcm/userInfo //apple_ref/occ/intfm/userInfo //apple_ref/occ/func/userInfo //apple_ref/occ/ftmplt/userInfo //apple_ref/occ/defn/userInfo //apple_ref/occ/macro/userInfo" --><span class="function">userInfo</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">userInfo</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/repeats //apple_ref/occ/clm/repeats //apple_ref/occ/intfcm/repeats //apple_ref/occ/intfm/repeats //apple_ref/occ/func/repeats //apple_ref/occ/ftmplt/repeats //apple_ref/occ/defn/repeats //apple_ref/occ/macro/repeats" --><span class="function">repeats</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/repeats //apple_ref/occ/data/repeats" --><span class="var">repeats</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes the receiver to invoke the method indicated by selector on target; the method must take a single argument of
+type id:
+</p>
+<p>- (void) methodFiredByTimer:(id)argument
+</p>
+<p>If aDate is not nil, then the invocation will happen on or after that date and time.  If theTimeInterval is also not
+nil and repeats is YES, then the receiver will reschedule on that interval forward from aDate.
+</p>
+<p>If aDate is nil, then theTimeInterval must be non-nil.  The firing date is calculated by adding theTimeInterval to the
+current date and time, and the value of repeats indicates whether or not the receiver fires once or periodically.
+</p>
+<p>The target and userInfo objects are retained by the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTimer/invalidate;   name=SBTimer::invalidate -->
+<a name="//apple_ref/occ/instm/SBTimer/invalidate"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="invalidate">invalidate</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/invalidate //apple_ref/occ/data/invalidate" --><span class="var">invalidate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Immediately mark the receiver as no longer scheduled and prevent it from firing again.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTimer/isValid;   name=SBTimer::isValid -->
+<a name="//apple_ref/occ/instm/SBTimer/isValid"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isValid">isValid</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isValid //apple_ref/occ/data/isValid" --><span class="var">isValid</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver is currently scheduled to fire at some time in the future.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBTimer/scheduledTimerWithFireDate:target:selector:userInfo:;   name=SBTimer::scheduledTimerWithFireDate:target:selector:userInfo: -->
+<a name="//apple_ref/occ/clm/SBTimer/scheduledTimerWithFireDate:target:selector:userInfo:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scheduledTimerWithFireDate:target:selector:userInfo:">scheduledTimerWithFireDate:target:selector:userInfo:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBTimer //apple_ref/occ/tdef/SBTimer //apple_ref/occ/tag/SBTimer //apple_ref/occ/econst/SBTimer //apple_ref/occ/struct/SBTimer //apple_ref/occ/clconst/SBTimer //apple_ref/occ/intf/SBTimer" --><span class="type">SBTimer</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/scheduledTimerWithFireDate //apple_ref/occ/clm/scheduledTimerWithFireDate //apple_ref/occ/intfcm/scheduledTimerWithFireDate //apple_ref/occ/intfm/scheduledTimerWithFireDate //apple_ref/occ/func/scheduledTimerWithFireDate //apple_ref/occ/ftmplt/scheduledTimerWithFireDate //apple_ref/occ/defn/scheduledTimerWithFireDate //apple_ref/occ/macro/scheduledTimerWithFireDate" --><span class="function">scheduledTimerWithFireDate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>)<span class="param">aDate</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/target //apple_ref/occ/clm/target //apple_ref/occ/intfcm/target //apple_ref/occ/intfm/target //apple_ref/occ/func/target //apple_ref/occ/ftmplt/target //apple_ref/occ/defn/target //apple_ref/occ/macro/target" --><span class="function">target</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">target</span> <!-- a logicalPath="//apple_ref/occ/instm/selector //apple_ref/occ/clm/selector //apple_ref/occ/intfcm/selector //apple_ref/occ/intfm/selector //apple_ref/occ/func/selector //apple_ref/occ/ftmplt/selector //apple_ref/occ/defn/selector //apple_ref/occ/macro/selector" --><span class="function">selector</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SEL //apple_ref/occ/tdef/SEL //apple_ref/occ/tag/SEL //apple_ref/occ/econst/SEL //apple_ref/occ/struct/SEL //apple_ref/occ/clconst/SEL //apple_ref/occ/intf/SEL" --><span class="type">SEL</span><!-- /a -->)<span class="param">selector</span> <!-- a logicalPath="//apple_ref/occ/instm/userInfo //apple_ref/occ/clm/userInfo //apple_ref/occ/intfcm/userInfo //apple_ref/occ/intfm/userInfo //apple_ref/occ/func/userInfo //apple_ref/occ/ftmplt/userInfo //apple_ref/occ/defn/userInfo //apple_ref/occ/macro/userInfo" --><span class="function">userInfo</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/userInfo //apple_ref/occ/data/userInfo" --><span class="var">userInfo</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance scheduled in the current runloop that will fire on the specified date, invoking
+the given selector on the target object.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBTimer/scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:;   name=SBTimer::scheduledTimerWithTimeInterval:target:selector:userInfo:repeats: -->
+<a name="//apple_ref/occ/clm/SBTimer/scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:">scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBTimer //apple_ref/occ/tdef/SBTimer //apple_ref/occ/tag/SBTimer //apple_ref/occ/econst/SBTimer //apple_ref/occ/struct/SBTimer //apple_ref/occ/clconst/SBTimer //apple_ref/occ/intf/SBTimer" --><span class="type">SBTimer</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/scheduledTimerWithTimeInterval //apple_ref/occ/clm/scheduledTimerWithTimeInterval //apple_ref/occ/intfcm/scheduledTimerWithTimeInterval //apple_ref/occ/intfm/scheduledTimerWithTimeInterval //apple_ref/occ/func/scheduledTimerWithTimeInterval //apple_ref/occ/ftmplt/scheduledTimerWithTimeInterval //apple_ref/occ/defn/scheduledTimerWithTimeInterval //apple_ref/occ/macro/scheduledTimerWithTimeInterval" --><span class="function">scheduledTimerWithTimeInterval</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBTimeInterval //apple_ref/occ/tdef/SBTimeInterval //apple_ref/occ/tag/SBTimeInterval //apple_ref/occ/econst/SBTimeInterval //apple_ref/occ/struct/SBTimeInterval //apple_ref/occ/clconst/SBTimeInterval //apple_ref/occ/intf/SBTimeInterval" --><span class="type">SBTimeInterval</span><!-- /a --><span class="type">*</span>)<span class="param">theTimeInterval</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/target //apple_ref/occ/clm/target //apple_ref/occ/intfcm/target //apple_ref/occ/intfm/target //apple_ref/occ/func/target //apple_ref/occ/ftmplt/target //apple_ref/occ/defn/target //apple_ref/occ/macro/target" --><span class="function">target</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">target</span> <!-- a logicalPath="//apple_ref/occ/instm/selector //apple_ref/occ/clm/selector //apple_ref/occ/intfcm/selector //apple_ref/occ/intfm/selector //apple_ref/occ/func/selector //apple_ref/occ/ftmplt/selector //apple_ref/occ/defn/selector //apple_ref/occ/macro/selector" --><span class="function">selector</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SEL //apple_ref/occ/tdef/SEL //apple_ref/occ/tag/SEL //apple_ref/occ/econst/SEL //apple_ref/occ/struct/SEL //apple_ref/occ/clconst/SEL //apple_ref/occ/intf/SEL" --><span class="type">SEL</span><!-- /a -->)<span class="param">selector</span> <!-- a logicalPath="//apple_ref/occ/instm/userInfo //apple_ref/occ/clm/userInfo //apple_ref/occ/intfcm/userInfo //apple_ref/occ/intfm/userInfo //apple_ref/occ/func/userInfo //apple_ref/occ/ftmplt/userInfo //apple_ref/occ/defn/userInfo //apple_ref/occ/macro/userInfo" --><span class="function">userInfo</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">userInfo</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/repeats //apple_ref/occ/clm/repeats //apple_ref/occ/intfcm/repeats //apple_ref/occ/intfm/repeats //apple_ref/occ/func/repeats //apple_ref/occ/ftmplt/repeats //apple_ref/occ/defn/repeats //apple_ref/occ/macro/repeats" --><span class="function">repeats</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/repeats //apple_ref/occ/data/repeats" --><span class="var">repeats</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance scheduled in the current runloop that will fire after the given time interval,
+invoking the given selector on the target object.  If repeats is YES, the timer will repeatedly fire on the given
+time interval.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTimer/setFireDate:;   name=SBTimer::setFireDate: -->
+<a name="//apple_ref/occ/instm/SBTimer/setFireDate:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setFireDate:">setFireDate:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setFireDate //apple_ref/occ/clm/setFireDate //apple_ref/occ/intfcm/setFireDate //apple_ref/occ/intfm/setFireDate //apple_ref/occ/func/setFireDate //apple_ref/occ/ftmplt/setFireDate //apple_ref/occ/defn/setFireDate //apple_ref/occ/macro/setFireDate" --><span class="function">setFireDate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/fireDate //apple_ref/occ/data/fireDate" --><span class="var">fireDate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the timer has not been invalidated, changes the date and time at which
+the receiver will next fire.  If fireDate has passed, then the receiver
+fires immediately and reschedules if set to repeat.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTimer/timeInterval;   name=SBTimer::timeInterval -->
+<a name="//apple_ref/occ/instm/SBTimer/timeInterval"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="timeInterval">timeInterval</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBTimeInterval //apple_ref/occ/tdef/SBTimeInterval //apple_ref/occ/tag/SBTimeInterval //apple_ref/occ/econst/SBTimeInterval //apple_ref/occ/struct/SBTimeInterval //apple_ref/occ/clconst/SBTimeInterval //apple_ref/occ/intf/SBTimeInterval" --><span class="type">SBTimeInterval</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/timeInterval //apple_ref/occ/data/timeInterval" --><span class="var">timeInterval</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the time interval used by the receiver when rescheduling itself after
+firing.  Returns nil if the receiver does not repeat.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBTimer/timerWithFireDate:target:selector:userInfo:;   name=SBTimer::timerWithFireDate:target:selector:userInfo: -->
+<a name="//apple_ref/occ/clm/SBTimer/timerWithFireDate:target:selector:userInfo:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="timerWithFireDate:target:selector:userInfo:">timerWithFireDate:target:selector:userInfo:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBTimer //apple_ref/occ/tdef/SBTimer //apple_ref/occ/tag/SBTimer //apple_ref/occ/econst/SBTimer //apple_ref/occ/struct/SBTimer //apple_ref/occ/clconst/SBTimer //apple_ref/occ/intf/SBTimer" --><span class="type">SBTimer</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/timerWithFireDate //apple_ref/occ/clm/timerWithFireDate //apple_ref/occ/intfcm/timerWithFireDate //apple_ref/occ/intfm/timerWithFireDate //apple_ref/occ/func/timerWithFireDate //apple_ref/occ/ftmplt/timerWithFireDate //apple_ref/occ/defn/timerWithFireDate //apple_ref/occ/macro/timerWithFireDate" --><span class="function">timerWithFireDate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>)<span class="param">aDate</span> <!-- a logicalPath="//apple_ref/occ/instm/target //apple_ref/occ/clm/target //apple_ref/occ/intfcm/target //apple_ref/occ/intfm/target //apple_ref/occ/func/target //apple_ref/occ/ftmplt/target //apple_ref/occ/defn/target //apple_ref/occ/macro/target" --><span class="function">target</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">target</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/selector //apple_ref/occ/clm/selector //apple_ref/occ/intfcm/selector //apple_ref/occ/intfm/selector //apple_ref/occ/func/selector //apple_ref/occ/ftmplt/selector //apple_ref/occ/defn/selector //apple_ref/occ/macro/selector" --><span class="function">selector</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SEL //apple_ref/occ/tdef/SEL //apple_ref/occ/tag/SEL //apple_ref/occ/econst/SEL //apple_ref/occ/struct/SEL //apple_ref/occ/clconst/SEL //apple_ref/occ/intf/SEL" --><span class="type">SEL</span><!-- /a -->)<span class="param">selector</span> <!-- a logicalPath="//apple_ref/occ/instm/userInfo //apple_ref/occ/clm/userInfo //apple_ref/occ/intfcm/userInfo //apple_ref/occ/intfm/userInfo //apple_ref/occ/func/userInfo //apple_ref/occ/ftmplt/userInfo //apple_ref/occ/defn/userInfo //apple_ref/occ/macro/userInfo" --><span class="function">userInfo</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/userInfo //apple_ref/occ/data/userInfo" --><span class="var">userInfo</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance that will fire on the specified date, invoking the given selector on the target
+object.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBTimer/timerWithTimeInterval:target:selector:userInfo:repeats:;   name=SBTimer::timerWithTimeInterval:target:selector:userInfo:repeats: -->
+<a name="//apple_ref/occ/clm/SBTimer/timerWithTimeInterval:target:selector:userInfo:repeats:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="timerWithTimeInterval:target:selector:userInfo:repeats:">timerWithTimeInterval:target:selector:userInfo:repeats:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBTimer //apple_ref/occ/tdef/SBTimer //apple_ref/occ/tag/SBTimer //apple_ref/occ/econst/SBTimer //apple_ref/occ/struct/SBTimer //apple_ref/occ/clconst/SBTimer //apple_ref/occ/intf/SBTimer" --><span class="type">SBTimer</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/timerWithTimeInterval //apple_ref/occ/clm/timerWithTimeInterval //apple_ref/occ/intfcm/timerWithTimeInterval //apple_ref/occ/intfm/timerWithTimeInterval //apple_ref/occ/func/timerWithTimeInterval //apple_ref/occ/ftmplt/timerWithTimeInterval //apple_ref/occ/defn/timerWithTimeInterval //apple_ref/occ/macro/timerWithTimeInterval" --><span class="function">timerWithTimeInterval</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBTimeInterval //apple_ref/occ/tdef/SBTimeInterval //apple_ref/occ/tag/SBTimeInterval //apple_ref/occ/econst/SBTimeInterval //apple_ref/occ/struct/SBTimeInterval //apple_ref/occ/clconst/SBTimeInterval //apple_ref/occ/intf/SBTimeInterval" --><span class="type">SBTimeInterval</span><!-- /a --><span class="type">*</span>)<span class="param">theTimeInterval</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/target //apple_ref/occ/clm/target //apple_ref/occ/intfcm/target //apple_ref/occ/intfm/target //apple_ref/occ/func/target //apple_ref/occ/ftmplt/target //apple_ref/occ/defn/target //apple_ref/occ/macro/target" --><span class="function">target</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">target</span> <!-- a logicalPath="//apple_ref/occ/instm/selector //apple_ref/occ/clm/selector //apple_ref/occ/intfcm/selector //apple_ref/occ/intfm/selector //apple_ref/occ/func/selector //apple_ref/occ/ftmplt/selector //apple_ref/occ/defn/selector //apple_ref/occ/macro/selector" --><span class="function">selector</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SEL //apple_ref/occ/tdef/SEL //apple_ref/occ/tag/SEL //apple_ref/occ/econst/SEL //apple_ref/occ/struct/SEL //apple_ref/occ/clconst/SEL //apple_ref/occ/intf/SEL" --><span class="type">SEL</span><!-- /a -->)<span class="param">selector</span> <!-- a logicalPath="//apple_ref/occ/instm/userInfo //apple_ref/occ/clm/userInfo //apple_ref/occ/intfcm/userInfo //apple_ref/occ/intfm/userInfo //apple_ref/occ/func/userInfo //apple_ref/occ/ftmplt/userInfo //apple_ref/occ/defn/userInfo //apple_ref/occ/macro/userInfo" --><span class="function">userInfo</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">userInfo</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/repeats //apple_ref/occ/clm/repeats //apple_ref/occ/intfcm/repeats //apple_ref/occ/intfm/repeats //apple_ref/occ/func/repeats //apple_ref/occ/ftmplt/repeats //apple_ref/occ/defn/repeats //apple_ref/occ/macro/repeats" --><span class="function">repeats</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/repeats //apple_ref/occ/data/repeats" --><span class="var">repeats</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance that will fire after the given time interval, invoking the given selector on the
+target object.  If repeats is YES, the timer will repeatedly fire on the given time interval.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTimer/userInfo;   name=SBTimer::userInfo -->
+<a name="//apple_ref/occ/instm/SBTimer/userInfo"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="userInfo">userInfo</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/userInfo //apple_ref/occ/data/userInfo" --><span class="var">userInfo</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the user-specified "additional info" object passed to the receiver when it was created.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

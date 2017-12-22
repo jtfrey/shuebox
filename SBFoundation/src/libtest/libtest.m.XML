@@ -1,0 +1,174 @@
+#import "SBFoundation.h"
+
+@interface XMLDelegate : SBObject <SBXMLParserDelegate>
+
+@end
+
+@implementation XMLDelegate
+
+  - (void) xmlParserDidStartDocument:(SBXMLParser*)parser
+  {
+    printf("Document started.\n");
+  }
+
+//
+
+  - (void) xmlParserDidEndDocument:(SBXMLParser*)parser
+  {
+    printf("Document completed.\n");
+  }
+  
+//
+
+  - (void) xmlParser:(SBXMLParser*)parser
+    didStartMappingPrefix:(SBString*)prefix
+    toURI:(SBString*)namespaceURI
+  {
+    printf("Begin namespace:  ");
+    [prefix writeToStream:stdout];
+    printf(" = ");
+    [namespaceURI writeToStream:stdout];
+    printf("\n");
+  }
+  
+//
+
+  - (void) xmlParser:(SBXMLParser*)parser
+    didEndMappingPrefix:(SBString*)prefix
+  {
+    printf("End namespace:  ");
+    [prefix writeToStream:stdout];
+    printf("\n");
+  }
+
+//
+
+  - (void) xmlParser:(SBXMLParser*)parser
+    didStartElement:(SBString*)elementName
+    namespaceURI:(SBString*)namespaceURI
+    qualifiedName:(SBString*)qualifiedName
+    attributes:(SBDictionary*)attributes
+  {
+    printf("<");
+    if ( namespaceURI ) {
+      printf("[[");
+      [namespaceURI writeToStream:stdout];
+      printf("]]:");
+    }
+    [elementName writeToStream:stdout];
+    printf("> ");
+    if ( attributes )
+      [attributes summarizeToStream:stdout];
+    printf("\n");
+  }
+  
+//
+
+  - (void) xmlParser:(SBXMLParser*)parser
+    didEndElement:(SBString*)elementName
+    namespaceURI:(SBString*)namespaceURI
+    qualifiedName:(SBString*)qualifiedName
+  {
+    printf("</");
+    if ( namespaceURI ) {
+      printf("[[");
+      [namespaceURI writeToStream:stdout];
+      printf("]]:");
+    }
+    [elementName writeToStream:stdout];
+    printf(">\n");
+  }
+
+//
+
+  - (void) xmlParser:(SBXMLParser*)parser
+    foundCharacters:(SBString*)string
+  {
+    printf("Text {");
+    [string writeToStream:stdout];
+    printf("}\n");
+  }
+  
+//
+              
+  - (void) xmlParser:(SBXMLParser*)parser
+    foundCDATA:(SBData*)cdata
+  {
+    printf("CDATA {");
+    [cdata summarizeToStream:stdout];
+    printf("\n}\n");
+  }
+  
+//
+
+  - (void) xmlParser:(SBXMLParser*)parser
+    foundProcessingInstructionWithTarget:(SBString*)target
+    data:(SBString*)data
+  {
+    printf("Processing Instruction:  ");
+    [target writeToStream:stdout];
+    printf(" = ");
+    if ( data )
+      [data writeToStream:stdout];
+    printf("\n");
+  }
+  
+//
+
+  - (void) xmlParser:(SBXMLParser*)parser
+    foundComment:(SBString*)comment
+  {
+    printf("// ");
+    [comment writeToStream:stdout];
+    printf("\n");
+  }
+  
+//
+
+  - (SBData*) xmlParser:(SBXMLParser*)parser
+    resolveExternalEntityName:(SBString*)name
+    systemID:(SBString*)systemID
+  {
+    printf("External entity:  ");
+    [name writeToStream:stdout];
+    printf(" = ");
+    if ( systemID )
+      [systemID writeToStream:stdout];
+    printf("\n");
+  }
+
+@end
+
+//
+
+int
+main()
+{
+  SBAutoreleasePool*      pool = [[SBAutoreleasePool alloc] init];
+  SBXMLDocument*          doc = [[SBXMLDocument alloc] initWithStream:[SBInputStream inputStreamWithFileHandle:[SBFileHandle fileHandleWithStandardInput]]];
+  
+  if ( doc ) {
+    SBXMLElement*         root = [doc rootElement];
+    
+    if ( root ) {
+      SBArray*            elements = [root childElementsForElementName:@"x" namespaceURI:@"http://ud.org/TR/a/1/"];
+      
+      printf("Looking for elements...\n");
+      if ( elements )
+        [elements summarizeToStream:stdout];
+      
+      SBXMLElement*       author = [root firstChildElementForElementName:@"author"];
+      
+      if ( author )
+        [author summarizeToStream:stdout];
+    }
+    [doc release];
+  }
+  
+  //
+  // Clear out autorelease:
+  //
+  [pool release];
+  
+  return 0;
+}

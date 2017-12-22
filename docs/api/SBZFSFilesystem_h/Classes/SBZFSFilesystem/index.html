@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBZFSFilesystem</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBZFSFilesystem;  name=SBZFSFilesystem-->
+<a name="//apple_ref/occ/cl/SBZFSFilesystem"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBZFSFilesystem">SBZFSFilesystem</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBZFSFilesystem.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>An instance of SBZFSFilesystem presents an interface to a ZFS "filesystem" storage
+entity.  The class provides methods to aid in getting/setting quota limits, reservations,
+and actual usage.
+</p>
+<p>Any filesystem for which a quota is not set will inherit it's parent filesystem's
+properties.  In the case of SHUEBox, this will basically amount of a filesystem with
+no quota limit; thus, the availableByteCount returned will be the available size of
+the entire ZFS pool.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/availableByteCount" target="_top">-availableByteCount</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/compressionType" target="_top">-compressionType</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBZFSFilesystem/createZFSFilesystem:" target="_top">+createZFSFilesystem:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBZFSFilesystem/destroyZFSFilesystem:" target="_top">+destroyZFSFilesystem:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/initWithNewZFSFilesystem:mountPoint:mounted:" target="_top">-initWithNewZFSFilesystem:mountPoint:mounted:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/initWithZFSFilesystem:" target="_top">-initWithZFSFilesystem:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/inUseByteCount" target="_top">-inUseByteCount</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/isMounted" target="_top">-isMounted</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/mountPoint" target="_top">-mountPoint</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/quotaByteCount" target="_top">-quotaByteCount</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/reservedByteCount" target="_top">-reservedByteCount</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/setCompressionType:" target="_top">-setCompressionType:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/setIsMounted:" target="_top">-setIsMounted:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/setQuotaByteCount:" target="_top">-setQuotaByteCount:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/setReservedByteCount:" target="_top">-setReservedByteCount:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/writeStatusSummaryToStream:" target="_top">-writeStatusSummaryToStream:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBZFSFilesystem/zfsFilesystem" target="_top">-zfsFilesystem</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/availableByteCount;   name=SBZFSFilesystem::availableByteCount -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/availableByteCount"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="availableByteCount">availableByteCount</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/uint64_t //apple_ref/occ/tdef/uint64_t //apple_ref/occ/tag/uint64_t //apple_ref/occ/econst/uint64_t //apple_ref/occ/struct/uint64_t //apple_ref/occ/clconst/uint64_t //apple_ref/occ/intf/uint64_t" --><span class="type">uint64_t</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/availableByteCount //apple_ref/occ/data/availableByteCount" --><span class="var">availableByteCount</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the number of bytes remaining unused by the receiver's ZFS filesystem.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/compressionType;   name=SBZFSFilesystem::compressionType -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/compressionType"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="compressionType">compressionType</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBZFSCompressionType //apple_ref/occ/tdef/SBZFSCompressionType //apple_ref/occ/tag/SBZFSCompressionType //apple_ref/occ/econst/SBZFSCompressionType //apple_ref/occ/struct/SBZFSCompressionType //apple_ref/occ/clconst/SBZFSCompressionType //apple_ref/occ/intf/SBZFSCompressionType" --><span class="type">SBZFSCompressionType</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/compressionType //apple_ref/occ/data/compressionType" --><span class="var">compressionType</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the kind of driver-level compression enabled on the receiver's ZFS
+filesystem.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBZFSFilesystem/createZFSFilesystem:;   name=SBZFSFilesystem::createZFSFilesystem: -->
+<a name="//apple_ref/occ/clm/SBZFSFilesystem/createZFSFilesystem:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="createZFSFilesystem:">createZFSFilesystem:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/createZFSFilesystem //apple_ref/occ/clm/createZFSFilesystem //apple_ref/occ/intfcm/createZFSFilesystem //apple_ref/occ/intfm/createZFSFilesystem //apple_ref/occ/func/createZFSFilesystem //apple_ref/occ/ftmplt/createZFSFilesystem //apple_ref/occ/defn/createZFSFilesystem //apple_ref/occ/macro/createZFSFilesystem" --><span class="function">createZFSFilesystem</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/filesystem //apple_ref/occ/data/filesystem" --><span class="var">filesystem</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Convenience method which attempts to create a new ZFS filesystem (using the provided
+filesystem name).  Uses the default mountpoint and attempts to mount the filesystem
+if successful.
+</p>
+<p>Returns an autoreleased SBZFSFilesystem instance which wraps the new filesystem if
+successful.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBZFSFilesystem/destroyZFSFilesystem:;   name=SBZFSFilesystem::destroyZFSFilesystem: -->
+<a name="//apple_ref/occ/clm/SBZFSFilesystem/destroyZFSFilesystem:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="destroyZFSFilesystem:">destroyZFSFilesystem:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/destroyZFSFilesystem //apple_ref/occ/clm/destroyZFSFilesystem //apple_ref/occ/intfcm/destroyZFSFilesystem //apple_ref/occ/intfm/destroyZFSFilesystem //apple_ref/occ/func/destroyZFSFilesystem //apple_ref/occ/ftmplt/destroyZFSFilesystem //apple_ref/occ/defn/destroyZFSFilesystem //apple_ref/occ/macro/destroyZFSFilesystem" --><span class="function">destroyZFSFilesystem</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/filesystem //apple_ref/occ/data/filesystem" --><span class="var">filesystem</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to destroy the given ZFS filesystem; returns YES if successful.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/initWithNewZFSFilesystem:mountPoint:mounted:;   name=SBZFSFilesystem::initWithNewZFSFilesystem:mountPoint:mounted: -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/initWithNewZFSFilesystem:mountPoint:mounted:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithNewZFSFilesystem:mountPoint:mounted:">initWithNewZFSFilesystem:mountPoint:mounted:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithNewZFSFilesystem //apple_ref/occ/clm/initWithNewZFSFilesystem //apple_ref/occ/intfcm/initWithNewZFSFilesystem //apple_ref/occ/intfm/initWithNewZFSFilesystem //apple_ref/occ/func/initWithNewZFSFilesystem //apple_ref/occ/ftmplt/initWithNewZFSFilesystem //apple_ref/occ/defn/initWithNewZFSFilesystem //apple_ref/occ/macro/initWithNewZFSFilesystem" --><span class="function">initWithNewZFSFilesystem</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">filesystem</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/mountPoint //apple_ref/occ/clm/mountPoint //apple_ref/occ/intfcm/mountPoint //apple_ref/occ/intfm/mountPoint //apple_ref/occ/func/mountPoint //apple_ref/occ/ftmplt/mountPoint //apple_ref/occ/defn/mountPoint //apple_ref/occ/macro/mountPoint" --><span class="function">mountPoint</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">mountPoint</span> <!-- a logicalPath="//apple_ref/occ/instm/mounted //apple_ref/occ/clm/mounted //apple_ref/occ/intfcm/mounted //apple_ref/occ/intfm/mounted //apple_ref/occ/func/mounted //apple_ref/occ/ftmplt/mounted //apple_ref/occ/defn/mounted //apple_ref/occ/macro/mounted" --><span class="function">mounted</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/mounted //apple_ref/occ/data/mounted" --><span class="var">mounted</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Create a new ZFS filesystem (named according to filesystem) which mounts at the
+specified mountpoint.  If the mountPoint is nil, then the inherited/default
+mountpoint will be used.  If mounted is YES, then the instance will also
+attempt to mount the filesystem before returing.
+</p>
+<p>If filesystem is an extant ZFS filesystem, this method is equivalent to calling the
+initWithZFSFilesystem: method.
+</p>
+<p>Returns nil under any condition of failure.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/initWithZFSFilesystem:;   name=SBZFSFilesystem::initWithZFSFilesystem: -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/initWithZFSFilesystem:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithZFSFilesystem:">initWithZFSFilesystem:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithZFSFilesystem //apple_ref/occ/clm/initWithZFSFilesystem //apple_ref/occ/intfcm/initWithZFSFilesystem //apple_ref/occ/intfm/initWithZFSFilesystem //apple_ref/occ/func/initWithZFSFilesystem //apple_ref/occ/ftmplt/initWithZFSFilesystem //apple_ref/occ/defn/initWithZFSFilesystem //apple_ref/occ/macro/initWithZFSFilesystem" --><span class="function">initWithZFSFilesystem</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/filesystem //apple_ref/occ/data/filesystem" --><span class="var">filesystem</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initialize a newly-allocated instance to provide an interface to the given ZFS
+filesystem.  The filesystem is _not_ the VFS path of the volume:  e.g. would
+be "shuebox/collaborations/nss-code".
+</p>
+<p>Returns nil if the given filesystem could not be found or if the ZFS library
+failed to initialize.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/inUseByteCount;   name=SBZFSFilesystem::inUseByteCount -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/inUseByteCount"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="inUseByteCount">inUseByteCount</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/uint64_t //apple_ref/occ/tdef/uint64_t //apple_ref/occ/tag/uint64_t //apple_ref/occ/econst/uint64_t //apple_ref/occ/struct/uint64_t //apple_ref/occ/clconst/uint64_t //apple_ref/occ/intf/uint64_t" --><span class="type">uint64_t</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/inUseByteCount //apple_ref/occ/data/inUseByteCount" --><span class="var">inUseByteCount</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the number of bytes being used by the receiver's ZFS filesystem.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/isMounted;   name=SBZFSFilesystem::isMounted -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/isMounted"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isMounted">isMounted</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isMounted //apple_ref/occ/data/isMounted" --><span class="var">isMounted</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver's ZFS filesystem is mounted.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/mountPoint;   name=SBZFSFilesystem::mountPoint -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/mountPoint"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="mountPoint">mountPoint</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/mountPoint //apple_ref/occ/data/mountPoint" --><span class="var">mountPoint</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the VFS mountpoint of the receiver's ZFS filesystem.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/quotaByteCount;   name=SBZFSFilesystem::quotaByteCount -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/quotaByteCount"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="quotaByteCount">quotaByteCount</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/uint64_t //apple_ref/occ/tdef/uint64_t //apple_ref/occ/tag/uint64_t //apple_ref/occ/econst/uint64_t //apple_ref/occ/struct/uint64_t //apple_ref/occ/clconst/uint64_t //apple_ref/occ/intf/uint64_t" --><span class="type">uint64_t</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/quotaByteCount //apple_ref/occ/data/quotaByteCount" --><span class="var">quotaByteCount</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the number of bytes in the quota limit for the receiver's ZFS filesystem.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/reservedByteCount;   name=SBZFSFilesystem::reservedByteCount -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/reservedByteCount"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="reservedByteCount">reservedByteCount</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/uint64_t //apple_ref/occ/tdef/uint64_t //apple_ref/occ/tag/uint64_t //apple_ref/occ/econst/uint64_t //apple_ref/occ/struct/uint64_t //apple_ref/occ/clconst/uint64_t //apple_ref/occ/intf/uint64_t" --><span class="type">uint64_t</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/reservedByteCount //apple_ref/occ/data/reservedByteCount" --><span class="var">reservedByteCount</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the number of bytes of reserved storage for the receiver's ZFS filesystem.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/setCompressionType:;   name=SBZFSFilesystem::setCompressionType: -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/setCompressionType:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setCompressionType:">setCompressionType:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setCompressionType //apple_ref/occ/clm/setCompressionType //apple_ref/occ/intfcm/setCompressionType //apple_ref/occ/intfm/setCompressionType //apple_ref/occ/func/setCompressionType //apple_ref/occ/ftmplt/setCompressionType //apple_ref/occ/defn/setCompressionType //apple_ref/occ/macro/setCompressionType" --><span class="function">setCompressionType</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBZFSCompressionType //apple_ref/occ/tdef/SBZFSCompressionType //apple_ref/occ/tag/SBZFSCompressionType //apple_ref/occ/econst/SBZFSCompressionType //apple_ref/occ/struct/SBZFSCompressionType //apple_ref/occ/clconst/SBZFSCompressionType //apple_ref/occ/intf/SBZFSCompressionType" --><span class="type">SBZFSCompressionType</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/compressionType //apple_ref/occ/data/compressionType" --><span class="var">compressionType</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to set the kind of driver-level compression enabled on the receiver's
+ZFS filesystem.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/setIsMounted:;   name=SBZFSFilesystem::setIsMounted: -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/setIsMounted:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setIsMounted:">setIsMounted:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setIsMounted //apple_ref/occ/clm/setIsMounted //apple_ref/occ/intfcm/setIsMounted //apple_ref/occ/intfm/setIsMounted //apple_ref/occ/func/setIsMounted //apple_ref/occ/ftmplt/setIsMounted //apple_ref/occ/defn/setIsMounted //apple_ref/occ/macro/setIsMounted" --><span class="function">setIsMounted</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/mounted //apple_ref/occ/data/mounted" --><span class="var">mounted</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to mount or unmount the receiver's ZFS filesystem based on mounted
+being YES or NO, respectively.  Returns YES if the state was successfully
+set.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/setQuotaByteCount:;   name=SBZFSFilesystem::setQuotaByteCount: -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/setQuotaByteCount:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setQuotaByteCount:">setQuotaByteCount:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setQuotaByteCount //apple_ref/occ/clm/setQuotaByteCount //apple_ref/occ/intfcm/setQuotaByteCount //apple_ref/occ/intfm/setQuotaByteCount //apple_ref/occ/func/setQuotaByteCount //apple_ref/occ/ftmplt/setQuotaByteCount //apple_ref/occ/defn/setQuotaByteCount //apple_ref/occ/macro/setQuotaByteCount" --><span class="function">setQuotaByteCount</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/uint64_t //apple_ref/occ/tdef/uint64_t //apple_ref/occ/tag/uint64_t //apple_ref/occ/econst/uint64_t //apple_ref/occ/struct/uint64_t //apple_ref/occ/clconst/uint64_t //apple_ref/occ/intf/uint64_t" --><span class="type">uint64_t</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/byteCount //apple_ref/occ/data/byteCount" --><span class="var">byteCount</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to modify the number of bytes in the quota limit for the receiver's ZFS
+filesystem.  Returns YES if successful.
+</p>
+<p>Note that the calling program must have the appropriate (root-like) privileges in
+order to modify a ZFS filesystem property like this.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/setReservedByteCount:;   name=SBZFSFilesystem::setReservedByteCount: -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/setReservedByteCount:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setReservedByteCount:">setReservedByteCount:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setReservedByteCount //apple_ref/occ/clm/setReservedByteCount //apple_ref/occ/intfcm/setReservedByteCount //apple_ref/occ/intfm/setReservedByteCount //apple_ref/occ/func/setReservedByteCount //apple_ref/occ/ftmplt/setReservedByteCount //apple_ref/occ/defn/setReservedByteCount //apple_ref/occ/macro/setReservedByteCount" --><span class="function">setReservedByteCount</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/uint64_t //apple_ref/occ/tdef/uint64_t //apple_ref/occ/tag/uint64_t //apple_ref/occ/econst/uint64_t //apple_ref/occ/struct/uint64_t //apple_ref/occ/clconst/uint64_t //apple_ref/occ/intf/uint64_t" --><span class="type">uint64_t</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/byteCount //apple_ref/occ/data/byteCount" --><span class="var">byteCount</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to modify the number of bytes of reserved storage for the receiver's ZFS
+filesystem.  Returns YES if successful.
+</p>
+<p>Note that the calling program must have the appropriate (root-like) privileges in
+order to modify a ZFS filesystem property like this.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/writeStatusSummaryToStream:;   name=SBZFSFilesystem::writeStatusSummaryToStream: -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/writeStatusSummaryToStream:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="writeStatusSummaryToStream:">writeStatusSummaryToStream:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/writeStatusSummaryToStream //apple_ref/occ/clm/writeStatusSummaryToStream //apple_ref/occ/intfcm/writeStatusSummaryToStream //apple_ref/occ/intfm/writeStatusSummaryToStream //apple_ref/occ/func/writeStatusSummaryToStream //apple_ref/occ/ftmplt/writeStatusSummaryToStream //apple_ref/occ/defn/writeStatusSummaryToStream //apple_ref/occ/macro/writeStatusSummaryToStream" --><span class="function">writeStatusSummaryToStream</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FILE //apple_ref/occ/tdef/FILE //apple_ref/occ/tag/FILE //apple_ref/occ/econst/FILE //apple_ref/occ/struct/FILE //apple_ref/occ/clconst/FILE //apple_ref/occ/intf/FILE" --><span class="type">FILE</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/stream //apple_ref/occ/data/stream" --><span class="var">stream</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Prints quota, reservation, usage statistics to the given stream.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBZFSFilesystem/zfsFilesystem;   name=SBZFSFilesystem::zfsFilesystem -->
+<a name="//apple_ref/occ/instm/SBZFSFilesystem/zfsFilesystem"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="zfsFilesystem">zfsFilesystem</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/zfsFilesystem //apple_ref/occ/data/zfsFilesystem" --><span class="var">zfsFilesystem</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the ZFS filesystem name associated with the receiver.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

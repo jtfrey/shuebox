@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBObject(SBKeyValueCoding)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cat; uid=//apple_ref/occ/cat/SBObject(SBKeyValueCoding);  name=SBObject(SBKeyValueCoding)-->
+<a name="//apple_ref/occ/cat/SBObject(SBKeyValueCoding)"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBObject(SBKeyValueCoding)">SBObject(SBKeyValueCoding)</a></h1>
+</td></tr></table><hr><p><b>Extends&nbsp;Class:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBKeyValueCoding.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Key-value coding is a mechanism by which instance variables of an
+object can be accessed by name or by a path comprised of names
+joined by a dot.
+</p>
+<p>For example, assume "anObj" has an instance variable named "_properties".
+Using a key path we can access a specific value in the dictionary as
+  </p>
+<pre>
+  
+    timestamp = [anObj valueForKeyPath:@"properties.timestamp"];
+    
+  </pre>
+<p>If any object along a key path does not allow direct access to instance
+variables and resolving the next path component would require direct
+access, the resolution will fail and the path will be considered
+invalid.
+</p>
+<p>By default, the valueForKey: method will search the receiver for a
+method with a name which matches the key and will simply invoke
+that method.  Likewise, the setValue:forKey: method searches the
+receiver for a method named as "set<Key>:" where the first character
+of the key is capitalized (e.g. "setTimestamp:").
+</p>
+<p>There is a special "@count" operator that can be used as a key against a
+collection object (SBArray or SBDictionary) to retrieve the number of
+objects in the collection.
+</p>
+<p>For classes which allow direct access to instance variables, most of
+the basic atomic types will automatically be converted to and from
+object form.  For example, integer and floating-point instance variables
+accessed via valueForKey: will return an instance of SBNumber which
+wraps the numerical value.  Likewise, a setValue:forKey: message with
+an SBNumber value will result in the atomic instance variable being
+set via the appropriate "[type]Value" message.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBObject(SBKeyValueCoding)/accessInstanceVariablesDirectly" target="_top">+accessInstanceVariablesDirectly</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/setValue:forKey:" target="_top">-setValue:forKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/setValue:forKeyPath:" target="_top">-setValue:forKeyPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/validateValue:forKey:" target="_top">-validateValue:forKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/validateValue:forKeyPath:" target="_top">-validateValue:forKeyPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/valueForKey:" target="_top">-valueForKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/valueForKeyPath:" target="_top">-valueForKeyPath:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBObject(SBKeyValueCoding)/accessInstanceVariablesDirectly;   name=SBObject(SBKeyValueCoding)::accessInstanceVariablesDirectly -->
+<a name="//apple_ref/occ/clm/SBObject(SBKeyValueCoding)/accessInstanceVariablesDirectly"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="accessInstanceVariablesDirectly">accessInstanceVariablesDirectly</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/accessInstanceVariablesDirectly //apple_ref/occ/data/accessInstanceVariablesDirectly" --><span class="var">accessInstanceVariablesDirectly</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Classes should override this method if they wish to discourage the
+key-value coding interfaces from accessing instance variables through
+the compiler-built data structures rather than through accessors.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/setValue:forKey:;   name=SBObject(SBKeyValueCoding)::setValue:forKey: -->
+<a name="//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/setValue:forKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setValue:forKey:">setValue:forKey:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setValue //apple_ref/occ/clm/setValue //apple_ref/occ/intfcm/setValue //apple_ref/occ/intfm/setValue //apple_ref/occ/func/setValue //apple_ref/occ/ftmplt/setValue //apple_ref/occ/defn/setValue //apple_ref/occ/macro/setValue" --><span class="function">setValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">value</span> <!-- a logicalPath="//apple_ref/occ/instm/forKey //apple_ref/occ/clm/forKey //apple_ref/occ/intfcm/forKey //apple_ref/occ/intfm/forKey //apple_ref/occ/func/forKey //apple_ref/occ/ftmplt/forKey //apple_ref/occ/defn/forKey //apple_ref/occ/macro/forKey" --><span class="function">forKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aKey //apple_ref/occ/data/aKey" --><span class="var">aKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to set the named (by aKey) value associated with the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/setValue:forKeyPath:;   name=SBObject(SBKeyValueCoding)::setValue:forKeyPath: -->
+<a name="//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/setValue:forKeyPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setValue:forKeyPath:">setValue:forKeyPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setValue //apple_ref/occ/clm/setValue //apple_ref/occ/intfcm/setValue //apple_ref/occ/intfm/setValue //apple_ref/occ/func/setValue //apple_ref/occ/ftmplt/setValue //apple_ref/occ/defn/setValue //apple_ref/occ/macro/setValue" --><span class="function">setValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">value</span> <!-- a logicalPath="//apple_ref/occ/instm/forKeyPath //apple_ref/occ/clm/forKeyPath //apple_ref/occ/intfcm/forKeyPath //apple_ref/occ/intfm/forKeyPath //apple_ref/occ/func/forKeyPath //apple_ref/occ/ftmplt/forKeyPath //apple_ref/occ/defn/forKeyPath //apple_ref/occ/macro/forKeyPath" --><span class="function">forKeyPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/keyPath //apple_ref/occ/data/keyPath" --><span class="var">keyPath</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to set the named value associated with the key path rooted
+at the receiver.  This method should rarely be overridden; it's far more
+likely you'll override the setValue:forKey: method.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/validateValue:forKey:;   name=SBObject(SBKeyValueCoding)::validateValue:forKey: -->
+<a name="//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/validateValue:forKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="validateValue:forKey:">validateValue:forKey:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/validateValue //apple_ref/occ/clm/validateValue //apple_ref/occ/intfcm/validateValue //apple_ref/occ/intfm/validateValue //apple_ref/occ/func/validateValue //apple_ref/occ/ftmplt/validateValue //apple_ref/occ/defn/validateValue //apple_ref/occ/macro/validateValue" --><span class="function">validateValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a --><span class="type">*</span>)<span class="param">inOutValue</span> <!-- a logicalPath="//apple_ref/occ/instm/forKey //apple_ref/occ/clm/forKey //apple_ref/occ/intfcm/forKey //apple_ref/occ/intfm/forKey //apple_ref/occ/func/forKey //apple_ref/occ/ftmplt/forKey //apple_ref/occ/defn/forKey //apple_ref/occ/macro/forKey" --><span class="function">forKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aKey //apple_ref/occ/data/aKey" --><span class="var">aKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Validate the value pointed at by inOutValue as an appropriate value
+to be associated with aKey.  Subclasses can substitute an alternate
+value by modifying *inOutValue with a different object.
+</p>
+<p>The method should return YES if the value was acceptable as-is or
+was modified to be acceptable.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/validateValue:forKeyPath:;   name=SBObject(SBKeyValueCoding)::validateValue:forKeyPath: -->
+<a name="//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/validateValue:forKeyPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="validateValue:forKeyPath:">validateValue:forKeyPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/validateValue //apple_ref/occ/clm/validateValue //apple_ref/occ/intfcm/validateValue //apple_ref/occ/intfm/validateValue //apple_ref/occ/func/validateValue //apple_ref/occ/ftmplt/validateValue //apple_ref/occ/defn/validateValue //apple_ref/occ/macro/validateValue" --><span class="function">validateValue</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a --><span class="type">*</span>)<span class="param">inOutValue</span> <!-- a logicalPath="//apple_ref/occ/instm/forKeyPath //apple_ref/occ/clm/forKeyPath //apple_ref/occ/intfcm/forKeyPath //apple_ref/occ/intfm/forKeyPath //apple_ref/occ/func/forKeyPath //apple_ref/occ/ftmplt/forKeyPath //apple_ref/occ/defn/forKeyPath //apple_ref/occ/macro/forKeyPath" --><span class="function">forKeyPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/keyPath //apple_ref/occ/data/keyPath" --><span class="var">keyPath</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Validate the value pointed at by inOutValue as an appropriate value
+associated with the key path rooted at the receiver.  Subclasses can
+substitute an alternate value by modifying *inOutValue with a different
+object.  That being said, this method should rarely be overridden;
+it's far more likely you'll override the validateValue:forKey: method.
+</p>
+<p>The method should return YES if the value was acceptable as-is or
+was modified to be acceptable.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/valueForKey:;   name=SBObject(SBKeyValueCoding)::valueForKey: -->
+<a name="//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/valueForKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="valueForKey:">valueForKey:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/valueForKey //apple_ref/occ/clm/valueForKey //apple_ref/occ/intfcm/valueForKey //apple_ref/occ/intfm/valueForKey //apple_ref/occ/func/valueForKey //apple_ref/occ/ftmplt/valueForKey //apple_ref/occ/defn/valueForKey //apple_ref/occ/macro/valueForKey" --><span class="function">valueForKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aKey //apple_ref/occ/data/aKey" --><span class="var">aKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempt to locate a value associated with the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/valueForKeyPath:;   name=SBObject(SBKeyValueCoding)::valueForKeyPath: -->
+<a name="//apple_ref/occ/instm/SBObject(SBKeyValueCoding)/valueForKeyPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="valueForKeyPath:">valueForKeyPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/valueForKeyPath //apple_ref/occ/clm/valueForKeyPath //apple_ref/occ/intfcm/valueForKeyPath //apple_ref/occ/intfm/valueForKeyPath //apple_ref/occ/func/valueForKeyPath //apple_ref/occ/ftmplt/valueForKeyPath //apple_ref/occ/defn/valueForKeyPath //apple_ref/occ/macro/valueForKeyPath" --><span class="function">valueForKeyPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/keyPath //apple_ref/occ/data/keyPath" --><span class="var">keyPath</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempt to locate a value associated with the given key path rooted
+at the receiver.  This method should rarely be overridden; it's far more
+likely you'll override the valueForKey: method.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

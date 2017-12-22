@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBMailer.h</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=Header;  uid=//apple_ref/doc/header/SBMailer.h;   name=SBMailer.h -->
+<a name="//apple_ref/doc/header/SBMailer.h"></a>
+<div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBMailer.h">SBMailer.h</a></h1>
+</td></tr></table><hr><p><!-- begin abstract -->Use the links in the table of contents to the left to access the documentation.<br>
+<!-- end abstract --></p>
+<p></p><div class='declaration_indent'>
+</div>
+<p></p><hr><br><a name="HeaderDoc_classes"></a>
+<h2>Classes</h2>
+<dl>
+<dt><tt><a href="Classes/SBMailer/index.html#//apple_ref/occ/cl/SBMailer" target="_top">SBMailer</a></tt></dt>
+<dd></dd>
+</dl>
+<a name="HeaderDoc_protocols"></a>
+<h2>Protocols</h2>
+<dl>
+<dt><tt><a href="Protocols/SBMailerComposer/index.html#//apple_ref/occ/intf/SBMailerComposer" target="_top">SBMailerComposer</a></tt></dt>
+<dd></dd>
+</dl>
+<a name="HeaderDoc_categories"></a>
+<h2>Categories</h2>
+<dl>
+<dt><tt><a href="Categories/SBData_SBMailerAdditions_/index.html#//apple_ref/occ/cat/SBData(SBMailerAdditions)" target="_top">SBData(SBMailerAdditions)</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Categories/SBMailer_SBMailerMessageComposition_/index.html#//apple_ref/occ/cat/SBMailer(SBMailerMessageComposition)" target="_top">SBMailer(SBMailerMessageComposition)</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Categories/SBString_SBMailerAdditions_/index.html#//apple_ref/occ/cat/SBString(SBMailerAdditions)" target="_top">SBString(SBMailerAdditions)</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><br><a name="HeaderDoc_datatypes"></a>
+<h2>Typedefs</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/tdef/SBMailerMultipartComposerFunction" target="_top">SBMailerMultipartComposerFunction</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=tdef;  uid=//apple_ref/c/tdef/SBMailerMultipartComposerFunction;   name=SBMailerMultipartComposerFunction -->
+<a name="//apple_ref/c/tdef/SBMailerMultipartComposerFunction"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBMailerMultipartComposerFunction">SBMailerMultipartComposerFunction</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">typedef</span> <!-- a logicalPath="//apple_ref/c/cl/SBError //apple_ref/c/tdef/SBError //apple_ref/c/tag/SBError //apple_ref/c/econst/SBError //apple_ref/c/struct/SBError //apple_ref/c/clconst/SBError //apple_ref/c/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span> ( <span class="type">*</span><!-- a logicalPath="//apple_ref/c/instm/SBMailerMultipartComposerFunction //apple_ref/c/clm/SBMailerMultipartComposerFunction //apple_ref/c/intfcm/SBMailerMultipartComposerFunction //apple_ref/c/intfm/SBMailerMultipartComposerFunction //apple_ref/c/func/SBMailerMultipartComposerFunction //apple_ref/c/ftmplt/SBMailerMultipartComposerFunction //apple_ref/c/defn/SBMailerMultipartComposerFunction //apple_ref/c/macro/SBMailerMultipartComposerFunction" --><span class="function">SBMailerMultipartComposerFunction</span><!-- /a -->)(
+    <!-- a logicalPath="//apple_ref/c/cl/SBMailer //apple_ref/c/tdef/SBMailer //apple_ref/c/tag/SBMailer //apple_ref/c/econst/SBMailer //apple_ref/c/struct/SBMailer //apple_ref/c/clconst/SBMailer //apple_ref/c/intf/SBMailer" --><span class="type">SBMailer</span><!-- /a --> <span class="type">*</span><span class="param">aMailer</span>,
+    <!-- a logicalPath="//apple_ref/c/cl/void //apple_ref/c/tdef/void //apple_ref/c/tag/void //apple_ref/c/econst/void //apple_ref/c/struct/void //apple_ref/c/clconst/void //apple_ref/c/intf/void" --><span class="type">void</span><!-- /a --> <span class="type">*</span><span class="param">context</span>);  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Type of the callback functions used by the sendMessageWithComposerFunction:context:properties:
+method to build the content of a message.
+<!-- end discussion -->
+<p></p><a name="HeaderDoc_vars"></a>
+<h2>Globals</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/data/SBMailerBCCAddressesKey" target="_top">SBMailerBCCAddressesKey</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/SBMailerCCAddressesKey" target="_top">SBMailerCCAddressesKey</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/SBMailerErrorDomain" target="_top">SBMailerErrorDomain</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/SBMailerFakeRecipientKey" target="_top">SBMailerFakeRecipientKey</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/SBMailerFromKey" target="_top">SBMailerFromKey</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/SBMailerMessageIdKey" target="_top">SBMailerMessageIdKey</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/SBMailerMultipartSubtypeKey" target="_top">SBMailerMultipartSubtypeKey</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/SBMailerReplyToKey" target="_top">SBMailerReplyToKey</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/SBMailerSubjectKey" target="_top">SBMailerSubjectKey</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/SBMailerToAddressesKey" target="_top">SBMailerToAddressesKey</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=data;  uid=//apple_ref/c/data/SBMailerBCCAddressesKey;   name=SBMailerBCCAddressesKey -->
+<a name="//apple_ref/c/data/SBMailerBCCAddressesKey"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBMailerBCCAddressesKey">SBMailerBCCAddressesKey</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">extern</span> <!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/SBMailerBCCAddressesKey //apple_ref/occ/data/SBMailerBCCAddressesKey" --><span class="var">SBMailerBCCAddressesKey</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Keys either an SBString or an SBArray of SBStrings; each SBString is a blind
+carbon-copy recipient email address.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=data;  uid=//apple_ref/c/data/SBMailerCCAddressesKey;   name=SBMailerCCAddressesKey -->
+<a name="//apple_ref/c/data/SBMailerCCAddressesKey"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBMailerCCAddressesKey">SBMailerCCAddressesKey</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">extern</span> <!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/SBMailerCCAddressesKey //apple_ref/occ/data/SBMailerCCAddressesKey" --><span class="var">SBMailerCCAddressesKey</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Keys either an SBString or an SBArray of SBStrings; each SBString is a carbon-copy
+recipient email address.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=data;  uid=//apple_ref/c/data/SBMailerErrorDomain;   name=SBMailerErrorDomain -->
+<a name="//apple_ref/c/data/SBMailerErrorDomain"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBMailerErrorDomain">SBMailerErrorDomain</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">extern</span> <!-- a logicalPath="//apple_ref/c/cl/SBString //apple_ref/c/tdef/SBString //apple_ref/c/tag/SBString //apple_ref/c/econst/SBString //apple_ref/c/struct/SBString //apple_ref/c/clconst/SBString //apple_ref/c/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/c/econst/SBMailerErrorDomain //apple_ref/c/data/SBMailerErrorDomain" --><span class="var">SBMailerErrorDomain</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>SBError domain used for errors originating in the SBMailer.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=data;  uid=//apple_ref/c/data/SBMailerFakeRecipientKey;   name=SBMailerFakeRecipientKey -->
+<a name="//apple_ref/c/data/SBMailerFakeRecipientKey"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBMailerFakeRecipientKey">SBMailerFakeRecipientKey</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">extern</span> <!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/SBMailerFakeRecipientKey //apple_ref/occ/data/SBMailerFakeRecipientKey" --><span class="var">SBMailerFakeRecipientKey</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Keys an SBString containing a "fake" recipient of the message, e.g.
+</p>
+<p>"SHUEBox Bulk Mail" undisclosed-recipients:;
+</p>
+<p>If this key is provided, then the real address lists will not be sent for the
+To and CC headers; only the To header will be sent, containing this string.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=data;  uid=//apple_ref/c/data/SBMailerFromKey;   name=SBMailerFromKey -->
+<a name="//apple_ref/c/data/SBMailerFromKey"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBMailerFromKey">SBMailerFromKey</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">extern</span> <!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/SBMailerFromKey //apple_ref/occ/data/SBMailerFromKey" --><span class="var">SBMailerFromKey</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Keys an SBString containing the email address which should be presented as the
+sender of the message.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=data;  uid=//apple_ref/c/data/SBMailerMessageIdKey;   name=SBMailerMessageIdKey -->
+<a name="//apple_ref/c/data/SBMailerMessageIdKey"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBMailerMessageIdKey">SBMailerMessageIdKey</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">extern</span> <!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/SBMailerMessageIdKey //apple_ref/occ/data/SBMailerMessageIdKey" --><span class="var">SBMailerMessageIdKey</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Keys an SBString containing an explicit message identifier that should be used
+when sending the message.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=data;  uid=//apple_ref/c/data/SBMailerMultipartSubtypeKey;   name=SBMailerMultipartSubtypeKey -->
+<a name="//apple_ref/c/data/SBMailerMultipartSubtypeKey"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBMailerMultipartSubtypeKey">SBMailerMultipartSubtypeKey</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">extern</span> <!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/SBMailerMultipartSubtypeKey //apple_ref/occ/data/SBMailerMultipartSubtypeKey" --><span class="var">SBMailerMultipartSubtypeKey</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Keys an SBString containing the MIME multipart subtype that should be used for
+the message.  By default, messages are sent as "multipart/mixed"; if you are
+constructing an email with alternate representations (plaintext and HTML forms
+of the same message, for example) then the SBString should be "alternative".
+</p>
+<p>Other subtypes are, of course, permissible -- the class blindly sends whatever
+subtype you specify.  It is up to your code to build the body of each part
+properly!
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=data;  uid=//apple_ref/c/data/SBMailerReplyToKey;   name=SBMailerReplyToKey -->
+<a name="//apple_ref/c/data/SBMailerReplyToKey"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBMailerReplyToKey">SBMailerReplyToKey</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">extern</span> <!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/SBMailerReplyToKey //apple_ref/occ/data/SBMailerReplyToKey" --><span class="var">SBMailerReplyToKey</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Keys an SBString containing the email address which should be presented as the
+address to which message replies should be directed.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=data;  uid=//apple_ref/c/data/SBMailerSubjectKey;   name=SBMailerSubjectKey -->
+<a name="//apple_ref/c/data/SBMailerSubjectKey"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBMailerSubjectKey">SBMailerSubjectKey</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">extern</span> <!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/SBMailerSubjectKey //apple_ref/occ/data/SBMailerSubjectKey" --><span class="var">SBMailerSubjectKey</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Keys an SBString containing the subject line for a message.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=data;  uid=//apple_ref/c/data/SBMailerToAddressesKey;   name=SBMailerToAddressesKey -->
+<a name="//apple_ref/c/data/SBMailerToAddressesKey"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBMailerToAddressesKey">SBMailerToAddressesKey</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">extern</span> <!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/SBMailerToAddressesKey //apple_ref/occ/data/SBMailerToAddressesKey" --><span class="var">SBMailerToAddressesKey</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Keys either an SBString or an SBArray of SBStrings; each SBString is a recipient
+email address.
+<!-- end discussion -->
+<p></p><a name="HeaderDoc_enums"></a>
+<h2>Enumerated Types</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/doc/title:tag/SBMailerErrorCodes" target="_top">SBMailer Error Codes</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=title:tag;  uid=//apple_ref/doc/title:tag/SBMailerErrorCodes;   name=SBMailer Error Codes -->
+<a name="//apple_ref/doc/title:tag/SBMailerErrorCodes"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBMailerErrorCodes">SBMailer Error Codes</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">enum</span> { 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBMailerOkay //apple_ref/c/data/kSBMailerOkay" --><span class="var">kSBMailerOkay</span><!-- /a --> = <span class="number">0</span>,  
+    <!-- a logicalPath="//apple_ref/c/econst/kSBMailerUnableToOpenSocket //apple_ref/c/data/kSBMailerUnableToOpenSocket" --><span class="var">kSBMailerUnableToOpenSocket</span><!-- /a -->, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBMailerSMTPCommandBuildFailure //apple_ref/c/data/kSBMailerSMTPCommandBuildFailure" --><span class="var">kSBMailerSMTPCommandBuildFailure</span><!-- /a -->, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBMailerSMTPCommandFailure //apple_ref/c/data/kSBMailerSMTPCommandFailure" --><span class="var">kSBMailerSMTPCommandFailure</span><!-- /a -->, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBMailerMessageNotReady //apple_ref/c/data/kSBMailerMessageNotReady" --><span class="var">kSBMailerMessageNotReady</span><!-- /a -->, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBMailerHeaderLengthExceeded //apple_ref/c/data/kSBMailerHeaderLengthExceeded" --><span class="var">kSBMailerHeaderLengthExceeded</span><!-- /a -->, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBMailerIncompleteMessage //apple_ref/c/data/kSBMailerIncompleteMessage" --><span class="var">kSBMailerIncompleteMessage</span><!-- /a -->, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBMailerErrorDuringSend //apple_ref/c/data/kSBMailerErrorDuringSend" --><span class="var">kSBMailerErrorDuringSend</span><!-- /a -->, 
+    <!-- a logicalPath="//apple_ref/c/econst/kSBMailerParameterError //apple_ref/c/data/kSBMailerParameterError" --><span class="var">kSBMailerParameterError</span><!-- /a --> 
+};  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Error codes associated with the SBMailerErrorDomain.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

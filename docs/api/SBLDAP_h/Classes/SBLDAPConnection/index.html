@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBLDAPConnection</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBLDAPConnection;  name=SBLDAPConnection-->
+<a name="//apple_ref/occ/cl/SBLDAPConnection"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBLDAPConnection">SBLDAPConnection</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBLDAP.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>An instance of SBLDAPConnection wraps a connection to an LDAP server. Connections
+can be created using the server's hostname and (optionally) the TCP/IP port and basic
+SSL security consideration.  Connections can also be created using an LDAP URL.
+</p>
+<p>A connection is closed when the last reference to an SBLDAPConnection instance is
+released and the object is deallocated.
+</p>
+<p>A per-instance default base DN can be assigned.  The protocol version can also be
+dynamically selected (defaults to protocol version 3).
+</p>
+<p>A TLS session can be established over an existing unencrypted connection; note that
+this will only work if the LDAP server on the other end of that connection supports
+TLS.
+</p>
+<p>Searching can be performed either by specification of an attribute key-value pair or
+by means of an LDAP filter string.  Searches can have specific base DN, scope, and
+attribute treatment associated with them.  For example, to map a filter to one or
+more DNs, the values of all attributes associated with the returned DNs are not
+needed and will both slow down the lookup action and consume far more memory (and
+possibly bandwidth) than truly necessary for the operation.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection/baseDN" target="_top">-baseDN</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBLDAPConnection/defaultProtocolVersion" target="_top">+defaultProtocolVersion</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection/initWithConnection:" target="_top">-initWithConnection:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection/ldapConnectionURL" target="_top">-ldapConnectionURL</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithServer:" target="_top">+ldapConnectionWithServer:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithServer:port:" target="_top">+ldapConnectionWithServer:port:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithServer:port:secure:" target="_top">+ldapConnectionWithServer:port:secure:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithServer:secure:" target="_top">+ldapConnectionWithServer:secure:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithURL:" target="_top">+ldapConnectionWithURL:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection/protocolVersion" target="_top">-protocolVersion</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection/setBaseDN:" target="_top">-setBaseDN:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBLDAPConnection/setDefaultProtocolVersion:" target="_top">+setDefaultProtocolVersion:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection/setProtocolVersion:" target="_top">-setProtocolVersion:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection/startTLSEncryption:" target="_top">-startTLSEncryption:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBLDAPConnection/tlsEncryptionIsStarted" target="_top">-tlsEncryptionIsStarted</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection/baseDN;   name=SBLDAPConnection::baseDN -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection/baseDN"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="baseDN">baseDN</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/baseDN //apple_ref/occ/data/baseDN" --><span class="var">baseDN</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's base DN which will be used when a DN is not provided explicitly
+to search methods.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBLDAPConnection/defaultProtocolVersion;   name=SBLDAPConnection::defaultProtocolVersion -->
+<a name="//apple_ref/occ/clm/SBLDAPConnection/defaultProtocolVersion"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="defaultProtocolVersion">defaultProtocolVersion</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/defaultProtocolVersion //apple_ref/occ/data/defaultProtocolVersion" --><span class="var">defaultProtocolVersion</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the default LDAP protocol version which new instances should use.  Default
+is version 3.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection/initWithConnection:;   name=SBLDAPConnection::initWithConnection: -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection/initWithConnection:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithConnection:">initWithConnection:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithConnection //apple_ref/occ/clm/initWithConnection //apple_ref/occ/intfcm/initWithConnection //apple_ref/occ/intfm/initWithConnection //apple_ref/occ/func/initWithConnection //apple_ref/occ/ftmplt/initWithConnection //apple_ref/occ/defn/initWithConnection //apple_ref/occ/macro/initWithConnection" --><span class="function">initWithConnection</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBLDAPConnection //apple_ref/occ/tdef/SBLDAPConnection //apple_ref/occ/tag/SBLDAPConnection //apple_ref/occ/econst/SBLDAPConnection //apple_ref/occ/struct/SBLDAPConnection //apple_ref/occ/clconst/SBLDAPConnection //apple_ref/occ/intf/SBLDAPConnection" --><span class="type">SBLDAPConnection</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/extantConnection //apple_ref/occ/data/extantConnection" --><span class="var">extantConnection</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes the receiver using the same connection settings for extantConnection.  Note
+that the "copy" method can also be used to duplicate an existing connection.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection/ldapConnectionURL;   name=SBLDAPConnection::ldapConnectionURL -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection/ldapConnectionURL"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="ldapConnectionURL">ldapConnectionURL</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/ldapConnectionURL //apple_ref/occ/data/ldapConnectionURL" --><span class="var">ldapConnectionURL</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the URL used to create the receiver's LDAP server connection.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithServer:;   name=SBLDAPConnection::ldapConnectionWithServer: -->
+<a name="//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithServer:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="ldapConnectionWithServer:">ldapConnectionWithServer:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/ldapConnectionWithServer //apple_ref/occ/clm/ldapConnectionWithServer //apple_ref/occ/intfcm/ldapConnectionWithServer //apple_ref/occ/intfm/ldapConnectionWithServer //apple_ref/occ/func/ldapConnectionWithServer //apple_ref/occ/ftmplt/ldapConnectionWithServer //apple_ref/occ/defn/ldapConnectionWithServer //apple_ref/occ/macro/ldapConnectionWithServer" --><span class="function">ldapConnectionWithServer</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/serverName //apple_ref/occ/data/serverName" --><span class="var">serverName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to open an unencrypted connection to the default LDAP port on the host
+with the given serverName.
+</p>
+<p>Returns nil if the connection could not be established.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithServer:port:;   name=SBLDAPConnection::ldapConnectionWithServer:port: -->
+<a name="//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithServer:port:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="ldapConnectionWithServer:port:">ldapConnectionWithServer:port:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/ldapConnectionWithServer //apple_ref/occ/clm/ldapConnectionWithServer //apple_ref/occ/intfcm/ldapConnectionWithServer //apple_ref/occ/intfm/ldapConnectionWithServer //apple_ref/occ/func/ldapConnectionWithServer //apple_ref/occ/ftmplt/ldapConnectionWithServer //apple_ref/occ/defn/ldapConnectionWithServer //apple_ref/occ/macro/ldapConnectionWithServer" --><span class="function">ldapConnectionWithServer</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">serverName</span> <!-- a logicalPath="//apple_ref/occ/instm/port //apple_ref/occ/clm/port //apple_ref/occ/intfcm/port //apple_ref/occ/intfm/port //apple_ref/occ/func/port //apple_ref/occ/ftmplt/port //apple_ref/occ/defn/port //apple_ref/occ/macro/port" --><span class="function">port</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/port //apple_ref/occ/data/port" --><span class="var">port</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to open an unencrypted connection to the given TCP/IP port on the host
+with the given serverName.
+</p>
+<p>Returns nil if the connection could not be established.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithServer:port:secure:;   name=SBLDAPConnection::ldapConnectionWithServer:port:secure: -->
+<a name="//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithServer:port:secure:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="ldapConnectionWithServer:port:secure:">ldapConnectionWithServer:port:secure:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/ldapConnectionWithServer //apple_ref/occ/clm/ldapConnectionWithServer //apple_ref/occ/intfcm/ldapConnectionWithServer //apple_ref/occ/intfm/ldapConnectionWithServer //apple_ref/occ/func/ldapConnectionWithServer //apple_ref/occ/ftmplt/ldapConnectionWithServer //apple_ref/occ/defn/ldapConnectionWithServer //apple_ref/occ/macro/ldapConnectionWithServer" --><span class="function">ldapConnectionWithServer</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">serverName</span> <!-- a logicalPath="//apple_ref/occ/instm/port //apple_ref/occ/clm/port //apple_ref/occ/intfcm/port //apple_ref/occ/intfm/port //apple_ref/occ/func/port //apple_ref/occ/ftmplt/port //apple_ref/occ/defn/port //apple_ref/occ/macro/port" --><span class="function">port</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<span class="param">port</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/secure //apple_ref/occ/clm/secure //apple_ref/occ/intfcm/secure //apple_ref/occ/intfm/secure //apple_ref/occ/func/secure //apple_ref/occ/ftmplt/secure //apple_ref/occ/defn/secure //apple_ref/occ/macro/secure" --><span class="function">secure</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/secure //apple_ref/occ/data/secure" --><span class="var">secure</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to open an encrypted/unencrypted connection to the given TCP/IP port on
+the host with the given serverName.  If 0 < port < 65536, that port number is
+used; otherwise, the default LDAP port is used.  The secure flag indicates whether
+the ldap:// or ldaps:// URL scheme should be used when connecting.
+</p>
+<p>Returns nil if the connection could not be established.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithServer:secure:;   name=SBLDAPConnection::ldapConnectionWithServer:secure: -->
+<a name="//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithServer:secure:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="ldapConnectionWithServer:secure:">ldapConnectionWithServer:secure:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/ldapConnectionWithServer //apple_ref/occ/clm/ldapConnectionWithServer //apple_ref/occ/intfcm/ldapConnectionWithServer //apple_ref/occ/intfm/ldapConnectionWithServer //apple_ref/occ/func/ldapConnectionWithServer //apple_ref/occ/ftmplt/ldapConnectionWithServer //apple_ref/occ/defn/ldapConnectionWithServer //apple_ref/occ/macro/ldapConnectionWithServer" --><span class="function">ldapConnectionWithServer</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">serverName</span> <!-- a logicalPath="//apple_ref/occ/instm/secure //apple_ref/occ/clm/secure //apple_ref/occ/intfcm/secure //apple_ref/occ/intfm/secure //apple_ref/occ/func/secure //apple_ref/occ/ftmplt/secure //apple_ref/occ/defn/secure //apple_ref/occ/macro/secure" --><span class="function">secure</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/secure //apple_ref/occ/data/secure" --><span class="var">secure</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to open an encrypted/unencrypted connection to the default LDAP port on
+the host with the given serverName.
+</p>
+<p>Returns nil if the connection could not be established.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithURL:;   name=SBLDAPConnection::ldapConnectionWithURL: -->
+<a name="//apple_ref/occ/clm/SBLDAPConnection/ldapConnectionWithURL:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="ldapConnectionWithURL:">ldapConnectionWithURL:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/ldapConnectionWithURL //apple_ref/occ/clm/ldapConnectionWithURL //apple_ref/occ/intfcm/ldapConnectionWithURL //apple_ref/occ/intfm/ldapConnectionWithURL //apple_ref/occ/func/ldapConnectionWithURL //apple_ref/occ/ftmplt/ldapConnectionWithURL //apple_ref/occ/defn/ldapConnectionWithURL //apple_ref/occ/macro/ldapConnectionWithURL" --><span class="function">ldapConnectionWithURL</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/ldapURL //apple_ref/occ/data/ldapURL" --><span class="var">ldapURL</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to open a connection to the LDAP server specified in the ldapURL.  The URL
+scheme provides for specifying the majority of options within the URL.  E.g.
+</p>
+<p>ldap{s}://[hostname]{:port#}/{dn{?attributes{?scope}{?filter}}{?extensions}
+</p>
+<p>See http://www.ietf.org/rfc/rfc1959.txt
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection/protocolVersion;   name=SBLDAPConnection::protocolVersion -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection/protocolVersion"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="protocolVersion">protocolVersion</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/protocolVersion //apple_ref/occ/data/protocolVersion" --><span class="var">protocolVersion</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the LDAP protocol version used by the receiver's connection.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection/setBaseDN:;   name=SBLDAPConnection::setBaseDN: -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection/setBaseDN:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setBaseDN:">setBaseDN:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setBaseDN //apple_ref/occ/clm/setBaseDN //apple_ref/occ/intfcm/setBaseDN //apple_ref/occ/intfm/setBaseDN //apple_ref/occ/func/setBaseDN //apple_ref/occ/ftmplt/setBaseDN //apple_ref/occ/defn/setBaseDN //apple_ref/occ/macro/setBaseDN" --><span class="function">setBaseDN</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/baseDN //apple_ref/occ/data/baseDN" --><span class="var">baseDN</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Set the receiver's default base DN which will be used when a DN is not provided
+explicitly to search methods.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBLDAPConnection/setDefaultProtocolVersion:;   name=SBLDAPConnection::setDefaultProtocolVersion: -->
+<a name="//apple_ref/occ/clm/SBLDAPConnection/setDefaultProtocolVersion:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setDefaultProtocolVersion:">setDefaultProtocolVersion:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setDefaultProtocolVersion //apple_ref/occ/clm/setDefaultProtocolVersion //apple_ref/occ/intfcm/setDefaultProtocolVersion //apple_ref/occ/intfm/setDefaultProtocolVersion //apple_ref/occ/func/setDefaultProtocolVersion //apple_ref/occ/ftmplt/setDefaultProtocolVersion //apple_ref/occ/defn/setDefaultProtocolVersion //apple_ref/occ/macro/setDefaultProtocolVersion" --><span class="function">setDefaultProtocolVersion</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/ldapProtVers //apple_ref/occ/data/ldapProtVers" --><span class="var">ldapProtVers</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Modify the default LDAP protocol version which new instances should use.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection/setProtocolVersion:;   name=SBLDAPConnection::setProtocolVersion: -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection/setProtocolVersion:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setProtocolVersion:">setProtocolVersion:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setProtocolVersion //apple_ref/occ/clm/setProtocolVersion //apple_ref/occ/intfcm/setProtocolVersion //apple_ref/occ/intfm/setProtocolVersion //apple_ref/occ/func/setProtocolVersion //apple_ref/occ/ftmplt/setProtocolVersion //apple_ref/occ/defn/setProtocolVersion //apple_ref/occ/macro/setProtocolVersion" --><span class="function">setProtocolVersion</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/ldapProtVers //apple_ref/occ/data/ldapProtVers" --><span class="var">ldapProtVers</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to modify the LDAP protocol version to be used by the receiver's connection.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection/startTLSEncryption:;   name=SBLDAPConnection::startTLSEncryption: -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection/startTLSEncryption:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="startTLSEncryption:">startTLSEncryption:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/startTLSEncryption //apple_ref/occ/clm/startTLSEncryption //apple_ref/occ/intfcm/startTLSEncryption //apple_ref/occ/intfm/startTLSEncryption //apple_ref/occ/func/startTLSEncryption //apple_ref/occ/ftmplt/startTLSEncryption //apple_ref/occ/defn/startTLSEncryption //apple_ref/occ/macro/startTLSEncryption" --><span class="function">startTLSEncryption</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/error //apple_ref/occ/data/error" --><span class="var">error</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to start TLS encryption on the receiver's connection.  Returns YES if the
+negotiation was successful (or was previously successful).  In case of any error,
+NO is returned and (if not NULL) error will contain an SBError represented the
+exception.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBLDAPConnection/tlsEncryptionIsStarted;   name=SBLDAPConnection::tlsEncryptionIsStarted -->
+<a name="//apple_ref/occ/instm/SBLDAPConnection/tlsEncryptionIsStarted"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="tlsEncryptionIsStarted">tlsEncryptionIsStarted</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/tlsEncryptionIsStarted //apple_ref/occ/data/tlsEncryptionIsStarted" --><span class="var">tlsEncryptionIsStarted</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver has started TLS encryption on its LDAP server
+connection.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

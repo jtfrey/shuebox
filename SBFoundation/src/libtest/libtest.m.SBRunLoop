@@ -1,0 +1,141 @@
+#import "SBFoundation.h"
+
+const char* httpCommand = "GET / HTTP/1.1\r\nHost: localhost\r\n\r\n";
+const char* httpCommandToo = "GET / HTTP/1.1\r\nHost: turin.nss.udel.edu\r\n\r\n";
+
+@interface Watcher : SBObject <SBStreamDelegate>
+{
+  const char*   _httpCommand;
+  BOOL          _headersSent;
+}
+
+- (id) initWithHTTPCommand:(const char*)httpCommand;
+- (void) delayedMethod:(id)argument;
+- (void) methodFiredByTimer:(id)argument;
+
+@end
+
+@implementation Watcher
+
+  - (id) initWithHTTPCommand:(const char*)httpCommand
+  {
+    if ( (self = [super init]) ) {
+      _httpCommand = httpCommand;
+    }
+    return self;
+  }
+
+//
+
+  - (void) delayedMethod:(id)argument
+  {
+    printf("%08X : DELAYED METHOD (%p)\n", time(NULL), argument);
+  }
+
+//
+
+  - (void) methodFiredByTimer:(id)argument
+  {
+    printf("%08X : TIMER FIRED (%p)\n", time(NULL), argument);
+  }
+
+//
+
+  - (void) stream:(SBStream*)stream
+    handleEvent:(SBStreamEvent)eventCode
+  {
+    switch ( eventCode ) {
+    
+      case SBStreamEventSpaceAvailable: {
+        if ( ! _headersSent ) {
+          printf("[%p] Sending HTTP headers...", self); fflush(stdout);
+          [(SBOutputStream*)stream write:_httpCommand length:strlen(_httpCommand)];
+          _headersSent = YES;
+          printf("done\n");
+        }
+        break;
+      }
+      
+      case SBStreamEventBytesAvailable: {
+        char          buffer[1024];
+        size_t        count;
+        
+        printf("[%p] Reading...", self); fflush(stdout);
+        while ( (count = [(SBInputStream*)stream read:buffer maxLength:sizeof(buffer)]) > 0 ) {
+          int         i = 0;
+          
+          printf("%ld bytes...", count); fflush(stdout);
+          while ( i < count )
+            fputc(buffer[i++], stdout);
+          if ( count < sizeof(buffer) )
+            break;
+        }
+        printf("done\n");
+        break;
+      }
+      
+      case SBStreamEventErrorOccurred: {
+        [[stream streamError] writeErrorSummaryToStream:stdout];
+      }
+      default: {
+        printf("[%p] Unscheduling from runloop (status = %d)...\n", self, eventCode);
+        [stream removeFromRunLoop:[SBRunLoop currentRunLoop] forMode:SBRunLoopDefaultMode];
+        [stream close];
+        
+        [[SBRunLoop currentRunLoop] performSelector:@selector(delayedMethod:)
+              target:self argument:nil
+              order:0
+              modes:[SBArray arrayWithObject:SBRunLoopDefaultMode]
+            ];
+        break;
+      }
+    
+    }
+  }
+
+@end
+
+//
+
+int
+main()
+{
+  SBAutoreleasePool*      pool = [[SBAutoreleasePool alloc] init];
+  Watcher*                watcher = [[Watcher alloc] initWithHTTPCommand:httpCommand];
+  Watcher*                watcherToo = [[Watcher alloc] initWithHTTPCommand:httpCommandToo];
+  SBInputStream*          iStream[2];
+  SBOutputStream*         oStream[2];
+  SBTimer*                periodicEvent = [SBTimer scheduledTimerWithTimeInterval:[SBTimeInterval timeIntervalWithSeconds:5]
+                                              target:watcher selector:@selector(methodFiredByTimer:) userInfo:nil repeats:YES];
+  
+  [SBStream getStreamsToHost:[SBHost hostWithName:@"localhost"] port:8080 inputStream:&iStream[0] outputStream:&oStream[0]];
+  [SBStream getStreamsToHost:[SBHost hostWithName:@"turin.nss.udel.edu"] port:80 inputStream:&iStream[1] outputStream:&oStream[1]];
+  
+  SBRunLoop*            runLoop = [SBRunLoop currentRunLoop];
+    
+  [runLoop performSelector:@selector(delayedMethod:)
+          target:watcher argument:iStream[0]
+          order:0
+          modes:[SBArray arrayWithObject:SBRunLoopDefaultMode]
+        ];
+  [oStream[0] setDelegate:watcher];
+  [iStream[0] setDelegate:watcher];
+  [oStream[0] scheduleInRunLoop:runLoop forMode:SBRunLoopDefaultMode];
+  [iStream[0] scheduleInRunLoop:runLoop forMode:SBRunLoopDefaultMode];
+  [oStream[0] open];
+  
+  [oStream[1] setDelegate:watcherToo];
+  [iStream[1] setDelegate:watcherToo];
+  [oStream[1] scheduleInRunLoop:runLoop forMode:SBRunLoopDefaultMode];
+  [iStream[1] scheduleInRunLoop:runLoop forMode:SBRunLoopDefaultMode];
+  [oStream[1] open];
+    
+  [runLoop run];
+  
+  //
+  // Clear out autorelease:
+  //
+  [pool release];
+  
+  return 0;
+}

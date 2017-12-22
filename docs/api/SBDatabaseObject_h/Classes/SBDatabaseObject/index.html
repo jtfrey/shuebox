@@ -1,0 +1,354 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBDatabaseObject</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBDatabaseObject;  name=SBDatabaseObject-->
+<a name="//apple_ref/occ/cl/SBDatabaseObject"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBDatabaseObject">SBDatabaseObject</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBDatabaseObject.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The SBDatabaseObject class lays the foundation for creating classes that
+are backed by an SQL database.  Each instance of this class has a parent
+database, an integral object identifier, and two sets of keyed properties
+associated with it.  Each property key should equate to an SQL column
+or field.
+</p>
+<p>When an instance is loaded from the backing database, an immutable
+dictionary containing the keyed properties is created.  Any changes made
+to the recevier are stored in a mutable dictionary.  Thus, the immutable
+copy is considered the reference state of the receiver (but may still be
+out-of-date with respect to the state in the database).
+</p>
+<p>Properties are reference by their (string) keys, with the current value
+being taken first from the (mutable) "changes" dictionary and then from
+the (immutable) reference dictionary.
+</p>
+<p>Removing all local modifications to the receiver equates to emptying the
+"changes" dictionary.  If the changes are successfully committed back to
+the database, the values from the "changes" dictionary are merged into
+the reference dictionary for the receiver.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBDatabaseObject/archivalTableNameForClass" target="_top">+archivalTableNameForClass</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/archivalTableNameForClass" target="_top">-archivalTableNameForClass</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/commitModifications" target="_top">-commitModifications</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBDatabaseObject/databaseObjectWithDatabase:key:value:" target="_top">+databaseObjectWithDatabase:key:value:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBDatabaseObject/databaseObjectWithDatabase:objectId:" target="_top">+databaseObjectWithDatabase:objectId:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/deleteFromDatabase" target="_top">-deleteFromDatabase</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/hasBeenModified" target="_top">-hasBeenModified</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/initWithDatabase:key:value:" target="_top">-initWithDatabase:key:value:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/initWithDatabase:objectId:" target="_top">-initWithDatabase:objectId:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBDatabaseObject/objectIdKeyForClass" target="_top">+objectIdKeyForClass</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/objectIdKeyForClass" target="_top">-objectIdKeyForClass</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/parentDatabase" target="_top">-parentDatabase</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/propertyForKey:" target="_top">-propertyForKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/propertyKeyEnumerator" target="_top">-propertyKeyEnumerator</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBDatabaseObject/propertyKeysForClass" target="_top">+propertyKeysForClass</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/propertyKeysForClass" target="_top">-propertyKeysForClass</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/refreshCommittedProperties" target="_top">-refreshCommittedProperties</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/revertModifications" target="_top">-revertModifications</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/setProperty:forKey:" target="_top">-setProperty:forKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBDatabaseObject/tableNameForClass" target="_top">+tableNameForClass</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/tableNameForClass" target="_top">-tableNameForClass</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBDatabaseObject/validPropertyKey:" target="_top">-validPropertyKey:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBDatabaseObject/archivalTableNameForClass;   name=SBDatabaseObject::archivalTableNameForClass -->
+<a name="//apple_ref/occ/clm/SBDatabaseObject/archivalTableNameForClass"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="archivalTableNameForClass">archivalTableNameForClass</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/archivalTableNameForClass //apple_ref/occ/data/archivalTableNameForClass" --><span class="var">archivalTableNameForClass</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Some classes may provide for revisionary archiving of instance data.
+This method returns the SQL name of the entity that backs archival
+data for this class.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/archivalTableNameForClass;   name=SBDatabaseObject::archivalTableNameForClass -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/archivalTableNameForClass"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="archivalTableNameForClass">archivalTableNameForClass</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/archivalTableNameForClass //apple_ref/occ/data/archivalTableNameForClass" --><span class="var">archivalTableNameForClass</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Some classes may provide for revisionary archiving of instance data.
+This method returns the SQL name of the entity that backs archival
+data for this receiver's class.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/commitModifications;   name=SBDatabaseObject::commitModifications -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/commitModifications"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="commitModifications">commitModifications</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/commitModifications //apple_ref/occ/data/commitModifications" --><span class="var">commitModifications</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempt to commit all modified property values for the receiver to the backing
+database.  Returns boolean YES if there were no modifications to commit or the
+commit was successful.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBDatabaseObject/databaseObjectWithDatabase:key:value:;   name=SBDatabaseObject::databaseObjectWithDatabase:key:value: -->
+<a name="//apple_ref/occ/clm/SBDatabaseObject/databaseObjectWithDatabase:key:value:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="databaseObjectWithDatabase:key:value:">databaseObjectWithDatabase:key:value:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/databaseObjectWithDatabase //apple_ref/occ/clm/databaseObjectWithDatabase //apple_ref/occ/intfcm/databaseObjectWithDatabase //apple_ref/occ/intfm/databaseObjectWithDatabase //apple_ref/occ/func/databaseObjectWithDatabase //apple_ref/occ/ftmplt/databaseObjectWithDatabase //apple_ref/occ/defn/databaseObjectWithDatabase //apple_ref/occ/macro/databaseObjectWithDatabase" --><span class="function">databaseObjectWithDatabase</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">database</span> <!-- a logicalPath="//apple_ref/occ/instm/key //apple_ref/occ/clm/key //apple_ref/occ/intfcm/key //apple_ref/occ/intfm/key //apple_ref/occ/func/key //apple_ref/occ/ftmplt/key //apple_ref/occ/defn/key //apple_ref/occ/macro/key" --><span class="function">key</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">key</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/value //apple_ref/occ/clm/value //apple_ref/occ/intfcm/value //apple_ref/occ/intfm/value //apple_ref/occ/func/value //apple_ref/occ/ftmplt/value //apple_ref/occ/defn/value //apple_ref/occ/macro/value" --><span class="function">value</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Lookup in the backing database an object instance for which the given column/field
+(key) has the specified value.  If found, an autoreleased instance of this class is
+initialized and returned.  Note that if the (key,value) is not unique across all
+backed objects only the first match is returned by this method. 
+</p>
+<p>Returns nil if the object does not exist in the backing database or there
+was an error while attempting to load it.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBDatabaseObject/databaseObjectWithDatabase:objectId:;   name=SBDatabaseObject::databaseObjectWithDatabase:objectId: -->
+<a name="//apple_ref/occ/clm/SBDatabaseObject/databaseObjectWithDatabase:objectId:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="databaseObjectWithDatabase:objectId:">databaseObjectWithDatabase:objectId:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/databaseObjectWithDatabase //apple_ref/occ/clm/databaseObjectWithDatabase //apple_ref/occ/intfcm/databaseObjectWithDatabase //apple_ref/occ/intfm/databaseObjectWithDatabase //apple_ref/occ/func/databaseObjectWithDatabase //apple_ref/occ/ftmplt/databaseObjectWithDatabase //apple_ref/occ/defn/databaseObjectWithDatabase //apple_ref/occ/macro/databaseObjectWithDatabase" --><span class="function">databaseObjectWithDatabase</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">database</span> <!-- a logicalPath="//apple_ref/occ/instm/objectId //apple_ref/occ/clm/objectId //apple_ref/occ/intfcm/objectId //apple_ref/occ/intfm/objectId //apple_ref/occ/func/objectId //apple_ref/occ/ftmplt/objectId //apple_ref/occ/defn/objectId //apple_ref/occ/macro/objectId" --><span class="function">objectId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/objId //apple_ref/occ/data/objId" --><span class="var">objId</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Lookup in the backing database an object instance with the given integral
+identifier.  If found, an autoreleased instance of this class is
+initialized and returned.
+</p>
+<p>This method is essentially a convenience for:
+</p>
+<p>[class databaseObjectWithDatabase:database key:[class objectIdKeyForClass] value:objId]
+</p>
+<p>Returns nil if the object does not exist in the backing database or there
+was an error while attempting to load it.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/deleteFromDatabase;   name=SBDatabaseObject::deleteFromDatabase -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/deleteFromDatabase"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="deleteFromDatabase">deleteFromDatabase</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/deleteFromDatabase //apple_ref/occ/data/deleteFromDatabase" --><span class="var">deleteFromDatabase</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempt to remove the receiver from the backing database.  Returns boolean YES
+if sucessful.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/hasBeenModified;   name=SBDatabaseObject::hasBeenModified -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/hasBeenModified"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="hasBeenModified">hasBeenModified</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/hasBeenModified //apple_ref/occ/data/hasBeenModified" --><span class="var">hasBeenModified</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns boolean YES if the receiver has had its properties modified.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/initWithDatabase:key:value:;   name=SBDatabaseObject::initWithDatabase:key:value: -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/initWithDatabase:key:value:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithDatabase:key:value:">initWithDatabase:key:value:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithDatabase //apple_ref/occ/clm/initWithDatabase //apple_ref/occ/intfcm/initWithDatabase //apple_ref/occ/intfm/initWithDatabase //apple_ref/occ/func/initWithDatabase //apple_ref/occ/ftmplt/initWithDatabase //apple_ref/occ/defn/initWithDatabase //apple_ref/occ/macro/initWithDatabase" --><span class="function">initWithDatabase</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">database</span> <!-- a logicalPath="//apple_ref/occ/instm/key //apple_ref/occ/clm/key //apple_ref/occ/intfcm/key //apple_ref/occ/intfm/key //apple_ref/occ/func/key //apple_ref/occ/ftmplt/key //apple_ref/occ/defn/key //apple_ref/occ/macro/key" --><span class="function">key</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">key</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/value //apple_ref/occ/clm/value //apple_ref/occ/intfcm/value //apple_ref/occ/intfm/value //apple_ref/occ/func/value //apple_ref/occ/ftmplt/value //apple_ref/occ/defn/value //apple_ref/occ/macro/value" --><span class="function">value</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initialize the receiver by loading its properties from the backing database; see
+the discussion for databaseObjectWithDatabase:key:value:.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/initWithDatabase:objectId:;   name=SBDatabaseObject::initWithDatabase:objectId: -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/initWithDatabase:objectId:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithDatabase:objectId:">initWithDatabase:objectId:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithDatabase //apple_ref/occ/clm/initWithDatabase //apple_ref/occ/intfcm/initWithDatabase //apple_ref/occ/intfm/initWithDatabase //apple_ref/occ/func/initWithDatabase //apple_ref/occ/ftmplt/initWithDatabase //apple_ref/occ/defn/initWithDatabase //apple_ref/occ/macro/initWithDatabase" --><span class="function">initWithDatabase</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">database</span> <!-- a logicalPath="//apple_ref/occ/instm/objectId //apple_ref/occ/clm/objectId //apple_ref/occ/intfcm/objectId //apple_ref/occ/intfm/objectId //apple_ref/occ/func/objectId //apple_ref/occ/ftmplt/objectId //apple_ref/occ/defn/objectId //apple_ref/occ/macro/objectId" --><span class="function">objectId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/objId //apple_ref/occ/data/objId" --><span class="var">objId</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initialize the receiver by loading its properties from the backing database; see
+the discussion for databaseObjectWithDatabase:objectId:.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBDatabaseObject/objectIdKeyForClass;   name=SBDatabaseObject::objectIdKeyForClass -->
+<a name="//apple_ref/occ/clm/SBDatabaseObject/objectIdKeyForClass"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="objectIdKeyForClass">objectIdKeyForClass</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/objectIdKeyForClass //apple_ref/occ/data/objectIdKeyForClass" --><span class="var">objectIdKeyForClass</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the property key that maps to a unique integral identifier
+used by the class to identify instances.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/objectIdKeyForClass;   name=SBDatabaseObject::objectIdKeyForClass -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/objectIdKeyForClass"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="objectIdKeyForClass">objectIdKeyForClass</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/objectIdKeyForClass //apple_ref/occ/data/objectIdKeyForClass" --><span class="var">objectIdKeyForClass</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the property key that maps to a unique integral identifier
+used by the receiver's class to identify instances.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/parentDatabase;   name=SBDatabaseObject::parentDatabase -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/parentDatabase"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="parentDatabase">parentDatabase</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/parentDatabase //apple_ref/occ/data/parentDatabase" --><span class="var">parentDatabase</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the reference to the receiver's backing database.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/propertyForKey:;   name=SBDatabaseObject::propertyForKey: -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/propertyForKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="propertyForKey:">propertyForKey:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/propertyForKey //apple_ref/occ/clm/propertyForKey //apple_ref/occ/intfcm/propertyForKey //apple_ref/occ/intfm/propertyForKey //apple_ref/occ/func/propertyForKey //apple_ref/occ/ftmplt/propertyForKey //apple_ref/occ/defn/propertyForKey //apple_ref/occ/macro/propertyForKey" --><span class="function">propertyForKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aKey //apple_ref/occ/data/aKey" --><span class="var">aKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Locates the current value for the given property (by aKey).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/propertyKeyEnumerator;   name=SBDatabaseObject::propertyKeyEnumerator -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/propertyKeyEnumerator"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="propertyKeyEnumerator">propertyKeyEnumerator</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBEnumerator //apple_ref/occ/tdef/SBEnumerator //apple_ref/occ/tag/SBEnumerator //apple_ref/occ/econst/SBEnumerator //apple_ref/occ/struct/SBEnumerator //apple_ref/occ/clconst/SBEnumerator //apple_ref/occ/intf/SBEnumerator" --><span class="type">SBEnumerator</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/propertyKeyEnumerator //apple_ref/occ/data/propertyKeyEnumerator" --><span class="var">propertyKeyEnumerator</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an enumerator that walks the list of valid property keys for the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBDatabaseObject/propertyKeysForClass;   name=SBDatabaseObject::propertyKeysForClass -->
+<a name="//apple_ref/occ/clm/SBDatabaseObject/propertyKeysForClass"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="propertyKeysForClass">propertyKeysForClass</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/propertyKeysForClass //apple_ref/occ/data/propertyKeysForClass" --><span class="var">propertyKeysForClass</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the property keys (SQL column/field names) managed by this
+class.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/propertyKeysForClass;   name=SBDatabaseObject::propertyKeysForClass -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/propertyKeysForClass"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="propertyKeysForClass">propertyKeysForClass</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/propertyKeysForClass //apple_ref/occ/data/propertyKeysForClass" --><span class="var">propertyKeysForClass</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the property keys (SQL column/field names) managed by the
+receiver's class.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/refreshCommittedProperties;   name=SBDatabaseObject::refreshCommittedProperties -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/refreshCommittedProperties"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="refreshCommittedProperties">refreshCommittedProperties</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/refreshCommittedProperties //apple_ref/occ/data/refreshCommittedProperties" --><span class="var">refreshCommittedProperties</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Purge any modifications that have been made to the receiver's properties and reload
+all property values from the backing database.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/revertModifications;   name=SBDatabaseObject::revertModifications -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/revertModifications"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="revertModifications">revertModifications</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/revertModifications //apple_ref/occ/data/revertModifications" --><span class="var">revertModifications</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Purge any modifications that have been made to the receiver's properties.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/setProperty:forKey:;   name=SBDatabaseObject::setProperty:forKey: -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/setProperty:forKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setProperty:forKey:">setProperty:forKey:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setProperty //apple_ref/occ/clm/setProperty //apple_ref/occ/intfcm/setProperty //apple_ref/occ/intfm/setProperty //apple_ref/occ/func/setProperty //apple_ref/occ/ftmplt/setProperty //apple_ref/occ/defn/setProperty //apple_ref/occ/macro/setProperty" --><span class="function">setProperty</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">property</span> <!-- a logicalPath="//apple_ref/occ/instm/forKey //apple_ref/occ/clm/forKey //apple_ref/occ/intfcm/forKey //apple_ref/occ/intfm/forKey //apple_ref/occ/func/forKey //apple_ref/occ/ftmplt/forKey //apple_ref/occ/defn/forKey //apple_ref/occ/macro/forKey" --><span class="function">forKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aKey //apple_ref/occ/data/aKey" --><span class="var">aKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Provide a new value for the property with key aKey.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBDatabaseObject/tableNameForClass;   name=SBDatabaseObject::tableNameForClass -->
+<a name="//apple_ref/occ/clm/SBDatabaseObject/tableNameForClass"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="tableNameForClass">tableNameForClass</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/tableNameForClass //apple_ref/occ/data/tableNameForClass" --><span class="var">tableNameForClass</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the SQL name of the database entity that backs instances
+of this class.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/tableNameForClass;   name=SBDatabaseObject::tableNameForClass -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/tableNameForClass"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="tableNameForClass">tableNameForClass</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/tableNameForClass //apple_ref/occ/data/tableNameForClass" --><span class="var">tableNameForClass</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the SQL name of the database entity that backs the
+recevier's class.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBDatabaseObject/validPropertyKey:;   name=SBDatabaseObject::validPropertyKey: -->
+<a name="//apple_ref/occ/instm/SBDatabaseObject/validPropertyKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="validPropertyKey:">validPropertyKey:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/validPropertyKey //apple_ref/occ/clm/validPropertyKey //apple_ref/occ/intfcm/validPropertyKey //apple_ref/occ/intfm/validPropertyKey //apple_ref/occ/func/validPropertyKey //apple_ref/occ/ftmplt/validPropertyKey //apple_ref/occ/defn/validPropertyKey //apple_ref/occ/macro/validPropertyKey" --><span class="function">validPropertyKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aKey //apple_ref/occ/data/aKey" --><span class="var">aKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns boolean YES if aKey is a valid property key for the receiver.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

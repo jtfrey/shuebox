@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBMutableString</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBMutableString;  name=SBMutableString-->
+<a name="//apple_ref/occ/cl/SBMutableString"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBMutableString">SBMutableString</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBString" -->SBString<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBString.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Instances of SBMutableString augment SBString with methods which modify instances' character
+strings.  This class is constructed to be very similar to the Cocoa NSMutableString class; just like
+SBString, there are concrete subclasses implemented behind the scenes.
+</p>
+<p>Internally, all of the SBMutableString concrete subclasses represent their text payload as UTF-16
+character arrays.  This may not be true of any subclasses defined outside the context of this
+header file, though.  Any subclass of SBMutableString must at least implement:
+</p>
+<ul>
+<li>- (SBUInteger) length</li>
+<li>- (UChar) characterAtIndex:(SBUInteger)index</li>
+<li>- (void) replaceCharactersInRange:(SBRange)range withCharacters:(UChar*)characters length:(SBUInteger)length</li>
+</ul>
+<p>With these three methods, any subclass will automatically work with all of the methods defined in
+the SBMutableStringExtensions category.  Of course, further optimization can be accomplished by
+overriding those methods with methods that are optimized to the particular context of the
+subclass.
+</p>
+<p>Subclasses are responsible for implementing their own factory and init methods; they should
+not rely on the SBString/SBMutableString methods since only concrete subclasses of SBMutableString
+<i>actually</i> allocate space for character arrays, etc.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableString/replaceCharactersInRange:withCharacters:length:" target="_top">-replaceCharactersInRange:withCharacters:length:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableString/replaceCharactersInRange:withCharacters:length:;   name=SBMutableString::replaceCharactersInRange:withCharacters:length: -->
+<a name="//apple_ref/occ/instm/SBMutableString/replaceCharactersInRange:withCharacters:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="replaceCharactersInRange:withCharacters:length:">replaceCharactersInRange:withCharacters:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/replaceCharactersInRange //apple_ref/occ/clm/replaceCharactersInRange //apple_ref/occ/intfcm/replaceCharactersInRange //apple_ref/occ/intfm/replaceCharactersInRange //apple_ref/occ/func/replaceCharactersInRange //apple_ref/occ/ftmplt/replaceCharactersInRange //apple_ref/occ/defn/replaceCharactersInRange //apple_ref/occ/macro/replaceCharactersInRange" --><span class="function">replaceCharactersInRange</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<span class="param">range</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/withCharacters //apple_ref/occ/clm/withCharacters //apple_ref/occ/intfcm/withCharacters //apple_ref/occ/intfm/withCharacters //apple_ref/occ/func/withCharacters //apple_ref/occ/ftmplt/withCharacters //apple_ref/occ/defn/withCharacters //apple_ref/occ/macro/withCharacters" --><span class="function">withCharacters</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/UChar //apple_ref/occ/tdef/UChar //apple_ref/occ/tag/UChar //apple_ref/occ/econst/UChar //apple_ref/occ/struct/UChar //apple_ref/occ/clconst/UChar //apple_ref/occ/intf/UChar" --><span class="type">UChar</span><!-- /a --><span class="type">*</span>)<span class="param">characters</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Cuts the UTF-16 entities in range out of the receiver and replaces them with the UTF-16 entities
+contained in aString; at most length UTF-16 entities are copied into the receiver.
+</p>
+<p>For mutable strings allocated with a fixed capacity, this method should not fail if the resulting
+string will exceed the capacity; rather, the resulting string should be truncated to fit the
+fixed capacity.<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBMACAddress</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBMACAddress;  name=SBMACAddress-->
+<a name="//apple_ref/occ/cl/SBMACAddress"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBMACAddress">SBMACAddress</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBMACAddress.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Instances of SBMACAddress represent Ethernet hardware addresses.  A MAC address is
+technically 6 unsigned bytes; the first three bytes represent an originating entity
+which owns the MAC address space in which the address is resident.
+</p>
+<p>Instances can be created from binary representation (6 bytes) or from text strings.
+The format of the incoming text string is very loose:  essentially, any non-hex
+characters can be used to separate the sequences of hex digits; a sequence of hex
+digits is implicitly left-padded by '0' if not of even length; and any string
+yielding zero bytes is considered invalid while a string yielding less than six
+bytes will be considered valid with any unfilled bytes of the MAC address being set
+to zero.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMACAddress/compareToMACAddress:" target="_top">-compareToMACAddress:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMACAddress/copyAddressBytes:length:" target="_top">-copyAddressBytes:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMACAddress/initWithBytes:" target="_top">-initWithBytes:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMACAddress/initWithCString:" target="_top">-initWithCString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMACAddress/initWithString:" target="_top">-initWithString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBMACAddress/initWithString:Behaves" target="_top">-initWithString:
+
+Behaves</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMACAddress/isEqualToMACAddress:" target="_top">-isEqualToMACAddress:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBMACAddress/isEqualToMACAddress:Returns" target="_top">-isEqualToMACAddress:
+
+Returns</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMACAddress/macAddressAsStringWithFormat:" target="_top">-macAddressAsStringWithFormat:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBMACAddress/macAddressWithBytes:" target="_top">+macAddressWithBytes:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBMACAddress/macAddressWithCString:" target="_top">+macAddressWithCString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBMACAddress/macAddressWithString:" target="_top">+macAddressWithString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:clm/SBMACAddress/macAddressWithString:Behaves" target="_top">+macAddressWithString:
+
+Behaves</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMACAddress/compareToMACAddress:;   name=SBMACAddress::compareToMACAddress: -->
+<a name="//apple_ref/occ/instm/SBMACAddress/compareToMACAddress:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="compareToMACAddress:">compareToMACAddress:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBComparisonResult //apple_ref/occ/tdef/SBComparisonResult //apple_ref/occ/tag/SBComparisonResult //apple_ref/occ/econst/SBComparisonResult //apple_ref/occ/struct/SBComparisonResult //apple_ref/occ/clconst/SBComparisonResult //apple_ref/occ/intf/SBComparisonResult" --><span class="type">SBComparisonResult</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/compareToMACAddress //apple_ref/occ/clm/compareToMACAddress //apple_ref/occ/intfcm/compareToMACAddress //apple_ref/occ/intfm/compareToMACAddress //apple_ref/occ/func/compareToMACAddress //apple_ref/occ/ftmplt/compareToMACAddress //apple_ref/occ/defn/compareToMACAddress //apple_ref/occ/macro/compareToMACAddress" --><span class="function">compareToMACAddress</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBMACAddress //apple_ref/occ/tdef/SBMACAddress //apple_ref/occ/tag/SBMACAddress //apple_ref/occ/econst/SBMACAddress //apple_ref/occ/struct/SBMACAddress //apple_ref/occ/clconst/SBMACAddress //apple_ref/occ/intf/SBMACAddress" --><span class="type">SBMACAddress</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aMACAddr //apple_ref/occ/data/aMACAddr" --><span class="var">aMACAddr</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Compare the receiver to another SBMACAddress, returning a value from the SBComparisonResult
+enumartion to indicate the ordering of the two addresses (ascending, descending, same).<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMACAddress/copyAddressBytes:length:;   name=SBMACAddress::copyAddressBytes:length: -->
+<a name="//apple_ref/occ/instm/SBMACAddress/copyAddressBytes:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="copyAddressBytes:length:">copyAddressBytes:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/copyAddressBytes //apple_ref/occ/clm/copyAddressBytes //apple_ref/occ/intfcm/copyAddressBytes //apple_ref/occ/intfm/copyAddressBytes //apple_ref/occ/func/copyAddressBytes //apple_ref/occ/ftmplt/copyAddressBytes //apple_ref/occ/defn/copyAddressBytes //apple_ref/occ/macro/copyAddressBytes" --><span class="function">copyAddressBytes</span><!-- /a -->:(<span class="keyword">unsigned</span> <!-- a logicalPath="//apple_ref/occ/cl/char //apple_ref/occ/tdef/char //apple_ref/occ/tag/char //apple_ref/occ/econst/char //apple_ref/occ/struct/char //apple_ref/occ/clconst/char //apple_ref/occ/intf/char" --><span class="type">char</span><!-- /a --><span class="type">*</span>)<span class="param">buffer</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Copies at most "length" bytes of the recevier's address to the provided
+memory buffer.  If length is larger than six, then only six bytes are copied
+and the rest of buffer is untouched.
+</p>
+<p>Returns the actual number of bytes copied to buffer.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMACAddress/initWithBytes:;   name=SBMACAddress::initWithBytes: -->
+<a name="//apple_ref/occ/instm/SBMACAddress/initWithBytes:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithBytes:">initWithBytes:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithBytes //apple_ref/occ/clm/initWithBytes //apple_ref/occ/intfcm/initWithBytes //apple_ref/occ/intfm/initWithBytes //apple_ref/occ/func/initWithBytes //apple_ref/occ/ftmplt/initWithBytes //apple_ref/occ/defn/initWithBytes //apple_ref/occ/macro/initWithBytes" --><span class="function">initWithBytes</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/bytes //apple_ref/occ/data/bytes" --><span class="var">bytes</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Initialize a newly-allocated instance using the first six bytes resident at
+"bytes".<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMACAddress/initWithCString:;   name=SBMACAddress::initWithCString: -->
+<a name="//apple_ref/occ/instm/SBMACAddress/initWithCString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithCString:">initWithCString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithCString //apple_ref/occ/clm/initWithCString //apple_ref/occ/intfcm/initWithCString //apple_ref/occ/intfm/initWithCString //apple_ref/occ/func/initWithCString //apple_ref/occ/ftmplt/initWithCString //apple_ref/occ/defn/initWithCString //apple_ref/occ/macro/initWithCString" --><span class="function">initWithCString</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/cString //apple_ref/occ/data/cString" --><span class="var">cString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Initialize a newly-allocated instance by scanning the passed-in cString for
+byte sequences -- see the SBMACAddress class documentation for a description
+of the acceptable string formatting.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMACAddress/initWithString:;   name=SBMACAddress::initWithString: -->
+<a name="//apple_ref/occ/instm/SBMACAddress/initWithString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithString:">initWithString:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBMACAddress/initWithString:Behaves" --><p>initWithString:  Behaves<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithString //apple_ref/occ/clm/initWithString //apple_ref/occ/intfcm/initWithString //apple_ref/occ/intfm/initWithString //apple_ref/occ/func/initWithString //apple_ref/occ/ftmplt/initWithString //apple_ref/occ/defn/initWithString //apple_ref/occ/macro/initWithString" --><span class="function">initWithString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the same as initWithCString: but operates on an SBString object.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBMACAddress/initWithString:Behaves;   name=SBMACAddress::initWithString:
+
+Behaves -->
+<a name="//apple_ref/doc/title:instm/SBMACAddress/initWithString:Behaves"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithString:Behaves">initWithString:
+
+Behaves</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBMACAddress/initWithString:" --><p>initWithString:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithString //apple_ref/occ/clm/initWithString //apple_ref/occ/intfcm/initWithString //apple_ref/occ/intfm/initWithString //apple_ref/occ/func/initWithString //apple_ref/occ/ftmplt/initWithString //apple_ref/occ/defn/initWithString //apple_ref/occ/macro/initWithString" --><span class="function">initWithString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the same as initWithCString: but operates on an SBString object.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMACAddress/isEqualToMACAddress:;   name=SBMACAddress::isEqualToMACAddress: -->
+<a name="//apple_ref/occ/instm/SBMACAddress/isEqualToMACAddress:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isEqualToMACAddress:">isEqualToMACAddress:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBMACAddress/isEqualToMACAddress:Returns" --><p>isEqualToMACAddress:  Returns<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/isEqualToMACAddress //apple_ref/occ/clm/isEqualToMACAddress //apple_ref/occ/intfcm/isEqualToMACAddress //apple_ref/occ/intfm/isEqualToMACAddress //apple_ref/occ/func/isEqualToMACAddress //apple_ref/occ/ftmplt/isEqualToMACAddress //apple_ref/occ/defn/isEqualToMACAddress //apple_ref/occ/macro/isEqualToMACAddress" --><span class="function">isEqualToMACAddress</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBMACAddress //apple_ref/occ/tdef/SBMACAddress //apple_ref/occ/tag/SBMACAddress //apple_ref/occ/econst/SBMACAddress //apple_ref/occ/struct/SBMACAddress //apple_ref/occ/clconst/SBMACAddress //apple_ref/occ/intf/SBMACAddress" --><span class="type">SBMACAddress</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aMACAddr //apple_ref/occ/data/aMACAddr" --><span class="var">aMACAddr</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>YES if the receiver and aMACAddr contain the same address.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBMACAddress/isEqualToMACAddress:Returns;   name=SBMACAddress::isEqualToMACAddress:
+
+Returns -->
+<a name="//apple_ref/doc/title:instm/SBMACAddress/isEqualToMACAddress:Returns"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isEqualToMACAddress:Returns">isEqualToMACAddress:
+
+Returns</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBMACAddress/isEqualToMACAddress:" --><p>isEqualToMACAddress:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/isEqualToMACAddress //apple_ref/occ/clm/isEqualToMACAddress //apple_ref/occ/intfcm/isEqualToMACAddress //apple_ref/occ/intfm/isEqualToMACAddress //apple_ref/occ/func/isEqualToMACAddress //apple_ref/occ/ftmplt/isEqualToMACAddress //apple_ref/occ/defn/isEqualToMACAddress //apple_ref/occ/macro/isEqualToMACAddress" --><span class="function">isEqualToMACAddress</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBMACAddress //apple_ref/occ/tdef/SBMACAddress //apple_ref/occ/tag/SBMACAddress //apple_ref/occ/econst/SBMACAddress //apple_ref/occ/struct/SBMACAddress //apple_ref/occ/clconst/SBMACAddress //apple_ref/occ/intf/SBMACAddress" --><span class="type">SBMACAddress</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aMACAddr //apple_ref/occ/data/aMACAddr" --><span class="var">aMACAddr</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>YES if the receiver and aMACAddr contain the same address.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMACAddress/macAddressAsStringWithFormat:;   name=SBMACAddress::macAddressAsStringWithFormat: -->
+<a name="//apple_ref/occ/instm/SBMACAddress/macAddressAsStringWithFormat:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="macAddressAsStringWithFormat:">macAddressAsStringWithFormat:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/macAddressAsStringWithFormat //apple_ref/occ/clm/macAddressAsStringWithFormat //apple_ref/occ/intfcm/macAddressAsStringWithFormat //apple_ref/occ/intfm/macAddressAsStringWithFormat //apple_ref/occ/func/macAddressAsStringWithFormat //apple_ref/occ/ftmplt/macAddressAsStringWithFormat //apple_ref/occ/defn/macAddressAsStringWithFormat //apple_ref/occ/macro/macAddressAsStringWithFormat" --><span class="function">macAddressAsStringWithFormat</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBMACAddressFormat //apple_ref/occ/tdef/SBMACAddressFormat //apple_ref/occ/tag/SBMACAddressFormat //apple_ref/occ/econst/SBMACAddressFormat //apple_ref/occ/struct/SBMACAddressFormat //apple_ref/occ/clconst/SBMACAddressFormat //apple_ref/occ/intf/SBMACAddressFormat" --><span class="type">SBMACAddressFormat</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/format //apple_ref/occ/data/format" --><span class="var">format</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an SBString object that contains a textual rendition of the
+receiver's MAC address.  The format argument dictates what byte-grouping
+and delimiter character should be used, e.g. two-triplet with dot
+delimiter producing
+</p>
+<p>012345.6789ab
+</p>
+<p>and three-word with hyphen producing
+</p>
+<p>0123-4567-89ab
+</p>
+<p>The default format is the most-often-seen
+</p>
+<p>01:23:45:67:89:ab<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBMACAddress/macAddressWithBytes:;   name=SBMACAddress::macAddressWithBytes: -->
+<a name="//apple_ref/occ/clm/SBMACAddress/macAddressWithBytes:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="macAddressWithBytes:">macAddressWithBytes:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBMACAddress //apple_ref/occ/tdef/SBMACAddress //apple_ref/occ/tag/SBMACAddress //apple_ref/occ/econst/SBMACAddress //apple_ref/occ/struct/SBMACAddress //apple_ref/occ/clconst/SBMACAddress //apple_ref/occ/intf/SBMACAddress" --><span class="type">SBMACAddress</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/macAddressWithBytes //apple_ref/occ/clm/macAddressWithBytes //apple_ref/occ/intfcm/macAddressWithBytes //apple_ref/occ/intfm/macAddressWithBytes //apple_ref/occ/func/macAddressWithBytes //apple_ref/occ/ftmplt/macAddressWithBytes //apple_ref/occ/defn/macAddressWithBytes //apple_ref/occ/macro/macAddressWithBytes" --><span class="function">macAddressWithBytes</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/bytes //apple_ref/occ/data/bytes" --><span class="var">bytes</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Create an autoreleased instance initialized with the first six bytes of data at
+"bytes".
+</p>
+<p>If "bytes" is NULL then nil is returned.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBMACAddress/macAddressWithCString:;   name=SBMACAddress::macAddressWithCString: -->
+<a name="//apple_ref/occ/clm/SBMACAddress/macAddressWithCString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="macAddressWithCString:">macAddressWithCString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBMACAddress //apple_ref/occ/tdef/SBMACAddress //apple_ref/occ/tag/SBMACAddress //apple_ref/occ/econst/SBMACAddress //apple_ref/occ/struct/SBMACAddress //apple_ref/occ/clconst/SBMACAddress //apple_ref/occ/intf/SBMACAddress" --><span class="type">SBMACAddress</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/macAddressWithCString //apple_ref/occ/clm/macAddressWithCString //apple_ref/occ/intfcm/macAddressWithCString //apple_ref/occ/intfm/macAddressWithCString //apple_ref/occ/func/macAddressWithCString //apple_ref/occ/ftmplt/macAddressWithCString //apple_ref/occ/defn/macAddressWithCString //apple_ref/occ/macro/macAddressWithCString" --><span class="function">macAddressWithCString</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/cString //apple_ref/occ/data/cString" --><span class="var">cString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Create an autoreleased instance initialized by scanning the passed-in cString
+for byte sequences -- see the SBMACAddress class documentation for a description
+of the acceptable string formatting.
+</p>
+<p>If cString is NULL then nil is returned.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBMACAddress/macAddressWithString:;   name=SBMACAddress::macAddressWithString: -->
+<a name="//apple_ref/occ/clm/SBMACAddress/macAddressWithString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="macAddressWithString:">macAddressWithString:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:clm/SBMACAddress/macAddressWithString:Behaves" --><p>macAddressWithString:  Behaves<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBMACAddress //apple_ref/occ/tdef/SBMACAddress //apple_ref/occ/tag/SBMACAddress //apple_ref/occ/econst/SBMACAddress //apple_ref/occ/struct/SBMACAddress //apple_ref/occ/clconst/SBMACAddress //apple_ref/occ/intf/SBMACAddress" --><span class="type">SBMACAddress</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/macAddressWithString //apple_ref/occ/clm/macAddressWithString //apple_ref/occ/intfcm/macAddressWithString //apple_ref/occ/intfm/macAddressWithString //apple_ref/occ/func/macAddressWithString //apple_ref/occ/ftmplt/macAddressWithString //apple_ref/occ/defn/macAddressWithString //apple_ref/occ/macro/macAddressWithString" --><span class="function">macAddressWithString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the same as macAddressWithCString: but operates on an SBString object.
+
+If aString is NULL then nil is returned.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:clm;  uid=//apple_ref/doc/title:clm/SBMACAddress/macAddressWithString:Behaves;   name=SBMACAddress::macAddressWithString:
+
+Behaves -->
+<a name="//apple_ref/doc/title:clm/SBMACAddress/macAddressWithString:Behaves"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="macAddressWithString:Behaves">macAddressWithString:
+
+Behaves</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/clm/SBMACAddress/macAddressWithString:" --><p>macAddressWithString:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBMACAddress //apple_ref/occ/tdef/SBMACAddress //apple_ref/occ/tag/SBMACAddress //apple_ref/occ/econst/SBMACAddress //apple_ref/occ/struct/SBMACAddress //apple_ref/occ/clconst/SBMACAddress //apple_ref/occ/intf/SBMACAddress" --><span class="type">SBMACAddress</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/macAddressWithString //apple_ref/occ/clm/macAddressWithString //apple_ref/occ/intfcm/macAddressWithString //apple_ref/occ/intfm/macAddressWithString //apple_ref/occ/func/macAddressWithString //apple_ref/occ/ftmplt/macAddressWithString //apple_ref/occ/defn/macAddressWithString //apple_ref/occ/macro/macAddressWithString" --><span class="function">macAddressWithString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the same as macAddressWithCString: but operates on an SBString object.
+
+If aString is NULL then nil is returned.</p><!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

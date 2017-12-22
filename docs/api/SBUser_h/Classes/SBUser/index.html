@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBUser</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBUser;  name=SBUser-->
+<a name="//apple_ref/occ/cl/SBUser"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBUser">SBUser</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBUser.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The SBUser class provides a basic (but highly extensible) representation
+of a user agent.  The class is setup to be primarily a wrapper to a
+mutable dictionary with a pre-defined set of keys for standard user agent
+properties.  Additional convenience methods are present to ease the use
+of these properties.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUser/authenticateWithPassword:" target="_top">-authenticateWithPassword:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUser/init" target="_top">-init</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUser/initWithUserProperties:" target="_top">-initWithUserProperties:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUser/primaryGidForUser" target="_top">-primaryGidForUser</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUser/setUserProperties:" target="_top">-setUserProperties:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUser/setUserProperty:forKey:" target="_top">-setUserProperty:forKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUser/uidForUser" target="_top">-uidForUser</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUser/userProperties" target="_top">-userProperties</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUser/userPropertyForKey:" target="_top">-userPropertyForKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBUser/userPropertyForKey:" target="_top">-userPropertyForKey:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUser/authenticateWithPassword:;   name=SBUser::authenticateWithPassword: -->
+<a name="//apple_ref/occ/instm/SBUser/authenticateWithPassword:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="authenticateWithPassword:">authenticateWithPassword:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/authenticateWithPassword //apple_ref/occ/clm/authenticateWithPassword //apple_ref/occ/intfcm/authenticateWithPassword //apple_ref/occ/intfm/authenticateWithPassword //apple_ref/occ/func/authenticateWithPassword //apple_ref/occ/ftmplt/authenticateWithPassword //apple_ref/occ/defn/authenticateWithPassword //apple_ref/occ/macro/authenticateWithPassword" --><span class="function">authenticateWithPassword</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/password //apple_ref/occ/data/password" --><span class="var">password</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Performs simple (cleartext) authentication of the passed-in password against
+the receiver's SBUserPasswordKey property.  If the receiver has no property
+with this key, then YES is returned (lack of password implies no password
+necessary, e.g.)
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUser/init;   name=SBUser::init -->
+<a name="//apple_ref/occ/instm/SBUser/init"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="init">init</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/init //apple_ref/occ/data/init" --><span class="var">init</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes an SBUser instance with no defined properties.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUser/initWithUserProperties:;   name=SBUser::initWithUserProperties: -->
+<a name="//apple_ref/occ/instm/SBUser/initWithUserProperties:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithUserProperties:">initWithUserProperties:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithUserProperties //apple_ref/occ/clm/initWithUserProperties //apple_ref/occ/intfcm/initWithUserProperties //apple_ref/occ/intfm/initWithUserProperties //apple_ref/occ/func/initWithUserProperties //apple_ref/occ/ftmplt/initWithUserProperties //apple_ref/occ/defn/initWithUserProperties //apple_ref/occ/macro/initWithUserProperties" --><span class="function">initWithUserProperties</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/properties //apple_ref/occ/data/properties" --><span class="var">properties</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes an SBUser instance which contains the properties defined
+in the passed-in properties dictionary.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUser/primaryGidForUser;   name=SBUser::primaryGidForUser -->
+<a name="//apple_ref/occ/instm/SBUser/primaryGidForUser"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="primaryGidForUser">primaryGidForUser</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/gid_t //apple_ref/occ/tdef/gid_t //apple_ref/occ/tag/gid_t //apple_ref/occ/econst/gid_t //apple_ref/occ/struct/gid_t //apple_ref/occ/clconst/gid_t //apple_ref/occ/intf/gid_t" --><span class="type">gid_t</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/primaryGidForUser //apple_ref/occ/data/primaryGidForUser" --><span class="var">primaryGidForUser</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver defines the SBUserPrimaryGIDNumberKey property, then its value
+is converted to a UNIX-native gid_t and returned.  If the property is not
+defined or cannot be converted, -1 is returned.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUser/setUserProperties:;   name=SBUser::setUserProperties: -->
+<a name="//apple_ref/occ/instm/SBUser/setUserProperties:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setUserProperties:">setUserProperties:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setUserProperties //apple_ref/occ/clm/setUserProperties //apple_ref/occ/intfcm/setUserProperties //apple_ref/occ/intfm/setUserProperties //apple_ref/occ/func/setUserProperties //apple_ref/occ/ftmplt/setUserProperties //apple_ref/occ/defn/setUserProperties //apple_ref/occ/macro/setUserProperties" --><span class="function">setUserProperties</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/properties //apple_ref/occ/data/properties" --><span class="var">properties</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Removes all data from the receiver's property dictionary and adds
+those present in the passed-in properties dictionary.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUser/setUserProperty:forKey:;   name=SBUser::setUserProperty:forKey: -->
+<a name="//apple_ref/occ/instm/SBUser/setUserProperty:forKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setUserProperty:forKey:">setUserProperty:forKey:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBUser/userPropertyForKey:" --><p>userPropertyForKey:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setUserProperty //apple_ref/occ/clm/setUserProperty //apple_ref/occ/intfcm/setUserProperty //apple_ref/occ/intfm/setUserProperty //apple_ref/occ/func/setUserProperty //apple_ref/occ/ftmplt/setUserProperty //apple_ref/occ/defn/setUserProperty //apple_ref/occ/macro/setUserProperty" --><span class="function">setUserProperty</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">value</span> <!-- a logicalPath="//apple_ref/occ/instm/forKey //apple_ref/occ/clm/forKey //apple_ref/occ/intfcm/forKey //apple_ref/occ/intfm/forKey //apple_ref/occ/func/forKey //apple_ref/occ/ftmplt/forKey //apple_ref/occ/defn/forKey //apple_ref/occ/macro/forKey" --><span class="function">forKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aKey //apple_ref/occ/data/aKey" --><span class="var">aKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Sets the value associated with the user property indicated by aKey in
+the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUser/uidForUser;   name=SBUser::uidForUser -->
+<a name="//apple_ref/occ/instm/SBUser/uidForUser"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="uidForUser">uidForUser</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/uid_t //apple_ref/occ/tdef/uid_t //apple_ref/occ/tag/uid_t //apple_ref/occ/econst/uid_t //apple_ref/occ/struct/uid_t //apple_ref/occ/clconst/uid_t //apple_ref/occ/intf/uid_t" --><span class="type">uid_t</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/uidForUser //apple_ref/occ/data/uidForUser" --><span class="var">uidForUser</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver defines the SBUserUIDNumberKey property, then its value is
+converted to a UNIX-native uid_t and returned.  If the property is not
+defined or cannot be converted, -1 is returned.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUser/userProperties;   name=SBUser::userProperties -->
+<a name="//apple_ref/occ/instm/SBUser/userProperties"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="userProperties">userProperties</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/userProperties //apple_ref/occ/data/userProperties" --><span class="var">userProperties</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's user property dictionary.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUser/userPropertyForKey:;   name=SBUser::userPropertyForKey: -->
+<a name="//apple_ref/occ/instm/SBUser/userPropertyForKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="userPropertyForKey:">userPropertyForKey:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/userPropertyForKey //apple_ref/occ/clm/userPropertyForKey //apple_ref/occ/intfcm/userPropertyForKey //apple_ref/occ/intfm/userPropertyForKey //apple_ref/occ/func/userPropertyForKey //apple_ref/occ/ftmplt/userPropertyForKey //apple_ref/occ/defn/userPropertyForKey //apple_ref/occ/macro/userPropertyForKey" --><span class="function">userPropertyForKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aKey //apple_ref/occ/data/aKey" --><span class="var">aKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the value currently associated with the user property indicated
+by aKey in the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBUser/userPropertyForKey:;   name=SBUser::userPropertyForKey: -->
+<a name="//apple_ref/doc/title:instm/SBUser/userPropertyForKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="userPropertyForKey:">userPropertyForKey:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBUser/setUserProperty:forKey:" --><p>setUserProperty:forKey:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setUserProperty //apple_ref/occ/clm/setUserProperty //apple_ref/occ/intfcm/setUserProperty //apple_ref/occ/intfm/setUserProperty //apple_ref/occ/func/setUserProperty //apple_ref/occ/ftmplt/setUserProperty //apple_ref/occ/defn/setUserProperty //apple_ref/occ/macro/setUserProperty" --><span class="function">setUserProperty</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">value</span> <!-- a logicalPath="//apple_ref/occ/instm/forKey //apple_ref/occ/clm/forKey //apple_ref/occ/intfcm/forKey //apple_ref/occ/intfm/forKey //apple_ref/occ/func/forKey //apple_ref/occ/ftmplt/forKey //apple_ref/occ/defn/forKey //apple_ref/occ/macro/forKey" --><span class="function">forKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aKey //apple_ref/occ/data/aKey" --><span class="var">aKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Sets the value associated with the user property indicated by aKey in
+the receiver.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

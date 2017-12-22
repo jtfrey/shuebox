@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBPostgresQueryResult</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBPostgresQueryResult;  name=SBPostgresQueryResult-->
+<a name="//apple_ref/occ/cl/SBPostgresQueryResult"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBPostgresQueryResult">SBPostgresQueryResult</a></h1>
+</td></tr></table><hr><p><b>Conforms&nbsp;to:</b> <!-- a logicalPath="//apple_ref/occ/intf/SBDatabaseQueryResult" -->SBDatabaseQueryResult<!-- /a --><br>
+<b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBPostgres.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Instances of SBPostgresQueryResult are returned by an SBPostgresDatabase when a query is
+successfully performed.  Each instance wraps a Postgres query result and provides an
+interface for retrieving result status and (for SELECT queries) row/field data.
+</p>
+<p>The value of fields can be retrieved atomically using the getValuePointer:atRow:fieldNum:
+and copyValueAtRow:fieldNum:toBuffer:length: methods; these two methods retrieve the
+literal binary data returned by the query.  On the other hand, the objectForRow:fieldNum:
+method will inspect the field's data type and return an object appropriate for that
+field's type initialized to contain the value of the field.  For example, a field of
+SQL type INET or CIDR will produce an instance of SBInetAddress, while a TIMESTAMP field
+will produce an instance of SBDate.  The DATE and TIME types will produce an instance of
+SBDateComponents.
+</p>
+<p>For any "exotic" SQL type for which no corresponding class is known, the objectForRow:fieldNum:
+method will return an SBData object containing the binary data returned by the database.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQueryResult/getOidOfInsertedRow:" target="_top">-getOidOfInsertedRow:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQueryResult/postgresResultStatus" target="_top">-postgresResultStatus</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQueryResult/postgresStorageSize:forFieldNum:" target="_top">-postgresStorageSize:forFieldNum:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQueryResult/postgresType:forFieldNum:" target="_top">-postgresType:forFieldNum:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQueryResult/postgresTypeModifier:forFieldNum:" target="_top">-postgresTypeModifier:forFieldNum:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBPostgresQueryResult/postgresTypeModifier:forFieldNum:" target="_top">-postgresTypeModifier:forFieldNum:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresQueryResult/queryErrorString" target="_top">-queryErrorString</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQueryResult/getOidOfInsertedRow:;   name=SBPostgresQueryResult::getOidOfInsertedRow: -->
+<a name="//apple_ref/occ/instm/SBPostgresQueryResult/getOidOfInsertedRow:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="getOidOfInsertedRow:">getOidOfInsertedRow:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/getOidOfInsertedRow //apple_ref/occ/clm/getOidOfInsertedRow //apple_ref/occ/intfcm/getOidOfInsertedRow //apple_ref/occ/intfm/getOidOfInsertedRow //apple_ref/occ/func/getOidOfInsertedRow //apple_ref/occ/ftmplt/getOidOfInsertedRow //apple_ref/occ/defn/getOidOfInsertedRow //apple_ref/occ/macro/getOidOfInsertedRow" --><span class="function">getOidOfInsertedRow</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/Oid //apple_ref/occ/tdef/Oid //apple_ref/occ/tag/Oid //apple_ref/occ/econst/Oid //apple_ref/occ/struct/Oid //apple_ref/occ/clconst/Oid //apple_ref/occ/intf/Oid" --><span class="type">Oid</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/anOid //apple_ref/occ/data/anOid" --><span class="var">anOid</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>For a query that adds a row to a table, attempt to retrieve the Oid that was generated for
+the new row.  If successful, sets anOid and returns YES; otherwise, returns NO.
+</p>
+<p>Postgres does not always have OIDs enabled on tables, so this may return an InvalidOid
+even if the query was successful!<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQueryResult/postgresResultStatus;   name=SBPostgresQueryResult::postgresResultStatus -->
+<a name="//apple_ref/occ/instm/SBPostgresQueryResult/postgresResultStatus"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="postgresResultStatus">postgresResultStatus</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/ExecStatusType //apple_ref/occ/tdef/ExecStatusType //apple_ref/occ/tag/ExecStatusType //apple_ref/occ/econst/ExecStatusType //apple_ref/occ/struct/ExecStatusType //apple_ref/occ/clconst/ExecStatusType //apple_ref/occ/intf/ExecStatusType" --><span class="type">ExecStatusType</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/postgresResultStatus //apple_ref/occ/data/postgresResultStatus" --><span class="var">postgresResultStatus</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the Postgres status code returned for the query.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQueryResult/postgresStorageSize:forFieldNum:;   name=SBPostgresQueryResult::postgresStorageSize:forFieldNum: -->
+<a name="//apple_ref/occ/instm/SBPostgresQueryResult/postgresStorageSize:forFieldNum:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="postgresStorageSize:forFieldNum:">postgresStorageSize:forFieldNum:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBPostgresQueryResult/postgresTypeModifier:forFieldNum:" --><p>postgresTypeModifier:forFieldNum:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/postgresStorageSize //apple_ref/occ/clm/postgresStorageSize //apple_ref/occ/intfcm/postgresStorageSize //apple_ref/occ/intfm/postgresStorageSize //apple_ref/occ/func/postgresStorageSize //apple_ref/occ/ftmplt/postgresStorageSize //apple_ref/occ/defn/postgresStorageSize //apple_ref/occ/macro/postgresStorageSize" --><span class="function">postgresStorageSize</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a --><span class="type">*</span>)<span class="param">storageSize</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/forFieldNum //apple_ref/occ/clm/forFieldNum //apple_ref/occ/intfcm/forFieldNum //apple_ref/occ/intfm/forFieldNum //apple_ref/occ/func/forFieldNum //apple_ref/occ/ftmplt/forFieldNum //apple_ref/occ/defn/forFieldNum //apple_ref/occ/macro/forFieldNum" --><span class="function">forFieldNum</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/fieldNum //apple_ref/occ/data/fieldNum" --><span class="var">fieldNum</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>For a data-returning query (e.g. SELECT), attempts to retrieve the server's internal
+storage size for the given column's data type.  If successful, the method sets
+typeMod and returns YES.  Otherwise, returns NO.
+</p>
+<p>As the Postgres docs state, this isn't really of any use to client programs...but it's in
+their API, so why not include it.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQueryResult/postgresType:forFieldNum:;   name=SBPostgresQueryResult::postgresType:forFieldNum: -->
+<a name="//apple_ref/occ/instm/SBPostgresQueryResult/postgresType:forFieldNum:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="postgresType:forFieldNum:">postgresType:forFieldNum:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/postgresType //apple_ref/occ/clm/postgresType //apple_ref/occ/intfcm/postgresType //apple_ref/occ/intfm/postgresType //apple_ref/occ/func/postgresType //apple_ref/occ/ftmplt/postgresType //apple_ref/occ/defn/postgresType //apple_ref/occ/macro/postgresType" --><span class="function">postgresType</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/Oid //apple_ref/occ/tdef/Oid //apple_ref/occ/tag/Oid //apple_ref/occ/econst/Oid //apple_ref/occ/struct/Oid //apple_ref/occ/clconst/Oid //apple_ref/occ/intf/Oid" --><span class="type">Oid</span><!-- /a --><span class="type">*</span>)<span class="param">typeOid</span> <!-- a logicalPath="//apple_ref/occ/instm/forFieldNum //apple_ref/occ/clm/forFieldNum //apple_ref/occ/intfcm/forFieldNum //apple_ref/occ/intfm/forFieldNum //apple_ref/occ/func/forFieldNum //apple_ref/occ/ftmplt/forFieldNum //apple_ref/occ/defn/forFieldNum //apple_ref/occ/macro/forFieldNum" --><span class="function">forFieldNum</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/fieldNum //apple_ref/occ/data/fieldNum" --><span class="var">fieldNum</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>For a data-returning query (e.g. SELECT), attempts to retrieve the Postgres data type
+(as an Oid) for the given column.  If successful, the method sets typeOid and returns
+YES.  Otherwise, returns NO.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQueryResult/postgresTypeModifier:forFieldNum:;   name=SBPostgresQueryResult::postgresTypeModifier:forFieldNum: -->
+<a name="//apple_ref/occ/instm/SBPostgresQueryResult/postgresTypeModifier:forFieldNum:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="postgresTypeModifier:forFieldNum:">postgresTypeModifier:forFieldNum:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/postgresTypeModifier //apple_ref/occ/clm/postgresTypeModifier //apple_ref/occ/intfcm/postgresTypeModifier //apple_ref/occ/intfm/postgresTypeModifier //apple_ref/occ/func/postgresTypeModifier //apple_ref/occ/ftmplt/postgresTypeModifier //apple_ref/occ/defn/postgresTypeModifier //apple_ref/occ/macro/postgresTypeModifier" --><span class="function">postgresTypeModifier</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a --><span class="type">*</span>)<span class="param">typeMod</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/forFieldNum //apple_ref/occ/clm/forFieldNum //apple_ref/occ/intfcm/forFieldNum //apple_ref/occ/intfm/forFieldNum //apple_ref/occ/func/forFieldNum //apple_ref/occ/ftmplt/forFieldNum //apple_ref/occ/defn/forFieldNum //apple_ref/occ/macro/forFieldNum" --><span class="function">forFieldNum</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/fieldNum //apple_ref/occ/data/fieldNum" --><span class="var">fieldNum</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>For a data-returning query (e.g. SELECT), attempts to retrieve a type modifier for the
+given column (e.g. the dimension of a VARCHAR).  If successful, the method sets
+typeMod and returns YES.  Otherwise, returns NO.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBPostgresQueryResult/postgresTypeModifier:forFieldNum:;   name=SBPostgresQueryResult::postgresTypeModifier:forFieldNum: -->
+<a name="//apple_ref/doc/title:instm/SBPostgresQueryResult/postgresTypeModifier:forFieldNum:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="postgresTypeModifier:forFieldNum:">postgresTypeModifier:forFieldNum:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBPostgresQueryResult/postgresStorageSize:forFieldNum:" --><p>postgresStorageSize:forFieldNum:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/postgresStorageSize //apple_ref/occ/clm/postgresStorageSize //apple_ref/occ/intfcm/postgresStorageSize //apple_ref/occ/intfm/postgresStorageSize //apple_ref/occ/func/postgresStorageSize //apple_ref/occ/ftmplt/postgresStorageSize //apple_ref/occ/defn/postgresStorageSize //apple_ref/occ/macro/postgresStorageSize" --><span class="function">postgresStorageSize</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a --><span class="type">*</span>)<span class="param">storageSize</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/forFieldNum //apple_ref/occ/clm/forFieldNum //apple_ref/occ/intfcm/forFieldNum //apple_ref/occ/intfm/forFieldNum //apple_ref/occ/func/forFieldNum //apple_ref/occ/ftmplt/forFieldNum //apple_ref/occ/defn/forFieldNum //apple_ref/occ/macro/forFieldNum" --><span class="function">forFieldNum</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/fieldNum //apple_ref/occ/data/fieldNum" --><span class="var">fieldNum</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>For a data-returning query (e.g. SELECT), attempts to retrieve the server's internal
+storage size for the given column's data type.  If successful, the method sets
+typeMod and returns YES.  Otherwise, returns NO.
+</p>
+<p>As the Postgres docs state, this isn't really of any use to client programs...but it's in
+their API, so why not include it.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresQueryResult/queryErrorString;   name=SBPostgresQueryResult::queryErrorString -->
+<a name="//apple_ref/occ/instm/SBPostgresQueryResult/queryErrorString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="queryErrorString">queryErrorString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/queryErrorString //apple_ref/occ/data/queryErrorString" --><span class="var">queryErrorString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>If an error occurred for the query, returns a string with the error description.
+Otherwise, returns nil.<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

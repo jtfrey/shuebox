@@ -1,0 +1,401 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBPostgresDatabase</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBPostgresDatabase;  name=SBPostgresDatabase-->
+<a name="//apple_ref/occ/cl/SBPostgresDatabase"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBPostgresDatabase">SBPostgresDatabase</a></h1>
+</td></tr></table><hr><p><b>Conforms&nbsp;to:</b> <!-- a logicalPath="//apple_ref/occ/intf/SBDatabaseAccess" -->SBDatabaseAccess<!-- /a --><br>
+<b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBPostgres.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Instances of this class wrap a connection to a Postgres database.
+</p>
+<p>When the connection is opened the client encoding is set to UTF8; this forces Postgres to
+convert the database-native text encoding to UTF8 before handing textual data back to us;
+having done so, SBString objects can be instantiated without involving an encoding
+converter inside our app.  It also forces Postgres to convert any textual data being
+added to the database to the database-native text encoding from UTF8.  So this single
+feature keeps text consistently and properly encoded when moving between us and the
+database!  Sweet!
+</p>
+<p>Instances maintain an error message stack for queries headed through the wrapped database
+connection.
+</p>
+<p>A search schema stack is implemented, as well.  Additional schemas to search during
+queries can be pushed to the top or bottom of that stack.  With no explicit stack
+provided at initialization, the default stack is configured (containing the user's and
+"public" schemas).
+</p>
+<p>The executeQuery method can be used to submit:
+</p>
+<ul>
+<li>Data w.r.t. a previously-prepared SBPostgresQuery</li>
+<li>A query wrapped by a SBPostgresQuery object</li>
+<li>A textual query in an SBString</li>
+</ul>
+<p>Internally, the SBPostgresDatabase instance maintains an array of prepared SBPostgresQuery
+objects and looks into that array when executeQuery is handed an SBPostgresQuery object;
+if that object is present in the array, then it is treated as a prepared statement and handled
+using PQexecPrepared().  If it is not present, then it is executed using PQexecParams().  If
+handed an SBString, then a UTF8-encoded copy of that string is executed with PQexec().  See
+Postgres documentation for more info on the three functions mentioned.
+</p>
+<p>SBPostgresQuery instances can (as already mentioned) be used to create prepared functions within
+the context of the database connection.  After binding data to all parameters of an SBPostgresQuery,
+invoke the prepareQuery: method on an SBPostgresDatabase object.  Preparing a query pre-plans its
+execution profile, which includes any necessary type-casting of data to fit the actual column
+types of affected tables.  This implies that once you have prepared a SBPostgresQuery, subsequent
+bindings _cannot_ change the data type associated with a parameter.  If you do not prepare an
+SBPostgresQuery (instead opting for PQexecParams() calls) then data type can vary between submissions
+of the SBPostgresQuery object to a database.
+</p>
+<p>Nested transactions can be setup by an SBPostgresDatabase object, effectively providing for 
+arbitrary-depth "undo" functionality.  The beginTransaction message creates a new transactional
+context; sending the discardLastTransaction or commitLastTransaction message effectively cancels
+or saves whatever modifications were made within that context.  Methods also exist to discard or
+commit the _entire_ transactional stack.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/appendSearchSchema:" target="_top">-appendSearchSchema:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBPostgresDatabase/appendSearchSchema:Add" target="_top">-appendSearchSchema:
+
+Add</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/clearErrorMessageStack" target="_top">-clearErrorMessageStack</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/connectionString" target="_top">-connectionString</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/containsSearchSchema:" target="_top">-containsSearchSchema:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBPostgresDatabase/containsSearchSchema:Returns" target="_top">-containsSearchSchema:
+
+Returns</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/databaseConnection" target="_top">-databaseConnection</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/errorMessageCount" target="_top">-errorMessageCount</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/errorMessageEnumerator" target="_top">-errorMessageEnumerator</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/initWithConnectionString:" target="_top">-initWithConnectionString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/initWithConnectionString:searchSchema:" target="_top">-initWithConnectionString:searchSchema:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/isConnectionOpen" target="_top">-isConnectionOpen</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/lastErrorMessage" target="_top">-lastErrorMessage</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/ping" target="_top">-ping</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/prepareQuery:" target="_top">-prepareQuery:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/prependSearchSchema:" target="_top">-prependSearchSchema:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBPostgresDatabase/prependSearchSchema:Add" target="_top">-prependSearchSchema:
+
+Add</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/reconnect" target="_top">-reconnect</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/reconnectWithRetryCount:" target="_top">-reconnectWithRetryCount:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/removeSearchSchema:" target="_top">-removeSearchSchema:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBPostgresDatabase/removeSearchSchema:Remove" target="_top">-removeSearchSchema:
+
+Remove</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/searchSchema" target="_top">-searchSchema</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBPostgresDatabase/typeOidForTypeName:" target="_top">-typeOidForTypeName:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/appendSearchSchema:;   name=SBPostgresDatabase::appendSearchSchema: -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/appendSearchSchema:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="appendSearchSchema:">appendSearchSchema:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBPostgresDatabase/appendSearchSchema:Add" --><p>appendSearchSchema:  Add<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/appendSearchSchema //apple_ref/occ/clm/appendSearchSchema //apple_ref/occ/intfcm/appendSearchSchema //apple_ref/occ/intfm/appendSearchSchema //apple_ref/occ/func/appendSearchSchema //apple_ref/occ/ftmplt/appendSearchSchema //apple_ref/occ/defn/appendSearchSchema //apple_ref/occ/macro/appendSearchSchema" --><span class="function">appendSearchSchema</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/schemaName //apple_ref/occ/data/schemaName" --><span class="var">schemaName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>a schema name to the tail of the schema-search stack.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBPostgresDatabase/appendSearchSchema:Add;   name=SBPostgresDatabase::appendSearchSchema:
+
+Add -->
+<a name="//apple_ref/doc/title:instm/SBPostgresDatabase/appendSearchSchema:Add"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="appendSearchSchema:Add">appendSearchSchema:
+
+Add</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBPostgresDatabase/appendSearchSchema:" --><p>appendSearchSchema:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/appendSearchSchema //apple_ref/occ/clm/appendSearchSchema //apple_ref/occ/intfcm/appendSearchSchema //apple_ref/occ/intfm/appendSearchSchema //apple_ref/occ/func/appendSearchSchema //apple_ref/occ/ftmplt/appendSearchSchema //apple_ref/occ/defn/appendSearchSchema //apple_ref/occ/macro/appendSearchSchema" --><span class="function">appendSearchSchema</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/schemaName //apple_ref/occ/data/schemaName" --><span class="var">schemaName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>a schema name to the tail of the schema-search stack.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/clearErrorMessageStack;   name=SBPostgresDatabase::clearErrorMessageStack -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/clearErrorMessageStack"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="clearErrorMessageStack">clearErrorMessageStack</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/clearErrorMessageStack //apple_ref/occ/data/clearErrorMessageStack" --><span class="var">clearErrorMessageStack</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Remove all messages from the error stack.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/connectionString;   name=SBPostgresDatabase::connectionString -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/connectionString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="connectionString">connectionString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/connectionString //apple_ref/occ/data/connectionString" --><span class="var">connectionString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the connection string that was used to open the receiver's database connection.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/containsSearchSchema:;   name=SBPostgresDatabase::containsSearchSchema: -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/containsSearchSchema:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="containsSearchSchema:">containsSearchSchema:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBPostgresDatabase/containsSearchSchema:Returns" --><p>containsSearchSchema:  Returns<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/containsSearchSchema //apple_ref/occ/clm/containsSearchSchema //apple_ref/occ/intfcm/containsSearchSchema //apple_ref/occ/intfm/containsSearchSchema //apple_ref/occ/func/containsSearchSchema //apple_ref/occ/ftmplt/containsSearchSchema //apple_ref/occ/defn/containsSearchSchema //apple_ref/occ/macro/containsSearchSchema" --><span class="function">containsSearchSchema</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/schemaName //apple_ref/occ/data/schemaName" --><span class="var">schemaName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>YES if the schema-search stack contains the provided schemaName.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBPostgresDatabase/containsSearchSchema:Returns;   name=SBPostgresDatabase::containsSearchSchema:
+
+Returns -->
+<a name="//apple_ref/doc/title:instm/SBPostgresDatabase/containsSearchSchema:Returns"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="containsSearchSchema:Returns">containsSearchSchema:
+
+Returns</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBPostgresDatabase/containsSearchSchema:" --><p>containsSearchSchema:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/containsSearchSchema //apple_ref/occ/clm/containsSearchSchema //apple_ref/occ/intfcm/containsSearchSchema //apple_ref/occ/intfm/containsSearchSchema //apple_ref/occ/func/containsSearchSchema //apple_ref/occ/ftmplt/containsSearchSchema //apple_ref/occ/defn/containsSearchSchema //apple_ref/occ/macro/containsSearchSchema" --><span class="function">containsSearchSchema</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/schemaName //apple_ref/occ/data/schemaName" --><span class="var">schemaName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>YES if the schema-search stack contains the provided schemaName.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/databaseConnection;   name=SBPostgresDatabase::databaseConnection -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/databaseConnection"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="databaseConnection">databaseConnection</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/PGconn //apple_ref/occ/tdef/PGconn //apple_ref/occ/tag/PGconn //apple_ref/occ/econst/PGconn //apple_ref/occ/struct/PGconn //apple_ref/occ/clconst/PGconn //apple_ref/occ/intf/PGconn" --><span class="type">PGconn</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/databaseConnection //apple_ref/occ/data/databaseConnection" --><span class="var">databaseConnection</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the Postgres database connection reference for the receiver.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/errorMessageCount;   name=SBPostgresDatabase::errorMessageCount -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/errorMessageCount"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="errorMessageCount">errorMessageCount</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/errorMessageCount //apple_ref/occ/data/errorMessageCount" --><span class="var">errorMessageCount</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the number of error messages currently available on the error stack.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/errorMessageEnumerator;   name=SBPostgresDatabase::errorMessageEnumerator -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/errorMessageEnumerator"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="errorMessageEnumerator">errorMessageEnumerator</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBEnumerator //apple_ref/occ/tdef/SBEnumerator //apple_ref/occ/tag/SBEnumerator //apple_ref/occ/econst/SBEnumerator //apple_ref/occ/struct/SBEnumerator //apple_ref/occ/clconst/SBEnumerator //apple_ref/occ/intf/SBEnumerator" --><span class="type">SBEnumerator</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/errorMessageEnumerator //apple_ref/occ/data/errorMessageEnumerator" --><span class="var">errorMessageEnumerator</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an SBEnumerator object that will iterate through the error messages
+on the error stack.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/initWithConnectionString:;   name=SBPostgresDatabase::initWithConnectionString: -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/initWithConnectionString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithConnectionString:">initWithConnectionString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithConnectionString //apple_ref/occ/clm/initWithConnectionString //apple_ref/occ/intfcm/initWithConnectionString //apple_ref/occ/intfm/initWithConnectionString //apple_ref/occ/func/initWithConnectionString //apple_ref/occ/ftmplt/initWithConnectionString //apple_ref/occ/defn/initWithConnectionString //apple_ref/occ/macro/initWithConnectionString" --><span class="function">initWithConnectionString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/connStr //apple_ref/occ/data/connStr" --><span class="var">connStr</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Initialize a newly-allocated instance using the provided Postgres database connection
+string.  The connection string format is described in the Postgres libpq documentation:
+it contains key=value pairs separated by whitespace, e.g.
+</p>
+<p>"dbname=template1 user=postgres password=secret"
+</p>
+<p>Returns nil if a connection could not be established.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/initWithConnectionString:searchSchema:;   name=SBPostgresDatabase::initWithConnectionString:searchSchema: -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/initWithConnectionString:searchSchema:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithConnectionString:searchSchema:">initWithConnectionString:searchSchema:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithConnectionString //apple_ref/occ/clm/initWithConnectionString //apple_ref/occ/intfcm/initWithConnectionString //apple_ref/occ/intfm/initWithConnectionString //apple_ref/occ/func/initWithConnectionString //apple_ref/occ/ftmplt/initWithConnectionString //apple_ref/occ/defn/initWithConnectionString //apple_ref/occ/macro/initWithConnectionString" --><span class="function">initWithConnectionString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">connStr</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/searchSchema //apple_ref/occ/clm/searchSchema //apple_ref/occ/intfcm/searchSchema //apple_ref/occ/intfm/searchSchema //apple_ref/occ/func/searchSchema //apple_ref/occ/ftmplt/searchSchema //apple_ref/occ/defn/searchSchema //apple_ref/occ/macro/searchSchema" --><span class="function">searchSchema</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/searchSchema //apple_ref/occ/data/searchSchema" --><span class="var">searchSchema</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Behaves exactly like initWithConnectionString: but in addition sets an initial search
+schema stack for the database.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/isConnectionOpen;   name=SBPostgresDatabase::isConnectionOpen -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/isConnectionOpen"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isConnectionOpen">isConnectionOpen</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isConnectionOpen //apple_ref/occ/data/isConnectionOpen" --><span class="var">isConnectionOpen</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver _is_ connected to a database.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/lastErrorMessage;   name=SBPostgresDatabase::lastErrorMessage -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/lastErrorMessage"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="lastErrorMessage">lastErrorMessage</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/lastErrorMessage //apple_ref/occ/data/lastErrorMessage" --><span class="var">lastErrorMessage</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Pop the last-added error message from error stack.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/ping;   name=SBPostgresDatabase::ping -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/ping"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="ping">ping</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/ping //apple_ref/occ/data/ping" --><span class="var">ping</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns boolean YES if the database connection is "okay."
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/prepareQuery:;   name=SBPostgresDatabase::prepareQuery: -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/prepareQuery:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="prepareQuery:">prepareQuery:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/prepareQuery //apple_ref/occ/clm/prepareQuery //apple_ref/occ/intfcm/prepareQuery //apple_ref/occ/intfm/prepareQuery //apple_ref/occ/func/prepareQuery //apple_ref/occ/ftmplt/prepareQuery //apple_ref/occ/defn/prepareQuery //apple_ref/occ/macro/prepareQuery" --><span class="function">prepareQuery</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBPostgresQuery //apple_ref/occ/tdef/SBPostgresQuery //apple_ref/occ/tag/SBPostgresQuery //apple_ref/occ/econst/SBPostgresQuery //apple_ref/occ/struct/SBPostgresQuery //apple_ref/occ/clconst/SBPostgresQuery //apple_ref/occ/intf/SBPostgresQuery" --><span class="type">SBPostgresQuery</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aReadyQuery //apple_ref/occ/data/aReadyQuery" --><span class="var">aReadyQuery</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Given an SBPostgresQuery object, attempt to create a prepared statement in the
+receiver's database context that will later be executed using data passed to
+the receiver in the same SBPostgresQuery object.  Once prepared, the
+statement can be executed multiple times by continuing to pass the SBPostgresQuery
+object to the executeQuery: method.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/prependSearchSchema:;   name=SBPostgresDatabase::prependSearchSchema: -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/prependSearchSchema:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="prependSearchSchema:">prependSearchSchema:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBPostgresDatabase/prependSearchSchema:Add" --><p>prependSearchSchema:  Add<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/prependSearchSchema //apple_ref/occ/clm/prependSearchSchema //apple_ref/occ/intfcm/prependSearchSchema //apple_ref/occ/intfm/prependSearchSchema //apple_ref/occ/func/prependSearchSchema //apple_ref/occ/ftmplt/prependSearchSchema //apple_ref/occ/defn/prependSearchSchema //apple_ref/occ/macro/prependSearchSchema" --><span class="function">prependSearchSchema</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/schemaName //apple_ref/occ/data/schemaName" --><span class="var">schemaName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>a schema name to the head of the schema-search stack.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBPostgresDatabase/prependSearchSchema:Add;   name=SBPostgresDatabase::prependSearchSchema:
+
+Add -->
+<a name="//apple_ref/doc/title:instm/SBPostgresDatabase/prependSearchSchema:Add"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="prependSearchSchema:Add">prependSearchSchema:
+
+Add</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBPostgresDatabase/prependSearchSchema:" --><p>prependSearchSchema:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/prependSearchSchema //apple_ref/occ/clm/prependSearchSchema //apple_ref/occ/intfcm/prependSearchSchema //apple_ref/occ/intfm/prependSearchSchema //apple_ref/occ/func/prependSearchSchema //apple_ref/occ/ftmplt/prependSearchSchema //apple_ref/occ/defn/prependSearchSchema //apple_ref/occ/macro/prependSearchSchema" --><span class="function">prependSearchSchema</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/schemaName //apple_ref/occ/data/schemaName" --><span class="var">schemaName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>a schema name to the head of the schema-search stack.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/reconnect;   name=SBPostgresDatabase::reconnect -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/reconnect"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="reconnect">reconnect</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/reconnect //apple_ref/occ/data/reconnect" --><span class="var">reconnect</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Convenience method that sends the reconnectWithRetryCount: message with a retry count
+of 3.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/reconnectWithRetryCount:;   name=SBPostgresDatabase::reconnectWithRetryCount: -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/reconnectWithRetryCount:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="reconnectWithRetryCount:">reconnectWithRetryCount:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/reconnectWithRetryCount //apple_ref/occ/clm/reconnectWithRetryCount //apple_ref/occ/intfcm/reconnectWithRetryCount //apple_ref/occ/intfm/reconnectWithRetryCount //apple_ref/occ/func/reconnectWithRetryCount //apple_ref/occ/ftmplt/reconnectWithRetryCount //apple_ref/occ/defn/reconnectWithRetryCount //apple_ref/occ/macro/reconnectWithRetryCount" --><span class="function">reconnectWithRetryCount</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/retryCount //apple_ref/occ/data/retryCount" --><span class="var">retryCount</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Close the connection to the database and attempt to reestablish a new connection to the
+same database, using all the same parameters previously used. This might be useful for
+error recovery if a working connection is lost.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/removeSearchSchema:;   name=SBPostgresDatabase::removeSearchSchema: -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/removeSearchSchema:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeSearchSchema:">removeSearchSchema:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBPostgresDatabase/removeSearchSchema:Remove" --><p>removeSearchSchema:  Remove<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/removeSearchSchema //apple_ref/occ/clm/removeSearchSchema //apple_ref/occ/intfcm/removeSearchSchema //apple_ref/occ/intfm/removeSearchSchema //apple_ref/occ/func/removeSearchSchema //apple_ref/occ/ftmplt/removeSearchSchema //apple_ref/occ/defn/removeSearchSchema //apple_ref/occ/macro/removeSearchSchema" --><span class="function">removeSearchSchema</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/schemaName //apple_ref/occ/data/schemaName" --><span class="var">schemaName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the provided schemaName from the schema-search stack.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBPostgresDatabase/removeSearchSchema:Remove;   name=SBPostgresDatabase::removeSearchSchema:
+
+Remove -->
+<a name="//apple_ref/doc/title:instm/SBPostgresDatabase/removeSearchSchema:Remove"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeSearchSchema:Remove">removeSearchSchema:
+
+Remove</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBPostgresDatabase/removeSearchSchema:" --><p>removeSearchSchema:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/removeSearchSchema //apple_ref/occ/clm/removeSearchSchema //apple_ref/occ/intfcm/removeSearchSchema //apple_ref/occ/intfm/removeSearchSchema //apple_ref/occ/func/removeSearchSchema //apple_ref/occ/ftmplt/removeSearchSchema //apple_ref/occ/defn/removeSearchSchema //apple_ref/occ/macro/removeSearchSchema" --><span class="function">removeSearchSchema</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/schemaName //apple_ref/occ/data/schemaName" --><span class="var">schemaName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the provided schemaName from the schema-search stack.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/searchSchema;   name=SBPostgresDatabase::searchSchema -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/searchSchema"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="searchSchema">searchSchema</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/searchSchema //apple_ref/occ/data/searchSchema" --><span class="var">searchSchema</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the array of search schemas for the receiver.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBPostgresDatabase/typeOidForTypeName:;   name=SBPostgresDatabase::typeOidForTypeName: -->
+<a name="//apple_ref/occ/instm/SBPostgresDatabase/typeOidForTypeName:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="typeOidForTypeName:">typeOidForTypeName:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/Oid //apple_ref/occ/tdef/Oid //apple_ref/occ/tag/Oid //apple_ref/occ/econst/Oid //apple_ref/occ/struct/Oid //apple_ref/occ/clconst/Oid //apple_ref/occ/intf/Oid" --><span class="type">Oid</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/typeOidForTypeName //apple_ref/occ/clm/typeOidForTypeName //apple_ref/occ/intfcm/typeOidForTypeName //apple_ref/occ/intfm/typeOidForTypeName //apple_ref/occ/func/typeOidForTypeName //apple_ref/occ/ftmplt/typeOidForTypeName //apple_ref/occ/defn/typeOidForTypeName //apple_ref/occ/macro/typeOidForTypeName" --><span class="function">typeOidForTypeName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/typeName //apple_ref/occ/data/typeName" --><span class="var">typeName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempts to lookup in the database what Oid is associated with the
+given named type.<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

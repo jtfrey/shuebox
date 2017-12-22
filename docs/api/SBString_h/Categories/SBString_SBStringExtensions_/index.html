@@ -1,0 +1,889 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBString(SBStringExtensions)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cat; uid=//apple_ref/occ/cat/SBString(SBStringExtensions);  name=SBString(SBStringExtensions)-->
+<a name="//apple_ref/occ/cat/SBString(SBStringExtensions)"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBString(SBStringExtensions)">SBString(SBStringExtensions)</a></h1>
+</td></tr></table><hr><p><b>Extends&nbsp;Class:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBString" -->SBString<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBString.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Category of SBString which contains all additional functionality beyond the accessors for
+string length and single-character retrieval.  At the level of SBString itself, these
+methods are implemented using those two basic accessors; subclasses can (and should!)
+provide their own implementations for more optimal processing where applicable.<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/caseInsensitiveCompare:" target="_top">-caseInsensitiveCompare:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBString(SBStringExtensions)/caseInsensitiveCompare:Convenience" target="_top">-caseInsensitiveCompare:
+
+Convenience</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/compare:" target="_top">-compare:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/compare:options:" target="_top">-compare:options:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/compare:options:range:" target="_top">-compare:options:range:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/compare:options:range:locale:" target="_top">-compare:options:range:locale:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/componentsSeparatedByString:" target="_top">-componentsSeparatedByString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/copyCharactersToBuffer:length:" target="_top">-copyCharactersToBuffer:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/copyUTF32CharactersToBuffer:length:" target="_top">-copyUTF32CharactersToBuffer:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/copyUTF8CharactersToBuffer:length:" target="_top">-copyUTF8CharactersToBuffer:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/dataUsingEncoding:" target="_top">-dataUsingEncoding:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/doubleValue" target="_top">-doubleValue</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/floatValue" target="_top">-floatValue</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/hasPrefix:" target="_top">-hasPrefix:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBString(SBStringExtensions)/hasPrefix:Returns" target="_top">-hasPrefix:
+
+Returns</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/hasSuffix:" target="_top">-hasSuffix:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBString(SBStringExtensions)/hasSuffix:Returns" target="_top">-hasSuffix:
+
+Returns</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/intValue" target="_top">-intValue</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/isEqualToString:" target="_top">-isEqualToString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBString(SBStringExtensions)/isEqualToString:Simple" target="_top">-isEqualToString:
+
+Simple</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/localizedCaseInsensitiveCompare:" target="_top">-localizedCaseInsensitiveCompare:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/localizedCompare:" target="_top">-localizedCompare:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBString(SBStringExtensions)/localizedCompare:Convenience" target="_top">-localizedCompare:
+
+Convenience</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/longLongIntValue" target="_top">-longLongIntValue</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/lowercaseString" target="_top">-lowercaseString</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/lowercaseStringWithLocale:" target="_top">-lowercaseStringWithLocale:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBString(SBStringExtensions)/nativeEncoding" target="_top">+nativeEncoding</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/nativeEncoding" target="_top">-nativeEncoding</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:" target="_top">-rangeOfCharacterFromSet:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:Returns" target="_top">-rangeOfCharacterFromSet:
+
+Returns</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:options:" target="_top">-rangeOfCharacterFromSet:options:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:options:range:" target="_top">-rangeOfCharacterFromSet:options:range:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:options:range:" target="_top">-rangeOfCharacterFromSet:options:range:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfString:" target="_top">-rangeOfString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfString:options:" target="_top">-rangeOfString:options:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfString:options:range:" target="_top">-rangeOfString:options:range:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfString:options:range:locale:" target="_top">-rangeOfString:options:range:locale:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/stringByAppendingFormat:" target="_top">-stringByAppendingFormat:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/stringByAppendingString:" target="_top">-stringByAppendingString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBString(SBStringExtensions)/stringByAppendingString:Return" target="_top">-stringByAppendingString:
+
+Return</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/substringFromIndex:" target="_top">-substringFromIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/substringToIndex:" target="_top">-substringToIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/substringWithRange:" target="_top">-substringWithRange:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/titlecaseString" target="_top">-titlecaseString</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/titlecaseStringWithLocale:" target="_top">-titlecaseStringWithLocale:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/uppercaseString" target="_top">-uppercaseString</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/uppercaseStringWithLocale:" target="_top">-uppercaseStringWithLocale:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/utf16Characters" target="_top">-utf16Characters</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/utf32CharacterAtIndex:" target="_top">-utf32CharacterAtIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBString(SBStringExtensions)/utf32CharacterAtIndex:Returns" target="_top">-utf32CharacterAtIndex:
+
+Returns</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/utf32Characters" target="_top">-utf32Characters</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/utf32Length" target="_top">-utf32Length</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/utf8Characters" target="_top">-utf8Characters</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/utf8Length" target="_top">-utf8Length</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBStringExtensions)/writeToStream:" target="_top">-writeToStream:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBString(SBStringExtensions)/writeToStream:Write" target="_top">-writeToStream:
+
+Write</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/caseInsensitiveCompare:;   name=SBString(SBStringExtensions)::caseInsensitiveCompare: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/caseInsensitiveCompare:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="caseInsensitiveCompare:">caseInsensitiveCompare:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/caseInsensitiveCompare:Convenience" --><p>caseInsensitiveCompare:  Convenience<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBComparisonResult //apple_ref/occ/tdef/SBComparisonResult //apple_ref/occ/tag/SBComparisonResult //apple_ref/occ/econst/SBComparisonResult //apple_ref/occ/struct/SBComparisonResult //apple_ref/occ/clconst/SBComparisonResult //apple_ref/occ/intf/SBComparisonResult" --><span class="type">SBComparisonResult</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/caseInsensitiveCompare //apple_ref/occ/clm/caseInsensitiveCompare //apple_ref/occ/intfcm/caseInsensitiveCompare //apple_ref/occ/intfm/caseInsensitiveCompare //apple_ref/occ/func/caseInsensitiveCompare //apple_ref/occ/ftmplt/caseInsensitiveCompare //apple_ref/occ/defn/caseInsensitiveCompare //apple_ref/occ/macro/caseInsensitiveCompare" --><span class="function">caseInsensitiveCompare</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherString //apple_ref/occ/data/otherString" --><span class="var">otherString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>method which invokes compare:options: with the SBStringCaseInsensitiveSearch option.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBString(SBStringExtensions)/caseInsensitiveCompare:Convenience;   name=SBString(SBStringExtensions)::caseInsensitiveCompare:
+
+Convenience -->
+<a name="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/caseInsensitiveCompare:Convenience"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="caseInsensitiveCompare:Convenience">caseInsensitiveCompare:
+
+Convenience</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBString(SBStringExtensions)/caseInsensitiveCompare:" --><p>caseInsensitiveCompare:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBComparisonResult //apple_ref/occ/tdef/SBComparisonResult //apple_ref/occ/tag/SBComparisonResult //apple_ref/occ/econst/SBComparisonResult //apple_ref/occ/struct/SBComparisonResult //apple_ref/occ/clconst/SBComparisonResult //apple_ref/occ/intf/SBComparisonResult" --><span class="type">SBComparisonResult</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/caseInsensitiveCompare //apple_ref/occ/clm/caseInsensitiveCompare //apple_ref/occ/intfcm/caseInsensitiveCompare //apple_ref/occ/intfm/caseInsensitiveCompare //apple_ref/occ/func/caseInsensitiveCompare //apple_ref/occ/ftmplt/caseInsensitiveCompare //apple_ref/occ/defn/caseInsensitiveCompare //apple_ref/occ/macro/caseInsensitiveCompare" --><span class="function">caseInsensitiveCompare</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherString //apple_ref/occ/data/otherString" --><span class="var">otherString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>method which invokes compare:options: with the SBStringCaseInsensitiveSearch option.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/compare:;   name=SBString(SBStringExtensions)::compare: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/compare:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="compare:">compare:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBComparisonResult //apple_ref/occ/tdef/SBComparisonResult //apple_ref/occ/tag/SBComparisonResult //apple_ref/occ/econst/SBComparisonResult //apple_ref/occ/struct/SBComparisonResult //apple_ref/occ/clconst/SBComparisonResult //apple_ref/occ/intf/SBComparisonResult" --><span class="type">SBComparisonResult</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/compare //apple_ref/occ/clm/compare //apple_ref/occ/intfcm/compare //apple_ref/occ/intfm/compare //apple_ref/occ/func/compare //apple_ref/occ/ftmplt/compare //apple_ref/occ/defn/compare //apple_ref/occ/macro/compare" --><span class="function">compare</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherString //apple_ref/occ/data/otherString" --><span class="var">otherString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Compare the full range of characters in the receiver's string against otherString.  The comparison
+uses the basic UCA algorithms and tables (no locale-specific tailoring) and tertiary strength
+(case and diacritics are significant).<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/compare:options:;   name=SBString(SBStringExtensions)::compare:options: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/compare:options:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="compare:options:">compare:options:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBComparisonResult //apple_ref/occ/tdef/SBComparisonResult //apple_ref/occ/tag/SBComparisonResult //apple_ref/occ/econst/SBComparisonResult //apple_ref/occ/struct/SBComparisonResult //apple_ref/occ/clconst/SBComparisonResult //apple_ref/occ/intf/SBComparisonResult" --><span class="type">SBComparisonResult</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/compare //apple_ref/occ/clm/compare //apple_ref/occ/intfcm/compare //apple_ref/occ/intfm/compare //apple_ref/occ/func/compare //apple_ref/occ/ftmplt/compare //apple_ref/occ/defn/compare //apple_ref/occ/macro/compare" --><span class="function">compare</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">otherString</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/options //apple_ref/occ/clm/options //apple_ref/occ/intfcm/options //apple_ref/occ/intfm/options //apple_ref/occ/func/options //apple_ref/occ/ftmplt/options //apple_ref/occ/defn/options //apple_ref/occ/macro/options" --><span class="function">options</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBStringSearchOptions //apple_ref/occ/tdef/SBStringSearchOptions //apple_ref/occ/tag/SBStringSearchOptions //apple_ref/occ/econst/SBStringSearchOptions //apple_ref/occ/struct/SBStringSearchOptions //apple_ref/occ/clconst/SBStringSearchOptions //apple_ref/occ/intf/SBStringSearchOptions" --><span class="type">SBStringSearchOptions</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/options //apple_ref/occ/data/options" --><span class="var">options</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Compare the full range of characters in the receiver's string against otherString.  The comparison
+uses the basic UCA algorithms and tables (no locale-specific tailoring).  The options argument
+can contain any of the following flags OR'ed together:
+</p>
+<p>- SBStringCaseInsensitiveSearch
+- SBStringLiteralSearch
+- SBStringNumericSearch
+- SBStringDiacriticInsensitiveSearch
+- SBStringForcedOrderingSearch<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/compare:options:range:;   name=SBString(SBStringExtensions)::compare:options:range: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/compare:options:range:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="compare:options:range:">compare:options:range:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBComparisonResult //apple_ref/occ/tdef/SBComparisonResult //apple_ref/occ/tag/SBComparisonResult //apple_ref/occ/econst/SBComparisonResult //apple_ref/occ/struct/SBComparisonResult //apple_ref/occ/clconst/SBComparisonResult //apple_ref/occ/intf/SBComparisonResult" --><span class="type">SBComparisonResult</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/compare //apple_ref/occ/clm/compare //apple_ref/occ/intfcm/compare //apple_ref/occ/intfm/compare //apple_ref/occ/func/compare //apple_ref/occ/ftmplt/compare //apple_ref/occ/defn/compare //apple_ref/occ/macro/compare" --><span class="function">compare</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">otherString</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/options //apple_ref/occ/clm/options //apple_ref/occ/intfcm/options //apple_ref/occ/intfm/options //apple_ref/occ/func/options //apple_ref/occ/ftmplt/options //apple_ref/occ/defn/options //apple_ref/occ/macro/options" --><span class="function">options</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBStringSearchOptions //apple_ref/occ/tdef/SBStringSearchOptions //apple_ref/occ/tag/SBStringSearchOptions //apple_ref/occ/econst/SBStringSearchOptions //apple_ref/occ/struct/SBStringSearchOptions //apple_ref/occ/clconst/SBStringSearchOptions //apple_ref/occ/intf/SBStringSearchOptions" --><span class="type">SBStringSearchOptions</span><!-- /a -->)<span class="param">options</span> <!-- a logicalPath="//apple_ref/occ/instm/range //apple_ref/occ/clm/range //apple_ref/occ/intfcm/range //apple_ref/occ/intfm/range //apple_ref/occ/func/range //apple_ref/occ/ftmplt/range //apple_ref/occ/defn/range //apple_ref/occ/macro/range" --><span class="function">range</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/compareRange //apple_ref/occ/data/compareRange" --><span class="var">compareRange</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Compare the given range of characters in the receiver's string against otherString.  The comparison
+uses the basic UCA algorithms and tables (no locale-specific tailoring).  The options argument
+can contain any of the following flags OR'ed together:
+</p>
+<p>- SBStringCaseInsensitiveSearch
+- SBStringLiteralSearch
+- SBStringNumericSearch
+- SBStringDiacriticInsensitiveSearch
+- SBStringForcedOrderingSearch<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/compare:options:range:locale:;   name=SBString(SBStringExtensions)::compare:options:range:locale: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/compare:options:range:locale:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="compare:options:range:locale:">compare:options:range:locale:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBComparisonResult //apple_ref/occ/tdef/SBComparisonResult //apple_ref/occ/tag/SBComparisonResult //apple_ref/occ/econst/SBComparisonResult //apple_ref/occ/struct/SBComparisonResult //apple_ref/occ/clconst/SBComparisonResult //apple_ref/occ/intf/SBComparisonResult" --><span class="type">SBComparisonResult</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/compare //apple_ref/occ/clm/compare //apple_ref/occ/intfcm/compare //apple_ref/occ/intfm/compare //apple_ref/occ/func/compare //apple_ref/occ/ftmplt/compare //apple_ref/occ/defn/compare //apple_ref/occ/macro/compare" --><span class="function">compare</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">otherString</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/options //apple_ref/occ/clm/options //apple_ref/occ/intfcm/options //apple_ref/occ/intfm/options //apple_ref/occ/func/options //apple_ref/occ/ftmplt/options //apple_ref/occ/defn/options //apple_ref/occ/macro/options" --><span class="function">options</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBStringSearchOptions //apple_ref/occ/tdef/SBStringSearchOptions //apple_ref/occ/tag/SBStringSearchOptions //apple_ref/occ/econst/SBStringSearchOptions //apple_ref/occ/struct/SBStringSearchOptions //apple_ref/occ/clconst/SBStringSearchOptions //apple_ref/occ/intf/SBStringSearchOptions" --><span class="type">SBStringSearchOptions</span><!-- /a -->)<span class="param">options</span> <!-- a logicalPath="//apple_ref/occ/instm/range //apple_ref/occ/clm/range //apple_ref/occ/intfcm/range //apple_ref/occ/intfm/range //apple_ref/occ/func/range //apple_ref/occ/ftmplt/range //apple_ref/occ/defn/range //apple_ref/occ/macro/range" --><span class="function">range</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<span class="param">compareRange</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/locale //apple_ref/occ/clm/locale //apple_ref/occ/intfcm/locale //apple_ref/occ/intfm/locale //apple_ref/occ/func/locale //apple_ref/occ/ftmplt/locale //apple_ref/occ/defn/locale //apple_ref/occ/macro/locale" --><span class="function">locale</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBLocale //apple_ref/occ/tdef/SBLocale //apple_ref/occ/tag/SBLocale //apple_ref/occ/econst/SBLocale //apple_ref/occ/struct/SBLocale //apple_ref/occ/clconst/SBLocale //apple_ref/occ/intf/SBLocale" --><span class="type">SBLocale</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/locale //apple_ref/occ/data/locale" --><span class="var">locale</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Compare the given range of characters in the receiver's string against otherString.  The comparison
+uses the basic UCA algorithms and tables unless a non-nil SBLocale is provided.  The options argument
+can contain any of the following flags OR'ed together:
+</p>
+<p>- SBStringCaseInsensitiveSearch
+- SBStringLiteralSearch
+- SBStringNumericSearch
+- SBStringDiacriticInsensitiveSearch
+- SBStringForcedOrderingSearch<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/componentsSeparatedByString:;   name=SBString(SBStringExtensions)::componentsSeparatedByString: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/componentsSeparatedByString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="componentsSeparatedByString:">componentsSeparatedByString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/componentsSeparatedByString //apple_ref/occ/clm/componentsSeparatedByString //apple_ref/occ/intfcm/componentsSeparatedByString //apple_ref/occ/intfm/componentsSeparatedByString //apple_ref/occ/func/componentsSeparatedByString //apple_ref/occ/ftmplt/componentsSeparatedByString //apple_ref/occ/defn/componentsSeparatedByString //apple_ref/occ/macro/componentsSeparatedByString" --><span class="function">componentsSeparatedByString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/separator //apple_ref/occ/data/separator" --><span class="var">separator</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempts to carve-up the receiver using the given separator string as a boundary between
+values.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/copyCharactersToBuffer:length:;   name=SBString(SBStringExtensions)::copyCharactersToBuffer:length: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/copyCharactersToBuffer:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="copyCharactersToBuffer:length:">copyCharactersToBuffer:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/copyCharactersToBuffer //apple_ref/occ/clm/copyCharactersToBuffer //apple_ref/occ/intfcm/copyCharactersToBuffer //apple_ref/occ/intfm/copyCharactersToBuffer //apple_ref/occ/func/copyCharactersToBuffer //apple_ref/occ/ftmplt/copyCharactersToBuffer //apple_ref/occ/defn/copyCharactersToBuffer //apple_ref/occ/macro/copyCharactersToBuffer" --><span class="function">copyCharactersToBuffer</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/UChar //apple_ref/occ/tdef/UChar //apple_ref/occ/tag/UChar //apple_ref/occ/econst/UChar //apple_ref/occ/struct/UChar //apple_ref/occ/clconst/UChar //apple_ref/occ/intf/UChar" --><span class="type">UChar</span><!-- /a --><span class="type">*</span>)<span class="param">buffer</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Fill the provided buffer with the receiver's string as UTF-16 characters/surrogates.  If the
+buffer is long enough, a trailing NUL character will be included.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/copyUTF32CharactersToBuffer:length:;   name=SBString(SBStringExtensions)::copyUTF32CharactersToBuffer:length: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/copyUTF32CharactersToBuffer:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="copyUTF32CharactersToBuffer:length:">copyUTF32CharactersToBuffer:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/copyUTF32CharactersToBuffer //apple_ref/occ/clm/copyUTF32CharactersToBuffer //apple_ref/occ/intfcm/copyUTF32CharactersToBuffer //apple_ref/occ/intfm/copyUTF32CharactersToBuffer //apple_ref/occ/func/copyUTF32CharactersToBuffer //apple_ref/occ/ftmplt/copyUTF32CharactersToBuffer //apple_ref/occ/defn/copyUTF32CharactersToBuffer //apple_ref/occ/macro/copyUTF32CharactersToBuffer" --><span class="function">copyUTF32CharactersToBuffer</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/UChar32 //apple_ref/occ/tdef/UChar32 //apple_ref/occ/tag/UChar32 //apple_ref/occ/econst/UChar32 //apple_ref/occ/struct/UChar32 //apple_ref/occ/clconst/UChar32 //apple_ref/occ/intf/UChar32" --><span class="type">UChar32</span><!-- /a --><span class="type">*</span>)<span class="param">buffer</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Fill the provided buffer with the receiver's string as UTF-32 characters.  If the buffer is long
+enough, a trailing NUL character will be included.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/copyUTF8CharactersToBuffer:length:;   name=SBString(SBStringExtensions)::copyUTF8CharactersToBuffer:length: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/copyUTF8CharactersToBuffer:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="copyUTF8CharactersToBuffer:length:">copyUTF8CharactersToBuffer:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/copyUTF8CharactersToBuffer //apple_ref/occ/clm/copyUTF8CharactersToBuffer //apple_ref/occ/intfcm/copyUTF8CharactersToBuffer //apple_ref/occ/intfm/copyUTF8CharactersToBuffer //apple_ref/occ/func/copyUTF8CharactersToBuffer //apple_ref/occ/ftmplt/copyUTF8CharactersToBuffer //apple_ref/occ/defn/copyUTF8CharactersToBuffer //apple_ref/occ/macro/copyUTF8CharactersToBuffer" --><span class="function">copyUTF8CharactersToBuffer</span><!-- /a -->:(<span class="keyword">unsigned</span> <!-- a logicalPath="//apple_ref/occ/cl/char //apple_ref/occ/tdef/char //apple_ref/occ/tag/char //apple_ref/occ/econst/char //apple_ref/occ/struct/char //apple_ref/occ/clconst/char //apple_ref/occ/intf/char" --><span class="type">char</span><!-- /a --><span class="type">*</span>)<span class="param">buffer</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Fill the provided buffer with the receiver's string as UTF-8 characters/surrogates.  If the
+buffer is long enough, a trailing NUL character will be included.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/dataUsingEncoding:;   name=SBString(SBStringExtensions)::dataUsingEncoding: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/dataUsingEncoding:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dataUsingEncoding:">dataUsingEncoding:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/dataUsingEncoding //apple_ref/occ/clm/dataUsingEncoding //apple_ref/occ/intfcm/dataUsingEncoding //apple_ref/occ/intfm/dataUsingEncoding //apple_ref/occ/func/dataUsingEncoding //apple_ref/occ/ftmplt/dataUsingEncoding //apple_ref/occ/defn/dataUsingEncoding //apple_ref/occ/macro/dataUsingEncoding" --><span class="function">dataUsingEncoding</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/encoding //apple_ref/occ/data/encoding" --><span class="var">encoding</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempt to convert the receiver _from_ its native encoding _to_ the given character encoding and
+return the resulting byte stream as an SBData object.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/doubleValue;   name=SBString(SBStringExtensions)::doubleValue -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/doubleValue"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="doubleValue">doubleValue</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/double //apple_ref/occ/tdef/double //apple_ref/occ/tag/double //apple_ref/occ/econst/double //apple_ref/occ/struct/double //apple_ref/occ/clconst/double //apple_ref/occ/intf/double" --><span class="type">double</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/doubleValue //apple_ref/occ/data/doubleValue" --><span class="var">doubleValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempts to parse the receiver as a double-precision floating-point value.  Returns
+NAN if unable to parse.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/floatValue;   name=SBString(SBStringExtensions)::floatValue -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/floatValue"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="floatValue">floatValue</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/float //apple_ref/occ/tdef/float //apple_ref/occ/tag/float //apple_ref/occ/econst/float //apple_ref/occ/struct/float //apple_ref/occ/clconst/float //apple_ref/occ/intf/float" --><span class="type">float</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/floatValue //apple_ref/occ/data/floatValue" --><span class="var">floatValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempts to parse the receiver as a single-precision floating-point value.  Returns
+NAN if unable to parse.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/hasPrefix:;   name=SBString(SBStringExtensions)::hasPrefix: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/hasPrefix:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="hasPrefix:">hasPrefix:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/hasPrefix:Returns" --><p>hasPrefix:  Returns<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/hasPrefix //apple_ref/occ/clm/hasPrefix //apple_ref/occ/intfcm/hasPrefix //apple_ref/occ/intfm/hasPrefix //apple_ref/occ/func/hasPrefix //apple_ref/occ/ftmplt/hasPrefix //apple_ref/occ/defn/hasPrefix //apple_ref/occ/macro/hasPrefix" --><span class="function">hasPrefix</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/prefixString //apple_ref/occ/data/prefixString" --><span class="var">prefixString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>YES if the receiver begins with the specified prefixString.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBString(SBStringExtensions)/hasPrefix:Returns;   name=SBString(SBStringExtensions)::hasPrefix:
+
+Returns -->
+<a name="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/hasPrefix:Returns"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="hasPrefix:Returns">hasPrefix:
+
+Returns</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBString(SBStringExtensions)/hasPrefix:" --><p>hasPrefix:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/hasPrefix //apple_ref/occ/clm/hasPrefix //apple_ref/occ/intfcm/hasPrefix //apple_ref/occ/intfm/hasPrefix //apple_ref/occ/func/hasPrefix //apple_ref/occ/ftmplt/hasPrefix //apple_ref/occ/defn/hasPrefix //apple_ref/occ/macro/hasPrefix" --><span class="function">hasPrefix</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/prefixString //apple_ref/occ/data/prefixString" --><span class="var">prefixString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>YES if the receiver begins with the specified prefixString.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/hasSuffix:;   name=SBString(SBStringExtensions)::hasSuffix: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/hasSuffix:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="hasSuffix:">hasSuffix:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/hasSuffix:Returns" --><p>hasSuffix:  Returns<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/hasSuffix //apple_ref/occ/clm/hasSuffix //apple_ref/occ/intfcm/hasSuffix //apple_ref/occ/intfm/hasSuffix //apple_ref/occ/func/hasSuffix //apple_ref/occ/ftmplt/hasSuffix //apple_ref/occ/defn/hasSuffix //apple_ref/occ/macro/hasSuffix" --><span class="function">hasSuffix</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/suffixString //apple_ref/occ/data/suffixString" --><span class="var">suffixString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>YES if the receiver ends with the specified suffixString.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBString(SBStringExtensions)/hasSuffix:Returns;   name=SBString(SBStringExtensions)::hasSuffix:
+
+Returns -->
+<a name="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/hasSuffix:Returns"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="hasSuffix:Returns">hasSuffix:
+
+Returns</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBString(SBStringExtensions)/hasSuffix:" --><p>hasSuffix:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/hasSuffix //apple_ref/occ/clm/hasSuffix //apple_ref/occ/intfcm/hasSuffix //apple_ref/occ/intfm/hasSuffix //apple_ref/occ/func/hasSuffix //apple_ref/occ/ftmplt/hasSuffix //apple_ref/occ/defn/hasSuffix //apple_ref/occ/macro/hasSuffix" --><span class="function">hasSuffix</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/suffixString //apple_ref/occ/data/suffixString" --><span class="var">suffixString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>YES if the receiver ends with the specified suffixString.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/intValue;   name=SBString(SBStringExtensions)::intValue -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/intValue"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="intValue">intValue</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/intValue //apple_ref/occ/data/intValue" --><span class="var">intValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to parse the receiver as an integer value.  Returns 0 if unable to parse.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/isEqualToString:;   name=SBString(SBStringExtensions)::isEqualToString: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/isEqualToString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isEqualToString:">isEqualToString:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/isEqualToString:Simple" --><p>isEqualToString:  Simple<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/isEqualToString //apple_ref/occ/clm/isEqualToString //apple_ref/occ/intfcm/isEqualToString //apple_ref/occ/intfm/isEqualToString //apple_ref/occ/func/isEqualToString //apple_ref/occ/ftmplt/isEqualToString //apple_ref/occ/defn/isEqualToString //apple_ref/occ/macro/isEqualToString" --><span class="function">isEqualToString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherString //apple_ref/occ/data/otherString" --><span class="var">otherString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>binary comparison of the receiver against another string.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBString(SBStringExtensions)/isEqualToString:Simple;   name=SBString(SBStringExtensions)::isEqualToString:
+
+Simple -->
+<a name="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/isEqualToString:Simple"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isEqualToString:Simple">isEqualToString:
+
+Simple</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBString(SBStringExtensions)/isEqualToString:" --><p>isEqualToString:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/isEqualToString //apple_ref/occ/clm/isEqualToString //apple_ref/occ/intfcm/isEqualToString //apple_ref/occ/intfm/isEqualToString //apple_ref/occ/func/isEqualToString //apple_ref/occ/ftmplt/isEqualToString //apple_ref/occ/defn/isEqualToString //apple_ref/occ/macro/isEqualToString" --><span class="function">isEqualToString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherString //apple_ref/occ/data/otherString" --><span class="var">otherString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>binary comparison of the receiver against another string.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/localizedCaseInsensitiveCompare:;   name=SBString(SBStringExtensions)::localizedCaseInsensitiveCompare: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/localizedCaseInsensitiveCompare:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="localizedCaseInsensitiveCompare:">localizedCaseInsensitiveCompare:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBComparisonResult //apple_ref/occ/tdef/SBComparisonResult //apple_ref/occ/tag/SBComparisonResult //apple_ref/occ/econst/SBComparisonResult //apple_ref/occ/struct/SBComparisonResult //apple_ref/occ/clconst/SBComparisonResult //apple_ref/occ/intf/SBComparisonResult" --><span class="type">SBComparisonResult</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/localizedCaseInsensitiveCompare //apple_ref/occ/clm/localizedCaseInsensitiveCompare //apple_ref/occ/intfcm/localizedCaseInsensitiveCompare //apple_ref/occ/intfm/localizedCaseInsensitiveCompare //apple_ref/occ/func/localizedCaseInsensitiveCompare //apple_ref/occ/ftmplt/localizedCaseInsensitiveCompare //apple_ref/occ/defn/localizedCaseInsensitiveCompare //apple_ref/occ/macro/localizedCaseInsensitiveCompare" --><span class="function">localizedCaseInsensitiveCompare</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherString //apple_ref/occ/data/otherString" --><span class="var">otherString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Convenience method which invokes compare:options:range:locale: with the default locale and the
+case-insensitive, forced-ordering option.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/localizedCompare:;   name=SBString(SBStringExtensions)::localizedCompare: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/localizedCompare:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="localizedCompare:">localizedCompare:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/localizedCompare:Convenience" --><p>localizedCompare:  Convenience<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBComparisonResult //apple_ref/occ/tdef/SBComparisonResult //apple_ref/occ/tag/SBComparisonResult //apple_ref/occ/econst/SBComparisonResult //apple_ref/occ/struct/SBComparisonResult //apple_ref/occ/clconst/SBComparisonResult //apple_ref/occ/intf/SBComparisonResult" --><span class="type">SBComparisonResult</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/localizedCompare //apple_ref/occ/clm/localizedCompare //apple_ref/occ/intfcm/localizedCompare //apple_ref/occ/intfm/localizedCompare //apple_ref/occ/func/localizedCompare //apple_ref/occ/ftmplt/localizedCompare //apple_ref/occ/defn/localizedCompare //apple_ref/occ/macro/localizedCompare" --><span class="function">localizedCompare</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherString //apple_ref/occ/data/otherString" --><span class="var">otherString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>method which invokes compare:options:range:locale: with the default locale.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBString(SBStringExtensions)/localizedCompare:Convenience;   name=SBString(SBStringExtensions)::localizedCompare:
+
+Convenience -->
+<a name="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/localizedCompare:Convenience"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="localizedCompare:Convenience">localizedCompare:
+
+Convenience</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBString(SBStringExtensions)/localizedCompare:" --><p>localizedCompare:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBComparisonResult //apple_ref/occ/tdef/SBComparisonResult //apple_ref/occ/tag/SBComparisonResult //apple_ref/occ/econst/SBComparisonResult //apple_ref/occ/struct/SBComparisonResult //apple_ref/occ/clconst/SBComparisonResult //apple_ref/occ/intf/SBComparisonResult" --><span class="type">SBComparisonResult</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/localizedCompare //apple_ref/occ/clm/localizedCompare //apple_ref/occ/intfcm/localizedCompare //apple_ref/occ/intfm/localizedCompare //apple_ref/occ/func/localizedCompare //apple_ref/occ/ftmplt/localizedCompare //apple_ref/occ/defn/localizedCompare //apple_ref/occ/macro/localizedCompare" --><span class="function">localizedCompare</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherString //apple_ref/occ/data/otherString" --><span class="var">otherString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>method which invokes compare:options:range:locale: with the default locale.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/longLongIntValue;   name=SBString(SBStringExtensions)::longLongIntValue -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/longLongIntValue"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="longLongIntValue">longLongIntValue</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/long //apple_ref/occ/tdef/long //apple_ref/occ/tag/long //apple_ref/occ/econst/long //apple_ref/occ/struct/long //apple_ref/occ/clconst/long //apple_ref/occ/intf/long" --><span class="type">long</span><!-- /a --> <!-- a logicalPath="//apple_ref/occ/cl/long //apple_ref/occ/tdef/long //apple_ref/occ/tag/long //apple_ref/occ/econst/long //apple_ref/occ/struct/long //apple_ref/occ/clconst/long //apple_ref/occ/intf/long" --><span class="type">long</span><!-- /a --> <!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/longLongIntValue //apple_ref/occ/data/longLongIntValue" --><span class="var">longLongIntValue</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to parse the receiver as a long long integer value.  Returns 0 if unable to parse.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/lowercaseString;   name=SBString(SBStringExtensions)::lowercaseString -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/lowercaseString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="lowercaseString">lowercaseString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/lowercaseString //apple_ref/occ/data/lowercaseString" --><span class="var">lowercaseString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Convenience method which calls through to uppercaseStringWithLocale: with the default locale.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/lowercaseStringWithLocale:;   name=SBString(SBStringExtensions)::lowercaseStringWithLocale: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/lowercaseStringWithLocale:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="lowercaseStringWithLocale:">lowercaseStringWithLocale:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/lowercaseStringWithLocale //apple_ref/occ/clm/lowercaseStringWithLocale //apple_ref/occ/intfcm/lowercaseStringWithLocale //apple_ref/occ/intfm/lowercaseStringWithLocale //apple_ref/occ/func/lowercaseStringWithLocale //apple_ref/occ/ftmplt/lowercaseStringWithLocale //apple_ref/occ/defn/lowercaseStringWithLocale //apple_ref/occ/macro/lowercaseStringWithLocale" --><span class="function">lowercaseStringWithLocale</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBLocale //apple_ref/occ/tdef/SBLocale //apple_ref/occ/tag/SBLocale //apple_ref/occ/econst/SBLocale //apple_ref/occ/struct/SBLocale //apple_ref/occ/clconst/SBLocale //apple_ref/occ/intf/SBLocale" --><span class="type">SBLocale</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/locale //apple_ref/occ/data/locale" --><span class="var">locale</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Return a string which contains the receiver's string transformed to lower case according to
+the provided locale's case-folding rules.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBString(SBStringExtensions)/nativeEncoding;   name=SBString(SBStringExtensions)::nativeEncoding -->
+<a name="//apple_ref/occ/clm/SBString(SBStringExtensions)/nativeEncoding"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="nativeEncoding">nativeEncoding</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBStringNativeEncoding //apple_ref/occ/tdef/SBStringNativeEncoding //apple_ref/occ/tag/SBStringNativeEncoding //apple_ref/occ/econst/SBStringNativeEncoding //apple_ref/occ/struct/SBStringNativeEncoding //apple_ref/occ/clconst/SBStringNativeEncoding //apple_ref/occ/intf/SBStringNativeEncoding" --><span class="type">SBStringNativeEncoding</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/nativeEncoding //apple_ref/occ/data/nativeEncoding" --><span class="var">nativeEncoding</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the default encoding that the class will use to represent instances' character
+data.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/nativeEncoding;   name=SBString(SBStringExtensions)::nativeEncoding -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/nativeEncoding"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="nativeEncoding">nativeEncoding</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBStringNativeEncoding //apple_ref/occ/tdef/SBStringNativeEncoding //apple_ref/occ/tag/SBStringNativeEncoding //apple_ref/occ/econst/SBStringNativeEncoding //apple_ref/occ/struct/SBStringNativeEncoding //apple_ref/occ/clconst/SBStringNativeEncoding //apple_ref/occ/intf/SBStringNativeEncoding" --><span class="type">SBStringNativeEncoding</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/nativeEncoding //apple_ref/occ/data/nativeEncoding" --><span class="var">nativeEncoding</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the encoding that the receiver is currently using to represent its character data.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:;   name=SBString(SBStringExtensions)::rangeOfCharacterFromSet: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rangeOfCharacterFromSet:">rangeOfCharacterFromSet:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:Returns" --><p>rangeOfCharacterFromSet:  Returns<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/rangeOfCharacterFromSet //apple_ref/occ/clm/rangeOfCharacterFromSet //apple_ref/occ/intfcm/rangeOfCharacterFromSet //apple_ref/occ/intfm/rangeOfCharacterFromSet //apple_ref/occ/func/rangeOfCharacterFromSet //apple_ref/occ/ftmplt/rangeOfCharacterFromSet //apple_ref/occ/defn/rangeOfCharacterFromSet //apple_ref/occ/macro/rangeOfCharacterFromSet" --><span class="function">rangeOfCharacterFromSet</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aSet //apple_ref/occ/data/aSet" --><span class="var">aSet</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the position of the first character in the receiver which is in aSet.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:Returns;   name=SBString(SBStringExtensions)::rangeOfCharacterFromSet:
+
+Returns -->
+<a name="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:Returns"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rangeOfCharacterFromSet:Returns">rangeOfCharacterFromSet:
+
+Returns</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:" --><p>rangeOfCharacterFromSet:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/rangeOfCharacterFromSet //apple_ref/occ/clm/rangeOfCharacterFromSet //apple_ref/occ/intfcm/rangeOfCharacterFromSet //apple_ref/occ/intfm/rangeOfCharacterFromSet //apple_ref/occ/func/rangeOfCharacterFromSet //apple_ref/occ/ftmplt/rangeOfCharacterFromSet //apple_ref/occ/defn/rangeOfCharacterFromSet //apple_ref/occ/macro/rangeOfCharacterFromSet" --><span class="function">rangeOfCharacterFromSet</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aSet //apple_ref/occ/data/aSet" --><span class="var">aSet</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the position of the first character in the receiver which is in aSet.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:options:;   name=SBString(SBStringExtensions)::rangeOfCharacterFromSet:options: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:options:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rangeOfCharacterFromSet:options:">rangeOfCharacterFromSet:options:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:options:range:" --><p>rangeOfCharacterFromSet:options:range:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/rangeOfCharacterFromSet //apple_ref/occ/clm/rangeOfCharacterFromSet //apple_ref/occ/intfcm/rangeOfCharacterFromSet //apple_ref/occ/intfm/rangeOfCharacterFromSet //apple_ref/occ/func/rangeOfCharacterFromSet //apple_ref/occ/ftmplt/rangeOfCharacterFromSet //apple_ref/occ/defn/rangeOfCharacterFromSet //apple_ref/occ/macro/rangeOfCharacterFromSet" --><span class="function">rangeOfCharacterFromSet</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>)<span class="param">aSet</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/options //apple_ref/occ/clm/options //apple_ref/occ/intfcm/options //apple_ref/occ/intfm/options //apple_ref/occ/func/options //apple_ref/occ/ftmplt/options //apple_ref/occ/defn/options //apple_ref/occ/macro/options" --><span class="function">options</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBStringSearchOptions //apple_ref/occ/tdef/SBStringSearchOptions //apple_ref/occ/tag/SBStringSearchOptions //apple_ref/occ/econst/SBStringSearchOptions //apple_ref/occ/struct/SBStringSearchOptions //apple_ref/occ/clconst/SBStringSearchOptions //apple_ref/occ/intf/SBStringSearchOptions" --><span class="type">SBStringSearchOptions</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/options //apple_ref/occ/data/options" --><span class="var">options</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the position of the first character in the receiver which is in aSet.
+</p>
+<p>The options argument can contain any of the following flags OR'ed together:
+</p>
+<p>- SBStringAnchoredSearch
+- SBStringBackwardsSearch<!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:options:range:;   name=SBString(SBStringExtensions)::rangeOfCharacterFromSet:options:range: -->
+<a name="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:options:range:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rangeOfCharacterFromSet:options:range:">rangeOfCharacterFromSet:options:range:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:options:" --><p>rangeOfCharacterFromSet:options:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/rangeOfCharacterFromSet //apple_ref/occ/clm/rangeOfCharacterFromSet //apple_ref/occ/intfcm/rangeOfCharacterFromSet //apple_ref/occ/intfm/rangeOfCharacterFromSet //apple_ref/occ/func/rangeOfCharacterFromSet //apple_ref/occ/ftmplt/rangeOfCharacterFromSet //apple_ref/occ/defn/rangeOfCharacterFromSet //apple_ref/occ/macro/rangeOfCharacterFromSet" --><span class="function">rangeOfCharacterFromSet</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>)<span class="param">aSet</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/options //apple_ref/occ/clm/options //apple_ref/occ/intfcm/options //apple_ref/occ/intfm/options //apple_ref/occ/func/options //apple_ref/occ/ftmplt/options //apple_ref/occ/defn/options //apple_ref/occ/macro/options" --><span class="function">options</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBStringSearchOptions //apple_ref/occ/tdef/SBStringSearchOptions //apple_ref/occ/tag/SBStringSearchOptions //apple_ref/occ/econst/SBStringSearchOptions //apple_ref/occ/struct/SBStringSearchOptions //apple_ref/occ/clconst/SBStringSearchOptions //apple_ref/occ/intf/SBStringSearchOptions" --><span class="type">SBStringSearchOptions</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/options //apple_ref/occ/data/options" --><span class="var">options</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the position of the first character in the receiver which is in aSet.
+</p>
+<p>The options argument can contain any of the following flags OR'ed together:
+</p>
+<p>- SBStringAnchoredSearch
+- SBStringBackwardsSearch<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:options:range:;   name=SBString(SBStringExtensions)::rangeOfCharacterFromSet:options:range: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfCharacterFromSet:options:range:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rangeOfCharacterFromSet:options:range:">rangeOfCharacterFromSet:options:range:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/rangeOfCharacterFromSet //apple_ref/occ/clm/rangeOfCharacterFromSet //apple_ref/occ/intfcm/rangeOfCharacterFromSet //apple_ref/occ/intfm/rangeOfCharacterFromSet //apple_ref/occ/func/rangeOfCharacterFromSet //apple_ref/occ/ftmplt/rangeOfCharacterFromSet //apple_ref/occ/defn/rangeOfCharacterFromSet //apple_ref/occ/macro/rangeOfCharacterFromSet" --><span class="function">rangeOfCharacterFromSet</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>)<span class="param">aSet</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/options //apple_ref/occ/clm/options //apple_ref/occ/intfcm/options //apple_ref/occ/intfm/options //apple_ref/occ/func/options //apple_ref/occ/ftmplt/options //apple_ref/occ/defn/options //apple_ref/occ/macro/options" --><span class="function">options</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBStringSearchOptions //apple_ref/occ/tdef/SBStringSearchOptions //apple_ref/occ/tag/SBStringSearchOptions //apple_ref/occ/econst/SBStringSearchOptions //apple_ref/occ/struct/SBStringSearchOptions //apple_ref/occ/clconst/SBStringSearchOptions //apple_ref/occ/intf/SBStringSearchOptions" --><span class="type">SBStringSearchOptions</span><!-- /a -->)<span class="param">options</span> <!-- a logicalPath="//apple_ref/occ/instm/range //apple_ref/occ/clm/range //apple_ref/occ/intfcm/range //apple_ref/occ/intfm/range //apple_ref/occ/func/range //apple_ref/occ/ftmplt/range //apple_ref/occ/defn/range //apple_ref/occ/macro/range" --><span class="function">range</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/searchRange //apple_ref/occ/data/searchRange" --><span class="var">searchRange</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the position of the first character in the receiver which is in aSet.  The search
+is limited to the given sub-range of the receiver (searchRange).
+</p>
+<p>The options argument can contain any of the following flags OR'ed together:
+</p>
+<p>- SBStringAnchoredSearch
+- SBStringBackwardsSearch<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfString:;   name=SBString(SBStringExtensions)::rangeOfString: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rangeOfString:">rangeOfString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/rangeOfString //apple_ref/occ/clm/rangeOfString //apple_ref/occ/intfcm/rangeOfString //apple_ref/occ/intfm/rangeOfString //apple_ref/occ/func/rangeOfString //apple_ref/occ/ftmplt/rangeOfString //apple_ref/occ/defn/rangeOfString //apple_ref/occ/macro/rangeOfString" --><span class="function">rangeOfString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherString //apple_ref/occ/data/otherString" --><span class="var">otherString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Locate the first occurence of otherString in the receiver and return a range corresponding to the
+found position and entity range.
+</p>
+<p>Returns an empty range if otherString is not found.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfString:options:;   name=SBString(SBStringExtensions)::rangeOfString:options: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfString:options:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rangeOfString:options:">rangeOfString:options:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/rangeOfString //apple_ref/occ/clm/rangeOfString //apple_ref/occ/intfcm/rangeOfString //apple_ref/occ/intfm/rangeOfString //apple_ref/occ/func/rangeOfString //apple_ref/occ/ftmplt/rangeOfString //apple_ref/occ/defn/rangeOfString //apple_ref/occ/macro/rangeOfString" --><span class="function">rangeOfString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">otherString</span> <!-- a logicalPath="//apple_ref/occ/instm/options //apple_ref/occ/clm/options //apple_ref/occ/intfcm/options //apple_ref/occ/intfm/options //apple_ref/occ/func/options //apple_ref/occ/ftmplt/options //apple_ref/occ/defn/options //apple_ref/occ/macro/options" --><span class="function">options</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBStringSearchOptions //apple_ref/occ/tdef/SBStringSearchOptions //apple_ref/occ/tag/SBStringSearchOptions //apple_ref/occ/econst/SBStringSearchOptions //apple_ref/occ/struct/SBStringSearchOptions //apple_ref/occ/clconst/SBStringSearchOptions //apple_ref/occ/intf/SBStringSearchOptions" --><span class="type">SBStringSearchOptions</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/options //apple_ref/occ/data/options" --><span class="var">options</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Locate the first occurence of otherString in the receiver and return a range corresponding to the found
+position and entity range.
+</p>
+<p>The options argument can contain any of the following flags OR'ed together:
+</p>
+<p>- SBStringCaseInsensitiveSearch
+- SBStringLiteralSearch
+- SBStringDiacriticInsensitiveSearch
+- SBStringAnchoredSearch
+- SBStringBackwardsSearch
+</p>
+<p>Returns an empty range if otherString is not found.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfString:options:range:;   name=SBString(SBStringExtensions)::rangeOfString:options:range: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfString:options:range:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rangeOfString:options:range:">rangeOfString:options:range:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/rangeOfString //apple_ref/occ/clm/rangeOfString //apple_ref/occ/intfcm/rangeOfString //apple_ref/occ/intfm/rangeOfString //apple_ref/occ/func/rangeOfString //apple_ref/occ/ftmplt/rangeOfString //apple_ref/occ/defn/rangeOfString //apple_ref/occ/macro/rangeOfString" --><span class="function">rangeOfString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">otherString</span> <!-- a logicalPath="//apple_ref/occ/instm/options //apple_ref/occ/clm/options //apple_ref/occ/intfcm/options //apple_ref/occ/intfm/options //apple_ref/occ/func/options //apple_ref/occ/ftmplt/options //apple_ref/occ/defn/options //apple_ref/occ/macro/options" --><span class="function">options</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBStringSearchOptions //apple_ref/occ/tdef/SBStringSearchOptions //apple_ref/occ/tag/SBStringSearchOptions //apple_ref/occ/econst/SBStringSearchOptions //apple_ref/occ/struct/SBStringSearchOptions //apple_ref/occ/clconst/SBStringSearchOptions //apple_ref/occ/intf/SBStringSearchOptions" --><span class="type">SBStringSearchOptions</span><!-- /a -->)<span class="param">options</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/range //apple_ref/occ/clm/range //apple_ref/occ/intfcm/range //apple_ref/occ/intfm/range //apple_ref/occ/func/range //apple_ref/occ/ftmplt/range //apple_ref/occ/defn/range //apple_ref/occ/macro/range" --><span class="function">range</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/searchRange //apple_ref/occ/data/searchRange" --><span class="var">searchRange</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Locate the first occurence of otherString in the given searchRange of the receiver and return a range
+corresponding to the found position and entity range.
+</p>
+<p>The searchRange is a range of UTF-16 entities to search, not strictly a character range.
+</p>
+<p>The options argument can contain any of the following flags OR'ed together:
+</p>
+<p>- SBStringCaseInsensitiveSearch
+- SBStringLiteralSearch
+- SBStringDiacriticInsensitiveSearch
+- SBStringAnchoredSearch
+- SBStringBackwardsSearch
+</p>
+<p>Returns an empty range if otherString is not found.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfString:options:range:locale:;   name=SBString(SBStringExtensions)::rangeOfString:options:range:locale: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/rangeOfString:options:range:locale:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rangeOfString:options:range:locale:">rangeOfString:options:range:locale:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/rangeOfString //apple_ref/occ/clm/rangeOfString //apple_ref/occ/intfcm/rangeOfString //apple_ref/occ/intfm/rangeOfString //apple_ref/occ/func/rangeOfString //apple_ref/occ/ftmplt/rangeOfString //apple_ref/occ/defn/rangeOfString //apple_ref/occ/macro/rangeOfString" --><span class="function">rangeOfString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">otherString</span> <!-- a logicalPath="//apple_ref/occ/instm/options //apple_ref/occ/clm/options //apple_ref/occ/intfcm/options //apple_ref/occ/intfm/options //apple_ref/occ/func/options //apple_ref/occ/ftmplt/options //apple_ref/occ/defn/options //apple_ref/occ/macro/options" --><span class="function">options</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBStringSearchOptions //apple_ref/occ/tdef/SBStringSearchOptions //apple_ref/occ/tag/SBStringSearchOptions //apple_ref/occ/econst/SBStringSearchOptions //apple_ref/occ/struct/SBStringSearchOptions //apple_ref/occ/clconst/SBStringSearchOptions //apple_ref/occ/intf/SBStringSearchOptions" --><span class="type">SBStringSearchOptions</span><!-- /a -->)<span class="param">options</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/range //apple_ref/occ/clm/range //apple_ref/occ/intfcm/range //apple_ref/occ/intfm/range //apple_ref/occ/func/range //apple_ref/occ/ftmplt/range //apple_ref/occ/defn/range //apple_ref/occ/macro/range" --><span class="function">range</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<span class="param">searchRange</span> <!-- a logicalPath="//apple_ref/occ/instm/locale //apple_ref/occ/clm/locale //apple_ref/occ/intfcm/locale //apple_ref/occ/intfm/locale //apple_ref/occ/func/locale //apple_ref/occ/ftmplt/locale //apple_ref/occ/defn/locale //apple_ref/occ/macro/locale" --><span class="function">locale</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBLocale //apple_ref/occ/tdef/SBLocale //apple_ref/occ/tag/SBLocale //apple_ref/occ/econst/SBLocale //apple_ref/occ/struct/SBLocale //apple_ref/occ/clconst/SBLocale //apple_ref/occ/intf/SBLocale" --><span class="type">SBLocale</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/locale //apple_ref/occ/data/locale" --><span class="var">locale</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Locate the first occurence of otherString in the given searchRange of the receiver and return a range
+corresponding to the found position and entity range.  The search uses the basic UCA algorithms and tables
+unless a non-nil SBLocale is provided.
+</p>
+<p>The searchRange is a range of UTF-16 entities to search, not strictly a character range.
+</p>
+<p>The options argument can contain any of the following flags OR'ed together:
+</p>
+<p>- SBStringCaseInsensitiveSearch
+- SBStringLiteralSearch
+- SBStringDiacriticInsensitiveSearch
+- SBStringAnchoredSearch
+- SBStringBackwardsSearch
+</p>
+<p>Returns an empty range if otherString is not found.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/stringByAppendingFormat:;   name=SBString(SBStringExtensions)::stringByAppendingFormat: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/stringByAppendingFormat:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringByAppendingFormat:">stringByAppendingFormat:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/stringByAppendingFormat //apple_ref/occ/clm/stringByAppendingFormat //apple_ref/occ/intfcm/stringByAppendingFormat //apple_ref/occ/intfm/stringByAppendingFormat //apple_ref/occ/func/stringByAppendingFormat //apple_ref/occ/ftmplt/stringByAppendingFormat //apple_ref/occ/defn/stringByAppendingFormat //apple_ref/occ/macro/stringByAppendingFormat" --><span class="function">stringByAppendingFormat</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/format //apple_ref/occ/data/format" --><span class="var">format</span><!-- /a -->, ...; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Return a new string that contains the receiver's string with the string that results from
+the sprintf-like conversion of the format string using the additional (variable) arguments
+passed to the method concatenated to it.
+</p>
+<p>See the ICU ustdio.h header for a description of the format string.  Basically the same as
+the C printf format, with %C/%S added to convert UChar/UChar* types<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/stringByAppendingString:;   name=SBString(SBStringExtensions)::stringByAppendingString: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/stringByAppendingString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringByAppendingString:">stringByAppendingString:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/stringByAppendingString:Return" --><p>stringByAppendingString:  Return<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/stringByAppendingString //apple_ref/occ/clm/stringByAppendingString //apple_ref/occ/intfcm/stringByAppendingString //apple_ref/occ/intfm/stringByAppendingString //apple_ref/occ/func/stringByAppendingString //apple_ref/occ/ftmplt/stringByAppendingString //apple_ref/occ/defn/stringByAppendingString //apple_ref/occ/macro/stringByAppendingString" --><span class="function">stringByAppendingString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>a new string that contains the receiver's string with aString concatenated.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBString(SBStringExtensions)/stringByAppendingString:Return;   name=SBString(SBStringExtensions)::stringByAppendingString:
+
+Return -->
+<a name="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/stringByAppendingString:Return"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringByAppendingString:Return">stringByAppendingString:
+
+Return</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBString(SBStringExtensions)/stringByAppendingString:" --><p>stringByAppendingString:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/stringByAppendingString //apple_ref/occ/clm/stringByAppendingString //apple_ref/occ/intfcm/stringByAppendingString //apple_ref/occ/intfm/stringByAppendingString //apple_ref/occ/func/stringByAppendingString //apple_ref/occ/ftmplt/stringByAppendingString //apple_ref/occ/defn/stringByAppendingString //apple_ref/occ/macro/stringByAppendingString" --><span class="function">stringByAppendingString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>a new string that contains the receiver's string with aString concatenated.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/substringFromIndex:;   name=SBString(SBStringExtensions)::substringFromIndex: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/substringFromIndex:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="substringFromIndex:">substringFromIndex:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/substringFromIndex //apple_ref/occ/clm/substringFromIndex //apple_ref/occ/intfcm/substringFromIndex //apple_ref/occ/intfm/substringFromIndex //apple_ref/occ/func/substringFromIndex //apple_ref/occ/ftmplt/substringFromIndex //apple_ref/occ/defn/substringFromIndex //apple_ref/occ/macro/substringFromIndex" --><span class="function">substringFromIndex</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/from //apple_ref/occ/data/from" --><span class="var">from</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Return a string which contains (inclusive) all characters from an arbitrary index to the end
+of the string.
+</p>
+<p>This is a convenience method that calls-through to substringWithRange:.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/substringToIndex:;   name=SBString(SBStringExtensions)::substringToIndex: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/substringToIndex:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="substringToIndex:">substringToIndex:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/substringToIndex //apple_ref/occ/clm/substringToIndex //apple_ref/occ/intfcm/substringToIndex //apple_ref/occ/intfm/substringToIndex //apple_ref/occ/func/substringToIndex //apple_ref/occ/ftmplt/substringToIndex //apple_ref/occ/defn/substringToIndex //apple_ref/occ/macro/substringToIndex" --><span class="function">substringToIndex</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/to //apple_ref/occ/data/to" --><span class="var">to</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Return a string which contains (inclusive) all characters up to an arbitrary index in the
+string.
+</p>
+<p>This is a convenience method that calls-through to substringWithRange:.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/substringWithRange:;   name=SBString(SBStringExtensions)::substringWithRange: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/substringWithRange:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="substringWithRange:">substringWithRange:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/substringWithRange //apple_ref/occ/clm/substringWithRange //apple_ref/occ/intfcm/substringWithRange //apple_ref/occ/intfm/substringWithRange //apple_ref/occ/func/substringWithRange //apple_ref/occ/ftmplt/substringWithRange //apple_ref/occ/defn/substringWithRange //apple_ref/occ/macro/substringWithRange" --><span class="function">substringWithRange</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/range //apple_ref/occ/data/range" --><span class="var">range</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Return a string which contains all characters in the receiver which lie inside the
+provided range (end-points are inclusive).<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/titlecaseString;   name=SBString(SBStringExtensions)::titlecaseString -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/titlecaseString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="titlecaseString">titlecaseString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/titlecaseString //apple_ref/occ/data/titlecaseString" --><span class="var">titlecaseString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Convenience method which calls through to uppercaseStringWithLocale: with the default locale.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/titlecaseStringWithLocale:;   name=SBString(SBStringExtensions)::titlecaseStringWithLocale: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/titlecaseStringWithLocale:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="titlecaseStringWithLocale:">titlecaseStringWithLocale:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/titlecaseStringWithLocale //apple_ref/occ/clm/titlecaseStringWithLocale //apple_ref/occ/intfcm/titlecaseStringWithLocale //apple_ref/occ/intfm/titlecaseStringWithLocale //apple_ref/occ/func/titlecaseStringWithLocale //apple_ref/occ/ftmplt/titlecaseStringWithLocale //apple_ref/occ/defn/titlecaseStringWithLocale //apple_ref/occ/macro/titlecaseStringWithLocale" --><span class="function">titlecaseStringWithLocale</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBLocale //apple_ref/occ/tdef/SBLocale //apple_ref/occ/tag/SBLocale //apple_ref/occ/econst/SBLocale //apple_ref/occ/struct/SBLocale //apple_ref/occ/clconst/SBLocale //apple_ref/occ/intf/SBLocale" --><span class="type">SBLocale</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/locale //apple_ref/occ/data/locale" --><span class="var">locale</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Return a string which contains the receiver's string transformed to title case according to
+the provided locale's case-folding rules.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/uppercaseString;   name=SBString(SBStringExtensions)::uppercaseString -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/uppercaseString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="uppercaseString">uppercaseString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/uppercaseString //apple_ref/occ/data/uppercaseString" --><span class="var">uppercaseString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Convenience method which calls through to uppercaseStringWithLocale: with the default locale.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/uppercaseStringWithLocale:;   name=SBString(SBStringExtensions)::uppercaseStringWithLocale: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/uppercaseStringWithLocale:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="uppercaseStringWithLocale:">uppercaseStringWithLocale:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/uppercaseStringWithLocale //apple_ref/occ/clm/uppercaseStringWithLocale //apple_ref/occ/intfcm/uppercaseStringWithLocale //apple_ref/occ/intfm/uppercaseStringWithLocale //apple_ref/occ/func/uppercaseStringWithLocale //apple_ref/occ/ftmplt/uppercaseStringWithLocale //apple_ref/occ/defn/uppercaseStringWithLocale //apple_ref/occ/macro/uppercaseStringWithLocale" --><span class="function">uppercaseStringWithLocale</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBLocale //apple_ref/occ/tdef/SBLocale //apple_ref/occ/tag/SBLocale //apple_ref/occ/econst/SBLocale //apple_ref/occ/struct/SBLocale //apple_ref/occ/clconst/SBLocale //apple_ref/occ/intf/SBLocale" --><span class="type">SBLocale</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/locale //apple_ref/occ/data/locale" --><span class="var">locale</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Return a string which contains the receiver's string transformed to upper case according to
+the provided locale's case-folding rules.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/utf16Characters;   name=SBString(SBStringExtensions)::utf16Characters -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/utf16Characters"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="utf16Characters">utf16Characters</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/UChar //apple_ref/occ/data/UChar" --><span class="var">UChar</span><!-- /a --><span class="var">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/utf16Characters //apple_ref/occ/data/utf16Characters" --><span class="var">utf16Characters</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Return a pointer to a buffer containing the receiver's character data in UTF-16 encoding.
+In some instances this is a constant-time operation with no additional memory cost; in
+some cases it may trigger a re-encoding into an autoreleased SBData instance.
+</p>
+<p>It is never okay to hold onto the returned pointer for very long &mdash; the next flush of the
+autorelease pool may cause the SBData object backing the character data to be deallocated,
+in which case the pointer will cause your program to SEGFAULT.  If you need a copy of
+the UTF-16 character data, use the copyCharactersToBuffer:length: method with a chunk of
+memory you've allocated.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/utf32CharacterAtIndex:;   name=SBString(SBStringExtensions)::utf32CharacterAtIndex: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/utf32CharacterAtIndex:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="utf32CharacterAtIndex:">utf32CharacterAtIndex:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/utf32CharacterAtIndex:Returns" --><p>utf32CharacterAtIndex:  Returns<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/UChar32 //apple_ref/occ/tdef/UChar32 //apple_ref/occ/tag/UChar32 //apple_ref/occ/econst/UChar32 //apple_ref/occ/struct/UChar32 //apple_ref/occ/clconst/UChar32 //apple_ref/occ/intf/UChar32" --><span class="type">UChar32</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/utf32CharacterAtIndex //apple_ref/occ/clm/utf32CharacterAtIndex //apple_ref/occ/intfcm/utf32CharacterAtIndex //apple_ref/occ/intfm/utf32CharacterAtIndex //apple_ref/occ/func/utf32CharacterAtIndex //apple_ref/occ/ftmplt/utf32CharacterAtIndex //apple_ref/occ/defn/utf32CharacterAtIndex //apple_ref/occ/macro/utf32CharacterAtIndex" --><span class="function">utf32CharacterAtIndex</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the index-th UTF-32 character from the receiver's string.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBString(SBStringExtensions)/utf32CharacterAtIndex:Returns;   name=SBString(SBStringExtensions)::utf32CharacterAtIndex:
+
+Returns -->
+<a name="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/utf32CharacterAtIndex:Returns"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="utf32CharacterAtIndex:Returns">utf32CharacterAtIndex:
+
+Returns</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBString(SBStringExtensions)/utf32CharacterAtIndex:" --><p>utf32CharacterAtIndex:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/UChar32 //apple_ref/occ/tdef/UChar32 //apple_ref/occ/tag/UChar32 //apple_ref/occ/econst/UChar32 //apple_ref/occ/struct/UChar32 //apple_ref/occ/clconst/UChar32 //apple_ref/occ/intf/UChar32" --><span class="type">UChar32</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/utf32CharacterAtIndex //apple_ref/occ/clm/utf32CharacterAtIndex //apple_ref/occ/intfcm/utf32CharacterAtIndex //apple_ref/occ/intfm/utf32CharacterAtIndex //apple_ref/occ/func/utf32CharacterAtIndex //apple_ref/occ/ftmplt/utf32CharacterAtIndex //apple_ref/occ/defn/utf32CharacterAtIndex //apple_ref/occ/macro/utf32CharacterAtIndex" --><span class="function">utf32CharacterAtIndex</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the index-th UTF-32 character from the receiver's string.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/utf32Characters;   name=SBString(SBStringExtensions)::utf32Characters -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/utf32Characters"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="utf32Characters">utf32Characters</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/UChar32 //apple_ref/occ/data/UChar32" --><span class="var">UChar32</span><!-- /a --><span class="var">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/utf32Characters //apple_ref/occ/data/utf32Characters" --><span class="var">utf32Characters</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Return a pointer to a buffer containing the receiver's character data in UTF-32 encoding.
+This will most likely _always_ trigger a re-encoding into an autoreleased SBData instance,
+since none of the internal bits of this class cluster natively treat their strings as
+UTF-32 characters.
+</p>
+<p>It is never okay to hold onto the returned pointer for very long &mdash; the next flush of the
+autorelease pool may cause the SBData object backing the character data to be deallocated,
+in which case the pointer will cause your program to SEGFAULT.  If you need a copy of
+the UTF-32 character data, use the copyUTF32CharactersToBuffer:length: method with a chunk of
+memory you've allocated.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/utf32Length;   name=SBString(SBStringExtensions)::utf32Length -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/utf32Length"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="utf32Length">utf32Length</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/utf32Length //apple_ref/occ/data/utf32Length" --><span class="var">utf32Length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Return the number of UTF-32 coding entities (4-byte words) required by the receiver's string.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/utf8Characters;   name=SBString(SBStringExtensions)::utf8Characters -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/utf8Characters"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="utf8Characters">utf8Characters</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/unsigned //apple_ref/occ/data/unsigned" --><span class="var">unsigned</span><!-- /a --> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/utf8Characters //apple_ref/occ/data/utf8Characters" --><span class="var">utf8Characters</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Return a pointer to a buffer containing the receiver's character data in UTF-8 encoding.
+In some instances this is a constant-time operation with no additional memory cost; in
+most cases it will trigger a re-encoding into an autoreleased SBData instance.
+</p>
+<p>It is never okay to hold onto the returned pointer for very long &mdash; the next flush of the
+autorelease pool may cause the SBData object backing the character data to be deallocated,
+in which case the pointer will cause your program to SEGFAULT.  If you need a copy of
+the UTF-8 character data, use the copyUTF8CharactersToBuffer:length: method with a chunk of
+memory you've allocated.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/utf8Length;   name=SBString(SBStringExtensions)::utf8Length -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/utf8Length"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="utf8Length">utf8Length</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/utf8Length //apple_ref/occ/data/utf8Length" --><span class="var">utf8Length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Return the number of UTF-8 coding entities (bytes) required by the receiver's string.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBStringExtensions)/writeToStream:;   name=SBString(SBStringExtensions)::writeToStream: -->
+<a name="//apple_ref/occ/instm/SBString(SBStringExtensions)/writeToStream:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="writeToStream:">writeToStream:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/writeToStream:Write" --><p>writeToStream:  Write<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/writeToStream //apple_ref/occ/clm/writeToStream //apple_ref/occ/intfcm/writeToStream //apple_ref/occ/intfm/writeToStream //apple_ref/occ/func/writeToStream //apple_ref/occ/ftmplt/writeToStream //apple_ref/occ/defn/writeToStream //apple_ref/occ/macro/writeToStream" --><span class="function">writeToStream</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FILE //apple_ref/occ/tdef/FILE //apple_ref/occ/tag/FILE //apple_ref/occ/econst/FILE //apple_ref/occ/struct/FILE //apple_ref/occ/clconst/FILE //apple_ref/occ/intf/FILE" --><span class="type">FILE</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/stream //apple_ref/occ/data/stream" --><span class="var">stream</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the receiver's string to the provided stdio stream as UTF-8 characters.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBString(SBStringExtensions)/writeToStream:Write;   name=SBString(SBStringExtensions)::writeToStream:
+
+Write -->
+<a name="//apple_ref/doc/title:instm/SBString(SBStringExtensions)/writeToStream:Write"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="writeToStream:Write">writeToStream:
+
+Write</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBString(SBStringExtensions)/writeToStream:" --><p>writeToStream:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/writeToStream //apple_ref/occ/clm/writeToStream //apple_ref/occ/intfcm/writeToStream //apple_ref/occ/intfm/writeToStream //apple_ref/occ/func/writeToStream //apple_ref/occ/ftmplt/writeToStream //apple_ref/occ/defn/writeToStream //apple_ref/occ/macro/writeToStream" --><span class="function">writeToStream</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FILE //apple_ref/occ/tdef/FILE //apple_ref/occ/tag/FILE //apple_ref/occ/econst/FILE //apple_ref/occ/struct/FILE //apple_ref/occ/clconst/FILE //apple_ref/occ/intf/FILE" --><span class="type">FILE</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/stream //apple_ref/occ/data/stream" --><span class="var">stream</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the receiver's string to the provided stdio stream as UTF-8 characters.</p><!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

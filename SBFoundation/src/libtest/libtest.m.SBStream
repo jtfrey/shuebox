@@ -1,0 +1,152 @@
+#import "SBFoundation.h"
+#import "SBStream.h"
+
+@interface Watcher : SBObject <SBStreamDelegate>
+
+@end
+
+@implementation Watcher
+
+  - (void) stream:(SBStream*)stream
+    handleEvent:(SBStreamEvent)eventCode
+  {
+    printf("CAUGHT:  SBStreamEvent(%d)\n", eventCode);
+  }
+
+@end
+
+//
+
+int
+main()
+{
+  char*                   bytes = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789π©µ¶™®†∆«»≤≥";
+  SBAutoreleasePool*      pool = [[SBAutoreleasePool alloc] init];
+  SBData*                 buffer = [SBData dataWithBytes:bytes length:strlen(bytes)];
+  SBInputStream*          inStream;
+  SBOutputStream*         outStream;
+  Watcher*                watcher = [[Watcher alloc] init];
+  char                    c[8], lc[26];
+  size_t                  l;
+  
+  if ( (inStream = [SBInputStream inputStreamWithData:buffer]) ) {
+    printf("TRYING memory-based SBInputStream:\n\n");
+    [inStream setDelegate:watcher];
+    [inStream open];
+    while ( 1 ) {
+      char*                 p = &c[0];
+      
+      printf("READ(%d) = ", sizeof(c));
+      l = [inStream read:p maxLength:sizeof(c)];
+      if ( l > 0 ) {
+        printf("%d : ", l);
+        while ( l-- )
+          printf("%02hhX", *p++);
+        printf("\n");
+      } else {
+        break;
+      }
+    }
+    [inStream close];
+  }
+  
+  //
+  // Clear out autorelease and start over:
+  //
+  [pool release];
+  pool = [[SBAutoreleasePool alloc] init];
+  
+  if ( (inStream = [SBInputStream inputStreamWithFileAtPath:@"/etc/passwd"]) ) {
+    printf("\nTRYING file-based SBInputStream:\n\n");
+    [inStream setDelegate:watcher];
+    [inStream open];
+    while ( 1 ) {
+      char*                 p = &lc[0];
+      
+      l = [inStream read:p maxLength:sizeof(lc)];
+      if ( l > 0 ) {
+        while ( l-- )
+          fputc(*p++, stdout);
+      } else {
+        break;
+      }
+    }
+    printf("\n");
+    [inStream close];
+  }
+  
+  //
+  // Clear out autorelease and start over:
+  //
+  [pool release];
+  pool = [[SBAutoreleasePool alloc] init];
+  
+  if ( (outStream = [SBOutputStream outputStreamToBuffer:lc capacity:sizeof(lc)]) ) {
+    char*                 p = &lc[0];
+    
+    printf("\nTRYING external memory-based SBOutputStream:\n\n");
+    [outStream setDelegate:watcher];
+    [outStream open];
+    l = [outStream write:bytes length:strlen(bytes)];
+    printf("WRITE(%d) = %d : ", strlen(bytes), l);
+    while ( l-- )
+      printf("%02hhX", *p++);
+    printf("\n");
+    [outStream close];
+  }
+  
+  //
+  // Clear out autorelease and start over:
+  //
+  [pool release];
+  pool = [[SBAutoreleasePool alloc] init];
+  
+  if ( (outStream = [SBOutputStream outputStreamToMemory]) ) {
+    SBData*               writtenData;
+    const char*           p;
+    
+    printf("\nTRYING memory-based SBOutputStream:\n\n");
+    [outStream setDelegate:watcher];
+    [outStream open];
+    l = [outStream write:bytes length:strlen(bytes)];
+    printf("WRITE(%d) = %d : ", strlen(bytes), l);
+    if ( (writtenData = [outStream propertyForKey:SBStreamDataWrittenToMemoryStreamKey]) ) {
+      p = [writtenData bytes];
+      while ( l-- )
+        printf("%02hhX", *p++);
+    } else {
+      printf("[no data available]");
+    }
+    printf("\n");
+    [outStream close];
+  }
+  
+  //
+  // Clear out autorelease and start over:
+  //
+  [pool release];
+  pool = [[SBAutoreleasePool alloc] init];
+  
+  if ( (outStream = [SBOutputStream outputStreamToFileAtPath:@"test.log" append:YES]) ) {
+    SBNumber*       fpos;
+    
+    printf("\nTRYING file-based SBOutputStream:\n\n");
+    [outStream setDelegate:watcher];
+    [outStream open];
+    l = [outStream write:bytes length:strlen(bytes)];
+    printf("WRITE(%d) = %d\n", strlen(bytes), l);
+    
+    if ( (fpos = [outStream propertyForKey:SBStreamFileCurrentOffsetKey]) ) {
+      printf("CURRENT FPOS = %d\n", [fpos intValue]);
+    }
+    
+    [outStream close];
+  }
+  
+  //
+  // Clear out autorelease:
+  //
+  [pool release];
+  
+  return 0;
+}

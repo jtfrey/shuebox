@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBTimeInterval</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBTimeInterval;  name=SBTimeInterval-->
+<a name="//apple_ref/occ/cl/SBTimeInterval"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBTimeInterval">SBTimeInterval</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBDate.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Instances of SBTimeInterval wrap a time interval.  Time intervals may be created as
+second, day, or month counts.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTimeInterval/daysInTimeInterval" target="_top">-daysInTimeInterval</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTimeInterval/monthsInTimeInterval" target="_top">-monthsInTimeInterval</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTimeInterval/secondsInTimeInterval" target="_top">-secondsInTimeInterval</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBTimeInterval/timeIntervalWithDays:seconds:" target="_top">+timeIntervalWithDays:seconds:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBTimeInterval/timeIntervalWithMonths:days:seconds:" target="_top">+timeIntervalWithMonths:days:seconds:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBTimeInterval/timeIntervalWithSeconds:" target="_top">+timeIntervalWithSeconds:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTimeInterval/totalSecondsInTimeInterval" target="_top">-totalSecondsInTimeInterval</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTimeInterval/daysInTimeInterval;   name=SBTimeInterval::daysInTimeInterval -->
+<a name="//apple_ref/occ/instm/SBTimeInterval/daysInTimeInterval"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="daysInTimeInterval">daysInTimeInterval</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBInteger //apple_ref/occ/tdef/SBInteger //apple_ref/occ/tag/SBInteger //apple_ref/occ/econst/SBInteger //apple_ref/occ/struct/SBInteger //apple_ref/occ/clconst/SBInteger //apple_ref/occ/intf/SBInteger" --><span class="type">SBInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/daysInTimeInterval //apple_ref/occ/data/daysInTimeInterval" --><span class="var">daysInTimeInterval</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the number of days (as an int) in the receiver's time interval.  An
+interval that does not fall on a day boundary will be rounded down.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTimeInterval/monthsInTimeInterval;   name=SBTimeInterval::monthsInTimeInterval -->
+<a name="//apple_ref/occ/instm/SBTimeInterval/monthsInTimeInterval"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="monthsInTimeInterval">monthsInTimeInterval</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBInteger //apple_ref/occ/tdef/SBInteger //apple_ref/occ/tag/SBInteger //apple_ref/occ/econst/SBInteger //apple_ref/occ/struct/SBInteger //apple_ref/occ/clconst/SBInteger //apple_ref/occ/intf/SBInteger" --><span class="type">SBInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/monthsInTimeInterval //apple_ref/occ/data/monthsInTimeInterval" --><span class="var">monthsInTimeInterval</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the number of months (as an int) in the receiver's time interval.  An
+interval that does not fall on a month boundary will be rounded down.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTimeInterval/secondsInTimeInterval;   name=SBTimeInterval::secondsInTimeInterval -->
+<a name="//apple_ref/occ/instm/SBTimeInterval/secondsInTimeInterval"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="secondsInTimeInterval">secondsInTimeInterval</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/double //apple_ref/occ/tdef/double //apple_ref/occ/tag/double //apple_ref/occ/econst/double //apple_ref/occ/struct/double //apple_ref/occ/clconst/double //apple_ref/occ/intf/double" --><span class="type">double</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/secondsInTimeInterval //apple_ref/occ/data/secondsInTimeInterval" --><span class="var">secondsInTimeInterval</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the number of seconds (as a double) in the receiver's time interval.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBTimeInterval/timeIntervalWithDays:seconds:;   name=SBTimeInterval::timeIntervalWithDays:seconds: -->
+<a name="//apple_ref/occ/clm/SBTimeInterval/timeIntervalWithDays:seconds:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="timeIntervalWithDays:seconds:">timeIntervalWithDays:seconds:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/timeIntervalWithDays //apple_ref/occ/clm/timeIntervalWithDays //apple_ref/occ/intfcm/timeIntervalWithDays //apple_ref/occ/intfm/timeIntervalWithDays //apple_ref/occ/func/timeIntervalWithDays //apple_ref/occ/ftmplt/timeIntervalWithDays //apple_ref/occ/defn/timeIntervalWithDays //apple_ref/occ/macro/timeIntervalWithDays" --><span class="function">timeIntervalWithDays</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInteger //apple_ref/occ/tdef/SBInteger //apple_ref/occ/tag/SBInteger //apple_ref/occ/econst/SBInteger //apple_ref/occ/struct/SBInteger //apple_ref/occ/clconst/SBInteger //apple_ref/occ/intf/SBInteger" --><span class="type">SBInteger</span><!-- /a -->)<span class="param">days</span> <!-- a logicalPath="//apple_ref/occ/instm/seconds //apple_ref/occ/clm/seconds //apple_ref/occ/intfcm/seconds //apple_ref/occ/intfm/seconds //apple_ref/occ/func/seconds //apple_ref/occ/ftmplt/seconds //apple_ref/occ/defn/seconds //apple_ref/occ/macro/seconds" --><span class="function">seconds</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/double //apple_ref/occ/tdef/double //apple_ref/occ/tag/double //apple_ref/occ/econst/double //apple_ref/occ/struct/double //apple_ref/occ/clconst/double //apple_ref/occ/intf/double" --><span class="type">double</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/seconds //apple_ref/occ/data/seconds" --><span class="var">seconds</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an initialized, autoreleased instance of SBTimeInterval which wraps a number
+of days.  The count is integer-based so this is whole days (24 hours) only; an
+interval that does not fall on a day boundary will always be rounded down.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBTimeInterval/timeIntervalWithMonths:days:seconds:;   name=SBTimeInterval::timeIntervalWithMonths:days:seconds: -->
+<a name="//apple_ref/occ/clm/SBTimeInterval/timeIntervalWithMonths:days:seconds:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="timeIntervalWithMonths:days:seconds:">timeIntervalWithMonths:days:seconds:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/timeIntervalWithMonths //apple_ref/occ/clm/timeIntervalWithMonths //apple_ref/occ/intfcm/timeIntervalWithMonths //apple_ref/occ/intfm/timeIntervalWithMonths //apple_ref/occ/func/timeIntervalWithMonths //apple_ref/occ/ftmplt/timeIntervalWithMonths //apple_ref/occ/defn/timeIntervalWithMonths //apple_ref/occ/macro/timeIntervalWithMonths" --><span class="function">timeIntervalWithMonths</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInteger //apple_ref/occ/tdef/SBInteger //apple_ref/occ/tag/SBInteger //apple_ref/occ/econst/SBInteger //apple_ref/occ/struct/SBInteger //apple_ref/occ/clconst/SBInteger //apple_ref/occ/intf/SBInteger" --><span class="type">SBInteger</span><!-- /a -->)<span class="param">months</span> <!-- a logicalPath="//apple_ref/occ/instm/days //apple_ref/occ/clm/days //apple_ref/occ/intfcm/days //apple_ref/occ/intfm/days //apple_ref/occ/func/days //apple_ref/occ/ftmplt/days //apple_ref/occ/defn/days //apple_ref/occ/macro/days" --><span class="function">days</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInteger //apple_ref/occ/tdef/SBInteger //apple_ref/occ/tag/SBInteger //apple_ref/occ/econst/SBInteger //apple_ref/occ/struct/SBInteger //apple_ref/occ/clconst/SBInteger //apple_ref/occ/intf/SBInteger" --><span class="type">SBInteger</span><!-- /a -->)<span class="param">days</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/seconds //apple_ref/occ/clm/seconds //apple_ref/occ/intfcm/seconds //apple_ref/occ/intfm/seconds //apple_ref/occ/func/seconds //apple_ref/occ/ftmplt/seconds //apple_ref/occ/defn/seconds //apple_ref/occ/macro/seconds" --><span class="function">seconds</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/double //apple_ref/occ/tdef/double //apple_ref/occ/tag/double //apple_ref/occ/econst/double //apple_ref/occ/struct/double //apple_ref/occ/clconst/double //apple_ref/occ/intf/double" --><span class="type">double</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/seconds //apple_ref/occ/data/seconds" --><span class="var">seconds</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an initialized, autoreleased instance of SBTimeInterval which wraps a number
+of months.  The count is integer-based so this is whole months (30 days) only; an
+interval that does not fall on a month boundary will always be rounded down.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBTimeInterval/timeIntervalWithSeconds:;   name=SBTimeInterval::timeIntervalWithSeconds: -->
+<a name="//apple_ref/occ/clm/SBTimeInterval/timeIntervalWithSeconds:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="timeIntervalWithSeconds:">timeIntervalWithSeconds:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/timeIntervalWithSeconds //apple_ref/occ/clm/timeIntervalWithSeconds //apple_ref/occ/intfcm/timeIntervalWithSeconds //apple_ref/occ/intfm/timeIntervalWithSeconds //apple_ref/occ/func/timeIntervalWithSeconds //apple_ref/occ/ftmplt/timeIntervalWithSeconds //apple_ref/occ/defn/timeIntervalWithSeconds //apple_ref/occ/macro/timeIntervalWithSeconds" --><span class="function">timeIntervalWithSeconds</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/double //apple_ref/occ/tdef/double //apple_ref/occ/tag/double //apple_ref/occ/econst/double //apple_ref/occ/struct/double //apple_ref/occ/clconst/double //apple_ref/occ/intf/double" --><span class="type">double</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/seconds //apple_ref/occ/data/seconds" --><span class="var">seconds</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an initialized, autoreleased instance of SBTimeInterval which wraps a number
+of seconds.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTimeInterval/totalSecondsInTimeInterval;   name=SBTimeInterval::totalSecondsInTimeInterval -->
+<a name="//apple_ref/occ/instm/SBTimeInterval/totalSecondsInTimeInterval"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="totalSecondsInTimeInterval">totalSecondsInTimeInterval</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/double //apple_ref/occ/tdef/double //apple_ref/occ/tag/double //apple_ref/occ/econst/double //apple_ref/occ/struct/double //apple_ref/occ/clconst/double //apple_ref/occ/intf/double" --><span class="type">double</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/totalSecondsInTimeInterval //apple_ref/occ/data/totalSecondsInTimeInterval" --><span class="var">totalSecondsInTimeInterval</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the total number of seconds in the time interval, with day and month counts
+converted to seconds and coallesced into the total.<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

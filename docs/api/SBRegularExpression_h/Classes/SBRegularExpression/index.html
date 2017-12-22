@@ -1,0 +1,329 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBRegularExpression</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBRegularExpression;  name=SBRegularExpression-->
+<a name="//apple_ref/occ/cl/SBRegularExpression"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBRegularExpression">SBRegularExpression</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBRegularExpression.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Class which wraps an ICU Unicode regular expression.  Unicode regular expressions
+behave pretty much just like POSIX extended regular expressions, with some added
+character set support junk.  See:
+</p>
+<p>http://icu-project.org/apiref/icu4c/uregex_8h.html
+</p>
+<p>Instances of SBRegularExpression can be initialized using either an SBString object
+or a UTF8-compliant C string.  Some special flags can be optionally passed to the
+instance; the flags affect case sensitivity, newline treatment, word boundaries,
+etc.  See:
+</p>
+<p>http://icu-project.org/apiref/icu4c/uregex_8h.html#874989dfec4cbeb6baf4d1a51cb529ae
+</p>
+<p>Once an instance has been initialized, it can be used to process one or more
+SBString objects.  The string to be processed -- the "subject string" -- is set
+and (optionally, if ICU version 4 is being used) a sub-range of the full string
+can be selected.  Repeated calls to "findNextMatch" will incrementally locate
+the next sub-string matching the regular expression and return YES; a return value
+of NO indicates no matches remain.  Methods exist to determine the extent of the
+current match (full or partial, relative to the subject string) and to retrieve
+the matched character range and/or any grouped character ranges within the match.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/findNextMatch" target="_top">-findNextMatch</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/flags" target="_top">-flags</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/initWithString:" target="_top">-initWithString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/initWithString:flags:" target="_top">-initWithString:flags:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/initWithUTF8String:" target="_top">-initWithUTF8String:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/initWithUTF8String:flags:" target="_top">-initWithUTF8String:flags:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/isFullMatch" target="_top">-isFullMatch</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/isPartialMatch" target="_top">-isPartialMatch</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/matchingGroupCount" target="_top">-matchingGroupCount</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/matchingRange" target="_top">-matchingRange</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/rangeOfMatch" target="_top">-rangeOfMatch</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/rangeOfMatchingGroup:" target="_top">-rangeOfMatchingGroup:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/rangesOfMatchingGroups:" target="_top">-rangesOfMatchingGroups:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/resetMatching" target="_top">-resetMatching</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/setMatchingRange:" target="_top">-setMatchingRange:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/setSubjectString:" target="_top">-setSubjectString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/stringForMatch" target="_top">-stringForMatch</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/stringForMatchingGroup:" target="_top">-stringForMatchingGroup:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRegularExpression/subjectString" target="_top">-subjectString</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/findNextMatch;   name=SBRegularExpression::findNextMatch -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/findNextMatch"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="findNextMatch">findNextMatch</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/findNextMatch //apple_ref/occ/data/findNextMatch" --><span class="var">findNextMatch</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Repeatedly returns YES if at least some portion of the remaining un-matched portion of the
+subject string (or the set matching range on the subject string) matches the receiver's
+regular expression.  Contrast this method against the isFullMatch and isPartialMatch methods,
+which only ever operate on the subject string in its entirety.
+</p>
+<p>If YES, then the stringForMatch and stringForMatchingGroup: methods can be used to retrieve
+matching sub-strings.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/flags;   name=SBRegularExpression::flags -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/flags"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="flags">flags</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/flags //apple_ref/occ/data/flags" --><span class="var">flags</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the bit-wise OR of all special flags that were used to initialize
+the receiver.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/initWithString:;   name=SBRegularExpression::initWithString: -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/initWithString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithString:">initWithString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithString //apple_ref/occ/clm/initWithString //apple_ref/occ/intfcm/initWithString //apple_ref/occ/intfm/initWithString //apple_ref/occ/func/initWithString //apple_ref/occ/ftmplt/initWithString //apple_ref/occ/defn/initWithString //apple_ref/occ/macro/initWithString" --><span class="function">initWithString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/regexString //apple_ref/occ/data/regexString" --><span class="var">regexString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Initialize a newly-allocated instance, attempting to interpret the provided
+SBString as a regular expression.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/initWithString:flags:;   name=SBRegularExpression::initWithString:flags: -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/initWithString:flags:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithString:flags:">initWithString:flags:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithString //apple_ref/occ/clm/initWithString //apple_ref/occ/intfcm/initWithString //apple_ref/occ/intfm/initWithString //apple_ref/occ/func/initWithString //apple_ref/occ/ftmplt/initWithString //apple_ref/occ/defn/initWithString //apple_ref/occ/macro/initWithString" --><span class="function">initWithString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">regexString</span> <!-- a logicalPath="//apple_ref/occ/instm/flags //apple_ref/occ/clm/flags //apple_ref/occ/intfcm/flags //apple_ref/occ/intfm/flags //apple_ref/occ/func/flags //apple_ref/occ/ftmplt/flags //apple_ref/occ/defn/flags //apple_ref/occ/macro/flags" --><span class="function">flags</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/flags //apple_ref/occ/data/flags" --><span class="var">flags</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Initialize a newly-allocated instance, attempting to interpret the provided
+SBString as a regular expression.  Special flags (see the class documentation)
+can also be provided to affect the regular expression's behavior -- pass 0 for
+default behavior.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/initWithUTF8String:;   name=SBRegularExpression::initWithUTF8String: -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/initWithUTF8String:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithUTF8String:">initWithUTF8String:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithUTF8String //apple_ref/occ/clm/initWithUTF8String //apple_ref/occ/intfcm/initWithUTF8String //apple_ref/occ/intfm/initWithUTF8String //apple_ref/occ/func/initWithUTF8String //apple_ref/occ/ftmplt/initWithUTF8String //apple_ref/occ/defn/initWithUTF8String //apple_ref/occ/macro/initWithUTF8String" --><span class="function">initWithUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/cString //apple_ref/occ/data/cString" --><span class="var">cString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Initialize a newly-allocated instance, attempting to interpret the provided
+NUL-terminated, UTF8-encoded C string as a regular expression.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/initWithUTF8String:flags:;   name=SBRegularExpression::initWithUTF8String:flags: -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/initWithUTF8String:flags:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithUTF8String:flags:">initWithUTF8String:flags:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithUTF8String //apple_ref/occ/clm/initWithUTF8String //apple_ref/occ/intfcm/initWithUTF8String //apple_ref/occ/intfm/initWithUTF8String //apple_ref/occ/func/initWithUTF8String //apple_ref/occ/ftmplt/initWithUTF8String //apple_ref/occ/defn/initWithUTF8String //apple_ref/occ/macro/initWithUTF8String" --><span class="function">initWithUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<span class="param">cString</span> <!-- a logicalPath="//apple_ref/occ/instm/flags //apple_ref/occ/clm/flags //apple_ref/occ/intfcm/flags //apple_ref/occ/intfm/flags //apple_ref/occ/func/flags //apple_ref/occ/ftmplt/flags //apple_ref/occ/defn/flags //apple_ref/occ/macro/flags" --><span class="function">flags</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/flags //apple_ref/occ/data/flags" --><span class="var">flags</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Initialize a newly-allocated instance, attempting to interpret the provided
+NUL-terminated, UTF8-encoded C string as a regular expression.  Special flags
+(see the class documentation) can also be provided to affect the regular
+expression's behavior -- pass 0 for default behavior.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/isFullMatch;   name=SBRegularExpression::isFullMatch -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/isFullMatch"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isFullMatch">isFullMatch</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isFullMatch //apple_ref/occ/data/isFullMatch" --><span class="var">isFullMatch</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns YES if the entirety of the subject string (or the set matching range on the subject
+string) matches the receiver's regular expression.  If YES, then the stringForMatch and
+stringForMatchingGroup: methods can be used to retrieve matching sub-strings.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/isPartialMatch;   name=SBRegularExpression::isPartialMatch -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/isPartialMatch"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isPartialMatch">isPartialMatch</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isPartialMatch //apple_ref/occ/data/isPartialMatch" --><span class="var">isPartialMatch</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns YES if at least some portion of the subject string (or the set matching range on the
+subject string) matches the receiver's regular expression.  If YES, then the stringForMatch
+and stringForMatchingGroup: methods can be used to retrieve matching sub-strings.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/matchingGroupCount;   name=SBRegularExpression::matchingGroupCount -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/matchingGroupCount"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="matchingGroupCount">matchingGroupCount</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/matchingGroupCount //apple_ref/occ/data/matchingGroupCount" --><span class="var">matchingGroupCount</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the number of grouped character ranges that appear in the receiver's
+regular expression.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/matchingRange;   name=SBRegularExpression::matchingRange -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/matchingRange"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="matchingRange">matchingRange</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/matchingRange //apple_ref/occ/data/matchingRange" --><span class="var">matchingRange</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the range of characters within the subject string to which the regular expression
+matching operations should be restricted.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/rangeOfMatch;   name=SBRegularExpression::rangeOfMatch -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/rangeOfMatch"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rangeOfMatch">rangeOfMatch</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/rangeOfMatch //apple_ref/occ/data/rangeOfMatch" --><span class="var">rangeOfMatch</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>After a successful matching method has been invoked, the method returns the range of characters
+in the subject string which were matched by the receiver's regular expression.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/rangeOfMatchingGroup:;   name=SBRegularExpression::rangeOfMatchingGroup: -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/rangeOfMatchingGroup:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rangeOfMatchingGroup:">rangeOfMatchingGroup:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/rangeOfMatchingGroup //apple_ref/occ/clm/rangeOfMatchingGroup //apple_ref/occ/intfcm/rangeOfMatchingGroup //apple_ref/occ/intfm/rangeOfMatchingGroup //apple_ref/occ/func/rangeOfMatchingGroup //apple_ref/occ/ftmplt/rangeOfMatchingGroup //apple_ref/occ/defn/rangeOfMatchingGroup //apple_ref/occ/macro/rangeOfMatchingGroup" --><span class="function">rangeOfMatchingGroup</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/groupNum //apple_ref/occ/data/groupNum" --><span class="var">groupNum</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>After a successful matching method has been invoked, the method returns the range of characters
+in the subject string which were matched by one of the grouped character ranges in the receiver's
+regular expression.  Groups are indexed from one up to and including the value returned by
+the matchingGroupCount method.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/rangesOfMatchingGroups:;   name=SBRegularExpression::rangesOfMatchingGroups: -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/rangesOfMatchingGroups:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rangesOfMatchingGroups:">rangesOfMatchingGroups:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/rangesOfMatchingGroups //apple_ref/occ/clm/rangesOfMatchingGroups //apple_ref/occ/intfcm/rangesOfMatchingGroups //apple_ref/occ/intfm/rangesOfMatchingGroups //apple_ref/occ/func/rangesOfMatchingGroups //apple_ref/occ/ftmplt/rangesOfMatchingGroups //apple_ref/occ/defn/rangesOfMatchingGroups //apple_ref/occ/macro/rangesOfMatchingGroups" --><span class="function">rangesOfMatchingGroups</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/groupRanges //apple_ref/occ/data/groupRanges" --><span class="var">groupRanges</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>After a successful matching method has been invoked, the method copies the array of parenthetical
+sub-matching ranges to groupRanges.  Note that groupRanges must be at least as large as the
+number of parenthetical sub-groups plus one.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/resetMatching;   name=SBRegularExpression::resetMatching -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/resetMatching"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="resetMatching">resetMatching</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/resetMatching //apple_ref/occ/data/resetMatching" --><span class="var">resetMatching</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Reset internal state on the receiver's regular expression; subsequent matching methods
+will search from the beginning of the subject string once again.  Returns YES if the internal
+state was reset properly.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/setMatchingRange:;   name=SBRegularExpression::setMatchingRange: -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/setMatchingRange:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setMatchingRange:">setMatchingRange:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setMatchingRange //apple_ref/occ/clm/setMatchingRange //apple_ref/occ/intfcm/setMatchingRange //apple_ref/occ/intfm/setMatchingRange //apple_ref/occ/func/setMatchingRange //apple_ref/occ/ftmplt/setMatchingRange //apple_ref/occ/defn/setMatchingRange //apple_ref/occ/macro/setMatchingRange" --><span class="function">setMatchingRange</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/range //apple_ref/occ/data/range" --><span class="var">range</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Modified the range of characters within the subject string to which the regular expression
+matching operations should be restricted.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/setSubjectString:;   name=SBRegularExpression::setSubjectString: -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/setSubjectString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setSubjectString:">setSubjectString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setSubjectString //apple_ref/occ/clm/setSubjectString //apple_ref/occ/intfcm/setSubjectString //apple_ref/occ/intfm/setSubjectString //apple_ref/occ/func/setSubjectString //apple_ref/occ/ftmplt/setSubjectString //apple_ref/occ/defn/setSubjectString //apple_ref/occ/macro/setSubjectString" --><span class="function">setSubjectString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/subject //apple_ref/occ/data/subject" --><span class="var">subject</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Resets the receiver's regular expression matching state and retains the given subject
+string to use for subsequent matching.
+</p>
+<p>Note that the subject string's characters are NOT copied; if you modify the subject
+string itself while attempting to process matches the behavior is undefined.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/stringForMatch;   name=SBRegularExpression::stringForMatch -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/stringForMatch"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringForMatch">stringForMatch</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/stringForMatch //apple_ref/occ/data/stringForMatch" --><span class="var">stringForMatch</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>After a successful matching method has been invoked, this method returns a string containing
+the full range of characters in the subject string which were matched by the receiver's
+regular expression.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/stringForMatchingGroup:;   name=SBRegularExpression::stringForMatchingGroup: -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/stringForMatchingGroup:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringForMatchingGroup:">stringForMatchingGroup:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/stringForMatchingGroup //apple_ref/occ/clm/stringForMatchingGroup //apple_ref/occ/intfcm/stringForMatchingGroup //apple_ref/occ/intfm/stringForMatchingGroup //apple_ref/occ/func/stringForMatchingGroup //apple_ref/occ/ftmplt/stringForMatchingGroup //apple_ref/occ/defn/stringForMatchingGroup //apple_ref/occ/macro/stringForMatchingGroup" --><span class="function">stringForMatchingGroup</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/groupNum //apple_ref/occ/data/groupNum" --><span class="var">groupNum</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>After a successful matching method has been invoked, this method returns a string containing
+one of the grouped character ranges in the subject string which were matched by the receiver's
+regular expression.  Groups are indexed from one up to and including the value returned by
+the matchingGroupCount method.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRegularExpression/subjectString;   name=SBRegularExpression::subjectString -->
+<a name="//apple_ref/occ/instm/SBRegularExpression/subjectString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="subjectString">subjectString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/subjectString //apple_ref/occ/data/subjectString" --><span class="var">subjectString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns the SBString currently associated with the receiver for regular expressiong
+matching.<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

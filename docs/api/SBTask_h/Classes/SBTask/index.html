@@ -1,0 +1,384 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBTask</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBTask;  name=SBTask-->
+<a name="//apple_ref/occ/cl/SBTask"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBTask">SBTask</a></h1>
+</td></tr></table><hr><p><!-- begin abstract --><p>Creating/managing sub-processes.
+<!-- end abstract --></p>
+<p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBTask.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Using the SBTask class, a program can run another program as a subprocess and monitor that program’s execution.  An SBTask object creates a separate executable
+entity using the Unix fork() function and executes the specified program over the child process.
+</p>
+<p>A task operates within an environment defined by the current values for several items: the current directory, standard input, standard output, standard error,
+and the values of any environment variables.  By default, an SBTask object inherits its environment from the process that launches it.  If there are any values
+that should be different for the task, for example, if the current directory should change, you must change the value before you launch the task.  A task’s
+environment cannot be changed from the parent process while it is running.
+</p>
+<p>An SBTask object can only be run once.  Subsequent attempts to re-run the task raise an exception.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/arguments" target="_top">-arguments</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/currentDirectoryPath" target="_top">-currentDirectoryPath</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/environment" target="_top">-environment</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/init" target="_top">-init</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/interrupt" target="_top">-interrupt</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/isRunning" target="_top">-isRunning</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/launch" target="_top">-launch</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBTask/launchedTaskWithLaunchPath:arguments:" target="_top">+launchedTaskWithLaunchPath:arguments:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/launchPath" target="_top">-launchPath</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/launchWithMinimalEnvironment" target="_top">-launchWithMinimalEnvironment</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/resume" target="_top">-resume</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/setArguments:" target="_top">-setArguments:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/setCurrentDirectoryPath:" target="_top">-setCurrentDirectoryPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/setEnvironment:" target="_top">-setEnvironment:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/setLaunchPath:" target="_top">-setLaunchPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/setLaunchWithMinimalEnvironment:" target="_top">-setLaunchWithMinimalEnvironment:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/setStandardError:" target="_top">-setStandardError:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/setStandardInput:" target="_top">-setStandardInput:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/setStandardOutput:" target="_top">-setStandardOutput:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/standardError" target="_top">-standardError</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/standardInput" target="_top">-standardInput</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/standardOutput" target="_top">-standardOutput</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/suspend" target="_top">-suspend</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/terminate" target="_top">-terminate</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/terminationReason" target="_top">-terminationReason</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/terminationStatus" target="_top">-terminationStatus</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBTask/waitUntilExit" target="_top">-waitUntilExit</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/arguments;   name=SBTask::arguments -->
+<a name="//apple_ref/occ/instm/SBTask/arguments"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="arguments">arguments</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/arguments //apple_ref/occ/data/arguments" --><span class="var">arguments</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the array of string arguments passed to the executable.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/currentDirectoryPath;   name=SBTask::currentDirectoryPath -->
+<a name="//apple_ref/occ/instm/SBTask/currentDirectoryPath"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="currentDirectoryPath">currentDirectoryPath</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/currentDirectoryPath //apple_ref/occ/data/currentDirectoryPath" --><span class="var">currentDirectoryPath</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the working directory that should be set when the executable is launched.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/environment;   name=SBTask::environment -->
+<a name="//apple_ref/occ/instm/SBTask/environment"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="environment">environment</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/environment //apple_ref/occ/data/environment" --><span class="var">environment</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a dictionary containing the environment variables that should be set
+when the executable is launched.  These values override and augment the
+current program's environment.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/init;   name=SBTask::init -->
+<a name="//apple_ref/occ/instm/SBTask/init"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="init">init</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/init //apple_ref/occ/data/init" --><span class="var">init</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Designated initializer.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/interrupt;   name=SBTask::interrupt -->
+<a name="//apple_ref/occ/instm/SBTask/interrupt"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="interrupt">interrupt</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/interrupt //apple_ref/occ/data/interrupt" --><span class="var">interrupt</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver's task is running, send it the SIGINT signal.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/isRunning;   name=SBTask::isRunning -->
+<a name="//apple_ref/occ/instm/SBTask/isRunning"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isRunning">isRunning</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isRunning //apple_ref/occ/data/isRunning" --><span class="var">isRunning</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns boolean YES if the receiver has been launched and is currently running as
+a child process of this program.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/launch;   name=SBTask::launch -->
+<a name="//apple_ref/occ/instm/SBTask/launch"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="launch">launch</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/launch //apple_ref/occ/data/launch" --><span class="var">launch</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempt to begin execution of the receiver's task.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBTask/launchedTaskWithLaunchPath:arguments:;   name=SBTask::launchedTaskWithLaunchPath:arguments: -->
+<a name="//apple_ref/occ/clm/SBTask/launchedTaskWithLaunchPath:arguments:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="launchedTaskWithLaunchPath:arguments:">launchedTaskWithLaunchPath:arguments:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBTask //apple_ref/occ/tdef/SBTask //apple_ref/occ/tag/SBTask //apple_ref/occ/econst/SBTask //apple_ref/occ/struct/SBTask //apple_ref/occ/clconst/SBTask //apple_ref/occ/intf/SBTask" --><span class="type">SBTask</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/launchedTaskWithLaunchPath //apple_ref/occ/clm/launchedTaskWithLaunchPath //apple_ref/occ/intfcm/launchedTaskWithLaunchPath //apple_ref/occ/intfm/launchedTaskWithLaunchPath //apple_ref/occ/func/launchedTaskWithLaunchPath //apple_ref/occ/ftmplt/launchedTaskWithLaunchPath //apple_ref/occ/defn/launchedTaskWithLaunchPath //apple_ref/occ/macro/launchedTaskWithLaunchPath" --><span class="function">launchedTaskWithLaunchPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">path</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/arguments //apple_ref/occ/clm/arguments //apple_ref/occ/intfcm/arguments //apple_ref/occ/intfm/arguments //apple_ref/occ/func/arguments //apple_ref/occ/ftmplt/arguments //apple_ref/occ/defn/arguments //apple_ref/occ/macro/arguments" --><span class="function">arguments</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/arguments //apple_ref/occ/data/arguments" --><span class="var">arguments</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Allocate and initialize an autoreleased instance of SBTask to execute the program at path with
+the provided array of arguments.  If the initialization is successful, the program is launched
+with the same environment as the parent program and the object is returned to the caller.
+Otherwise, nil is returned.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/launchPath;   name=SBTask::launchPath -->
+<a name="//apple_ref/occ/instm/SBTask/launchPath"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="launchPath">launchPath</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/launchPath //apple_ref/occ/data/launchPath" --><span class="var">launchPath</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the path of the executable that is to be launched.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/launchWithMinimalEnvironment;   name=SBTask::launchWithMinimalEnvironment -->
+<a name="//apple_ref/occ/instm/SBTask/launchWithMinimalEnvironment"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="launchWithMinimalEnvironment">launchWithMinimalEnvironment</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/launchWithMinimalEnvironment //apple_ref/occ/data/launchWithMinimalEnvironment" --><span class="var">launchWithMinimalEnvironment</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns boolean YES if the task should be launched with an empty environment.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/resume;   name=SBTask::resume -->
+<a name="//apple_ref/occ/instm/SBTask/resume"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="resume">resume</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/resume //apple_ref/occ/data/resume" --><span class="var">resume</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver's task has been launched but is currently suspended, send it the SIGCONT signal.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/setArguments:;   name=SBTask::setArguments: -->
+<a name="//apple_ref/occ/instm/SBTask/setArguments:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setArguments:">setArguments:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setArguments //apple_ref/occ/clm/setArguments //apple_ref/occ/intfcm/setArguments //apple_ref/occ/intfm/setArguments //apple_ref/occ/func/setArguments //apple_ref/occ/ftmplt/setArguments //apple_ref/occ/defn/setArguments //apple_ref/occ/macro/setArguments" --><span class="function">setArguments</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/arguments //apple_ref/occ/data/arguments" --><span class="var">arguments</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Set the array of string arguments to be passed to the executable when launched.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/setCurrentDirectoryPath:;   name=SBTask::setCurrentDirectoryPath: -->
+<a name="//apple_ref/occ/instm/SBTask/setCurrentDirectoryPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setCurrentDirectoryPath:">setCurrentDirectoryPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setCurrentDirectoryPath //apple_ref/occ/clm/setCurrentDirectoryPath //apple_ref/occ/intfcm/setCurrentDirectoryPath //apple_ref/occ/intfm/setCurrentDirectoryPath //apple_ref/occ/func/setCurrentDirectoryPath //apple_ref/occ/ftmplt/setCurrentDirectoryPath //apple_ref/occ/defn/setCurrentDirectoryPath //apple_ref/occ/macro/setCurrentDirectoryPath" --><span class="function">setCurrentDirectoryPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/currentDirectoryPath //apple_ref/occ/data/currentDirectoryPath" --><span class="var">currentDirectoryPath</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Launch the executable with currentDirectoryPath as the working directory.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/setEnvironment:;   name=SBTask::setEnvironment: -->
+<a name="//apple_ref/occ/instm/SBTask/setEnvironment:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setEnvironment:">setEnvironment:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setEnvironment //apple_ref/occ/clm/setEnvironment //apple_ref/occ/intfcm/setEnvironment //apple_ref/occ/intfm/setEnvironment //apple_ref/occ/func/setEnvironment //apple_ref/occ/ftmplt/setEnvironment //apple_ref/occ/defn/setEnvironment //apple_ref/occ/macro/setEnvironment" --><span class="function">setEnvironment</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/environment //apple_ref/occ/data/environment" --><span class="var">environment</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Set the environment variables that should be added/augmented when the executable
+is launched.  These values override and augment the current program's environment.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/setLaunchPath:;   name=SBTask::setLaunchPath: -->
+<a name="//apple_ref/occ/instm/SBTask/setLaunchPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setLaunchPath:">setLaunchPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setLaunchPath //apple_ref/occ/clm/setLaunchPath //apple_ref/occ/intfcm/setLaunchPath //apple_ref/occ/intfm/setLaunchPath //apple_ref/occ/func/setLaunchPath //apple_ref/occ/ftmplt/setLaunchPath //apple_ref/occ/defn/setLaunchPath //apple_ref/occ/macro/setLaunchPath" --><span class="function">setLaunchPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/launchPath //apple_ref/occ/data/launchPath" --><span class="var">launchPath</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Set the path of the executable that is to be launched to launchPath.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/setLaunchWithMinimalEnvironment:;   name=SBTask::setLaunchWithMinimalEnvironment: -->
+<a name="//apple_ref/occ/instm/SBTask/setLaunchWithMinimalEnvironment:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setLaunchWithMinimalEnvironment:">setLaunchWithMinimalEnvironment:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setLaunchWithMinimalEnvironment //apple_ref/occ/clm/setLaunchWithMinimalEnvironment //apple_ref/occ/intfcm/setLaunchWithMinimalEnvironment //apple_ref/occ/intfm/setLaunchWithMinimalEnvironment //apple_ref/occ/func/setLaunchWithMinimalEnvironment //apple_ref/occ/ftmplt/setLaunchWithMinimalEnvironment //apple_ref/occ/defn/setLaunchWithMinimalEnvironment //apple_ref/occ/macro/setLaunchWithMinimalEnvironment" --><span class="function">setLaunchWithMinimalEnvironment</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/launchWithMinimalEnvironment //apple_ref/occ/data/launchWithMinimalEnvironment" --><span class="var">launchWithMinimalEnvironment</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If launchWithMinimalEnvironment is YES then the task should be launched with
+an empty environment.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/setStandardError:;   name=SBTask::setStandardError: -->
+<a name="//apple_ref/occ/instm/SBTask/setStandardError:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setStandardError:">setStandardError:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setStandardError //apple_ref/occ/clm/setStandardError //apple_ref/occ/intfcm/setStandardError //apple_ref/occ/intfm/setStandardError //apple_ref/occ/func/setStandardError //apple_ref/occ/ftmplt/setStandardError //apple_ref/occ/defn/setStandardError //apple_ref/occ/macro/setStandardError" --><span class="function">setStandardError</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/standardError //apple_ref/occ/data/standardError" --><span class="var">standardError</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Set the SBPipe or SBFileHandle that should be used as the stderr for the task
+when launched.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/setStandardInput:;   name=SBTask::setStandardInput: -->
+<a name="//apple_ref/occ/instm/SBTask/setStandardInput:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setStandardInput:">setStandardInput:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setStandardInput //apple_ref/occ/clm/setStandardInput //apple_ref/occ/intfcm/setStandardInput //apple_ref/occ/intfm/setStandardInput //apple_ref/occ/func/setStandardInput //apple_ref/occ/ftmplt/setStandardInput //apple_ref/occ/defn/setStandardInput //apple_ref/occ/macro/setStandardInput" --><span class="function">setStandardInput</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/standardInput //apple_ref/occ/data/standardInput" --><span class="var">standardInput</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Set the SBPipe or SBFileHandle that should be used as the stdin for the task
+when launched.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/setStandardOutput:;   name=SBTask::setStandardOutput: -->
+<a name="//apple_ref/occ/instm/SBTask/setStandardOutput:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setStandardOutput:">setStandardOutput:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setStandardOutput //apple_ref/occ/clm/setStandardOutput //apple_ref/occ/intfcm/setStandardOutput //apple_ref/occ/intfm/setStandardOutput //apple_ref/occ/func/setStandardOutput //apple_ref/occ/ftmplt/setStandardOutput //apple_ref/occ/defn/setStandardOutput //apple_ref/occ/macro/setStandardOutput" --><span class="function">setStandardOutput</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/standardOutput //apple_ref/occ/data/standardOutput" --><span class="var">standardOutput</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Set the SBPipe or SBFileHandle that should be used as the stdout for the task
+when launched.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/standardError;   name=SBTask::standardError -->
+<a name="//apple_ref/occ/instm/SBTask/standardError"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="standardError">standardError</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/standardError //apple_ref/occ/data/standardError" --><span class="var">standardError</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the SBPipe or SBFileHandle that should be used as the stderr for the task
+when launched.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/standardInput;   name=SBTask::standardInput -->
+<a name="//apple_ref/occ/instm/SBTask/standardInput"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="standardInput">standardInput</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/standardInput //apple_ref/occ/data/standardInput" --><span class="var">standardInput</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the SBPipe or SBFileHandle that should be used as the stdin for the task
+when launched.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/standardOutput;   name=SBTask::standardOutput -->
+<a name="//apple_ref/occ/instm/SBTask/standardOutput"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="standardOutput">standardOutput</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/standardOutput //apple_ref/occ/data/standardOutput" --><span class="var">standardOutput</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the SBPipe or SBFileHandle that should be used as the stdout for the task
+when launched.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/suspend;   name=SBTask::suspend -->
+<a name="//apple_ref/occ/instm/SBTask/suspend"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="suspend">suspend</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/suspend //apple_ref/occ/data/suspend" --><span class="var">suspend</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver's task has been launched send it the SIGSTOP signal.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/terminate;   name=SBTask::terminate -->
+<a name="//apple_ref/occ/instm/SBTask/terminate"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="terminate">terminate</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/terminate //apple_ref/occ/data/terminate" --><span class="var">terminate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver's task has been launched send it the SIGTERM signal.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/terminationReason;   name=SBTask::terminationReason -->
+<a name="//apple_ref/occ/instm/SBTask/terminationReason"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="terminationReason">terminationReason</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBTaskTerminationReason //apple_ref/occ/tdef/SBTaskTerminationReason //apple_ref/occ/tag/SBTaskTerminationReason //apple_ref/occ/econst/SBTaskTerminationReason //apple_ref/occ/struct/SBTaskTerminationReason //apple_ref/occ/clconst/SBTaskTerminationReason //apple_ref/occ/intf/SBTaskTerminationReason" --><span class="type">SBTaskTerminationReason</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/terminationReason //apple_ref/occ/data/terminationReason" --><span class="var">terminationReason</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Once the receiver's task has been launched and has completed execution, returns the
+nature of its termination.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/terminationStatus;   name=SBTask::terminationStatus -->
+<a name="//apple_ref/occ/instm/SBTask/terminationStatus"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="terminationStatus">terminationStatus</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/terminationStatus //apple_ref/occ/data/terminationStatus" --><span class="var">terminationStatus</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the status bitmask that the receiver's task returned when it exited.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBTask/waitUntilExit;   name=SBTask::waitUntilExit -->
+<a name="//apple_ref/occ/instm/SBTask/waitUntilExit"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="waitUntilExit">waitUntilExit</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/waitUntilExit //apple_ref/occ/data/waitUntilExit" --><span class="var">waitUntilExit</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver's task has been launched wait for it to exit.  This method blocks
+execution of this program until the child has completed.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

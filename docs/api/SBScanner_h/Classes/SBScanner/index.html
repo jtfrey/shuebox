@@ -1,0 +1,361 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBScanner</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBScanner;  name=SBScanner-->
+<a name="//apple_ref/occ/cl/SBScanner"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBScanner">SBScanner</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBScanner.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Instances of SBScanner are used to process the textual content of a string.  The
+scanner wraps an SBString object and an index within it; scanning always occurs
+at the index and if successful advances the index past the scanned content.
+</p>
+<p>Simple integer and floating-point values can be parsed by the scanner.  Floating-point
+values are expected to be in simplistic IEEE format with no localization of the
+decimal point, for example.
+</p>
+<p>An SBScanner be default ignores whitespace and newlines between the fields it scans.
+This can be overridden by setting an alternate SBCharacterSet or nil (implying no
+characters are ignored).  An SBScanner can also be made case-insensitive, which affects
+the string-scanning methods -- scanString:intoString: and scanUpToString:intoString:.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/caseSensitive" target="_top">-caseSensitive</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/charactersToBeSkipped" target="_top">-charactersToBeSkipped</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/initWithString:" target="_top">-initWithString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/isAtEnd" target="_top">-isAtEnd</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/scanCharactersFromSet:intoString:" target="_top">-scanCharactersFromSet:intoString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/scanDouble:" target="_top">-scanDouble:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/scanFloat:" target="_top">-scanFloat:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/scanHexInt:" target="_top">-scanHexInt:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/scanHexLongLong:" target="_top">-scanHexLongLong:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/scanInt:" target="_top">-scanInt:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/scanInteger:" target="_top">-scanInteger:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/scanLocation" target="_top">-scanLocation</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/scanLongLong:" target="_top">-scanLongLong:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBScanner/scannerWithString:" target="_top">+scannerWithString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/scanString:intoString:" target="_top">-scanString:intoString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/scanUpToCharactersFromSet:intoString:" target="_top">-scanUpToCharactersFromSet:intoString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/scanUpToString:intoString:" target="_top">-scanUpToString:intoString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/setCaseSensitive:" target="_top">-setCaseSensitive:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/setCharactersToBeSkipped:" target="_top">-setCharactersToBeSkipped:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/setScanLocation:" target="_top">-setScanLocation:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBScanner/string" target="_top">-string</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/caseSensitive;   name=SBScanner::caseSensitive -->
+<a name="//apple_ref/occ/instm/SBScanner/caseSensitive"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="caseSensitive">caseSensitive</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/caseSensitive //apple_ref/occ/data/caseSensitive" --><span class="var">caseSensitive</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver uses case-sensitive string matching in the
+scanString:intoString: and scanUpToString:intoString: methods.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/charactersToBeSkipped;   name=SBScanner::charactersToBeSkipped -->
+<a name="//apple_ref/occ/instm/SBScanner/charactersToBeSkipped"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="charactersToBeSkipped">charactersToBeSkipped</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/charactersToBeSkipped //apple_ref/occ/data/charactersToBeSkipped" --><span class="var">charactersToBeSkipped</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the SBCharacterSet the receiver uses to identify characters which will
+be skipped between fields.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/initWithString:;   name=SBScanner::initWithString: -->
+<a name="//apple_ref/occ/instm/SBScanner/initWithString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithString:">initWithString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithString //apple_ref/occ/clm/initWithString //apple_ref/occ/intfcm/initWithString //apple_ref/occ/intfm/initWithString //apple_ref/occ/func/initWithString //apple_ref/occ/ftmplt/initWithString //apple_ref/occ/defn/initWithString //apple_ref/occ/macro/initWithString" --><span class="function">initWithString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes the receiver to process the contents of aString.  The receiver is set to be
+case-sensitive and skip all whitespace and newline characters between the fields it
+scans.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/isAtEnd;   name=SBScanner::isAtEnd -->
+<a name="//apple_ref/occ/instm/SBScanner/isAtEnd"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isAtEnd">isAtEnd</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isAtEnd //apple_ref/occ/data/isAtEnd" --><span class="var">isAtEnd</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver's scan location is at the end of the source string.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/scanCharactersFromSet:intoString:;   name=SBScanner::scanCharactersFromSet:intoString: -->
+<a name="//apple_ref/occ/instm/SBScanner/scanCharactersFromSet:intoString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scanCharactersFromSet:intoString:">scanCharactersFromSet:intoString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/scanCharactersFromSet //apple_ref/occ/clm/scanCharactersFromSet //apple_ref/occ/intfcm/scanCharactersFromSet //apple_ref/occ/intfm/scanCharactersFromSet //apple_ref/occ/func/scanCharactersFromSet //apple_ref/occ/ftmplt/scanCharactersFromSet //apple_ref/occ/defn/scanCharactersFromSet //apple_ref/occ/macro/scanCharactersFromSet" --><span class="function">scanCharactersFromSet</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>)<span class="param">aSet</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/intoString //apple_ref/occ/clm/intoString //apple_ref/occ/intfcm/intoString //apple_ref/occ/intfm/intoString //apple_ref/occ/func/intoString //apple_ref/occ/ftmplt/intoString //apple_ref/occ/defn/intoString //apple_ref/occ/macro/intoString" --><span class="function">intoString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Scans the string as long as characters from a given character set are encountered,
+accumulating characters into a string that’s returned by reference in value.
+</p>
+<p>Invoke this method with value of NULL to simply scan up to a given string.  Returns
+YES if any characters from aSet are found.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/scanDouble:;   name=SBScanner::scanDouble: -->
+<a name="//apple_ref/occ/instm/SBScanner/scanDouble:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scanDouble:">scanDouble:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/scanDouble //apple_ref/occ/clm/scanDouble //apple_ref/occ/intfcm/scanDouble //apple_ref/occ/intfm/scanDouble //apple_ref/occ/func/scanDouble //apple_ref/occ/ftmplt/scanDouble //apple_ref/occ/defn/scanDouble //apple_ref/occ/macro/scanDouble" --><span class="function">scanDouble</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/double //apple_ref/occ/tdef/double //apple_ref/occ/tag/double //apple_ref/occ/econst/double //apple_ref/occ/struct/double //apple_ref/occ/clconst/double //apple_ref/occ/intf/double" --><span class="type">double</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver scans and converts a floating-point value from the
+string.  If the result would overflow a double-precision float, ±Inf is returned;
+if the result would underflow ±0 is returned.  The special values ±Infinity and
+±NaN are also properly scanned and returned.
+</p>
+<p>Invoke this method with value of NULL to simply scan past a given number.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/scanFloat:;   name=SBScanner::scanFloat: -->
+<a name="//apple_ref/occ/instm/SBScanner/scanFloat:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scanFloat:">scanFloat:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/scanFloat //apple_ref/occ/clm/scanFloat //apple_ref/occ/intfcm/scanFloat //apple_ref/occ/intfm/scanFloat //apple_ref/occ/func/scanFloat //apple_ref/occ/ftmplt/scanFloat //apple_ref/occ/defn/scanFloat //apple_ref/occ/macro/scanFloat" --><span class="function">scanFloat</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/float //apple_ref/occ/tdef/float //apple_ref/occ/tag/float //apple_ref/occ/econst/float //apple_ref/occ/struct/float //apple_ref/occ/clconst/float //apple_ref/occ/intf/float" --><span class="type">float</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver scans and converts a floating-point value from the
+string.  If the result would overflow a single-precision float, ±Inf is returned;
+if the result would underflow ±0 is returned.  The special values ±Infinity and
+±NaN are also properly scanned and returned.
+</p>
+<p>Invoke this method with value of NULL to simply scan past a given number.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/scanHexInt:;   name=SBScanner::scanHexInt: -->
+<a name="//apple_ref/occ/instm/SBScanner/scanHexInt:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scanHexInt:">scanHexInt:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/scanHexInt //apple_ref/occ/clm/scanHexInt //apple_ref/occ/intfcm/scanHexInt //apple_ref/occ/intfm/scanHexInt //apple_ref/occ/func/scanHexInt //apple_ref/occ/ftmplt/scanHexInt //apple_ref/occ/defn/scanHexInt //apple_ref/occ/macro/scanHexInt" --><span class="function">scanHexInt</span><!-- /a -->:(<span class="keyword">unsigned</span> <!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver scans and converts from the string an integer value
+in hexadecimal format.  If the result would overflow a 32-bit unsigned integer
+it is clamped at the maximul and YES is still returned.
+</p>
+<p>Invoke this method with value of NULL to simply scan past a given number.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/scanHexLongLong:;   name=SBScanner::scanHexLongLong: -->
+<a name="//apple_ref/occ/instm/SBScanner/scanHexLongLong:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scanHexLongLong:">scanHexLongLong:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/scanHexLongLong //apple_ref/occ/clm/scanHexLongLong //apple_ref/occ/intfcm/scanHexLongLong //apple_ref/occ/intfm/scanHexLongLong //apple_ref/occ/func/scanHexLongLong //apple_ref/occ/ftmplt/scanHexLongLong //apple_ref/occ/defn/scanHexLongLong //apple_ref/occ/macro/scanHexLongLong" --><span class="function">scanHexLongLong</span><!-- /a -->:(<span class="keyword">unsigned</span> <!-- a logicalPath="//apple_ref/occ/cl/long //apple_ref/occ/tdef/long //apple_ref/occ/tag/long //apple_ref/occ/econst/long //apple_ref/occ/struct/long //apple_ref/occ/clconst/long //apple_ref/occ/intf/long" --><span class="type">long</span><!-- /a --> <!-- a logicalPath="//apple_ref/occ/cl/long //apple_ref/occ/tdef/long //apple_ref/occ/tag/long //apple_ref/occ/econst/long //apple_ref/occ/struct/long //apple_ref/occ/clconst/long //apple_ref/occ/intf/long" --><span class="type">long</span><!-- /a --> <!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver scans and converts from the string an integer value
+in hexadecimal format.  If the result would overflow a 64-bit unsigned integer
+it is clamped at the maximul and YES is still returned.
+</p>
+<p>Invoke this method with value of NULL to simply scan past a given number.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/scanInt:;   name=SBScanner::scanInt: -->
+<a name="//apple_ref/occ/instm/SBScanner/scanInt:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scanInt:">scanInt:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/scanInt //apple_ref/occ/clm/scanInt //apple_ref/occ/intfcm/scanInt //apple_ref/occ/intfm/scanInt //apple_ref/occ/func/scanInt //apple_ref/occ/ftmplt/scanInt //apple_ref/occ/defn/scanInt //apple_ref/occ/macro/scanInt" --><span class="function">scanInt</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver scans and converts an integer value from the
+string.  If the result would overflow a 32-bit integer it is clamped at the
+extrema and YES is still returned.
+</p>
+<p>Invoke this method with value of NULL to simply scan past a given number.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/scanInteger:;   name=SBScanner::scanInteger: -->
+<a name="//apple_ref/occ/instm/SBScanner/scanInteger:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scanInteger:">scanInteger:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/scanInteger //apple_ref/occ/clm/scanInteger //apple_ref/occ/intfcm/scanInteger //apple_ref/occ/intfm/scanInteger //apple_ref/occ/func/scanInteger //apple_ref/occ/ftmplt/scanInteger //apple_ref/occ/defn/scanInteger //apple_ref/occ/macro/scanInteger" --><span class="function">scanInteger</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInteger //apple_ref/occ/tdef/SBInteger //apple_ref/occ/tag/SBInteger //apple_ref/occ/econst/SBInteger //apple_ref/occ/struct/SBInteger //apple_ref/occ/clconst/SBInteger //apple_ref/occ/intf/SBInteger" --><span class="type">SBInteger</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver scans and converts an integer value from the
+string.  If the result would overflow the limits of an SBInteger type it
+is clamped at the extrema and YES is still returned.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/scanLocation;   name=SBScanner::scanLocation -->
+<a name="//apple_ref/occ/instm/SBScanner/scanLocation"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scanLocation">scanLocation</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/scanLocation //apple_ref/occ/data/scanLocation" --><span class="var">scanLocation</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the character position at which the receiver will next scan.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/scanLongLong:;   name=SBScanner::scanLongLong: -->
+<a name="//apple_ref/occ/instm/SBScanner/scanLongLong:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scanLongLong:">scanLongLong:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/scanLongLong //apple_ref/occ/clm/scanLongLong //apple_ref/occ/intfcm/scanLongLong //apple_ref/occ/intfm/scanLongLong //apple_ref/occ/func/scanLongLong //apple_ref/occ/ftmplt/scanLongLong //apple_ref/occ/defn/scanLongLong //apple_ref/occ/macro/scanLongLong" --><span class="function">scanLongLong</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/long //apple_ref/occ/tdef/long //apple_ref/occ/tag/long //apple_ref/occ/econst/long //apple_ref/occ/struct/long //apple_ref/occ/clconst/long //apple_ref/occ/intf/long" --><span class="type">long</span><!-- /a --> <!-- a logicalPath="//apple_ref/occ/cl/long //apple_ref/occ/tdef/long //apple_ref/occ/tag/long //apple_ref/occ/econst/long //apple_ref/occ/struct/long //apple_ref/occ/clconst/long //apple_ref/occ/intf/long" --><span class="type">long</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver scans and converts an integer value from the
+string.  If the result would overflow a 64-bit integer it is clamped at the
+extrema and YES is still returned.
+</p>
+<p>Invoke this method with value of NULL to simply scan past a given number.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBScanner/scannerWithString:;   name=SBScanner::scannerWithString: -->
+<a name="//apple_ref/occ/clm/SBScanner/scannerWithString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scannerWithString:">scannerWithString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/scannerWithString //apple_ref/occ/clm/scannerWithString //apple_ref/occ/intfcm/scannerWithString //apple_ref/occ/intfm/scannerWithString //apple_ref/occ/func/scannerWithString //apple_ref/occ/ftmplt/scannerWithString //apple_ref/occ/defn/scannerWithString //apple_ref/occ/macro/scannerWithString" --><span class="function">scannerWithString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a newly-allocated, autorelease SBScanner which can be used to process the
+contents of aString.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/scanString:intoString:;   name=SBScanner::scanString:intoString: -->
+<a name="//apple_ref/occ/instm/SBScanner/scanString:intoString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scanString:intoString:">scanString:intoString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/scanString //apple_ref/occ/clm/scanString //apple_ref/occ/intfcm/scanString //apple_ref/occ/intfm/scanString //apple_ref/occ/func/scanString //apple_ref/occ/ftmplt/scanString //apple_ref/occ/defn/scanString //apple_ref/occ/macro/scanString" --><span class="function">scanString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">aString</span> <!-- a logicalPath="//apple_ref/occ/instm/intoString //apple_ref/occ/clm/intoString //apple_ref/occ/intfcm/intoString //apple_ref/occ/intfm/intoString //apple_ref/occ/func/intoString //apple_ref/occ/ftmplt/intoString //apple_ref/occ/defn/intoString //apple_ref/occ/macro/intoString" --><span class="function">intoString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If aString is present at the current scan location, then the current scan location
+is advanced to after it; otherwise the scan location does not change.  A copy of the
+matching sub-string is returned in value.
+</p>
+<p>Invoke this method with value of NULL to simply scan past a given string.  Returns
+YES if aString was found.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/scanUpToCharactersFromSet:intoString:;   name=SBScanner::scanUpToCharactersFromSet:intoString: -->
+<a name="//apple_ref/occ/instm/SBScanner/scanUpToCharactersFromSet:intoString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scanUpToCharactersFromSet:intoString:">scanUpToCharactersFromSet:intoString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/scanUpToCharactersFromSet //apple_ref/occ/clm/scanUpToCharactersFromSet //apple_ref/occ/intfcm/scanUpToCharactersFromSet //apple_ref/occ/intfm/scanUpToCharactersFromSet //apple_ref/occ/func/scanUpToCharactersFromSet //apple_ref/occ/ftmplt/scanUpToCharactersFromSet //apple_ref/occ/defn/scanUpToCharactersFromSet //apple_ref/occ/macro/scanUpToCharactersFromSet" --><span class="function">scanUpToCharactersFromSet</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>)<span class="param">aSet</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/intoString //apple_ref/occ/clm/intoString //apple_ref/occ/intfcm/intoString //apple_ref/occ/intfm/intoString //apple_ref/occ/func/intoString //apple_ref/occ/ftmplt/intoString //apple_ref/occ/defn/intoString //apple_ref/occ/macro/intoString" --><span class="function">intoString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Scans the string until a character from a given character set is encountered, accumulating
+characters into a string that’s returned by reference in value.
+</p>
+<p>If no characters in aSet are present in the receiver's source string, the remainder of the
+source string is put into value, the receiver’s scanLocation is advanced to the end of the
+source string, and the method returns YES.
+</p>
+<p>Invoke this method with value of NULL to simply scan up to a given string.  Returns
+YES if any characters from aSet are found.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/scanUpToString:intoString:;   name=SBScanner::scanUpToString:intoString: -->
+<a name="//apple_ref/occ/instm/SBScanner/scanUpToString:intoString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="scanUpToString:intoString:">scanUpToString:intoString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/scanUpToString //apple_ref/occ/clm/scanUpToString //apple_ref/occ/intfcm/scanUpToString //apple_ref/occ/intfm/scanUpToString //apple_ref/occ/func/scanUpToString //apple_ref/occ/ftmplt/scanUpToString //apple_ref/occ/defn/scanUpToString //apple_ref/occ/macro/scanUpToString" --><span class="function">scanUpToString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">aString</span> <!-- a logicalPath="//apple_ref/occ/instm/intoString //apple_ref/occ/clm/intoString //apple_ref/occ/intfcm/intoString //apple_ref/occ/intfm/intoString //apple_ref/occ/func/intoString //apple_ref/occ/ftmplt/intoString //apple_ref/occ/defn/intoString //apple_ref/occ/macro/intoString" --><span class="function">intoString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If aString is present anywhere after the current scan location, then the current scan
+location is advanced to it; otherwise the scan location does not change.  A copy of the
+characters present between the current scan location and the first occurrence of aString
+is returned in value.
+</p>
+<p>Invoke this method with value of NULL to simply scan up to a given string.  Returns
+YES if aString was found.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/setCaseSensitive:;   name=SBScanner::setCaseSensitive: -->
+<a name="//apple_ref/occ/instm/SBScanner/setCaseSensitive:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setCaseSensitive:">setCaseSensitive:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setCaseSensitive //apple_ref/occ/clm/setCaseSensitive //apple_ref/occ/intfcm/setCaseSensitive //apple_ref/occ/intfm/setCaseSensitive //apple_ref/occ/func/setCaseSensitive //apple_ref/occ/ftmplt/setCaseSensitive //apple_ref/occ/defn/setCaseSensitive //apple_ref/occ/macro/setCaseSensitive" --><span class="function">setCaseSensitive</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/caseSensitive //apple_ref/occ/data/caseSensitive" --><span class="var">caseSensitive</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Pass YES if the receiver should use case-sensitive string matching in the
+scanString:intoString: and scanUpToString:intoString: methods; NO if those
+methods should ignore case.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/setCharactersToBeSkipped:;   name=SBScanner::setCharactersToBeSkipped: -->
+<a name="//apple_ref/occ/instm/SBScanner/setCharactersToBeSkipped:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setCharactersToBeSkipped:">setCharactersToBeSkipped:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setCharactersToBeSkipped //apple_ref/occ/clm/setCharactersToBeSkipped //apple_ref/occ/intfcm/setCharactersToBeSkipped //apple_ref/occ/intfm/setCharactersToBeSkipped //apple_ref/occ/func/setCharactersToBeSkipped //apple_ref/occ/ftmplt/setCharactersToBeSkipped //apple_ref/occ/defn/setCharactersToBeSkipped //apple_ref/occ/macro/setCharactersToBeSkipped" --><span class="function">setCharactersToBeSkipped</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBCharacterSet //apple_ref/occ/tdef/SBCharacterSet //apple_ref/occ/tag/SBCharacterSet //apple_ref/occ/econst/SBCharacterSet //apple_ref/occ/struct/SBCharacterSet //apple_ref/occ/clconst/SBCharacterSet //apple_ref/occ/intf/SBCharacterSet" --><span class="type">SBCharacterSet</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/skipSet //apple_ref/occ/data/skipSet" --><span class="var">skipSet</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Sets the receiver to skip all characters in skipSet before scanning a field.
+If skipSet is nil then no characters are skipped.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/setScanLocation:;   name=SBScanner::setScanLocation: -->
+<a name="//apple_ref/occ/instm/SBScanner/setScanLocation:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setScanLocation:">setScanLocation:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setScanLocation //apple_ref/occ/clm/setScanLocation //apple_ref/occ/intfcm/setScanLocation //apple_ref/occ/intfm/setScanLocation //apple_ref/occ/func/setScanLocation //apple_ref/occ/ftmplt/setScanLocation //apple_ref/occ/defn/setScanLocation //apple_ref/occ/macro/setScanLocation" --><span class="function">setScanLocation</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Alter the character position at which the receiver will next scan.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBScanner/string;   name=SBScanner::string -->
+<a name="//apple_ref/occ/instm/SBScanner/string"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="string">string</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/string //apple_ref/occ/data/string" --><span class="var">string</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the string which the receiver is processing.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

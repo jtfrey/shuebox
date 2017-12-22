@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBString(SBHTTPAdditions)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cat; uid=//apple_ref/occ/cat/SBString(SBHTTPAdditions);  name=SBString(SBHTTPAdditions)-->
+<a name="//apple_ref/occ/cat/SBString(SBHTTPAdditions)"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBString(SBHTTPAdditions)">SBString(SBHTTPAdditions)</a></h1>
+</td></tr></table><hr><p><b>Extends&nbsp;Class:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBString" -->SBString<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBHTTP.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Additions to the SBString class to provide support for HTTP/XML string
+handling.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBHTTPAdditions)/decodeURLEncodedString" target="_top">-decodeURLEncodedString</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithURLEncodedString:" target="_top">-initWithURLEncodedString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithURLEncodedUTF8String:" target="_top">-initWithURLEncodedUTF8String:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithURLEncodedUTF8String:length:" target="_top">-initWithURLEncodedUTF8String:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithXMLSafeUTF8String:" target="_top">-initWithXMLSafeUTF8String:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithXMLSafeUTF8String:length:" target="_top">-initWithXMLSafeUTF8String:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBHTTPAdditions)/normalizedHTTPToken" target="_top">-normalizedHTTPToken</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithURLEncodedString:" target="_top">+stringWithURLEncodedString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithURLEncodedUTF8String:" target="_top">+stringWithURLEncodedUTF8String:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithURLEncodedUTF8String:length:" target="_top">+stringWithURLEncodedUTF8String:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithXMLSafeUTF8String:" target="_top">+stringWithXMLSafeUTF8String:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithXMLSafeUTF8String:length:" target="_top">+stringWithXMLSafeUTF8String:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBHTTPAdditions)/urlEncodedString" target="_top">-urlEncodedString</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBHTTPAdditions)/xmlSafeString" target="_top">-xmlSafeString</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBHTTPAdditions)/decodeURLEncodedString;   name=SBString(SBHTTPAdditions)::decodeURLEncodedString -->
+<a name="//apple_ref/occ/instm/SBString(SBHTTPAdditions)/decodeURLEncodedString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="decodeURLEncodedString">decodeURLEncodedString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/decodeURLEncodedString //apple_ref/occ/data/decodeURLEncodedString" --><span class="var">decodeURLEncodedString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Decode all URL-encoded sequences in the receiver and return an SBString
+that contains that form.
+</p>
+<p>If the receiver contains no URL-encoded sequences then it returns itself.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithURLEncodedString:;   name=SBString(SBHTTPAdditions)::initWithURLEncodedString: -->
+<a name="//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithURLEncodedString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithURLEncodedString:">initWithURLEncodedString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithURLEncodedString //apple_ref/occ/clm/initWithURLEncodedString //apple_ref/occ/intfcm/initWithURLEncodedString //apple_ref/occ/intfm/initWithURLEncodedString //apple_ref/occ/func/initWithURLEncodedString //apple_ref/occ/ftmplt/initWithURLEncodedString //apple_ref/occ/defn/initWithURLEncodedString //apple_ref/occ/macro/initWithURLEncodedString" --><span class="function">initWithURLEncodedString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes the receiver to contain a copy of aString for which all
+URL-encoded sequences (%XX) have been decoded.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithURLEncodedUTF8String:;   name=SBString(SBHTTPAdditions)::initWithURLEncodedUTF8String: -->
+<a name="//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithURLEncodedUTF8String:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithURLEncodedUTF8String:">initWithURLEncodedUTF8String:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithURLEncodedUTF8String //apple_ref/occ/clm/initWithURLEncodedUTF8String //apple_ref/occ/intfcm/initWithURLEncodedUTF8String //apple_ref/occ/intfm/initWithURLEncodedUTF8String //apple_ref/occ/func/initWithURLEncodedUTF8String //apple_ref/occ/ftmplt/initWithURLEncodedUTF8String //apple_ref/occ/defn/initWithURLEncodedUTF8String //apple_ref/occ/macro/initWithURLEncodedUTF8String" --><span class="function">initWithURLEncodedUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/cString //apple_ref/occ/data/cString" --><span class="var">cString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes the receiver to contain a copy of cString for which all
+URL-encoded sequences (%XX) have been decoded.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithURLEncodedUTF8String:length:;   name=SBString(SBHTTPAdditions)::initWithURLEncodedUTF8String:length: -->
+<a name="//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithURLEncodedUTF8String:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithURLEncodedUTF8String:length:">initWithURLEncodedUTF8String:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithURLEncodedUTF8String //apple_ref/occ/clm/initWithURLEncodedUTF8String //apple_ref/occ/intfcm/initWithURLEncodedUTF8String //apple_ref/occ/intfm/initWithURLEncodedUTF8String //apple_ref/occ/func/initWithURLEncodedUTF8String //apple_ref/occ/ftmplt/initWithURLEncodedUTF8String //apple_ref/occ/defn/initWithURLEncodedUTF8String //apple_ref/occ/macro/initWithURLEncodedUTF8String" --><span class="function">initWithURLEncodedUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<span class="param">cString</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes the receiver to contain a copy of the first length characters
+of cString for which all URL-encoded sequences (%XX) have been decoded.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithXMLSafeUTF8String:;   name=SBString(SBHTTPAdditions)::initWithXMLSafeUTF8String: -->
+<a name="//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithXMLSafeUTF8String:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithXMLSafeUTF8String:">initWithXMLSafeUTF8String:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithXMLSafeUTF8String //apple_ref/occ/clm/initWithXMLSafeUTF8String //apple_ref/occ/intfcm/initWithXMLSafeUTF8String //apple_ref/occ/intfm/initWithXMLSafeUTF8String //apple_ref/occ/func/initWithXMLSafeUTF8String //apple_ref/occ/ftmplt/initWithXMLSafeUTF8String //apple_ref/occ/defn/initWithXMLSafeUTF8String //apple_ref/occ/macro/initWithXMLSafeUTF8String" --><span class="function">initWithXMLSafeUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/cString //apple_ref/occ/data/cString" --><span class="var">cString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes the receiver to contain a copy of cString for which all
+XML-unsafe characters have been escaped.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithXMLSafeUTF8String:length:;   name=SBString(SBHTTPAdditions)::initWithXMLSafeUTF8String:length: -->
+<a name="//apple_ref/occ/instm/SBString(SBHTTPAdditions)/initWithXMLSafeUTF8String:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithXMLSafeUTF8String:length:">initWithXMLSafeUTF8String:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithXMLSafeUTF8String //apple_ref/occ/clm/initWithXMLSafeUTF8String //apple_ref/occ/intfcm/initWithXMLSafeUTF8String //apple_ref/occ/intfm/initWithXMLSafeUTF8String //apple_ref/occ/func/initWithXMLSafeUTF8String //apple_ref/occ/ftmplt/initWithXMLSafeUTF8String //apple_ref/occ/defn/initWithXMLSafeUTF8String //apple_ref/occ/macro/initWithXMLSafeUTF8String" --><span class="function">initWithXMLSafeUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<span class="param">cString</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes the receiver to contain a copy of the first length characters
+of cString for which all XML-unsafe characters have been escaped.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBHTTPAdditions)/normalizedHTTPToken;   name=SBString(SBHTTPAdditions)::normalizedHTTPToken -->
+<a name="//apple_ref/occ/instm/SBString(SBHTTPAdditions)/normalizedHTTPToken"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="normalizedHTTPToken">normalizedHTTPToken</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/normalizedHTTPToken //apple_ref/occ/data/normalizedHTTPToken" --><span class="var">normalizedHTTPToken</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a copy of the receiver that has been normalized as an HTTP protocol
+token.  Normalizing here equates to stripping invalid characters and
+capitalizing any alphabetic characters occurring after a hyphen while
+lowercasing all other alphabetic characters.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithURLEncodedString:;   name=SBString(SBHTTPAdditions)::stringWithURLEncodedString: -->
+<a name="//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithURLEncodedString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringWithURLEncodedString:">stringWithURLEncodedString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/stringWithURLEncodedString //apple_ref/occ/clm/stringWithURLEncodedString //apple_ref/occ/intfcm/stringWithURLEncodedString //apple_ref/occ/intfm/stringWithURLEncodedString //apple_ref/occ/func/stringWithURLEncodedString //apple_ref/occ/ftmplt/stringWithURLEncodedString //apple_ref/occ/defn/stringWithURLEncodedString //apple_ref/occ/macro/stringWithURLEncodedString" --><span class="function">stringWithURLEncodedString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance containing a copy of aString for
+which all URL-encoded sequences (%XX) have been decoded.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithURLEncodedUTF8String:;   name=SBString(SBHTTPAdditions)::stringWithURLEncodedUTF8String: -->
+<a name="//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithURLEncodedUTF8String:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringWithURLEncodedUTF8String:">stringWithURLEncodedUTF8String:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/stringWithURLEncodedUTF8String //apple_ref/occ/clm/stringWithURLEncodedUTF8String //apple_ref/occ/intfcm/stringWithURLEncodedUTF8String //apple_ref/occ/intfm/stringWithURLEncodedUTF8String //apple_ref/occ/func/stringWithURLEncodedUTF8String //apple_ref/occ/ftmplt/stringWithURLEncodedUTF8String //apple_ref/occ/defn/stringWithURLEncodedUTF8String //apple_ref/occ/macro/stringWithURLEncodedUTF8String" --><span class="function">stringWithURLEncodedUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/cString //apple_ref/occ/data/cString" --><span class="var">cString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance containing a copy of cString for
+which all URL-encoded sequences (%XX) have been decoded.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithURLEncodedUTF8String:length:;   name=SBString(SBHTTPAdditions)::stringWithURLEncodedUTF8String:length: -->
+<a name="//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithURLEncodedUTF8String:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringWithURLEncodedUTF8String:length:">stringWithURLEncodedUTF8String:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/stringWithURLEncodedUTF8String //apple_ref/occ/clm/stringWithURLEncodedUTF8String //apple_ref/occ/intfcm/stringWithURLEncodedUTF8String //apple_ref/occ/intfm/stringWithURLEncodedUTF8String //apple_ref/occ/func/stringWithURLEncodedUTF8String //apple_ref/occ/ftmplt/stringWithURLEncodedUTF8String //apple_ref/occ/defn/stringWithURLEncodedUTF8String //apple_ref/occ/macro/stringWithURLEncodedUTF8String" --><span class="function">stringWithURLEncodedUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<span class="param">cString</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance containing a copy of the first length
+characters of cString for which all URL-encoded sequences (%XX) have
+been decoded.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithXMLSafeUTF8String:;   name=SBString(SBHTTPAdditions)::stringWithXMLSafeUTF8String: -->
+<a name="//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithXMLSafeUTF8String:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringWithXMLSafeUTF8String:">stringWithXMLSafeUTF8String:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/stringWithXMLSafeUTF8String //apple_ref/occ/clm/stringWithXMLSafeUTF8String //apple_ref/occ/intfcm/stringWithXMLSafeUTF8String //apple_ref/occ/intfm/stringWithXMLSafeUTF8String //apple_ref/occ/func/stringWithXMLSafeUTF8String //apple_ref/occ/ftmplt/stringWithXMLSafeUTF8String //apple_ref/occ/defn/stringWithXMLSafeUTF8String //apple_ref/occ/macro/stringWithXMLSafeUTF8String" --><span class="function">stringWithXMLSafeUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/cString //apple_ref/occ/data/cString" --><span class="var">cString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance containing a copy of cString for which
+all XML-unsafe characters have been escaped.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithXMLSafeUTF8String:length:;   name=SBString(SBHTTPAdditions)::stringWithXMLSafeUTF8String:length: -->
+<a name="//apple_ref/occ/clm/SBString(SBHTTPAdditions)/stringWithXMLSafeUTF8String:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringWithXMLSafeUTF8String:length:">stringWithXMLSafeUTF8String:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/stringWithXMLSafeUTF8String //apple_ref/occ/clm/stringWithXMLSafeUTF8String //apple_ref/occ/intfcm/stringWithXMLSafeUTF8String //apple_ref/occ/intfm/stringWithXMLSafeUTF8String //apple_ref/occ/func/stringWithXMLSafeUTF8String //apple_ref/occ/ftmplt/stringWithXMLSafeUTF8String //apple_ref/occ/defn/stringWithXMLSafeUTF8String //apple_ref/occ/macro/stringWithXMLSafeUTF8String" --><span class="function">stringWithXMLSafeUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<span class="param">cString</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased instance containing a copy of the first length
+characters of cString for which all XML-unsafe characters have been escaped.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBHTTPAdditions)/urlEncodedString;   name=SBString(SBHTTPAdditions)::urlEncodedString -->
+<a name="//apple_ref/occ/instm/SBString(SBHTTPAdditions)/urlEncodedString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="urlEncodedString">urlEncodedString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/urlEncodedString //apple_ref/occ/data/urlEncodedString" --><span class="var">urlEncodedString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>URL-encode the receiver and return an SBString containing that alternate
+form.
+</p>
+<p>If the receiver contains no characters that demand encoding then it
+returns itself.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBHTTPAdditions)/xmlSafeString;   name=SBString(SBHTTPAdditions)::xmlSafeString -->
+<a name="//apple_ref/occ/instm/SBString(SBHTTPAdditions)/xmlSafeString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="xmlSafeString">xmlSafeString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/xmlSafeString //apple_ref/occ/data/xmlSafeString" --><span class="var">xmlSafeString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Return a copy of the receiver for which any XML reserved characters have
+been properly escaped.
+</p>
+<p>If the receiver is itself XML-safe then it returns itself.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

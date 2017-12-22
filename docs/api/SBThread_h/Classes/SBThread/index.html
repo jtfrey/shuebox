@@ -1,0 +1,417 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBThread</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBThread;  name=SBThread-->
+<a name="//apple_ref/occ/cl/SBThread"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBThread">SBThread</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBThread.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Instances of SBThread represent a separate thread of execution
+within a process.
+</p>
+<p>There are two methods by which threads are created.  The old-school
+method is to use the detachNewThreadSelector:toTarget:withObject:
+class method to invoke the specified method of the target object
+in a separate thread of execution.  No SBThread is returned, so you
+have no control over the thread.
+</p>
+<p>The modern alternative is to subclass SBThread, overriding the
+threadMain and hasBeenCancelled methods; chain your init... methods
+to SBThread's init method.  When the object is ready to execute,
+send the start method to it.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/cancel" target="_top">-cancel</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBThread/currentThread" target="_top">+currentThread</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBThread/detachNewThreadSelector:toTarget:withObject:" target="_top">+detachNewThreadSelector:toTarget:withObject:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBThread/exit" target="_top">+exit</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/hasBeenCancelled" target="_top">-hasBeenCancelled</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/identifier" target="_top">-identifier</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/init" target="_top">-init</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/initWithTarget:selector:object:" target="_top">-initWithTarget:selector:object:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/isCancelled" target="_top">-isCancelled</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/isExecuting" target="_top">-isExecuting</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/isFinished" target="_top">-isFinished</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBThread/isMainThread" target="_top">+isMainThread</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/isMainThread" target="_top">-isMainThread</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBThread/isMultiThreaded" target="_top">+isMultiThreaded</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/kill:" target="_top">-kill:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/lastSignalCaught" target="_top">-lastSignalCaught</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBThread/mainThread" target="_top">+mainThread</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/properties" target="_top">-properties</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/respondsToSignals:" target="_top">-respondsToSignals:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/setIdentifier:" target="_top">-setIdentifier:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/setRespondsToSignals:" target="_top">-setRespondsToSignals:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBThread/sleepForTimeInterval:" target="_top">+sleepForTimeInterval:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:clm/SBThread/sleepForTimeInterval:" target="_top">+sleepForTimeInterval:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBThread/sleepUntilDate:" target="_top">+sleepUntilDate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/start" target="_top">-start</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBThread/threadMain" target="_top">-threadMain</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/cancel;   name=SBThread::cancel -->
+<a name="//apple_ref/occ/instm/SBThread/cancel"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="cancel">cancel</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/cancel //apple_ref/occ/data/cancel" --><span class="var">cancel</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempt to cancel the receiver's thread of exection.  If successful the thread
+terminates early.  The hasBeenCancelled method can be overridden to provide
+subclasses with a chance to cleanup before their thread is destroyed.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBThread/currentThread;   name=SBThread::currentThread -->
+<a name="//apple_ref/occ/clm/SBThread/currentThread"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="currentThread">currentThread</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBThread //apple_ref/occ/tdef/SBThread //apple_ref/occ/tag/SBThread //apple_ref/occ/econst/SBThread //apple_ref/occ/struct/SBThread //apple_ref/occ/clconst/SBThread //apple_ref/occ/intf/SBThread" --><span class="type">SBThread</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/currentThread //apple_ref/occ/data/currentThread" --><span class="var">currentThread</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the SBThread in which the caller is executing.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBThread/detachNewThreadSelector:toTarget:withObject:;   name=SBThread::detachNewThreadSelector:toTarget:withObject: -->
+<a name="//apple_ref/occ/clm/SBThread/detachNewThreadSelector:toTarget:withObject:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="detachNewThreadSelector:toTarget:withObject:">detachNewThreadSelector:toTarget:withObject:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/detachNewThreadSelector //apple_ref/occ/clm/detachNewThreadSelector //apple_ref/occ/intfcm/detachNewThreadSelector //apple_ref/occ/intfm/detachNewThreadSelector //apple_ref/occ/func/detachNewThreadSelector //apple_ref/occ/ftmplt/detachNewThreadSelector //apple_ref/occ/defn/detachNewThreadSelector //apple_ref/occ/macro/detachNewThreadSelector" --><span class="function">detachNewThreadSelector</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SEL //apple_ref/occ/tdef/SEL //apple_ref/occ/tag/SEL //apple_ref/occ/econst/SEL //apple_ref/occ/struct/SEL //apple_ref/occ/clconst/SEL //apple_ref/occ/intf/SEL" --><span class="type">SEL</span><!-- /a -->)<span class="param">aSelector</span> <!-- a logicalPath="//apple_ref/occ/instm/toTarget //apple_ref/occ/clm/toTarget //apple_ref/occ/intfcm/toTarget //apple_ref/occ/intfm/toTarget //apple_ref/occ/func/toTarget //apple_ref/occ/ftmplt/toTarget //apple_ref/occ/defn/toTarget //apple_ref/occ/macro/toTarget" --><span class="function">toTarget</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">aTarget</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/withObject //apple_ref/occ/clm/withObject //apple_ref/occ/intfcm/withObject //apple_ref/occ/intfm/withObject //apple_ref/occ/func/withObject //apple_ref/occ/ftmplt/withObject //apple_ref/occ/defn/withObject //apple_ref/occ/macro/withObject" --><span class="function">withObject</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/anObject //apple_ref/occ/data/anObject" --><span class="var">anObject</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Creates a new thread in which the given message (aSelector) will be
+sent to aTarget.  The method in question should have no return value
+and should accept a single argument of type id:
+</p>
+<p>- (void) threadedEntryPoint:(id)argument
+</p>
+<p>The method will execute concurrently in a separate thread; control returns
+immediately to the caller in the original thread.
+</p>
+<p>The new thread is anonymous and cannot directly be controlled by other
+threads.  It runs to completion or the termination of the owning process.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBThread/exit;   name=SBThread::exit -->
+<a name="//apple_ref/occ/clm/SBThread/exit"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="exit">exit</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/exit //apple_ref/occ/data/exit" --><span class="var">exit</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Force the caller's thread of execution to terminate.  This method has no
+effect on the process's main thread.
+</p>
+<p>If you attempt to exit the process's main thread an SBException will be
+raised.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/hasBeenCancelled;   name=SBThread::hasBeenCancelled -->
+<a name="//apple_ref/occ/instm/SBThread/hasBeenCancelled"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="hasBeenCancelled">hasBeenCancelled</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/hasBeenCancelled //apple_ref/occ/data/hasBeenCancelled" --><span class="var">hasBeenCancelled</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Subclasses should override this method if they require any cleanup
+after a thread has been prematurely cancelled.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/identifier;   name=SBThread::identifier -->
+<a name="//apple_ref/occ/instm/SBThread/identifier"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="identifier">identifier</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/identifier //apple_ref/occ/data/identifier" --><span class="var">identifier</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the textual identifier assigned to the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/init;   name=SBThread::init -->
+<a name="//apple_ref/occ/instm/SBThread/init"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="init">init</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/init //apple_ref/occ/data/init" --><span class="var">init</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Designated initializer for this class.  The resulting SBThread will be sent
+the threadMain message on a different thread of execution when it is sent
+the start message.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/initWithTarget:selector:object:;   name=SBThread::initWithTarget:selector:object: -->
+<a name="//apple_ref/occ/instm/SBThread/initWithTarget:selector:object:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithTarget:selector:object:">initWithTarget:selector:object:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithTarget //apple_ref/occ/clm/initWithTarget //apple_ref/occ/intfcm/initWithTarget //apple_ref/occ/intfm/initWithTarget //apple_ref/occ/func/initWithTarget //apple_ref/occ/ftmplt/initWithTarget //apple_ref/occ/defn/initWithTarget //apple_ref/occ/macro/initWithTarget" --><span class="function">initWithTarget</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">aTarget</span> <!-- a logicalPath="//apple_ref/occ/instm/selector //apple_ref/occ/clm/selector //apple_ref/occ/intfcm/selector //apple_ref/occ/intfm/selector //apple_ref/occ/func/selector //apple_ref/occ/ftmplt/selector //apple_ref/occ/defn/selector //apple_ref/occ/macro/selector" --><span class="function">selector</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SEL //apple_ref/occ/tdef/SEL //apple_ref/occ/tag/SEL //apple_ref/occ/econst/SEL //apple_ref/occ/struct/SEL //apple_ref/occ/clconst/SEL //apple_ref/occ/intf/SEL" --><span class="type">SEL</span><!-- /a -->)<span class="param">aSelector</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/object //apple_ref/occ/clm/object //apple_ref/occ/intfcm/object //apple_ref/occ/intfm/object //apple_ref/occ/func/object //apple_ref/occ/ftmplt/object //apple_ref/occ/defn/object //apple_ref/occ/macro/object" --><span class="function">object</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/anObject //apple_ref/occ/data/anObject" --><span class="var">anObject</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes a new instance of SBThread.  When the thread is sent the start
+message, the aSelector message will be sent to aTarget (with a single argument
+of anObject).
+</p>
+<p>The method aSelector is responsible for setting up an autorelease pool for the
+newly detached thread and freeing that pool before it exits.  If you can
+guarantee that no objects will be created and autoreleased within the context
+of aSelector, then no pool is necessary.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/isCancelled;   name=SBThread::isCancelled -->
+<a name="//apple_ref/occ/instm/SBThread/isCancelled"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isCancelled">isCancelled</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isCancelled //apple_ref/occ/data/isCancelled" --><span class="var">isCancelled</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver thread has been cancelled but has not yet
+finished cleaning-up.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/isExecuting;   name=SBThread::isExecuting -->
+<a name="//apple_ref/occ/instm/SBThread/isExecuting"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isExecuting">isExecuting</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isExecuting //apple_ref/occ/data/isExecuting" --><span class="var">isExecuting</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver thread is currently executing.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/isFinished;   name=SBThread::isFinished -->
+<a name="//apple_ref/occ/instm/SBThread/isFinished"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isFinished">isFinished</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isFinished //apple_ref/occ/data/isFinished" --><span class="var">isFinished</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver thread has completed execution.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBThread/isMainThread;   name=SBThread::isMainThread -->
+<a name="//apple_ref/occ/clm/SBThread/isMainThread"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isMainThread">isMainThread</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isMainThread //apple_ref/occ/data/isMainThread" --><span class="var">isMainThread</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the thread in which the caller is executing is the process's
+main thread of execution.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/isMainThread;   name=SBThread::isMainThread -->
+<a name="//apple_ref/occ/instm/SBThread/isMainThread"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isMainThread">isMainThread</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isMainThread //apple_ref/occ/data/isMainThread" --><span class="var">isMainThread</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver is the process's main thread of execution.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBThread/isMultiThreaded;   name=SBThread::isMultiThreaded -->
+<a name="//apple_ref/occ/clm/SBThread/isMultiThreaded"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isMultiThreaded">isMultiThreaded</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isMultiThreaded //apple_ref/occ/data/isMultiThreaded" --><span class="var">isMultiThreaded</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if any SBThreads have been created by the process (ever).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/kill:;   name=SBThread::kill: -->
+<a name="//apple_ref/occ/instm/SBThread/kill:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="kill:">kill:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/kill //apple_ref/occ/clm/kill //apple_ref/occ/intfcm/kill //apple_ref/occ/intfm/kill //apple_ref/occ/func/kill //apple_ref/occ/ftmplt/kill //apple_ref/occ/defn/kill //apple_ref/occ/macro/kill" --><span class="function">kill</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/signalId //apple_ref/occ/data/signalId" --><span class="var">signalId</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Send the specified signal to the receiver thread.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/lastSignalCaught;   name=SBThread::lastSignalCaught -->
+<a name="//apple_ref/occ/instm/SBThread/lastSignalCaught"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="lastSignalCaught">lastSignalCaught</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/lastSignalCaught //apple_ref/occ/data/lastSignalCaught" --><span class="var">lastSignalCaught</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the last signal seen by the receiver thread.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBThread/mainThread;   name=SBThread::mainThread -->
+<a name="//apple_ref/occ/clm/SBThread/mainThread"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="mainThread">mainThread</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBThread //apple_ref/occ/tdef/SBThread //apple_ref/occ/tag/SBThread //apple_ref/occ/econst/SBThread //apple_ref/occ/struct/SBThread //apple_ref/occ/clconst/SBThread //apple_ref/occ/intf/SBThread" --><span class="type">SBThread</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/mainThread //apple_ref/occ/data/mainThread" --><span class="var">mainThread</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the SBThread that represents the main program entry point.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/properties;   name=SBThread::properties -->
+<a name="//apple_ref/occ/instm/SBThread/properties"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="properties">properties</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBMutableDictionary //apple_ref/occ/tdef/SBMutableDictionary //apple_ref/occ/tag/SBMutableDictionary //apple_ref/occ/econst/SBMutableDictionary //apple_ref/occ/struct/SBMutableDictionary //apple_ref/occ/clconst/SBMutableDictionary //apple_ref/occ/intf/SBMutableDictionary" --><span class="type">SBMutableDictionary</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/properties //apple_ref/occ/data/properties" --><span class="var">properties</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Use the returned dictionary to store thread-specific data.  The thread dictionary is not used
+during any manipulations of the SBThread object — it is simply a place where you can store
+any interesting data.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/respondsToSignals:;   name=SBThread::respondsToSignals: -->
+<a name="//apple_ref/occ/instm/SBThread/respondsToSignals:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="respondsToSignals:">respondsToSignals:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/respondsToSignals //apple_ref/occ/clm/respondsToSignals //apple_ref/occ/intfcm/respondsToSignals //apple_ref/occ/intfm/respondsToSignals //apple_ref/occ/func/respondsToSignals //apple_ref/occ/ftmplt/respondsToSignals //apple_ref/occ/defn/respondsToSignals //apple_ref/occ/macro/respondsToSignals" --><span class="function">respondsToSignals</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/sigset_t //apple_ref/occ/tdef/sigset_t //apple_ref/occ/tag/sigset_t //apple_ref/occ/econst/sigset_t //apple_ref/occ/struct/sigset_t //apple_ref/occ/clconst/sigset_t //apple_ref/occ/intf/sigset_t" --><span class="type">sigset_t</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/signals //apple_ref/occ/data/signals" --><span class="var">signals</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Fills-in signals with the current signals to which the receiver thread
+responds.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/setIdentifier:;   name=SBThread::setIdentifier: -->
+<a name="//apple_ref/occ/instm/SBThread/setIdentifier:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setIdentifier:">setIdentifier:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setIdentifier //apple_ref/occ/clm/setIdentifier //apple_ref/occ/intfcm/setIdentifier //apple_ref/occ/intfm/setIdentifier //apple_ref/occ/func/setIdentifier //apple_ref/occ/ftmplt/setIdentifier //apple_ref/occ/defn/setIdentifier //apple_ref/occ/macro/setIdentifier" --><span class="function">setIdentifier</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/identifier //apple_ref/occ/data/identifier" --><span class="var">identifier</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Assigns a textual identifier to the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/setRespondsToSignals:;   name=SBThread::setRespondsToSignals: -->
+<a name="//apple_ref/occ/instm/SBThread/setRespondsToSignals:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setRespondsToSignals:">setRespondsToSignals:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setRespondsToSignals //apple_ref/occ/clm/setRespondsToSignals //apple_ref/occ/intfcm/setRespondsToSignals //apple_ref/occ/intfm/setRespondsToSignals //apple_ref/occ/func/setRespondsToSignals //apple_ref/occ/ftmplt/setRespondsToSignals //apple_ref/occ/defn/setRespondsToSignals //apple_ref/occ/macro/setRespondsToSignals" --><span class="function">setRespondsToSignals</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/sigset_t //apple_ref/occ/tdef/sigset_t //apple_ref/occ/tag/sigset_t //apple_ref/occ/econst/sigset_t //apple_ref/occ/struct/sigset_t //apple_ref/occ/clconst/sigset_t //apple_ref/occ/intf/sigset_t" --><span class="type">sigset_t</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/signals //apple_ref/occ/data/signals" --><span class="var">signals</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Sets the receiver thread's signal mask and signal handlers such that all
+those signals set in the signals sigset will be caught and noted for
+later introspection via the lastCaughtSignal method.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBThread/sleepForTimeInterval:;   name=SBThread::sleepForTimeInterval: -->
+<a name="//apple_ref/occ/clm/SBThread/sleepForTimeInterval:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sleepForTimeInterval:">sleepForTimeInterval:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/sleepForTimeInterval //apple_ref/occ/clm/sleepForTimeInterval //apple_ref/occ/intfcm/sleepForTimeInterval //apple_ref/occ/intfm/sleepForTimeInterval //apple_ref/occ/func/sleepForTimeInterval //apple_ref/occ/ftmplt/sleepForTimeInterval //apple_ref/occ/defn/sleepForTimeInterval //apple_ref/occ/macro/sleepForTimeInterval" --><span class="function">sleepForTimeInterval</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBTimeInterval //apple_ref/occ/tdef/SBTimeInterval //apple_ref/occ/tag/SBTimeInterval //apple_ref/occ/econst/SBTimeInterval //apple_ref/occ/struct/SBTimeInterval //apple_ref/occ/clconst/SBTimeInterval //apple_ref/occ/intf/SBTimeInterval" --><span class="type">SBTimeInterval</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/anInterval //apple_ref/occ/data/anInterval" --><span class="var">anInterval</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to force the thread in which the caller is running to halt
+execution for the given time interval.
+</p>
+<p>This method may return early if the thread was cancelled.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:clm;  uid=//apple_ref/doc/title:clm/SBThread/sleepForTimeInterval:;   name=SBThread::sleepForTimeInterval: -->
+<a name="//apple_ref/doc/title:clm/SBThread/sleepForTimeInterval:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sleepForTimeInterval:">sleepForTimeInterval:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/clm/SBThread/sleepUntilDate:" --><p>sleepUntilDate:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/sleepUntilDate //apple_ref/occ/clm/sleepUntilDate //apple_ref/occ/intfcm/sleepUntilDate //apple_ref/occ/intfm/sleepUntilDate //apple_ref/occ/func/sleepUntilDate //apple_ref/occ/ftmplt/sleepUntilDate //apple_ref/occ/defn/sleepUntilDate //apple_ref/occ/macro/sleepUntilDate" --><span class="function">sleepUntilDate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aDate //apple_ref/occ/data/aDate" --><span class="var">aDate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to force the thread in which the caller is running to halt
+execution until the specified date and time.
+</p>
+<p>This method may return early if the thread was cancelled.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBThread/sleepUntilDate:;   name=SBThread::sleepUntilDate: -->
+<a name="//apple_ref/occ/clm/SBThread/sleepUntilDate:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sleepUntilDate:">sleepUntilDate:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:clm/SBThread/sleepForTimeInterval:" --><p>sleepForTimeInterval:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/sleepUntilDate //apple_ref/occ/clm/sleepUntilDate //apple_ref/occ/intfcm/sleepUntilDate //apple_ref/occ/intfm/sleepUntilDate //apple_ref/occ/func/sleepUntilDate //apple_ref/occ/ftmplt/sleepUntilDate //apple_ref/occ/defn/sleepUntilDate //apple_ref/occ/macro/sleepUntilDate" --><span class="function">sleepUntilDate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aDate //apple_ref/occ/data/aDate" --><span class="var">aDate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to force the thread in which the caller is running to halt
+execution until the specified date and time.
+</p>
+<p>This method may return early if the thread was cancelled.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/start;   name=SBThread::start -->
+<a name="//apple_ref/occ/instm/SBThread/start"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="start">start</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/start //apple_ref/occ/data/start" --><span class="var">start</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>This method spawns a new thread and invokes the receiver’s threadMain method in the
+new thread.  If you initialized the receiver with a target and selector, the default
+threadMain method invokes that selector automatically.
+</p>
+<p>If this thread is the first thread detached in the application, this method posts the
+SBWillBecomeMultiThreadedNotification to the default notification center.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBThread/threadMain;   name=SBThread::threadMain -->
+<a name="//apple_ref/occ/instm/SBThread/threadMain"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="threadMain">threadMain</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/threadMain //apple_ref/occ/data/threadMain" --><span class="var">threadMain</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The default implementation of this method takes the target and selector used to initialize
+the receiver and invokes the selector on the specified target.  If you subclass SBThread
+you can override this method and use it to implement the main body of your thread instead.
+If you do so, you do not need to chain to SBThread's implementation.
+</p>
+<p>You should never invoke this method directly.  You should always start your thread by invoking
+the start method.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

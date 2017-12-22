@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBUUID</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBUUID;  name=SBUUID-->
+<a name="//apple_ref/occ/cl/SBUUID"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBUUID">SBUUID</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBUUID.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Instances of SBUUID wrap a 128 bit "universally-unique identifier."  Wikipedia has a nice article on the
+topic of UUIDs at
+</p>
+<blockquote>
+<a href="http://en.wikipedia.org/wiki/Universally_Unique_Identifier" target="_top">http://en.wikipedia.org/wiki/Universally_Unique_Identifier</a>
+</blockquote>
+<p>Behind the scenes this class uses libuuid to create and compare UUIDs.
+</p>
+<p>Textually speaking, the UUID is a sequence of 32 hexadecimal digits grouped as
+  </p>
+<pre>
+    ########-####-####-####-############
+  </pre>
+<p>or in terms of number of digits per block
+  </p>
+<pre>
+    8-4-4-4-12
+  </pre>
+<p>for a total of 36 characters.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUUID/asString" target="_top">-asString</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUUID/compareToUUID:" target="_top">-compareToUUID:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUUID/getUUIDBytes:" target="_top">-getUUIDBytes:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUUID/init" target="_top">-init</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUUID/initWithBytes:" target="_top">-initWithBytes:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBUUID/initWithBytes:Initializes" target="_top">-initWithBytes:
+
+Initializes</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUUID/initWithString:" target="_top">-initWithString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUUID/initWithUTF8String:" target="_top">-initWithUTF8String:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUUID/initWithUUID:" target="_top">-initWithUUID:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBUUID/initWithUUID:Initializes" target="_top">-initWithUUID:
+
+Initializes</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBUUID/isNull" target="_top">-isNull</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBUUID/uuid" target="_top">+uuid</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBUUID/uuidWithBytes:" target="_top">+uuidWithBytes:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBUUID/uuidWithString:" target="_top">+uuidWithString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBUUID/uuidWithUTF8String:" target="_top">+uuidWithUTF8String:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBUUID/uuidWithUUID:" target="_top">+uuidWithUUID:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUUID/asString;   name=SBUUID::asString -->
+<a name="//apple_ref/occ/instm/SBUUID/asString"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="asString">asString</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/asString //apple_ref/occ/data/asString" --><span class="var">asString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an SBString containing the textual form of the receiver's UUID.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUUID/compareToUUID:;   name=SBUUID::compareToUUID: -->
+<a name="//apple_ref/occ/instm/SBUUID/compareToUUID:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="compareToUUID:">compareToUUID:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBComparisonResult //apple_ref/occ/tdef/SBComparisonResult //apple_ref/occ/tag/SBComparisonResult //apple_ref/occ/econst/SBComparisonResult //apple_ref/occ/struct/SBComparisonResult //apple_ref/occ/clconst/SBComparisonResult //apple_ref/occ/intf/SBComparisonResult" --><span class="type">SBComparisonResult</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/compareToUUID //apple_ref/occ/clm/compareToUUID //apple_ref/occ/intfcm/compareToUUID //apple_ref/occ/intfm/compareToUUID //apple_ref/occ/func/compareToUUID //apple_ref/occ/ftmplt/compareToUUID //apple_ref/occ/defn/compareToUUID //apple_ref/occ/macro/compareToUUID" --><span class="function">compareToUUID</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUUID //apple_ref/occ/tdef/SBUUID //apple_ref/occ/tag/SBUUID //apple_ref/occ/econst/SBUUID //apple_ref/occ/struct/SBUUID //apple_ref/occ/clconst/SBUUID //apple_ref/occ/intf/SBUUID" --><span class="type">SBUUID</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/anotherUUID //apple_ref/occ/data/anotherUUID" --><span class="var">anotherUUID</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Compare the receiver's UUID against the UUID wrapped by anotherUUID.  Returns a value
+from the SBComparisonResult enumeration indicating the order of the two UUIDs.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUUID/getUUIDBytes:;   name=SBUUID::getUUIDBytes: -->
+<a name="//apple_ref/occ/instm/SBUUID/getUUIDBytes:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="getUUIDBytes:">getUUIDBytes:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/getUUIDBytes //apple_ref/occ/clm/getUUIDBytes //apple_ref/occ/intfcm/getUUIDBytes //apple_ref/occ/intfm/getUUIDBytes //apple_ref/occ/func/getUUIDBytes //apple_ref/occ/ftmplt/getUUIDBytes //apple_ref/occ/defn/getUUIDBytes //apple_ref/occ/macro/getUUIDBytes" --><span class="function">getUUIDBytes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/uuid //apple_ref/occ/data/uuid" --><span class="var">uuid</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Copy the receiver's UUID to the provided buffer (uuid).  The provided buffer must be
+at least 16 bytes in size.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUUID/init;   name=SBUUID::init -->
+<a name="//apple_ref/occ/instm/SBUUID/init"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="init">init</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/init //apple_ref/occ/data/init" --><span class="var">init</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes an instance to contain a newly-generated UUID.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUUID/initWithBytes:;   name=SBUUID::initWithBytes: -->
+<a name="//apple_ref/occ/instm/SBUUID/initWithBytes:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithBytes:">initWithBytes:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBUUID/initWithBytes:Initializes" --><p>initWithBytes:  Initializes<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithBytes //apple_ref/occ/clm/initWithBytes //apple_ref/occ/intfcm/initWithBytes //apple_ref/occ/intfm/initWithBytes //apple_ref/occ/func/initWithBytes //apple_ref/occ/ftmplt/initWithBytes //apple_ref/occ/defn/initWithBytes //apple_ref/occ/macro/initWithBytes" --><span class="function">initWithBytes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/uuidBytes //apple_ref/occ/data/uuidBytes" --><span class="var">uuidBytes</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>an instance to contain the first 16 bytes at uuidBytes.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBUUID/initWithBytes:Initializes;   name=SBUUID::initWithBytes:
+
+Initializes -->
+<a name="//apple_ref/doc/title:instm/SBUUID/initWithBytes:Initializes"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithBytes:Initializes">initWithBytes:
+
+Initializes</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBUUID/initWithBytes:" --><p>initWithBytes:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithBytes //apple_ref/occ/clm/initWithBytes //apple_ref/occ/intfcm/initWithBytes //apple_ref/occ/intfm/initWithBytes //apple_ref/occ/func/initWithBytes //apple_ref/occ/ftmplt/initWithBytes //apple_ref/occ/defn/initWithBytes //apple_ref/occ/macro/initWithBytes" --><span class="function">initWithBytes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/uuidBytes //apple_ref/occ/data/uuidBytes" --><span class="var">uuidBytes</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>an instance to contain the first 16 bytes at uuidBytes.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUUID/initWithString:;   name=SBUUID::initWithString: -->
+<a name="//apple_ref/occ/instm/SBUUID/initWithString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithString:">initWithString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithString //apple_ref/occ/clm/initWithString //apple_ref/occ/intfcm/initWithString //apple_ref/occ/intfm/initWithString //apple_ref/occ/func/initWithString //apple_ref/occ/ftmplt/initWithString //apple_ref/occ/defn/initWithString //apple_ref/occ/macro/initWithString" --><span class="function">initWithString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempts to parse a valid UUID from the given string.  If successful, initializes the
+receiver to wrap the parsed UUID.  Otherwise, releases the receiver and returns nil.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUUID/initWithUTF8String:;   name=SBUUID::initWithUTF8String: -->
+<a name="//apple_ref/occ/instm/SBUUID/initWithUTF8String:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithUTF8String:">initWithUTF8String:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithUTF8String //apple_ref/occ/clm/initWithUTF8String //apple_ref/occ/intfcm/initWithUTF8String //apple_ref/occ/intfm/initWithUTF8String //apple_ref/occ/func/initWithUTF8String //apple_ref/occ/ftmplt/initWithUTF8String //apple_ref/occ/defn/initWithUTF8String //apple_ref/occ/macro/initWithUTF8String" --><span class="function">initWithUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aCString //apple_ref/occ/data/aCString" --><span class="var">aCString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempts to parse a valid UUID from the given UTF8 string.  If successful, initializes the
+receiver to wrap the parsed UUID.  Otherwise, releases the receiver and returns nil.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUUID/initWithUUID:;   name=SBUUID::initWithUUID: -->
+<a name="//apple_ref/occ/instm/SBUUID/initWithUUID:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithUUID:">initWithUUID:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBUUID/initWithUUID:Initializes" --><p>initWithUUID:  Initializes<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithUUID //apple_ref/occ/clm/initWithUUID //apple_ref/occ/intfcm/initWithUUID //apple_ref/occ/intfm/initWithUUID //apple_ref/occ/func/initWithUUID //apple_ref/occ/ftmplt/initWithUUID //apple_ref/occ/defn/initWithUUID //apple_ref/occ/macro/initWithUUID" --><span class="function">initWithUUID</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUUID //apple_ref/occ/tdef/SBUUID //apple_ref/occ/tag/SBUUID //apple_ref/occ/econst/SBUUID //apple_ref/occ/struct/SBUUID //apple_ref/occ/clconst/SBUUID //apple_ref/occ/intf/SBUUID" --><span class="type">SBUUID</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aUUID //apple_ref/occ/data/aUUID" --><span class="var">aUUID</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>an instance to contain the same UUID as aUUID.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBUUID/initWithUUID:Initializes;   name=SBUUID::initWithUUID:
+
+Initializes -->
+<a name="//apple_ref/doc/title:instm/SBUUID/initWithUUID:Initializes"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithUUID:Initializes">initWithUUID:
+
+Initializes</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBUUID/initWithUUID:" --><p>initWithUUID:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithUUID //apple_ref/occ/clm/initWithUUID //apple_ref/occ/intfcm/initWithUUID //apple_ref/occ/intfm/initWithUUID //apple_ref/occ/func/initWithUUID //apple_ref/occ/ftmplt/initWithUUID //apple_ref/occ/defn/initWithUUID //apple_ref/occ/macro/initWithUUID" --><span class="function">initWithUUID</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUUID //apple_ref/occ/tdef/SBUUID //apple_ref/occ/tag/SBUUID //apple_ref/occ/econst/SBUUID //apple_ref/occ/struct/SBUUID //apple_ref/occ/clconst/SBUUID //apple_ref/occ/intf/SBUUID" --><span class="type">SBUUID</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aUUID //apple_ref/occ/data/aUUID" --><span class="var">aUUID</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>an instance to contain the same UUID as aUUID.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBUUID/isNull;   name=SBUUID::isNull -->
+<a name="//apple_ref/occ/instm/SBUUID/isNull"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isNull">isNull</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isNull //apple_ref/occ/data/isNull" --><span class="var">isNull</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver's UUID is the null UUID.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBUUID/uuid;   name=SBUUID::uuid -->
+<a name="//apple_ref/occ/clm/SBUUID/uuid"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="uuid">uuid</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBUUID //apple_ref/occ/tdef/SBUUID //apple_ref/occ/tag/SBUUID //apple_ref/occ/econst/SBUUID //apple_ref/occ/struct/SBUUID //apple_ref/occ/clconst/SBUUID //apple_ref/occ/intf/SBUUID" --><span class="type">SBUUID</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/uuid //apple_ref/occ/data/uuid" --><span class="var">uuid</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns a newly-allocated, autoreleased instance which wraps a newly-generated
+UUID.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBUUID/uuidWithBytes:;   name=SBUUID::uuidWithBytes: -->
+<a name="//apple_ref/occ/clm/SBUUID/uuidWithBytes:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="uuidWithBytes:">uuidWithBytes:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBUUID //apple_ref/occ/tdef/SBUUID //apple_ref/occ/tag/SBUUID //apple_ref/occ/econst/SBUUID //apple_ref/occ/struct/SBUUID //apple_ref/occ/clconst/SBUUID //apple_ref/occ/intf/SBUUID" --><span class="type">SBUUID</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/uuidWithBytes //apple_ref/occ/clm/uuidWithBytes //apple_ref/occ/intfcm/uuidWithBytes //apple_ref/occ/intfm/uuidWithBytes //apple_ref/occ/func/uuidWithBytes //apple_ref/occ/ftmplt/uuidWithBytes //apple_ref/occ/defn/uuidWithBytes //apple_ref/occ/macro/uuidWithBytes" --><span class="function">uuidWithBytes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/uuidBytes //apple_ref/occ/data/uuidBytes" --><span class="var">uuidBytes</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns a newly-allocated, autoreleased instance initialized with the first 16
+bytes at uuidBytes.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBUUID/uuidWithString:;   name=SBUUID::uuidWithString: -->
+<a name="//apple_ref/occ/clm/SBUUID/uuidWithString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="uuidWithString:">uuidWithString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBUUID //apple_ref/occ/tdef/SBUUID //apple_ref/occ/tag/SBUUID //apple_ref/occ/econst/SBUUID //apple_ref/occ/struct/SBUUID //apple_ref/occ/clconst/SBUUID //apple_ref/occ/intf/SBUUID" --><span class="type">SBUUID</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/uuidWithString //apple_ref/occ/clm/uuidWithString //apple_ref/occ/intfcm/uuidWithString //apple_ref/occ/intfm/uuidWithString //apple_ref/occ/func/uuidWithString //apple_ref/occ/ftmplt/uuidWithString //apple_ref/occ/defn/uuidWithString //apple_ref/occ/macro/uuidWithString" --><span class="function">uuidWithString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempts to parse a valid UUID from the given string.  If successful, returns
+a newly-allocated, autoreleased instance which wraps the parsed UUID.  Otherwise,
+returns nil.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBUUID/uuidWithUTF8String:;   name=SBUUID::uuidWithUTF8String: -->
+<a name="//apple_ref/occ/clm/SBUUID/uuidWithUTF8String:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="uuidWithUTF8String:">uuidWithUTF8String:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBUUID //apple_ref/occ/tdef/SBUUID //apple_ref/occ/tag/SBUUID //apple_ref/occ/econst/SBUUID //apple_ref/occ/struct/SBUUID //apple_ref/occ/clconst/SBUUID //apple_ref/occ/intf/SBUUID" --><span class="type">SBUUID</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/uuidWithUTF8String //apple_ref/occ/clm/uuidWithUTF8String //apple_ref/occ/intfcm/uuidWithUTF8String //apple_ref/occ/intfm/uuidWithUTF8String //apple_ref/occ/func/uuidWithUTF8String //apple_ref/occ/ftmplt/uuidWithUTF8String //apple_ref/occ/defn/uuidWithUTF8String //apple_ref/occ/macro/uuidWithUTF8String" --><span class="function">uuidWithUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aCString //apple_ref/occ/data/aCString" --><span class="var">aCString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempts to parse a valid UUID from the given UTF8 string.  If successful, returns
+a newly-allocated, autoreleased instance which wraps the parsed UUID.  Otherwise,
+returns nil.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBUUID/uuidWithUUID:;   name=SBUUID::uuidWithUUID: -->
+<a name="//apple_ref/occ/clm/SBUUID/uuidWithUUID:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="uuidWithUUID:">uuidWithUUID:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBUUID //apple_ref/occ/tdef/SBUUID //apple_ref/occ/tag/SBUUID //apple_ref/occ/econst/SBUUID //apple_ref/occ/struct/SBUUID //apple_ref/occ/clconst/SBUUID //apple_ref/occ/intf/SBUUID" --><span class="type">SBUUID</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/uuidWithUUID //apple_ref/occ/clm/uuidWithUUID //apple_ref/occ/intfcm/uuidWithUUID //apple_ref/occ/intfm/uuidWithUUID //apple_ref/occ/func/uuidWithUUID //apple_ref/occ/ftmplt/uuidWithUUID //apple_ref/occ/defn/uuidWithUUID //apple_ref/occ/macro/uuidWithUUID" --><span class="function">uuidWithUUID</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUUID //apple_ref/occ/tdef/SBUUID //apple_ref/occ/tag/SBUUID //apple_ref/occ/econst/SBUUID //apple_ref/occ/struct/SBUUID //apple_ref/occ/clconst/SBUUID //apple_ref/occ/intf/SBUUID" --><span class="type">SBUUID</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aUUID //apple_ref/occ/data/aUUID" --><span class="var">aUUID</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns a newly-allocated, autoreleased instance initialized with the UUID
+wrapped by aUUID (the result is a copy of aUUID).<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

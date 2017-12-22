@@ -1,0 +1,387 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBMailer</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBMailer;  name=SBMailer-->
+<a name="//apple_ref/occ/cl/SBMailer"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBMailer">SBMailer</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBMailer.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Instances of SBMailer represent a somewhat robust mail delivery engine.  Behind the scenes, the
+class does not simply call-through to sendmail:  it actually opens a connection to a mail relay
+host (on port 25 by default) and performs an SMTP dialogue.  Basic methods for starting an
+SMTP session with a server, sending SMTP control commands in that session, and cancelling or
+completing a message description are made available.
+</p>
+<p>A message is described within an open session by issuing an ordered sequence of commands:
+</p>
+<ol>
+<li>sendFromAddress: (once only)</li>
+<li>sendRecipient: or sendRecipients: (at least once)</li>
+<li>sendMessageHeaders: (once only)</li>
+<li>sendTextPart: of sendTextPart:mimeType: (zero or more)</li>
+</ol>
+<p>Barring any errors, the message is handed-off to the server by sending the finishSMTPSession
+message.  If at any point in the process the message should be discarded, the cancelSMTPSession
+message can be sent.
+</p>
+<p>If the instance is set to "stayAlive" then cancelling or finishing a session does not also
+immediately close the connection to the mail relay server.  Instead, the connection will be
+reused by the next session (or until the "stayAlive" option is disabled on the instance).
+</p>
+<p>The sendMessage:withSubject: and sendMessage:withProperties: methods are conveniences which
+implement the command sequence illustrated above for two relatively simply message classes.
+For both, the body of the message is an SBString containing character data treated as
+MIME type "text/plain".  The former method is the simplest of all, delivering the body and
+a subject to the default mail recipient for the receiver.  The latter allows a dictionary
+of message meta data (From address, To addresses, Subject, etc.) to accompany the mail body.
+</p>
+<p>The default recipient, sender, subject, and SMTP host/port can be set on a per-instance
+basis.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/agentName" target="_top">-agentName</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/cancelSMTPSession" target="_top">-cancelSMTPSession</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/defaultSMTPHost" target="_top">-defaultSMTPHost</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/defaultSMTPPort" target="_top">-defaultSMTPPort</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/defaultSMTPRecipient" target="_top">-defaultSMTPRecipient</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/defaultSMTPSender" target="_top">-defaultSMTPSender</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/defaultSMTPSubject" target="_top">-defaultSMTPSubject</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/finishSMTPSession" target="_top">-finishSMTPSession</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/isVerbose" target="_top">-isVerbose</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/sendSMTPCommand:" target="_top">-sendSMTPCommand:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBMailer/sendSMTPCommand:..." target="_top">-sendSMTPCommand:...</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/setAgentName:" target="_top">-setAgentName:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/setDefaultSMTPHost:" target="_top">-setDefaultSMTPHost:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/setDefaultSMTPPort:" target="_top">-setDefaultSMTPPort:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/setDefaultSMTPRecipient:" target="_top">-setDefaultSMTPRecipient:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/setDefaultSMTPSender:" target="_top">-setDefaultSMTPSender:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/setDefaultSMTPSubject:" target="_top">-setDefaultSMTPSubject:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/setIsVerbose:" target="_top">-setIsVerbose:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/setStayAlive:" target="_top">-setStayAlive:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBMailer/sharedMailer" target="_top">+sharedMailer</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/startSMTPSession" target="_top">-startSMTPSession</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/startSMTPSessionWithHost:" target="_top">-startSMTPSessionWithHost:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/startSMTPSessionWithHost:port:" target="_top">-startSMTPSessionWithHost:port:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer/stayAlive" target="_top">-stayAlive</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/agentName;   name=SBMailer::agentName -->
+<a name="//apple_ref/occ/instm/SBMailer/agentName"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="agentName">agentName</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/agentName //apple_ref/occ/data/agentName" --><span class="var">agentName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the X-Mailer identifier associated with the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/cancelSMTPSession;   name=SBMailer::cancelSMTPSession -->
+<a name="//apple_ref/occ/instm/SBMailer/cancelSMTPSession"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="cancelSMTPSession">cancelSMTPSession</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/cancelSMTPSession //apple_ref/occ/data/cancelSMTPSession" --><span class="var">cancelSMTPSession</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If an SMTP session is open for the receiver, send the RSET command to discard
+any in-progress message.  Unless the receiver has the stayAlive option set,
+the connection is terminated, as well. 
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/defaultSMTPHost;   name=SBMailer::defaultSMTPHost -->
+<a name="//apple_ref/occ/instm/SBMailer/defaultSMTPHost"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="defaultSMTPHost">defaultSMTPHost</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBHost //apple_ref/occ/tdef/SBHost //apple_ref/occ/tag/SBHost //apple_ref/occ/econst/SBHost //apple_ref/occ/struct/SBHost //apple_ref/occ/clconst/SBHost //apple_ref/occ/intf/SBHost" --><span class="type">SBHost</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/defaultSMTPHost //apple_ref/occ/data/defaultSMTPHost" --><span class="var">defaultSMTPHost</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the default SMTP host associated with the receiver.  SMTP sessions
+started without any explicit SMTP host will be relayed using this host.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/defaultSMTPPort;   name=SBMailer::defaultSMTPPort -->
+<a name="//apple_ref/occ/instm/SBMailer/defaultSMTPPort"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="defaultSMTPPort">defaultSMTPPort</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/defaultSMTPPort //apple_ref/occ/data/defaultSMTPPort" --><span class="var">defaultSMTPPort</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the default TCP port associated with the receiver.  SMTP sessions
+started without any explicit TCP port will use this port number.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/defaultSMTPRecipient;   name=SBMailer::defaultSMTPRecipient -->
+<a name="//apple_ref/occ/instm/SBMailer/defaultSMTPRecipient"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="defaultSMTPRecipient">defaultSMTPRecipient</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/defaultSMTPRecipient //apple_ref/occ/data/defaultSMTPRecipient" --><span class="var">defaultSMTPRecipient</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the default SMTP recipient email address associated with the receiver.
+Messages composed without any explicit recipients will be sent to this address.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/defaultSMTPSender;   name=SBMailer::defaultSMTPSender -->
+<a name="//apple_ref/occ/instm/SBMailer/defaultSMTPSender"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="defaultSMTPSender">defaultSMTPSender</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/defaultSMTPSender //apple_ref/occ/data/defaultSMTPSender" --><span class="var">defaultSMTPSender</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the default SMTP sender email address associated with the receiver.
+Messages composed without any explicit sender will appear to be from this
+address.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/defaultSMTPSubject;   name=SBMailer::defaultSMTPSubject -->
+<a name="//apple_ref/occ/instm/SBMailer/defaultSMTPSubject"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="defaultSMTPSubject">defaultSMTPSubject</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/defaultSMTPSubject //apple_ref/occ/data/defaultSMTPSubject" --><span class="var">defaultSMTPSubject</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the default SMTP subject line associated with the receiver.  Messages
+composed without any explicit subject will use this string.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/finishSMTPSession;   name=SBMailer::finishSMTPSession -->
+<a name="//apple_ref/occ/instm/SBMailer/finishSMTPSession"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="finishSMTPSession">finishSMTPSession</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/finishSMTPSession //apple_ref/occ/data/finishSMTPSession" --><span class="var">finishSMTPSession</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If an SMTP session is open for the receiver and headers have already been sent,
+close out the message and hand it off to the server.  Unless the receiver has
+the stayAlive option set, the connection is terminated, as well. 
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/isVerbose;   name=SBMailer::isVerbose -->
+<a name="//apple_ref/occ/instm/SBMailer/isVerbose"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isVerbose">isVerbose</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/isVerbose //apple_ref/occ/data/isVerbose" --><span class="var">isVerbose</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver is set to write debugging output to stderr.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/sendSMTPCommand:;   name=SBMailer::sendSMTPCommand: -->
+<a name="//apple_ref/occ/instm/SBMailer/sendSMTPCommand:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendSMTPCommand:">sendSMTPCommand:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBMailer/sendSMTPCommand:..." --><p>sendSMTPCommand:...<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendSMTPCommand //apple_ref/occ/clm/sendSMTPCommand //apple_ref/occ/intfcm/sendSMTPCommand //apple_ref/occ/intfm/sendSMTPCommand //apple_ref/occ/func/sendSMTPCommand //apple_ref/occ/ftmplt/sendSMTPCommand //apple_ref/occ/defn/sendSMTPCommand //apple_ref/occ/macro/sendSMTPCommand" --><span class="function">sendSMTPCommand</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/format //apple_ref/occ/data/format" --><span class="var">format</span><!-- /a -->, ...; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If an SMTP session is active for the receiver, attempt to send the SMTP
+command produced by converting the given format using the variable argument
+list (a'la printf() and friends, see SBString's stringWithFormat:...
+method for more information on the formatting directives that are
+available).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBMailer/sendSMTPCommand:...;   name=SBMailer::sendSMTPCommand:... -->
+<a name="//apple_ref/doc/title:instm/SBMailer/sendSMTPCommand:..."></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendSMTPCommand:...">sendSMTPCommand:...</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBMailer/sendSMTPCommand:" --><p>sendSMTPCommand:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendSMTPCommand //apple_ref/occ/clm/sendSMTPCommand //apple_ref/occ/intfcm/sendSMTPCommand //apple_ref/occ/intfm/sendSMTPCommand //apple_ref/occ/func/sendSMTPCommand //apple_ref/occ/ftmplt/sendSMTPCommand //apple_ref/occ/defn/sendSMTPCommand //apple_ref/occ/macro/sendSMTPCommand" --><span class="function">sendSMTPCommand</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/format //apple_ref/occ/data/format" --><span class="var">format</span><!-- /a -->, ...; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If an SMTP session is active for the receiver, attempt to send the SMTP
+command produced by converting the given format using the variable argument
+list (a'la printf() and friends, see SBString's stringWithFormat:...
+method for more information on the formatting directives that are
+available).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/setAgentName:;   name=SBMailer::setAgentName: -->
+<a name="//apple_ref/occ/instm/SBMailer/setAgentName:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setAgentName:">setAgentName:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setAgentName //apple_ref/occ/clm/setAgentName //apple_ref/occ/intfcm/setAgentName //apple_ref/occ/intfm/setAgentName //apple_ref/occ/func/setAgentName //apple_ref/occ/ftmplt/setAgentName //apple_ref/occ/defn/setAgentName //apple_ref/occ/macro/setAgentName" --><span class="function">setAgentName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/agentName //apple_ref/occ/data/agentName" --><span class="var">agentName</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Sets the X-Mailer identifier the receiver should send in message headers.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/setDefaultSMTPHost:;   name=SBMailer::setDefaultSMTPHost: -->
+<a name="//apple_ref/occ/instm/SBMailer/setDefaultSMTPHost:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setDefaultSMTPHost:">setDefaultSMTPHost:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setDefaultSMTPHost //apple_ref/occ/clm/setDefaultSMTPHost //apple_ref/occ/intfcm/setDefaultSMTPHost //apple_ref/occ/intfm/setDefaultSMTPHost //apple_ref/occ/func/setDefaultSMTPHost //apple_ref/occ/ftmplt/setDefaultSMTPHost //apple_ref/occ/defn/setDefaultSMTPHost //apple_ref/occ/macro/setDefaultSMTPHost" --><span class="function">setDefaultSMTPHost</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBHost //apple_ref/occ/tdef/SBHost //apple_ref/occ/tag/SBHost //apple_ref/occ/econst/SBHost //apple_ref/occ/struct/SBHost //apple_ref/occ/clconst/SBHost //apple_ref/occ/intf/SBHost" --><span class="type">SBHost</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/smtpHost //apple_ref/occ/data/smtpHost" --><span class="var">smtpHost</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Sets the default SMTP host associated with the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/setDefaultSMTPPort:;   name=SBMailer::setDefaultSMTPPort: -->
+<a name="//apple_ref/occ/instm/SBMailer/setDefaultSMTPPort:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setDefaultSMTPPort:">setDefaultSMTPPort:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setDefaultSMTPPort //apple_ref/occ/clm/setDefaultSMTPPort //apple_ref/occ/intfcm/setDefaultSMTPPort //apple_ref/occ/intfm/setDefaultSMTPPort //apple_ref/occ/func/setDefaultSMTPPort //apple_ref/occ/ftmplt/setDefaultSMTPPort //apple_ref/occ/defn/setDefaultSMTPPort //apple_ref/occ/macro/setDefaultSMTPPort" --><span class="function">setDefaultSMTPPort</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/aPort //apple_ref/occ/data/aPort" --><span class="var">aPort</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Sets the default TCP port associated with the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/setDefaultSMTPRecipient:;   name=SBMailer::setDefaultSMTPRecipient: -->
+<a name="//apple_ref/occ/instm/SBMailer/setDefaultSMTPRecipient:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setDefaultSMTPRecipient:">setDefaultSMTPRecipient:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setDefaultSMTPRecipient //apple_ref/occ/clm/setDefaultSMTPRecipient //apple_ref/occ/intfcm/setDefaultSMTPRecipient //apple_ref/occ/intfm/setDefaultSMTPRecipient //apple_ref/occ/func/setDefaultSMTPRecipient //apple_ref/occ/ftmplt/setDefaultSMTPRecipient //apple_ref/occ/defn/setDefaultSMTPRecipient //apple_ref/occ/macro/setDefaultSMTPRecipient" --><span class="function">setDefaultSMTPRecipient</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/recipientAddress //apple_ref/occ/data/recipientAddress" --><span class="var">recipientAddress</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Sets the default SMTP recipient email address associated with the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/setDefaultSMTPSender:;   name=SBMailer::setDefaultSMTPSender: -->
+<a name="//apple_ref/occ/instm/SBMailer/setDefaultSMTPSender:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setDefaultSMTPSender:">setDefaultSMTPSender:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setDefaultSMTPSender //apple_ref/occ/clm/setDefaultSMTPSender //apple_ref/occ/intfcm/setDefaultSMTPSender //apple_ref/occ/intfm/setDefaultSMTPSender //apple_ref/occ/func/setDefaultSMTPSender //apple_ref/occ/ftmplt/setDefaultSMTPSender //apple_ref/occ/defn/setDefaultSMTPSender //apple_ref/occ/macro/setDefaultSMTPSender" --><span class="function">setDefaultSMTPSender</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/senderAddress //apple_ref/occ/data/senderAddress" --><span class="var">senderAddress</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Sets the default SMTP sender email address associated with the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/setDefaultSMTPSubject:;   name=SBMailer::setDefaultSMTPSubject: -->
+<a name="//apple_ref/occ/instm/SBMailer/setDefaultSMTPSubject:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setDefaultSMTPSubject:">setDefaultSMTPSubject:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setDefaultSMTPSubject //apple_ref/occ/clm/setDefaultSMTPSubject //apple_ref/occ/intfcm/setDefaultSMTPSubject //apple_ref/occ/intfm/setDefaultSMTPSubject //apple_ref/occ/func/setDefaultSMTPSubject //apple_ref/occ/ftmplt/setDefaultSMTPSubject //apple_ref/occ/defn/setDefaultSMTPSubject //apple_ref/occ/macro/setDefaultSMTPSubject" --><span class="function">setDefaultSMTPSubject</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/subject //apple_ref/occ/data/subject" --><span class="var">subject</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Sets the default SMTP subject associated with the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/setIsVerbose:;   name=SBMailer::setIsVerbose: -->
+<a name="//apple_ref/occ/instm/SBMailer/setIsVerbose:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setIsVerbose:">setIsVerbose:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setIsVerbose //apple_ref/occ/clm/setIsVerbose //apple_ref/occ/intfcm/setIsVerbose //apple_ref/occ/intfm/setIsVerbose //apple_ref/occ/func/setIsVerbose //apple_ref/occ/ftmplt/setIsVerbose //apple_ref/occ/defn/setIsVerbose //apple_ref/occ/macro/setIsVerbose" --><span class="function">setIsVerbose</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/verbose //apple_ref/occ/data/verbose" --><span class="var">verbose</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If verbose is YES, then the receiver should write debugging output to stderr as
+the SMTP session proceeds.  If verbose is NO, then the receiver should be silent.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/setStayAlive:;   name=SBMailer::setStayAlive: -->
+<a name="//apple_ref/occ/instm/SBMailer/setStayAlive:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setStayAlive:">setStayAlive:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setStayAlive //apple_ref/occ/clm/setStayAlive //apple_ref/occ/intfcm/setStayAlive //apple_ref/occ/intfm/setStayAlive //apple_ref/occ/func/setStayAlive //apple_ref/occ/ftmplt/setStayAlive //apple_ref/occ/defn/setStayAlive //apple_ref/occ/macro/setStayAlive" --><span class="function">setStayAlive</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/stayAlive //apple_ref/occ/data/stayAlive" --><span class="var">stayAlive</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If stayAlive is YES, then the receiver will not terminate the connection to the
+SMTP server after the message is dispatched.  If stayAlive is NO, the connection
+will be terminated -- and if a connection is already active and no message is
+being composed the connection is immediately terminated, as well.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBMailer/sharedMailer;   name=SBMailer::sharedMailer -->
+<a name="//apple_ref/occ/clm/SBMailer/sharedMailer"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sharedMailer">sharedMailer</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBMailer //apple_ref/occ/tdef/SBMailer //apple_ref/occ/tag/SBMailer //apple_ref/occ/econst/SBMailer //apple_ref/occ/struct/SBMailer //apple_ref/occ/clconst/SBMailer //apple_ref/occ/intf/SBMailer" --><span class="type">SBMailer</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/sharedMailer //apple_ref/occ/data/sharedMailer" --><span class="var">sharedMailer</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the default shared emailing agent.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/startSMTPSession;   name=SBMailer::startSMTPSession -->
+<a name="//apple_ref/occ/instm/SBMailer/startSMTPSession"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="startSMTPSession">startSMTPSession</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/startSMTPSession //apple_ref/occ/data/startSMTPSession" --><span class="var">startSMTPSession</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Convenience method that called startSMTPSessionWithHost:port: with the
+receiver's default SMTP host and port.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/startSMTPSessionWithHost:;   name=SBMailer::startSMTPSessionWithHost: -->
+<a name="//apple_ref/occ/instm/SBMailer/startSMTPSessionWithHost:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="startSMTPSessionWithHost:">startSMTPSessionWithHost:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/startSMTPSessionWithHost //apple_ref/occ/clm/startSMTPSessionWithHost //apple_ref/occ/intfcm/startSMTPSessionWithHost //apple_ref/occ/intfm/startSMTPSessionWithHost //apple_ref/occ/func/startSMTPSessionWithHost //apple_ref/occ/ftmplt/startSMTPSessionWithHost //apple_ref/occ/defn/startSMTPSessionWithHost //apple_ref/occ/macro/startSMTPSessionWithHost" --><span class="function">startSMTPSessionWithHost</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBHost //apple_ref/occ/tdef/SBHost //apple_ref/occ/tag/SBHost //apple_ref/occ/econst/SBHost //apple_ref/occ/struct/SBHost //apple_ref/occ/clconst/SBHost //apple_ref/occ/intf/SBHost" --><span class="type">SBHost</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/smtpHost //apple_ref/occ/data/smtpHost" --><span class="var">smtpHost</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Convenience method that called startSMTPSessionWithHost:port: with the
+given host and receiver's default SMTP port.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/startSMTPSessionWithHost:port:;   name=SBMailer::startSMTPSessionWithHost:port: -->
+<a name="//apple_ref/occ/instm/SBMailer/startSMTPSessionWithHost:port:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="startSMTPSessionWithHost:port:">startSMTPSessionWithHost:port:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/startSMTPSessionWithHost //apple_ref/occ/clm/startSMTPSessionWithHost //apple_ref/occ/intfcm/startSMTPSessionWithHost //apple_ref/occ/intfm/startSMTPSessionWithHost //apple_ref/occ/func/startSMTPSessionWithHost //apple_ref/occ/ftmplt/startSMTPSessionWithHost //apple_ref/occ/defn/startSMTPSessionWithHost //apple_ref/occ/macro/startSMTPSessionWithHost" --><span class="function">startSMTPSessionWithHost</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBHost //apple_ref/occ/tdef/SBHost //apple_ref/occ/tag/SBHost //apple_ref/occ/econst/SBHost //apple_ref/occ/struct/SBHost //apple_ref/occ/clconst/SBHost //apple_ref/occ/intf/SBHost" --><span class="type">SBHost</span><!-- /a --><span class="type">*</span>)<span class="param">smtpHost</span> <!-- a logicalPath="//apple_ref/occ/instm/port //apple_ref/occ/clm/port //apple_ref/occ/intfcm/port //apple_ref/occ/intfm/port //apple_ref/occ/func/port //apple_ref/occ/ftmplt/port //apple_ref/occ/defn/port //apple_ref/occ/macro/port" --><span class="function">port</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/port //apple_ref/occ/data/port" --><span class="var">port</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to open a TCP connection to the given host and port and begin
+an SMTP dialogue by sending the EHLO command.
+</p>
+<p>If the stayAlive option is enabled on the receiver and the last-opened
+connection matches the incoming host and port, the connection is
+recycled.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer/stayAlive;   name=SBMailer::stayAlive -->
+<a name="//apple_ref/occ/instm/SBMailer/stayAlive"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stayAlive">stayAlive</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/stayAlive //apple_ref/occ/data/stayAlive" --><span class="var">stayAlive</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns NO if the receiver will terminate the connection to the SMTP server when
+the cancelSMTPSession or finishSMTPSession method are invoked.<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

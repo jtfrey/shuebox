@@ -1,0 +1,19 @@
+#import "SBFoundation.h"
+
+int
+main()
+{
+  SBAutoreleasePool*      ourPool = [[SBAutoreleasePool alloc] init];
+  SBDateFormatter*        postgresFrmtr = [[SBDateFormatter alloc] init];
+  
+  [postgresFrmtr setPattern:@"yyyy-MM-dd HH:mm:ssZZZ"];
+  
+  SBDate*               date = [postgresFrmtr dateFromString:@"2013-01-14 00:00:00-05"];
+  
+  if ( date ) {
+    [date summarizeToStream:stdout];
+    printf("%d\n", [date compare:[SBDate dateWhichIsAlwaysNow]]);
+  }
+  
+  return 0;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBString(SBPostgresStringEscaping)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cat; uid=//apple_ref/occ/cat/SBString(SBPostgresStringEscaping);  name=SBString(SBPostgresStringEscaping)-->
+<a name="//apple_ref/occ/cat/SBString(SBPostgresStringEscaping)"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBString(SBPostgresStringEscaping)">SBString(SBPostgresStringEscaping)</a></h1>
+</td></tr></table><hr><p><b>Extends&nbsp;Class:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBString" -->SBString<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBPostgres.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Convenience methods that handle the escaping of text strings for use in Postgres database
+queries. Note that escaping is _not_ necessary when using SBPostgresQuery objects, only when
+creating SBString-based queries (for PQexec()).
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBPostgresStringEscaping)/escapeForPostgresDatabase:inBuffer:byteSize:" target="_top">-escapeForPostgresDatabase:inBuffer:byteSize:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBString(SBPostgresStringEscaping)/stringEscapedForPostgresDatabase:" target="_top">-stringEscapedForPostgresDatabase:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBString(SBPostgresStringEscaping)/stringEscapedForPostgresDatabase:" target="_top">-stringEscapedForPostgresDatabase:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBPostgresStringEscaping)/escapeForPostgresDatabase:inBuffer:byteSize:;   name=SBString(SBPostgresStringEscaping)::escapeForPostgresDatabase:inBuffer:byteSize: -->
+<a name="//apple_ref/occ/instm/SBString(SBPostgresStringEscaping)/escapeForPostgresDatabase:inBuffer:byteSize:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="escapeForPostgresDatabase:inBuffer:byteSize:">escapeForPostgresDatabase:inBuffer:byteSize:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBString(SBPostgresStringEscaping)/stringEscapedForPostgresDatabase:" --><p>stringEscapedForPostgresDatabase:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/escapeForPostgresDatabase //apple_ref/occ/clm/escapeForPostgresDatabase //apple_ref/occ/intfcm/escapeForPostgresDatabase //apple_ref/occ/intfm/escapeForPostgresDatabase //apple_ref/occ/func/escapeForPostgresDatabase //apple_ref/occ/ftmplt/escapeForPostgresDatabase //apple_ref/occ/defn/escapeForPostgresDatabase //apple_ref/occ/macro/escapeForPostgresDatabase" --><span class="function">escapeForPostgresDatabase</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBPostgresDatabase //apple_ref/occ/tdef/SBPostgresDatabase //apple_ref/occ/tag/SBPostgresDatabase //apple_ref/occ/econst/SBPostgresDatabase //apple_ref/occ/struct/SBPostgresDatabase //apple_ref/occ/clconst/SBPostgresDatabase //apple_ref/occ/intf/SBPostgresDatabase" --><span class="type">SBPostgresDatabase</span><!-- /a --><span class="type">*</span>)<span class="param">aDatabase</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/inBuffer //apple_ref/occ/clm/inBuffer //apple_ref/occ/intfcm/inBuffer //apple_ref/occ/intfm/inBuffer //apple_ref/occ/func/inBuffer //apple_ref/occ/ftmplt/inBuffer //apple_ref/occ/defn/inBuffer //apple_ref/occ/macro/inBuffer" --><span class="function">inBuffer</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a --><span class="type">*</span>)<span class="param">buffer</span> <!-- a logicalPath="//apple_ref/occ/instm/byteSize //apple_ref/occ/clm/byteSize //apple_ref/occ/intfcm/byteSize //apple_ref/occ/intfm/byteSize //apple_ref/occ/func/byteSize //apple_ref/occ/ftmplt/byteSize //apple_ref/occ/defn/byteSize //apple_ref/occ/macro/byteSize" --><span class="function">byteSize</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/byteSize //apple_ref/occ/data/byteSize" --><span class="var">byteSize</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Place a copy of the receiver which has been properly escaped for inclusion in Postgres query
+strings into the provided buffer.
+</p>
+<p>Ideally the buffer should be one plus twice the size of the UTF8-encoded version of the
+receiver -- every character escaped plus the NUL terminator.  The actual number of bytes of
+buffer used in the escaping is returned by this method; if the returned byte count equals
+the byteSize then the string in buffer may _not_ be NUL terminated.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBString(SBPostgresStringEscaping)/stringEscapedForPostgresDatabase:;   name=SBString(SBPostgresStringEscaping)::stringEscapedForPostgresDatabase: -->
+<a name="//apple_ref/occ/instm/SBString(SBPostgresStringEscaping)/stringEscapedForPostgresDatabase:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringEscapedForPostgresDatabase:">stringEscapedForPostgresDatabase:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/stringEscapedForPostgresDatabase //apple_ref/occ/clm/stringEscapedForPostgresDatabase //apple_ref/occ/intfcm/stringEscapedForPostgresDatabase //apple_ref/occ/intfm/stringEscapedForPostgresDatabase //apple_ref/occ/func/stringEscapedForPostgresDatabase //apple_ref/occ/ftmplt/stringEscapedForPostgresDatabase //apple_ref/occ/defn/stringEscapedForPostgresDatabase //apple_ref/occ/macro/stringEscapedForPostgresDatabase" --><span class="function">stringEscapedForPostgresDatabase</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBPostgresDatabase //apple_ref/occ/tdef/SBPostgresDatabase //apple_ref/occ/tag/SBPostgresDatabase //apple_ref/occ/econst/SBPostgresDatabase //apple_ref/occ/struct/SBPostgresDatabase //apple_ref/occ/clconst/SBPostgresDatabase //apple_ref/occ/intf/SBPostgresDatabase" --><span class="type">SBPostgresDatabase</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aDatabase //apple_ref/occ/data/aDatabase" --><span class="var">aDatabase</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Returns an autoreleased copy of the receiver which has been properly escaped for inclusion
+in Postgres query strings.
+</p>
+<p>Returns nil on error.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBString(SBPostgresStringEscaping)/stringEscapedForPostgresDatabase:;   name=SBString(SBPostgresStringEscaping)::stringEscapedForPostgresDatabase: -->
+<a name="//apple_ref/doc/title:instm/SBString(SBPostgresStringEscaping)/stringEscapedForPostgresDatabase:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="stringEscapedForPostgresDatabase:">stringEscapedForPostgresDatabase:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBString(SBPostgresStringEscaping)/escapeForPostgresDatabase:inBuffer:byteSize:" --><p>escapeForPostgresDatabase:inBuffer:byteSize:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/escapeForPostgresDatabase //apple_ref/occ/clm/escapeForPostgresDatabase //apple_ref/occ/intfcm/escapeForPostgresDatabase //apple_ref/occ/intfm/escapeForPostgresDatabase //apple_ref/occ/func/escapeForPostgresDatabase //apple_ref/occ/ftmplt/escapeForPostgresDatabase //apple_ref/occ/defn/escapeForPostgresDatabase //apple_ref/occ/macro/escapeForPostgresDatabase" --><span class="function">escapeForPostgresDatabase</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBPostgresDatabase //apple_ref/occ/tdef/SBPostgresDatabase //apple_ref/occ/tag/SBPostgresDatabase //apple_ref/occ/econst/SBPostgresDatabase //apple_ref/occ/struct/SBPostgresDatabase //apple_ref/occ/clconst/SBPostgresDatabase //apple_ref/occ/intf/SBPostgresDatabase" --><span class="type">SBPostgresDatabase</span><!-- /a --><span class="type">*</span>)<span class="param">aDatabase</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/inBuffer //apple_ref/occ/clm/inBuffer //apple_ref/occ/intfcm/inBuffer //apple_ref/occ/intfm/inBuffer //apple_ref/occ/func/inBuffer //apple_ref/occ/ftmplt/inBuffer //apple_ref/occ/defn/inBuffer //apple_ref/occ/macro/inBuffer" --><span class="function">inBuffer</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a --><span class="type">*</span>)<span class="param">buffer</span> <!-- a logicalPath="//apple_ref/occ/instm/byteSize //apple_ref/occ/clm/byteSize //apple_ref/occ/intfcm/byteSize //apple_ref/occ/intfm/byteSize //apple_ref/occ/func/byteSize //apple_ref/occ/ftmplt/byteSize //apple_ref/occ/defn/byteSize //apple_ref/occ/macro/byteSize" --><span class="function">byteSize</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/byteSize //apple_ref/occ/data/byteSize" --><span class="var">byteSize</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Place a copy of the receiver which has been properly escaped for inclusion in Postgres query
+strings into the provided buffer.
+</p>
+<p>Ideally the buffer should be one plus twice the size of the UTF8-encoded version of the
+receiver -- every character escaped plus the NUL terminator.  The actual number of bytes of
+buffer used in the escaping is returned by this method; if the returned byte count equals
+the byteSize then the string in buffer may _not_ be NUL terminated.<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

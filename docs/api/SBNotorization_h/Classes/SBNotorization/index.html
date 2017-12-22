@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBNotorization</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBNotorization;  name=SBNotorization-->
+<a name="//apple_ref/occ/cl/SBNotorization"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBNotorization">SBNotorization</a></h1>
+</td></tr></table><hr><p><b>Conforms&nbsp;to:</b> <!-- a logicalPath="//apple_ref/occ/intf/SBStringValue" -->SBStringValue<!-- /a --><br>
+<b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBNotorization.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>A notorization is the combination of a timestamp, a user identifier, and an IP address.
+The idea is that we'll often want to indicate who did something, from what host (think
+web interfaces), and at what time.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBNotorization/fromAddress" target="_top">-fromAddress</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBNotorization/initWithUserId:fromAddress:withTimestamp:" target="_top">-initWithUserId:fromAddress:withTimestamp:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBNotorization/notorization" target="_top">+notorization</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBNotorization/notorizationViaApacheEnvironment" target="_top">+notorizationViaApacheEnvironment</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBNotorization/notorizationWithUserId:" target="_top">+notorizationWithUserId:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBNotorization/notorizationWithUserId:fromAddress:" target="_top">+notorizationWithUserId:fromAddress:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBNotorization/notorizationWithUserId:fromAddress:withTimestamp:" target="_top">+notorizationWithUserId:fromAddress:withTimestamp:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBNotorization/timestamp" target="_top">-timestamp</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBNotorization/userId" target="_top">-userId</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBNotorization/fromAddress;   name=SBNotorization::fromAddress -->
+<a name="//apple_ref/occ/instm/SBNotorization/fromAddress"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fromAddress">fromAddress</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/fromAddress //apple_ref/occ/data/fromAddress" --><span class="var">fromAddress</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the IP address associated with the receiver; returns nil for the default
+address ("localhost").
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBNotorization/initWithUserId:fromAddress:withTimestamp:;   name=SBNotorization::initWithUserId:fromAddress:withTimestamp: -->
+<a name="//apple_ref/occ/instm/SBNotorization/initWithUserId:fromAddress:withTimestamp:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithUserId:fromAddress:withTimestamp:">initWithUserId:fromAddress:withTimestamp:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithUserId //apple_ref/occ/clm/initWithUserId //apple_ref/occ/intfcm/initWithUserId //apple_ref/occ/intfm/initWithUserId //apple_ref/occ/func/initWithUserId //apple_ref/occ/ftmplt/initWithUserId //apple_ref/occ/defn/initWithUserId //apple_ref/occ/macro/initWithUserId" --><span class="function">initWithUserId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">userId</span> <!-- a logicalPath="//apple_ref/occ/instm/fromAddress //apple_ref/occ/clm/fromAddress //apple_ref/occ/intfcm/fromAddress //apple_ref/occ/intfm/fromAddress //apple_ref/occ/func/fromAddress //apple_ref/occ/ftmplt/fromAddress //apple_ref/occ/defn/fromAddress //apple_ref/occ/macro/fromAddress" --><span class="function">fromAddress</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>)<span class="param">address</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/withTimestamp //apple_ref/occ/clm/withTimestamp //apple_ref/occ/intfcm/withTimestamp //apple_ref/occ/intfm/withTimestamp //apple_ref/occ/func/withTimestamp //apple_ref/occ/ftmplt/withTimestamp //apple_ref/occ/defn/withTimestamp //apple_ref/occ/macro/withTimestamp" --><span class="function">withTimestamp</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/timestamp //apple_ref/occ/data/timestamp" --><span class="var">timestamp</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes the receiver using the provided user identifier, timestamp, and
+host address.
+</p>
+<p>Any of the parameters can be nil, which signals for the default value -- "system", "localhost", and
+the current date and time.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBNotorization/notorization;   name=SBNotorization::notorization -->
+<a name="//apple_ref/occ/clm/SBNotorization/notorization"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="notorization">notorization</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBNotorization //apple_ref/occ/tdef/SBNotorization //apple_ref/occ/tag/SBNotorization //apple_ref/occ/econst/SBNotorization //apple_ref/occ/struct/SBNotorization //apple_ref/occ/clconst/SBNotorization //apple_ref/occ/intf/SBNotorization" --><span class="type">SBNotorization</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/notorization //apple_ref/occ/data/notorization" --><span class="var">notorization</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a new, autoreleased instance which wraps a default notorization:
+</p>
+<ul>
+<li>userId = "system"</li>
+<li>fromAddress = "localhost"</li>
+<li>timestamp = now</li>
+</ul>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBNotorization/notorizationViaApacheEnvironment;   name=SBNotorization::notorizationViaApacheEnvironment -->
+<a name="//apple_ref/occ/clm/SBNotorization/notorizationViaApacheEnvironment"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="notorizationViaApacheEnvironment">notorizationViaApacheEnvironment</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBNotorization //apple_ref/occ/tdef/SBNotorization //apple_ref/occ/tag/SBNotorization //apple_ref/occ/econst/SBNotorization //apple_ref/occ/struct/SBNotorization //apple_ref/occ/clconst/SBNotorization //apple_ref/occ/intf/SBNotorization" --><span class="type">SBNotorization</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/notorizationViaApacheEnvironment //apple_ref/occ/data/notorizationViaApacheEnvironment" --><span class="var">notorizationViaApacheEnvironment</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a new, autoreleased instance which wraps a notorization set using
+the standard environment variables that Apache sets with remote user and
+IP.  If not present, the userId and fromAddress take on default values.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBNotorization/notorizationWithUserId:;   name=SBNotorization::notorizationWithUserId: -->
+<a name="//apple_ref/occ/clm/SBNotorization/notorizationWithUserId:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="notorizationWithUserId:">notorizationWithUserId:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBNotorization //apple_ref/occ/tdef/SBNotorization //apple_ref/occ/tag/SBNotorization //apple_ref/occ/econst/SBNotorization //apple_ref/occ/struct/SBNotorization //apple_ref/occ/clconst/SBNotorization //apple_ref/occ/intf/SBNotorization" --><span class="type">SBNotorization</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/notorizationWithUserId //apple_ref/occ/clm/notorizationWithUserId //apple_ref/occ/intfcm/notorizationWithUserId //apple_ref/occ/intfm/notorizationWithUserId //apple_ref/occ/func/notorizationWithUserId //apple_ref/occ/ftmplt/notorizationWithUserId //apple_ref/occ/defn/notorizationWithUserId //apple_ref/occ/macro/notorizationWithUserId" --><span class="function">notorizationWithUserId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/userId //apple_ref/occ/data/userId" --><span class="var">userId</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a new, autoreleased instance which wraps a local notorization; in
+addition to the provided userId:
+</p>
+<ul>
+<li>fromAddress = "localhost"</li>
+<li>timestamp = now</li>
+</ul>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBNotorization/notorizationWithUserId:fromAddress:;   name=SBNotorization::notorizationWithUserId:fromAddress: -->
+<a name="//apple_ref/occ/clm/SBNotorization/notorizationWithUserId:fromAddress:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="notorizationWithUserId:fromAddress:">notorizationWithUserId:fromAddress:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBNotorization //apple_ref/occ/tdef/SBNotorization //apple_ref/occ/tag/SBNotorization //apple_ref/occ/econst/SBNotorization //apple_ref/occ/struct/SBNotorization //apple_ref/occ/clconst/SBNotorization //apple_ref/occ/intf/SBNotorization" --><span class="type">SBNotorization</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/notorizationWithUserId //apple_ref/occ/clm/notorizationWithUserId //apple_ref/occ/intfcm/notorizationWithUserId //apple_ref/occ/intfm/notorizationWithUserId //apple_ref/occ/func/notorizationWithUserId //apple_ref/occ/ftmplt/notorizationWithUserId //apple_ref/occ/defn/notorizationWithUserId //apple_ref/occ/macro/notorizationWithUserId" --><span class="function">notorizationWithUserId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">userId</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/fromAddress //apple_ref/occ/clm/fromAddress //apple_ref/occ/intfcm/fromAddress //apple_ref/occ/intfm/fromAddress //apple_ref/occ/func/fromAddress //apple_ref/occ/ftmplt/fromAddress //apple_ref/occ/defn/fromAddress //apple_ref/occ/macro/fromAddress" --><span class="function">fromAddress</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/address //apple_ref/occ/data/address" --><span class="var">address</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a new, autoreleased instance which wraps a notorization; in
+addition to the provided userId and IP address, the timestamp is set to
+the instant the object was created.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBNotorization/notorizationWithUserId:fromAddress:withTimestamp:;   name=SBNotorization::notorizationWithUserId:fromAddress:withTimestamp: -->
+<a name="//apple_ref/occ/clm/SBNotorization/notorizationWithUserId:fromAddress:withTimestamp:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="notorizationWithUserId:fromAddress:withTimestamp:">notorizationWithUserId:fromAddress:withTimestamp:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBNotorization //apple_ref/occ/tdef/SBNotorization //apple_ref/occ/tag/SBNotorization //apple_ref/occ/econst/SBNotorization //apple_ref/occ/struct/SBNotorization //apple_ref/occ/clconst/SBNotorization //apple_ref/occ/intf/SBNotorization" --><span class="type">SBNotorization</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/notorizationWithUserId //apple_ref/occ/clm/notorizationWithUserId //apple_ref/occ/intfcm/notorizationWithUserId //apple_ref/occ/intfm/notorizationWithUserId //apple_ref/occ/func/notorizationWithUserId //apple_ref/occ/ftmplt/notorizationWithUserId //apple_ref/occ/defn/notorizationWithUserId //apple_ref/occ/macro/notorizationWithUserId" --><span class="function">notorizationWithUserId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">userId</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/fromAddress //apple_ref/occ/clm/fromAddress //apple_ref/occ/intfcm/fromAddress //apple_ref/occ/intfm/fromAddress //apple_ref/occ/func/fromAddress //apple_ref/occ/ftmplt/fromAddress //apple_ref/occ/defn/fromAddress //apple_ref/occ/macro/fromAddress" --><span class="function">fromAddress</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBInetAddress //apple_ref/occ/tdef/SBInetAddress //apple_ref/occ/tag/SBInetAddress //apple_ref/occ/econst/SBInetAddress //apple_ref/occ/struct/SBInetAddress //apple_ref/occ/clconst/SBInetAddress //apple_ref/occ/intf/SBInetAddress" --><span class="type">SBInetAddress</span><!-- /a --><span class="type">*</span>)<span class="param">address</span> <!-- a logicalPath="//apple_ref/occ/instm/withTimestamp //apple_ref/occ/clm/withTimestamp //apple_ref/occ/intfcm/withTimestamp //apple_ref/occ/intfm/withTimestamp //apple_ref/occ/func/withTimestamp //apple_ref/occ/ftmplt/withTimestamp //apple_ref/occ/defn/withTimestamp //apple_ref/occ/macro/withTimestamp" --><span class="function">withTimestamp</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/timestamp //apple_ref/occ/data/timestamp" --><span class="var">timestamp</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a new, autoreleased instance which wraps a notorization.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBNotorization/timestamp;   name=SBNotorization::timestamp -->
+<a name="//apple_ref/occ/instm/SBNotorization/timestamp"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="timestamp">timestamp</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/timestamp //apple_ref/occ/data/timestamp" --><span class="var">timestamp</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's timestamp.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBNotorization/userId;   name=SBNotorization::userId -->
+<a name="//apple_ref/occ/instm/SBNotorization/userId"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="userId">userId</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/userId //apple_ref/occ/data/userId" --><span class="var">userId</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the receiver's userId; returns nil for the default userId ("system").
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

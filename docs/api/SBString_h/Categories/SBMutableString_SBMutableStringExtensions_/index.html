@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBMutableString(SBMutableStringExtensions)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cat; uid=//apple_ref/occ/cat/SBMutableString(SBMutableStringExtensions);  name=SBMutableString(SBMutableStringExtensions)-->
+<a name="//apple_ref/occ/cat/SBMutableString(SBMutableStringExtensions)"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBMutableString(SBMutableStringExtensions)">SBMutableString(SBMutableStringExtensions)</a></h1>
+</td></tr></table><hr><p><b>Extends&nbsp;Class:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBMutableString" -->SBMutableString<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBString.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Category of SBMutableString which contains all additional functionality beyond the simple
+character replacement method.  At the level of SBMutableString itself, these methods are
+implemented using the replaceCharactersInRange:withCharacters:length method; subclasses
+can provide their own implementations for more optimal processing where applicable.<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/appendCharacters:length:" target="_top">-appendCharacters:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/appendCharacters:length:Append" target="_top">-appendCharacters:length:
+
+Append</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/appendFormat:" target="_top">-appendFormat:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/appendFormat:..." target="_top">-appendFormat:...</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/appendString:" target="_top">-appendString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/appendString:Append" target="_top">-appendString:
+
+Append</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/deleteAllCharacters" target="_top">-deleteAllCharacters</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/deleteCharactersInRange:" target="_top">-deleteCharactersInRange:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/deleteCharactersInRange:Remove" target="_top">-deleteCharactersInRange:
+
+Remove</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/insertCharacters:length:atIndex:" target="_top">-insertCharacters:length:atIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/insertString:atIndex:" target="_top">-insertString:atIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/insertString:atIndex:Insert" target="_top">-insertString:atIndex:
+
+Insert</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/replaceCharactersInRange:withString:" target="_top">-replaceCharactersInRange:withString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/setString:" target="_top">-setString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/setString:Clears" target="_top">-setString:
+
+Clears</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/setWithUTF8String:" target="_top">-setWithUTF8String:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/setWithUTF8String:Clears" target="_top">-setWithUTF8String:
+
+Clears</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/setWithUTF8String:length:" target="_top">-setWithUTF8String:length:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/appendCharacters:length:;   name=SBMutableString(SBMutableStringExtensions)::appendCharacters:length: -->
+<a name="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/appendCharacters:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="appendCharacters:length:">appendCharacters:length:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/appendCharacters:length:Append" --><p>appendCharacters:length:  Append<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/appendCharacters //apple_ref/occ/clm/appendCharacters //apple_ref/occ/intfcm/appendCharacters //apple_ref/occ/intfm/appendCharacters //apple_ref/occ/func/appendCharacters //apple_ref/occ/ftmplt/appendCharacters //apple_ref/occ/defn/appendCharacters //apple_ref/occ/macro/appendCharacters" --><span class="function">appendCharacters</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/UChar //apple_ref/occ/data/UChar" --><span class="var">UChar</span><!-- /a --><span class="var">*</span>)<span class="param">characters</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>length UTF-16 entities from the characters buffer to the receiver.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/appendCharacters:length:Append;   name=SBMutableString(SBMutableStringExtensions)::appendCharacters:length:
+
+Append -->
+<a name="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/appendCharacters:length:Append"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="appendCharacters:length:Append">appendCharacters:length:
+
+Append</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/appendCharacters:length:" --><p>appendCharacters:length:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/appendCharacters //apple_ref/occ/clm/appendCharacters //apple_ref/occ/intfcm/appendCharacters //apple_ref/occ/intfm/appendCharacters //apple_ref/occ/func/appendCharacters //apple_ref/occ/ftmplt/appendCharacters //apple_ref/occ/defn/appendCharacters //apple_ref/occ/macro/appendCharacters" --><span class="function">appendCharacters</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/UChar //apple_ref/occ/data/UChar" --><span class="var">UChar</span><!-- /a --><span class="var">*</span>)<span class="param">characters</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>length UTF-16 entities from the characters buffer to the receiver.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/appendFormat:;   name=SBMutableString(SBMutableStringExtensions)::appendFormat: -->
+<a name="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/appendFormat:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="appendFormat:">appendFormat:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/appendFormat:..." --><p>appendFormat:...<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/appendFormat //apple_ref/occ/clm/appendFormat //apple_ref/occ/intfcm/appendFormat //apple_ref/occ/intfm/appendFormat //apple_ref/occ/func/appendFormat //apple_ref/occ/ftmplt/appendFormat //apple_ref/occ/defn/appendFormat //apple_ref/occ/macro/appendFormat" --><span class="function">appendFormat</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/format //apple_ref/occ/data/format" --><span class="var">format</span><!-- /a -->,...; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Append characters produced by the sprintf-like conversion of the format string using the
+additional (variable) arguments passed to the method.
+</p>
+<p>See the ICU ustdio.h header for a description of the format string.  Basically the same as
+the C printf format, with %C/%S added to convert UChar/UChar* types.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/appendFormat:...;   name=SBMutableString(SBMutableStringExtensions)::appendFormat:... -->
+<a name="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/appendFormat:..."></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="appendFormat:...">appendFormat:...</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/appendFormat:" --><p>appendFormat:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/appendFormat //apple_ref/occ/clm/appendFormat //apple_ref/occ/intfcm/appendFormat //apple_ref/occ/intfm/appendFormat //apple_ref/occ/func/appendFormat //apple_ref/occ/ftmplt/appendFormat //apple_ref/occ/defn/appendFormat //apple_ref/occ/macro/appendFormat" --><span class="function">appendFormat</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/format //apple_ref/occ/data/format" --><span class="var">format</span><!-- /a -->,...; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Append characters produced by the sprintf-like conversion of the format string using the
+additional (variable) arguments passed to the method.
+</p>
+<p>See the ICU ustdio.h header for a description of the format string.  Basically the same as
+the C printf format, with %C/%S added to convert UChar/UChar* types.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/appendString:;   name=SBMutableString(SBMutableStringExtensions)::appendString: -->
+<a name="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/appendString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="appendString:">appendString:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/appendString:Append" --><p>appendString:  Append<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/appendString //apple_ref/occ/clm/appendString //apple_ref/occ/intfcm/appendString //apple_ref/occ/intfm/appendString //apple_ref/occ/func/appendString //apple_ref/occ/ftmplt/appendString //apple_ref/occ/defn/appendString //apple_ref/occ/macro/appendString" --><span class="function">appendString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the contents of aString to the receiver.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/appendString:Append;   name=SBMutableString(SBMutableStringExtensions)::appendString:
+
+Append -->
+<a name="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/appendString:Append"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="appendString:Append">appendString:
+
+Append</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/appendString:" --><p>appendString:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/appendString //apple_ref/occ/clm/appendString //apple_ref/occ/intfcm/appendString //apple_ref/occ/intfm/appendString //apple_ref/occ/func/appendString //apple_ref/occ/ftmplt/appendString //apple_ref/occ/defn/appendString //apple_ref/occ/macro/appendString" --><span class="function">appendString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the contents of aString to the receiver.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/deleteAllCharacters;   name=SBMutableString(SBMutableStringExtensions)::deleteAllCharacters -->
+<a name="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/deleteAllCharacters"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="deleteAllCharacters">deleteAllCharacters</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/deleteAllCharacters //apple_ref/occ/data/deleteAllCharacters" --><span class="var">deleteAllCharacters</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Null-out the string.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/deleteCharactersInRange:;   name=SBMutableString(SBMutableStringExtensions)::deleteCharactersInRange: -->
+<a name="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/deleteCharactersInRange:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="deleteCharactersInRange:">deleteCharactersInRange:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/deleteCharactersInRange:Remove" --><p>deleteCharactersInRange:  Remove<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/deleteCharactersInRange //apple_ref/occ/clm/deleteCharactersInRange //apple_ref/occ/intfcm/deleteCharactersInRange //apple_ref/occ/intfm/deleteCharactersInRange //apple_ref/occ/func/deleteCharactersInRange //apple_ref/occ/ftmplt/deleteCharactersInRange //apple_ref/occ/defn/deleteCharactersInRange //apple_ref/occ/macro/deleteCharactersInRange" --><span class="function">deleteCharactersInRange</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/range //apple_ref/occ/data/range" --><span class="var">range</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the UTF-16 entities at indices in range (end-points inclusive) from the receiver.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/deleteCharactersInRange:Remove;   name=SBMutableString(SBMutableStringExtensions)::deleteCharactersInRange:
+
+Remove -->
+<a name="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/deleteCharactersInRange:Remove"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="deleteCharactersInRange:Remove">deleteCharactersInRange:
+
+Remove</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/deleteCharactersInRange:" --><p>deleteCharactersInRange:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/deleteCharactersInRange //apple_ref/occ/clm/deleteCharactersInRange //apple_ref/occ/intfcm/deleteCharactersInRange //apple_ref/occ/intfm/deleteCharactersInRange //apple_ref/occ/func/deleteCharactersInRange //apple_ref/occ/ftmplt/deleteCharactersInRange //apple_ref/occ/defn/deleteCharactersInRange //apple_ref/occ/macro/deleteCharactersInRange" --><span class="function">deleteCharactersInRange</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/range //apple_ref/occ/data/range" --><span class="var">range</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the UTF-16 entities at indices in range (end-points inclusive) from the receiver.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/insertCharacters:length:atIndex:;   name=SBMutableString(SBMutableStringExtensions)::insertCharacters:length:atIndex: -->
+<a name="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/insertCharacters:length:atIndex:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="insertCharacters:length:atIndex:">insertCharacters:length:atIndex:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/insertCharacters //apple_ref/occ/clm/insertCharacters //apple_ref/occ/intfcm/insertCharacters //apple_ref/occ/intfm/insertCharacters //apple_ref/occ/func/insertCharacters //apple_ref/occ/ftmplt/insertCharacters //apple_ref/occ/defn/insertCharacters //apple_ref/occ/macro/insertCharacters" --><span class="function">insertCharacters</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/UChar //apple_ref/occ/data/UChar" --><span class="var">UChar</span><!-- /a --><span class="var">*</span>)<span class="param">characters</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<span class="param">length</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/atIndex //apple_ref/occ/clm/atIndex //apple_ref/occ/intfcm/atIndex //apple_ref/occ/intfm/atIndex //apple_ref/occ/func/atIndex //apple_ref/occ/ftmplt/atIndex //apple_ref/occ/defn/atIndex //apple_ref/occ/macro/atIndex" --><span class="function">atIndex</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Insert length UTF-16 entities from the characters buffer to the receiver at the specified offset
+within the receiver.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/insertString:atIndex:;   name=SBMutableString(SBMutableStringExtensions)::insertString:atIndex: -->
+<a name="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/insertString:atIndex:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="insertString:atIndex:">insertString:atIndex:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/insertString:atIndex:Insert" --><p>insertString:atIndex:  Insert<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/insertString //apple_ref/occ/clm/insertString //apple_ref/occ/intfcm/insertString //apple_ref/occ/intfm/insertString //apple_ref/occ/func/insertString //apple_ref/occ/ftmplt/insertString //apple_ref/occ/defn/insertString //apple_ref/occ/macro/insertString" --><span class="function">insertString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">aString</span> <!-- a logicalPath="//apple_ref/occ/instm/atIndex //apple_ref/occ/clm/atIndex //apple_ref/occ/intfcm/atIndex //apple_ref/occ/intfm/atIndex //apple_ref/occ/func/atIndex //apple_ref/occ/ftmplt/atIndex //apple_ref/occ/defn/atIndex //apple_ref/occ/macro/atIndex" --><span class="function">atIndex</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the contents of aString in the receiver at the specified offset within the receiver.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/insertString:atIndex:Insert;   name=SBMutableString(SBMutableStringExtensions)::insertString:atIndex:
+
+Insert -->
+<a name="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/insertString:atIndex:Insert"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="insertString:atIndex:Insert">insertString:atIndex:
+
+Insert</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/insertString:atIndex:" --><p>insertString:atIndex:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/insertString //apple_ref/occ/clm/insertString //apple_ref/occ/intfcm/insertString //apple_ref/occ/intfm/insertString //apple_ref/occ/func/insertString //apple_ref/occ/ftmplt/insertString //apple_ref/occ/defn/insertString //apple_ref/occ/macro/insertString" --><span class="function">insertString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">aString</span> <!-- a logicalPath="//apple_ref/occ/instm/atIndex //apple_ref/occ/clm/atIndex //apple_ref/occ/intfcm/atIndex //apple_ref/occ/intfm/atIndex //apple_ref/occ/func/atIndex //apple_ref/occ/ftmplt/atIndex //apple_ref/occ/defn/atIndex //apple_ref/occ/macro/atIndex" --><span class="function">atIndex</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the contents of aString in the receiver at the specified offset within the receiver.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/replaceCharactersInRange:withString:;   name=SBMutableString(SBMutableStringExtensions)::replaceCharactersInRange:withString: -->
+<a name="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/replaceCharactersInRange:withString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="replaceCharactersInRange:withString:">replaceCharactersInRange:withString:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/replaceCharactersInRange //apple_ref/occ/clm/replaceCharactersInRange //apple_ref/occ/intfcm/replaceCharactersInRange //apple_ref/occ/intfm/replaceCharactersInRange //apple_ref/occ/func/replaceCharactersInRange //apple_ref/occ/ftmplt/replaceCharactersInRange //apple_ref/occ/defn/replaceCharactersInRange //apple_ref/occ/macro/replaceCharactersInRange" --><span class="function">replaceCharactersInRange</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<span class="param">range</span> <!-- a logicalPath="//apple_ref/occ/instm/withString //apple_ref/occ/clm/withString //apple_ref/occ/intfcm/withString //apple_ref/occ/intfm/withString //apple_ref/occ/func/withString //apple_ref/occ/ftmplt/withString //apple_ref/occ/defn/withString //apple_ref/occ/macro/withString" --><span class="function">withString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Cuts the UTF-16 entities in range out of the receiver and replaces them with the characters
+contained in aString.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/setString:;   name=SBMutableString(SBMutableStringExtensions)::setString: -->
+<a name="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/setString:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setString:">setString:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/setString:Clears" --><p>setString:  Clears<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setString //apple_ref/occ/clm/setString //apple_ref/occ/intfcm/setString //apple_ref/occ/intfm/setString //apple_ref/occ/func/setString //apple_ref/occ/ftmplt/setString //apple_ref/occ/defn/setString //apple_ref/occ/macro/setString" --><span class="function">setString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the receiver and sets it to contain the same string present in aString.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/setString:Clears;   name=SBMutableString(SBMutableStringExtensions)::setString:
+
+Clears -->
+<a name="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/setString:Clears"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setString:Clears">setString:
+
+Clears</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/setString:" --><p>setString:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setString //apple_ref/occ/clm/setString //apple_ref/occ/intfcm/setString //apple_ref/occ/intfm/setString //apple_ref/occ/func/setString //apple_ref/occ/ftmplt/setString //apple_ref/occ/defn/setString //apple_ref/occ/macro/setString" --><span class="function">setString</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aString //apple_ref/occ/data/aString" --><span class="var">aString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the receiver and sets it to contain the same string present in aString.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/setWithUTF8String:;   name=SBMutableString(SBMutableStringExtensions)::setWithUTF8String: -->
+<a name="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/setWithUTF8String:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setWithUTF8String:">setWithUTF8String:</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/setWithUTF8String:Clears" --><p>setWithUTF8String:  Clears<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setWithUTF8String //apple_ref/occ/clm/setWithUTF8String //apple_ref/occ/intfcm/setWithUTF8String //apple_ref/occ/intfm/setWithUTF8String //apple_ref/occ/func/setWithUTF8String //apple_ref/occ/ftmplt/setWithUTF8String //apple_ref/occ/defn/setWithUTF8String //apple_ref/occ/macro/setWithUTF8String" --><span class="function">setWithUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/cString //apple_ref/occ/data/cString" --><span class="var">cString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the receiver and sets it to contain the characters in cString.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=title:instm;  uid=//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/setWithUTF8String:Clears;   name=SBMutableString(SBMutableStringExtensions)::setWithUTF8String:
+
+Clears -->
+<a name="//apple_ref/doc/title:instm/SBMutableString(SBMutableStringExtensions)/setWithUTF8String:Clears"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setWithUTF8String:Clears">setWithUTF8String:
+
+Clears</a></h3>
+</td></tr></table><hr><p></p><b>See Also:</b><div class='list_indent'><dl>
+<dt><!-- a logicalPath="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/setWithUTF8String:" --><p>setWithUTF8String:<!-- /a --></dt><dd></dd></dl></div>
+<div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setWithUTF8String //apple_ref/occ/clm/setWithUTF8String //apple_ref/occ/intfcm/setWithUTF8String //apple_ref/occ/intfm/setWithUTF8String //apple_ref/occ/func/setWithUTF8String //apple_ref/occ/ftmplt/setWithUTF8String //apple_ref/occ/defn/setWithUTF8String //apple_ref/occ/macro/setWithUTF8String" --><span class="function">setWithUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/cString //apple_ref/occ/data/cString" --><span class="var">cString</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>the receiver and sets it to contain the characters in cString.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/setWithUTF8String:length:;   name=SBMutableString(SBMutableStringExtensions)::setWithUTF8String:length: -->
+<a name="//apple_ref/occ/instm/SBMutableString(SBMutableStringExtensions)/setWithUTF8String:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setWithUTF8String:length:">setWithUTF8String:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setWithUTF8String //apple_ref/occ/clm/setWithUTF8String //apple_ref/occ/intfcm/setWithUTF8String //apple_ref/occ/intfm/setWithUTF8String //apple_ref/occ/func/setWithUTF8String //apple_ref/occ/ftmplt/setWithUTF8String //apple_ref/occ/defn/setWithUTF8String //apple_ref/occ/macro/setWithUTF8String" --><span class="function">setWithUTF8String</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<span class="param">cString</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Clears the receiver and sets it to contain the characters in the first "length" bytes
+of cString.<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

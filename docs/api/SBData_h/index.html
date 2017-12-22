@@ -1,0 +1,494 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBData.h</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=Header;  uid=//apple_ref/doc/header/SBData.h;   name=SBData.h -->
+<a name="//apple_ref/doc/header/SBData.h"></a>
+<div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBData.h">SBData.h</a></h1>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>SBData represents the public interface to an entire cluster of classes devoted to the
+task of representing and processing binary data.
+</p>
+<p><b>Implementation Details</b>
+</p>
+<blockquote>
+A little inside info, the actual class cluster under SBData looks like this:
+<ul>
+<li>SBData
+<ul>
+<li>SBDataSubData</li>
+<li>SBConcreteData
+<ul>
+<li>SBConcreteDataSubData</li>
+</ul>
+<p></li>
+<li>SBMutableData
+</p>
+<ul>
+<li>SBConcreteMutableData</li>
+</ul>
+<p></li>
+</ul>
+<p></li>
+</ul>
+<p>The two sub-data classes are present because the content of an immutable binary buffer
+cannot change, so a sub-data can refer directly to the original buffer rather
+than making a copy of it in memory.  SBData will return SBDataSubData objects from
+its subdata* methods; an SBDataSubData object retains a reference to the parent
+SBData object and modifies the length and bytes methods to call-through to the parent's
+method with a properly-modified offset (according to the range with which the
+SBDataSubData was initialized).  The SBConcreteDataSubData object is a subclass
+of SBConcreteData which also retains a reference to the parent SBData but sends itself
+the initWithBytesNoCopy:length:freeWhenDone: message with the applicable region 
+of the parent SBData's buffer.
+</blockquote>
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_classes"></a>
+<h2>Classes</h2>
+<dl>
+<dt><tt><a href="Classes/SBData/index.html#//apple_ref/occ/cl/SBData" target="_top">SBData</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Classes/SBMutableData/index.html#//apple_ref/occ/cl/SBMutableData" target="_top">SBMutableData</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/instm/appendBytes:length:" target="_top">-appendBytes:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/appendData:" target="_top">-appendData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/data" target="_top">-data</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/dataWithBytes:length:" target="_top">-dataWithBytes:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/dataWithBytesNoCopy:length:" target="_top">-dataWithBytesNoCopy:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/dataWithBytesNoCopy:length:freeWhenDone:" target="_top">-dataWithBytesNoCopy:length:freeWhenDone:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/dataWithCapacity:" target="_top">-dataWithCapacity:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/dataWithContentsOfFile:" target="_top">-dataWithContentsOfFile:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/dataWithData:" target="_top">-dataWithData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/dataWithLength:" target="_top">-dataWithLength:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/deleteBytesInRange:" target="_top">-deleteBytesInRange:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/getBytes:length:" target="_top">-getBytes:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/getBytes:length:offset:" target="_top">-getBytes:length:offset:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/init" target="_top">-init</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/initWithBytes:length:" target="_top">-initWithBytes:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/initWithBytesNoCopy:length:" target="_top">-initWithBytesNoCopy:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/initWithBytesNoCopy:length:freeWhenDone:" target="_top">-initWithBytesNoCopy:length:freeWhenDone:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/initWithCapacity:" target="_top">-initWithCapacity:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/initWithContentsOfFile:" target="_top">-initWithContentsOfFile:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/initWithData:" target="_top">-initWithData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/initWithLength:" target="_top">-initWithLength:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/insertBytes:length:atIndex:" target="_top">-insertBytes:length:atIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/insertData:atIndex:" target="_top">-insertData:atIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/isEqualToData:" target="_top">-isEqualToData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/replaceBytesInRange:withBytes:length:" target="_top">-replaceBytesInRange:withBytes:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/replaceBytesInRange:withData:" target="_top">-replaceBytesInRange:withData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/resetBytesInRange:" target="_top">-resetBytesInRange:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/resetBytesInRange:_DONTLINK_0" target="_top">-resetBytesInRange:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/setData:" target="_top">-setData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/instm/subdataWithRange:" target="_top">-subdataWithRange:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/appendBytes:length:;   name=appendBytes:length: -->
+<a name="//apple_ref/c/instm/appendBytes:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="appendBytes:length:">appendBytes:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/appendBytes //apple_ref/occ/clm/appendBytes //apple_ref/occ/intfcm/appendBytes //apple_ref/occ/intfm/appendBytes //apple_ref/occ/func/appendBytes //apple_ref/occ/ftmplt/appendBytes //apple_ref/occ/defn/appendBytes //apple_ref/occ/macro/appendBytes" --><span class="function">appendBytes</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<span class="param">bytes</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Append length bytes from the bytes buffer to the end receiver's buffer.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/appendData:;   name=appendData: -->
+<a name="//apple_ref/c/instm/appendData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="appendData:">appendData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/appendData //apple_ref/occ/clm/appendData //apple_ref/occ/intfcm/appendData //apple_ref/occ/intfm/appendData //apple_ref/occ/func/appendData //apple_ref/occ/ftmplt/appendData //apple_ref/occ/defn/appendData //apple_ref/occ/macro/appendData" --><span class="function">appendData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aData //apple_ref/occ/data/aData" --><span class="var">aData</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Append the contents of aData to the end of the receiver's buffer.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/data;   name=data -->
+<a name="//apple_ref/c/instm/data"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="data">data</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/data //apple_ref/occ/data/data" --><span class="var">data</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased SBData instance containing an empty, zero-length buffer.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/dataWithBytes:length:;   name=dataWithBytes:length: -->
+<a name="//apple_ref/c/instm/dataWithBytes:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dataWithBytes:length:">dataWithBytes:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/dataWithBytes //apple_ref/occ/clm/dataWithBytes //apple_ref/occ/intfcm/dataWithBytes //apple_ref/occ/intfm/dataWithBytes //apple_ref/occ/func/dataWithBytes //apple_ref/occ/ftmplt/dataWithBytes //apple_ref/occ/defn/dataWithBytes //apple_ref/occ/macro/dataWithBytes" --><span class="function">dataWithBytes</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<span class="param">bytes</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased SBData instance containing a copy of the length bytes of
+data originating at bytes.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/dataWithBytesNoCopy:length:;   name=dataWithBytesNoCopy:length: -->
+<a name="//apple_ref/c/instm/dataWithBytesNoCopy:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dataWithBytesNoCopy:length:">dataWithBytesNoCopy:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/dataWithBytesNoCopy //apple_ref/occ/clm/dataWithBytesNoCopy //apple_ref/occ/intfcm/dataWithBytesNoCopy //apple_ref/occ/intfm/dataWithBytesNoCopy //apple_ref/occ/func/dataWithBytesNoCopy //apple_ref/occ/ftmplt/dataWithBytesNoCopy //apple_ref/occ/defn/dataWithBytesNoCopy //apple_ref/occ/macro/dataWithBytesNoCopy" --><span class="function">dataWithBytesNoCopy</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<span class="param">bytes</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased SBData instance which wraps the buffer of length octets
+originating at bytes.  The buffer will not be destroyed (via objc_free()) when
+this object is deallocated.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/dataWithBytesNoCopy:length:freeWhenDone:;   name=dataWithBytesNoCopy:length:freeWhenDone: -->
+<a name="//apple_ref/c/instm/dataWithBytesNoCopy:length:freeWhenDone:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dataWithBytesNoCopy:length:freeWhenDone:">dataWithBytesNoCopy:length:freeWhenDone:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/dataWithBytesNoCopy //apple_ref/occ/clm/dataWithBytesNoCopy //apple_ref/occ/intfcm/dataWithBytesNoCopy //apple_ref/occ/intfm/dataWithBytesNoCopy //apple_ref/occ/func/dataWithBytesNoCopy //apple_ref/occ/ftmplt/dataWithBytesNoCopy //apple_ref/occ/defn/dataWithBytesNoCopy //apple_ref/occ/macro/dataWithBytesNoCopy" --><span class="function">dataWithBytesNoCopy</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<span class="param">bytes</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<span class="param">length</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/freeWhenDone //apple_ref/occ/clm/freeWhenDone //apple_ref/occ/intfcm/freeWhenDone //apple_ref/occ/intfm/freeWhenDone //apple_ref/occ/func/freeWhenDone //apple_ref/occ/ftmplt/freeWhenDone //apple_ref/occ/defn/freeWhenDone //apple_ref/occ/macro/freeWhenDone" --><span class="function">freeWhenDone</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/freeWhenDone //apple_ref/occ/data/freeWhenDone" --><span class="var">freeWhenDone</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased SBData instance which wraps the buffer of length octets
+originating at bytes.  If freeWhenDone is YES, then the buffer will be destroyed
+(via objc_free()) when this object is deallocated.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/dataWithCapacity:;   name=dataWithCapacity: -->
+<a name="//apple_ref/c/instm/dataWithCapacity:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dataWithCapacity:">dataWithCapacity:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/dataWithCapacity //apple_ref/occ/clm/dataWithCapacity //apple_ref/occ/intfcm/dataWithCapacity //apple_ref/occ/intfm/dataWithCapacity //apple_ref/occ/func/dataWithCapacity //apple_ref/occ/ftmplt/dataWithCapacity //apple_ref/occ/defn/dataWithCapacity //apple_ref/occ/macro/dataWithCapacity" --><span class="function">dataWithCapacity</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/capacity //apple_ref/occ/data/capacity" --><span class="var">capacity</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased SBMutableData instance which initially has a buffer
+sized at least equal to capacity but containing no bytes (length of zero).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/dataWithContentsOfFile:;   name=dataWithContentsOfFile: -->
+<a name="//apple_ref/c/instm/dataWithContentsOfFile:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dataWithContentsOfFile:">dataWithContentsOfFile:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/dataWithContentsOfFile //apple_ref/occ/clm/dataWithContentsOfFile //apple_ref/occ/intfcm/dataWithContentsOfFile //apple_ref/occ/intfm/dataWithContentsOfFile //apple_ref/occ/func/dataWithContentsOfFile //apple_ref/occ/ftmplt/dataWithContentsOfFile //apple_ref/occ/defn/dataWithContentsOfFile //apple_ref/occ/macro/dataWithContentsOfFile" --><span class="function">dataWithContentsOfFile</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased SBData instance which wraps the contents of the file
+at path.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/dataWithData:;   name=dataWithData: -->
+<a name="//apple_ref/c/instm/dataWithData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dataWithData:">dataWithData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/dataWithData //apple_ref/occ/clm/dataWithData //apple_ref/occ/intfcm/dataWithData //apple_ref/occ/intfm/dataWithData //apple_ref/occ/func/dataWithData //apple_ref/occ/ftmplt/dataWithData //apple_ref/occ/defn/dataWithData //apple_ref/occ/macro/dataWithData" --><span class="function">dataWithData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherData //apple_ref/occ/data/otherData" --><span class="var">otherData</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased SBData instance which contains a copy of the content
+of otherData.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/dataWithLength:;   name=dataWithLength: -->
+<a name="//apple_ref/c/instm/dataWithLength:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="dataWithLength:">dataWithLength:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/dataWithLength //apple_ref/occ/clm/dataWithLength //apple_ref/occ/intfcm/dataWithLength //apple_ref/occ/intfm/dataWithLength //apple_ref/occ/func/dataWithLength //apple_ref/occ/ftmplt/dataWithLength //apple_ref/occ/defn/dataWithLength //apple_ref/occ/macro/dataWithLength" --><span class="function">dataWithLength</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an autoreleased SBMutableData instance which has a buffer sized
+at least equal to length and containing the given number of zeroed bytes.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/deleteBytesInRange:;   name=deleteBytesInRange: -->
+<a name="//apple_ref/c/instm/deleteBytesInRange:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="deleteBytesInRange:">deleteBytesInRange:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/deleteBytesInRange //apple_ref/occ/clm/deleteBytesInRange //apple_ref/occ/intfcm/deleteBytesInRange //apple_ref/occ/intfm/deleteBytesInRange //apple_ref/occ/func/deleteBytesInRange //apple_ref/occ/ftmplt/deleteBytesInRange //apple_ref/occ/defn/deleteBytesInRange //apple_ref/occ/macro/deleteBytesInRange" --><span class="function">deleteBytesInRange</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/range //apple_ref/occ/data/range" --><span class="var">range</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Remove octets at indices in range from the receiver's buffer (shrinking its length in
+the process).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/getBytes:length:;   name=getBytes:length: -->
+<a name="//apple_ref/c/instm/getBytes:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="getBytes:length:">getBytes:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/getBytes //apple_ref/occ/clm/getBytes //apple_ref/occ/intfcm/getBytes //apple_ref/occ/intfm/getBytes //apple_ref/occ/func/getBytes //apple_ref/occ/ftmplt/getBytes //apple_ref/occ/defn/getBytes //apple_ref/occ/macro/getBytes" --><span class="function">getBytes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a --><span class="type">*</span>)<span class="param">buffer</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Copy the first "length" bytes of the receiver's data into "buffer".
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/getBytes:length:offset:;   name=getBytes:length:offset: -->
+<a name="//apple_ref/c/instm/getBytes:length:offset:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="getBytes:length:offset:">getBytes:length:offset:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/getBytes //apple_ref/occ/clm/getBytes //apple_ref/occ/intfcm/getBytes //apple_ref/occ/intfm/getBytes //apple_ref/occ/func/getBytes //apple_ref/occ/ftmplt/getBytes //apple_ref/occ/defn/getBytes //apple_ref/occ/macro/getBytes" --><span class="function">getBytes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a --><span class="type">*</span>)<span class="param">buffer</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<span class="param">length</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/offset //apple_ref/occ/clm/offset //apple_ref/occ/intfcm/offset //apple_ref/occ/intfm/offset //apple_ref/occ/func/offset //apple_ref/occ/ftmplt/offset //apple_ref/occ/defn/offset //apple_ref/occ/macro/offset" --><span class="function">offset</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/offset //apple_ref/occ/data/offset" --><span class="var">offset</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Copy "length" bytes of the receiver's data, starting at the "offset" byte position,
+into "buffer".
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/init;   name=init -->
+<a name="//apple_ref/c/instm/init"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="init">init</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/init //apple_ref/occ/data/init" --><span class="var">init</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes an SBData instance to contain an empty, zero-length buffer.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/initWithBytes:length:;   name=initWithBytes:length: -->
+<a name="//apple_ref/c/instm/initWithBytes:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithBytes:length:">initWithBytes:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithBytes //apple_ref/occ/clm/initWithBytes //apple_ref/occ/intfcm/initWithBytes //apple_ref/occ/intfm/initWithBytes //apple_ref/occ/func/initWithBytes //apple_ref/occ/ftmplt/initWithBytes //apple_ref/occ/defn/initWithBytes //apple_ref/occ/macro/initWithBytes" --><span class="function">initWithBytes</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<span class="param">bytes</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes an SBData instance to the specified length containing a copy of
+the octets originating at bytes.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/initWithBytesNoCopy:length:;   name=initWithBytesNoCopy:length: -->
+<a name="//apple_ref/c/instm/initWithBytesNoCopy:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithBytesNoCopy:length:">initWithBytesNoCopy:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithBytesNoCopy //apple_ref/occ/clm/initWithBytesNoCopy //apple_ref/occ/intfcm/initWithBytesNoCopy //apple_ref/occ/intfm/initWithBytesNoCopy //apple_ref/occ/func/initWithBytesNoCopy //apple_ref/occ/ftmplt/initWithBytesNoCopy //apple_ref/occ/defn/initWithBytesNoCopy //apple_ref/occ/macro/initWithBytesNoCopy" --><span class="function">initWithBytesNoCopy</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<span class="param">bytes</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes an SBData instance which wraps the buffer of length octets
+originating at bytes.  The buffer will not be destroyed (via objc_free())
+when this object is deallocated.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/initWithBytesNoCopy:length:freeWhenDone:;   name=initWithBytesNoCopy:length:freeWhenDone: -->
+<a name="//apple_ref/c/instm/initWithBytesNoCopy:length:freeWhenDone:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithBytesNoCopy:length:freeWhenDone:">initWithBytesNoCopy:length:freeWhenDone:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithBytesNoCopy //apple_ref/occ/clm/initWithBytesNoCopy //apple_ref/occ/intfcm/initWithBytesNoCopy //apple_ref/occ/intfm/initWithBytesNoCopy //apple_ref/occ/func/initWithBytesNoCopy //apple_ref/occ/ftmplt/initWithBytesNoCopy //apple_ref/occ/defn/initWithBytesNoCopy //apple_ref/occ/macro/initWithBytesNoCopy" --><span class="function">initWithBytesNoCopy</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<span class="param">bytes</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<span class="param">length</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/freeWhenDone //apple_ref/occ/clm/freeWhenDone //apple_ref/occ/intfcm/freeWhenDone //apple_ref/occ/intfm/freeWhenDone //apple_ref/occ/func/freeWhenDone //apple_ref/occ/ftmplt/freeWhenDone //apple_ref/occ/defn/freeWhenDone //apple_ref/occ/macro/freeWhenDone" --><span class="function">freeWhenDone</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/freeWhenDone //apple_ref/occ/data/freeWhenDone" --><span class="var">freeWhenDone</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes an SBData instance which wraps the buffer of length octets
+originating at bytes.  If freeWhenDone is YES, then the buffer will be
+destroyed (via objc_free()) when this object is deallocated.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/initWithCapacity:;   name=initWithCapacity: -->
+<a name="//apple_ref/c/instm/initWithCapacity:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithCapacity:">initWithCapacity:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithCapacity //apple_ref/occ/clm/initWithCapacity //apple_ref/occ/intfcm/initWithCapacity //apple_ref/occ/intfm/initWithCapacity //apple_ref/occ/func/initWithCapacity //apple_ref/occ/ftmplt/initWithCapacity //apple_ref/occ/defn/initWithCapacity //apple_ref/occ/macro/initWithCapacity" --><span class="function">initWithCapacity</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/capacity //apple_ref/occ/data/capacity" --><span class="var">capacity</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initialize an SBMutableData instance to initially have a buffer sized at
+least equal to capacity but containing no bytes (length of zero).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/initWithContentsOfFile:;   name=initWithContentsOfFile: -->
+<a name="//apple_ref/c/instm/initWithContentsOfFile:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithContentsOfFile:">initWithContentsOfFile:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithContentsOfFile //apple_ref/occ/clm/initWithContentsOfFile //apple_ref/occ/intfcm/initWithContentsOfFile //apple_ref/occ/intfm/initWithContentsOfFile //apple_ref/occ/func/initWithContentsOfFile //apple_ref/occ/ftmplt/initWithContentsOfFile //apple_ref/occ/defn/initWithContentsOfFile //apple_ref/occ/macro/initWithContentsOfFile" --><span class="function">initWithContentsOfFile</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes an SBData instance which wraps the contents of the file
+at path.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/initWithData:;   name=initWithData: -->
+<a name="//apple_ref/c/instm/initWithData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithData:">initWithData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithData //apple_ref/occ/clm/initWithData //apple_ref/occ/intfcm/initWithData //apple_ref/occ/intfm/initWithData //apple_ref/occ/func/initWithData //apple_ref/occ/ftmplt/initWithData //apple_ref/occ/defn/initWithData //apple_ref/occ/macro/initWithData" --><span class="function">initWithData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherData //apple_ref/occ/data/otherData" --><span class="var">otherData</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initializes an SBData instance which contains a copy of the content
+of otherData.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/initWithLength:;   name=initWithLength: -->
+<a name="//apple_ref/c/instm/initWithLength:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithLength:">initWithLength:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithLength //apple_ref/occ/clm/initWithLength //apple_ref/occ/intfcm/initWithLength //apple_ref/occ/intfm/initWithLength //apple_ref/occ/func/initWithLength //apple_ref/occ/ftmplt/initWithLength //apple_ref/occ/defn/initWithLength //apple_ref/occ/macro/initWithLength" --><span class="function">initWithLength</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initialize an SBMutableData instance which has a buffer sized at least equal
+to length and containing the given number of zeroed bytes.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/insertBytes:length:atIndex:;   name=insertBytes:length:atIndex: -->
+<a name="//apple_ref/c/instm/insertBytes:length:atIndex:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="insertBytes:length:atIndex:">insertBytes:length:atIndex:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/insertBytes //apple_ref/occ/clm/insertBytes //apple_ref/occ/intfcm/insertBytes //apple_ref/occ/intfm/insertBytes //apple_ref/occ/func/insertBytes //apple_ref/occ/ftmplt/insertBytes //apple_ref/occ/defn/insertBytes //apple_ref/occ/macro/insertBytes" --><span class="function">insertBytes</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<span class="param">bytes</span> <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<span class="param">length</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/atIndex //apple_ref/occ/clm/atIndex //apple_ref/occ/intfcm/atIndex //apple_ref/occ/intfm/atIndex //apple_ref/occ/func/atIndex //apple_ref/occ/ftmplt/atIndex //apple_ref/occ/defn/atIndex //apple_ref/occ/macro/atIndex" --><span class="function">atIndex</span><!-- /a -->:(<span class="keyword">unsigned</span> <!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Insert length bytes from the bytes buffer into the receiver at the specified offset
+within the receiver's buffer.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/insertData:atIndex:;   name=insertData:atIndex: -->
+<a name="//apple_ref/c/instm/insertData:atIndex:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="insertData:atIndex:">insertData:atIndex:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/insertData //apple_ref/occ/clm/insertData //apple_ref/occ/intfcm/insertData //apple_ref/occ/intfm/insertData //apple_ref/occ/func/insertData //apple_ref/occ/ftmplt/insertData //apple_ref/occ/defn/insertData //apple_ref/occ/macro/insertData" --><span class="function">insertData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<span class="param">aData</span> <!-- a logicalPath="//apple_ref/occ/instm/atIndex //apple_ref/occ/clm/atIndex //apple_ref/occ/intfcm/atIndex //apple_ref/occ/intfm/atIndex //apple_ref/occ/func/atIndex //apple_ref/occ/ftmplt/atIndex //apple_ref/occ/defn/atIndex //apple_ref/occ/macro/atIndex" --><span class="function">atIndex</span><!-- /a -->:(<span class="keyword">unsigned</span> <!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Insert the contents of aData in the receiver at the specified offset within the 
+receiver's buffer.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/isEqualToData:;   name=isEqualToData: -->
+<a name="//apple_ref/c/instm/isEqualToData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isEqualToData:">isEqualToData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/isEqualToData //apple_ref/occ/clm/isEqualToData //apple_ref/occ/intfcm/isEqualToData //apple_ref/occ/intfm/isEqualToData //apple_ref/occ/func/isEqualToData //apple_ref/occ/ftmplt/isEqualToData //apple_ref/occ/defn/isEqualToData //apple_ref/occ/macro/isEqualToData" --><span class="function">isEqualToData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherData //apple_ref/occ/data/otherData" --><span class="var">otherData</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Compares two SBData objects for equality, returning YES if they are matching
+buffers (in length and binary content).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/replaceBytesInRange:withBytes:length:;   name=replaceBytesInRange:withBytes:length: -->
+<a name="//apple_ref/c/instm/replaceBytesInRange:withBytes:length:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="replaceBytesInRange:withBytes:length:">replaceBytesInRange:withBytes:length:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/replaceBytesInRange //apple_ref/occ/clm/replaceBytesInRange //apple_ref/occ/intfcm/replaceBytesInRange //apple_ref/occ/intfm/replaceBytesInRange //apple_ref/occ/func/replaceBytesInRange //apple_ref/occ/ftmplt/replaceBytesInRange //apple_ref/occ/defn/replaceBytesInRange //apple_ref/occ/macro/replaceBytesInRange" --><span class="function">replaceBytesInRange</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<span class="param">range</span> <!-- a logicalPath="//apple_ref/occ/instm/withBytes //apple_ref/occ/clm/withBytes //apple_ref/occ/intfcm/withBytes //apple_ref/occ/intfm/withBytes //apple_ref/occ/func/withBytes //apple_ref/occ/ftmplt/withBytes //apple_ref/occ/defn/withBytes //apple_ref/occ/macro/withBytes" --><span class="function">withBytes</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/void //apple_ref/occ/data/void" --><span class="var">void</span><!-- /a --><span class="var">*</span>)<span class="param">bytes</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/length //apple_ref/occ/clm/length //apple_ref/occ/intfcm/length //apple_ref/occ/intfm/length //apple_ref/occ/func/length //apple_ref/occ/ftmplt/length //apple_ref/occ/defn/length //apple_ref/occ/macro/length" --><span class="function">length</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/length //apple_ref/occ/data/length" --><span class="var">length</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Delete octets in the given byte range and insert the length octets originating
+at bytes in its place.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/replaceBytesInRange:withData:;   name=replaceBytesInRange:withData: -->
+<a name="//apple_ref/c/instm/replaceBytesInRange:withData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="replaceBytesInRange:withData:">replaceBytesInRange:withData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/replaceBytesInRange //apple_ref/occ/clm/replaceBytesInRange //apple_ref/occ/intfcm/replaceBytesInRange //apple_ref/occ/intfm/replaceBytesInRange //apple_ref/occ/func/replaceBytesInRange //apple_ref/occ/ftmplt/replaceBytesInRange //apple_ref/occ/defn/replaceBytesInRange //apple_ref/occ/macro/replaceBytesInRange" --><span class="function">replaceBytesInRange</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<span class="param">range</span> <!-- a logicalPath="//apple_ref/occ/instm/withData //apple_ref/occ/clm/withData //apple_ref/occ/intfcm/withData //apple_ref/occ/intfm/withData //apple_ref/occ/func/withData //apple_ref/occ/ftmplt/withData //apple_ref/occ/defn/withData //apple_ref/occ/macro/withData" --><span class="function">withData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aData //apple_ref/occ/data/aData" --><span class="var">aData</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Delete octets in the given byte range and insert the content of
+aData in its place.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/resetBytesInRange:;   name=resetBytesInRange: -->
+<a name="//apple_ref/c/instm/resetBytesInRange:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="resetBytesInRange:">resetBytesInRange:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/resetBytesInRange //apple_ref/occ/clm/resetBytesInRange //apple_ref/occ/intfcm/resetBytesInRange //apple_ref/occ/intfm/resetBytesInRange //apple_ref/occ/func/resetBytesInRange //apple_ref/occ/ftmplt/resetBytesInRange //apple_ref/occ/defn/resetBytesInRange //apple_ref/occ/macro/resetBytesInRange" --><span class="function">resetBytesInRange</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/range //apple_ref/occ/data/range" --><span class="var">range</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Set all octets in the given range of byte indices within the receiver's buffer to
+zero.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/resetBytesInRange:_DONTLINK_0;   name=resetBytesInRange: -->
+<a name="//apple_ref/c/instm/resetBytesInRange:_DONTLINK_0"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="resetBytesInRange:">resetBytesInRange:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setData //apple_ref/occ/clm/setData //apple_ref/occ/intfcm/setData //apple_ref/occ/intfm/setData //apple_ref/occ/func/setData //apple_ref/occ/ftmplt/setData //apple_ref/occ/defn/setData //apple_ref/occ/macro/setData" --><span class="function">setData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aData //apple_ref/occ/data/aData" --><span class="var">aData</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Reset the length of the receiver to match aData and copy aData's content into the
+receiver's buffer.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/setData:;   name=setData: -->
+<a name="//apple_ref/c/instm/setData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setData:">setData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setData //apple_ref/occ/clm/setData //apple_ref/occ/intfcm/setData //apple_ref/occ/intfm/setData //apple_ref/occ/func/setData //apple_ref/occ/ftmplt/setData //apple_ref/occ/defn/setData //apple_ref/occ/macro/setData" --><span class="function">setData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aData //apple_ref/occ/data/aData" --><span class="var">aData</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Reset the length of the receiver to match aData and copy aData's content into the
+receiver's buffer.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/c/instm/subdataWithRange:;   name=subdataWithRange: -->
+<a name="//apple_ref/c/instm/subdataWithRange:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="subdataWithRange:">subdataWithRange:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/subdataWithRange //apple_ref/occ/clm/subdataWithRange //apple_ref/occ/intfcm/subdataWithRange //apple_ref/occ/intfm/subdataWithRange //apple_ref/occ/func/subdataWithRange //apple_ref/occ/ftmplt/subdataWithRange //apple_ref/occ/defn/subdataWithRange //apple_ref/occ/macro/subdataWithRange" --><span class="function">subdataWithRange</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBRange //apple_ref/occ/tdef/SBRange //apple_ref/occ/tag/SBRange //apple_ref/occ/econst/SBRange //apple_ref/occ/struct/SBRange //apple_ref/occ/clconst/SBRange //apple_ref/occ/intf/SBRange" --><span class="type">SBRange</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/range //apple_ref/occ/data/range" --><span class="var">range</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an SBData object which represents the given byte range of the
+receiver.
+<!-- end discussion -->
+<p></p><a name="HeaderDoc_vars"></a>
+<h2>Globals</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/data/SBDataBadIndexException" target="_top">SBDataBadIndexException</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/SBDataMemoryException" target="_top">SBDataMemoryException</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=data;  uid=//apple_ref/c/data/SBDataBadIndexException;   name=SBDataBadIndexException -->
+<a name="//apple_ref/c/data/SBDataBadIndexException"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBDataBadIndexException">SBDataBadIndexException</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">extern</span> <!-- a logicalPath="//apple_ref/c/cl/SBString //apple_ref/c/tdef/SBString //apple_ref/c/tag/SBString //apple_ref/c/econst/SBString //apple_ref/c/struct/SBString //apple_ref/c/clconst/SBString //apple_ref/c/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/c/econst/SBDataBadIndexException //apple_ref/c/data/SBDataBadIndexException" --><span class="var">SBDataBadIndexException</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Identifier of exceptions raised by SBData when a byte index is
+out of range for the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=data;  uid=//apple_ref/c/data/SBDataMemoryException;   name=SBDataMemoryException -->
+<a name="//apple_ref/c/data/SBDataMemoryException"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="SBDataMemoryException">SBDataMemoryException</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre><span class="keyword">extern</span> <!-- a logicalPath="//apple_ref/c/cl/SBString //apple_ref/c/tdef/SBString //apple_ref/c/tag/SBString //apple_ref/c/econst/SBString //apple_ref/c/struct/SBString //apple_ref/c/clconst/SBString //apple_ref/c/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/c/econst/SBDataMemoryException //apple_ref/c/data/SBDataMemoryException" --><span class="var">SBDataMemoryException</span><!-- /a -->;  </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Identifier of exceptions raised by SBData when memory cannot be
+allocated.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

@@ -1,0 +1,469 @@
+#import "SBFoundation.h"
+#import "SBPostgres.h"
+
+SBLocale*               ourLocale = nil;
+
+
+SBComparisonResult
+myStringCmp(
+  id    s1,
+  id    s2,
+  void* context
+)
+{
+  return [s1 compare:s2 options:(SBStringNumericSearch | SBStringForcedOrderingSearch) range:SBRangeCreate(0,[s1 length]) locale:[SBLocale defaultLocale]];
+}
+
+
+const char      isoLatin1[12] = { 'H' , 'e' , 'l' , 'l' , 'o' , ' ' , 0xA9 , 0x86 , 0xdf , 0xb5 , 0xfc , 0x00 };
+
+const char*     inetAddrs[] = {
+                  "128.175.2.26",
+                  "fe80::214:51ff:fe11:bd2",
+                  "128.175.2.26/30",
+                  "128.175.2.26/255.255",
+                  "128.175.2.26/255.255.255.192",
+                  "::",
+                  "128.175.163.73/26",
+                  "128.175.163.14/26",
+                  "fe80::214:51ff:fe11:bd2",
+                  "fe80::214:51ff:fe11:bd2/100",
+                  NULL
+                };
+
+int
+main()
+{
+  SBAutoreleasePool*      ourPool = [[SBAutoreleasePool alloc] init];
+  
+  SBString*               s1 = @"Ünknown †";
+  SBMutableString*        s2 = [SBMutableString stringWithFormat:"Testing %d: %S %d", 1, [s1 utf16Characters],-10245];
+  SBString*               s3 = @"ÜNKNOWN †";
+  SBRegularExpression*    r1 = [[SBRegularExpression alloc] initWithUTF8String:"([+-]?[0-9]+)"];
+  
+  SBString*               homeDirectory = SBHomeDirectory();
+  
+  SBMutableArray*         anArray = [SBMutableArray arrayWithObjects:s1, @"unknown † -999", s2, s3, homeDirectory, @"unknown † 10", @"unknown † 2", @"Zebra", nil];
+  
+  ourLocale = [[SBLocale alloc] initWithLocaleIdentifier:"en_US"];
+  
+  if ( anArray ) {
+    [anArray summarizeToStream:stdout];
+    
+    [anArray sortUsingFunction:myStringCmp context:NULL];
+    
+    [anArray summarizeToStream:stdout];
+  }
+ 
+  printf("\nThe alternative (to the system-defined) locale that we will use in some places = %s\n\n", ( ourLocale ? [ourLocale localeIdentifier] : "<n/a>" ));
+  
+  SBSTRING_AS_UTF8_BEGIN(s1)
+  
+    printf("Stack-based UTF-8 conversion test\n\n  s1 = %s\n\n", s1_utf8);
+  
+  SBSTRING_AS_UTF8_END
+  
+  if ( s1 && s2 && s3 && r1) {
+    const unsigned char*    utf8 = [s3 utf8Characters];
+    SBRange                 found;
+    
+    printf(
+        "Caseless comparison:\n"
+        "  s1  = `%s`\n"
+        "  s2  = `%s`\n"
+        "  cmp = %d\n\n",
+        [s1 utf8Characters],
+        [s3 utf8Characters],
+        [s1 compare:s3 options:SBStringCaseInsensitiveSearch]
+      );
+    printf(
+        "Caseless, diacritic-less comparison:\n"
+        "  s1  = `%s`\n"
+        "  s2  = `%s`\n"
+        "  cmp = %d\n\n",
+        [s1 utf8Characters],
+        [s3 utf8Characters],
+        [s1 compare:s3 options:SBStringCaseInsensitiveSearch | SBStringDiacriticInsensitiveSearch]
+      );
+      
+    printf("As UTF-8: `%s`\n", utf8);
+    
+    printf("s1[0] = %08X\n", [s1 utf32CharacterAtIndex:0]);
+    printf("s1[1] = %08X\n", [s1 utf32CharacterAtIndex:1]);
+    printf("s1[8] = %08X\n", [s1 utf32CharacterAtIndex:8]);
+    
+    found = [@"This is a test" rangeOfString:@"test" options:0];
+    printf("found = ( %d , %d )\n", found.start, found.length);
+    
+    found = [@"This is a test of a test" rangeOfString:@"test" options:SBStringBackwardsSearch];
+    printf("found = ( %d , %d )\n", found.start, found.length);
+    
+    [s2 replaceCharactersInRange:SBRangeCreate(11,10) withString:s3];
+    printf("\n");
+    
+    if ( homeDirectory ) {
+      SBString*     bashRC = [homeDirectory stringByAppendingPathComponent:@"hello.txt"];
+      
+      printf("SBHomeDirectory() = `");[homeDirectory writeToStream:stdout];printf("` [%s]\n", [homeDirectory name]);
+      printf("path component append = `");[bashRC writeToStream:stdout];printf("` [%s]\n", [bashRC name]);
+      
+      SBString*     lastPathComp = [bashRC lastPathComponent];
+      
+      printf("last path component = `");[lastPathComp writeToStream:stdout];printf("` [%s]\n", [lastPathComp name]);
+      
+      SBString*     woLastPathComp = [bashRC stringByDeletingLastPathComponent];
+      
+      printf("remove last path component = `");[woLastPathComp writeToStream:stdout];printf("` [%s]\n", [woLastPathComp name]);
+      
+      SBString*     extension = [lastPathComp pathExtension];
+      
+      if ( extension ) {
+        printf("extension = `");
+        [extension writeToStream:stdout];
+        printf("` [%s]\n\n", [extension name]);
+      }
+    }
+    
+    printf("Exhaustive search for /([+-]?[0-9]+)/ in `");[s2 writeToStream:stdout];printf("` :\n");
+    [r1 setSubjectString:s2];
+    if ( [r1 findNextMatch] ) {
+      do {
+        printf("  match = `");[[r1 stringForMatchingGroup:1] writeToStream:stdout];printf("`\n");
+      } while ([r1 findNextMatch]);
+    } else {
+      printf("no matches.\n");
+    }
+    
+    printf("\nRegex-based find-and-replace for /([+-]?[0-9]+)/ in `");[s2 writeToStream:stdout];printf("` :\n");
+    [s2 replaceAllMatchesForRegex:r1 withString:@"{$1}"];
+    printf("    `");[s2 writeToStream:stdout];printf("` :\n");
+  }
+  
+  s1 = [[SBString alloc] initWithBytes:isoLatin1 count:12 encoding:"ISO-8859-1"];
+  if ( s1 ) {
+    SBData*     toAltEnc = [s1 dataUsingEncoding:"IBM1047"];
+    
+    printf("\nTesting string conversion capabilities:\n\n ISO-LATIN-1[%s] = `", isoLatin1); [s1 writeToStream:stdout]; printf("`\n\n");
+    
+    printf(" Unicode to 'IBM1047' (EBCDIC Latin 1/Open Systems): ");
+    if ( toAltEnc ) {
+      printf("SUCCESS!\n\n");
+      [toAltEnc summarizeToStream:stdout];
+    } else {
+      printf("FAILURE!\n");
+    }
+    [s1 release];
+    printf("\n");
+  }
+  
+  int           int1 = 256;
+  double        d2[10];
+  
+  SBValue*      v1 = [SBValue valueWithBytes:&int1 objCType:@encode(int)];
+  SBValue*      v2 = [SBValue valueWithBytes:&d2 objCType:@encode(double[3])];
+  SBValue*      v3 = [SBValue valueWithBytes:&d2 objCType:@encode(double[10])];
+  SBValue*      v4 = [SBValue valueWithPointer:&int1];
+  
+  [v1 summarizeToStream:stdout];
+  [v2 summarizeToStream:stdout];
+  [v3 summarizeToStream:stdout];
+  [v4 summarizeToStream:stdout];
+  
+  SBNumber*     n1 = [SBNumber numberWithInt:256];
+  SBNumber*     n2 = [SBNumber numberWithDouble:3.14159];
+  
+  [n1 summarizeToStream:stdout];
+  [n2 summarizeToStream:stdout];
+  
+  SBDate*       aDate = [[SBDate alloc] init];
+  
+  if ( aDate ) {;
+    SBDateComponents*   dateParts = [[SBCalendar defaultCalendar] components:SBAllCalendarUnits fromDate:aDate];
+    SBDateFormatter*    dateFormatter = [[SBDateFormatter alloc] init];
+    
+    [dateFormatter setLocale:ourLocale];
+    [[SBCalendar defaultCalendar] setLocale:ourLocale];
+    [[SBCalendar defaultCalendar] summarizeToStream:stdout];
+    
+    
+    [aDate summarizeToStream:stdout];
+    printf("    = %04d-%02d-%02d %02d:%02d:%02d era(%d) week(%d) weekday(%d) ordinal-weekday(%d)\n\n",
+        [dateParts year],
+        [dateParts month] + 1, /* Months end up being zero-based */
+        [dateParts day],
+        [dateParts hour],
+        [dateParts minute],
+        [dateParts second],
+        [dateParts era],
+        [dateParts week],
+        [dateParts weekday],
+        [dateParts weekdayOrdinal]
+      );
+    
+    [dateFormatter setDateStyle:UDAT_LONG];
+    [dateFormatter setTimeStyle:UDAT_LONG];
+    printf("date as string = ");[[dateFormatter stringFromDate:aDate] writeToStream:stdout];printf("\n\n");
+    [aDate release];
+    
+    [dateFormatter setPattern:@"yyyy-MM-dd HH:mm:ssZZZ"];
+    aDate = [dateFormatter dateFromString:@"2009-01-23 15:34:22-0500"];
+    if ( aDate ) {
+      dateParts = [[SBCalendar defaultCalendar] components:SBAllCalendarUnits fromDate:aDate];
+      [aDate summarizeToStream:stdout];
+      printf("    = %04d-%02d-%02d %02d:%02d:%02d era(%d) week(%d) weekday(%d) ordinal-weekday(%d)\n\n",
+          [dateParts year],
+          [dateParts month] + 1, /* Months end up being zero-based */
+          [dateParts day],
+          [dateParts hour],
+          [dateParts minute],
+          [dateParts second],
+          [dateParts era],
+          [dateParts week],
+          [dateParts weekday],
+          [dateParts weekdayOrdinal]
+        );
+      [aDate release];
+    }
+    
+  }
+  
+  SBNumber*       theNum = [SBNumber numberWithDouble:M_PI];
+  
+  if ( theNum ) {
+    SBNumberFormatter*    numFormatter = [[SBNumberFormatter alloc] init];
+    SBString*             formatted = nil;
+    
+    [numFormatter setLocale:ourLocale];
+    [numFormatter setNumberStyle:UNUM_CURRENCY];
+    [numFormatter setMaximumFractionDigits:2];
+    
+    formatted = [numFormatter stringFromNumber:theNum];
+    if ( formatted ) {
+      printf("%lg = `", M_PI);[formatted writeToStream:stdout];printf("`\n");
+    }
+    
+    [theNum release];
+    
+    [numFormatter setNumberStyle:UNUM_DEFAULT];
+    theNum = [numFormatter numberFromString:@"6.0225467E+023"];
+    
+    if ( theNum ) {
+      printf("Parsed to %lg (%s)\n", [theNum doubleValue], [[theNum class] name]);
+    }
+    
+    printf("Forcing integer-only parsing and retrying...\n");
+    [numFormatter setParseIntegerOnly:YES];
+    theNum = [numFormatter numberFromString:@"6.0225467E+023"];
+    
+    if ( theNum ) {
+      printf("Parsed to %lg (%s)\n", [theNum doubleValue], [[theNum class] name]);
+    }
+  }
+  
+  SBCharacterSet*   aSet = nil;
+  
+  printf("\n\nTesting default character sets:\n\n");
+  aSet = [SBCharacterSet controlCharacterSet];
+  printf("  %-40s %s\n", "controlCharacterSet", (aSet ? "OK!" : "FAILED"));
+  aSet = [SBCharacterSet whitespaceCharacterSet];
+  printf("  %-40s %s\n", "whitespaceCharacterSet", (aSet ? "OK!" : "FAILED"));
+  aSet = [SBCharacterSet whitespaceAndNewlineCharacterSet];
+  printf("  %-40s %s\n", "whitespaceAndNewlineCharacterSet", (aSet ? "OK!" : "FAILED"));
+  aSet = [SBCharacterSet newlineCharacterSet];
+  printf("  %-40s %s\n", "newlineCharacterSet", (aSet ? "OK!" : "FAILED"));
+  aSet = [SBCharacterSet decimalDigitCharacterSet];
+  printf("  %-40s %s\n", "decimalDigitCharacterSet", (aSet ? "OK!" : "FAILED"));
+  aSet = [SBCharacterSet letterCharacterSet];
+  printf("  %-40s %s\n", "letterCharacterSet", (aSet ? "OK!" : "FAILED"));
+  aSet = [SBCharacterSet lowercaseLetterCharacterSet];
+  printf("  %-40s %s\n", "lowercaseLetterCharacterSet", (aSet ? "OK!" : "FAILED"));
+  aSet = [SBCharacterSet uppercaseLetterCharacterSet];
+  printf("  %-40s %s\n", "uppercaseLetterCharacterSet", (aSet ? "OK!" : "FAILED"));
+  aSet = [SBCharacterSet marksCharacterSet];
+  printf("  %-40s %s\n", "marksCharacterSet", (aSet ? "OK!" : "FAILED"));
+  aSet = [SBCharacterSet alphanumericCharacterSet];
+  printf("  %-40s %s\n", "alphanumericCharacterSet", (aSet ? "OK!" : "FAILED"));
+  aSet = [SBCharacterSet illegalCharacterSet];
+  printf("  %-40s %s\n", "illegalCharacterSet", (aSet ? "OK!" : "FAILED"));
+  aSet = [SBCharacterSet punctuationCharacterSet];
+  printf("  %-40s %s\n", "punctuationCharacterSet", (aSet ? "OK!" : "FAILED"));
+  aSet = [SBCharacterSet capitalizedLetterCharacterSet];
+  printf("  %-40s %s\n", "capitalizedLetterCharacterSet", (aSet ? "OK!" : "FAILED"));
+  aSet = [SBCharacterSet symbolCharacterSet];
+  printf("  %-40s %s\n\n", "symbolCharacterSet", (aSet ? "OK!" : "FAILED"));
+  
+  SBData*     bitmap = [aSet bitmapRepresentation];
+  
+  if ( bitmap ) {
+    printf("symbolCharacterSet, bitmap representation = ");
+    [bitmap summarizeToStream:stdout];
+    printf("\n\n");
+  }
+  
+  // Play with IP addresses:
+  const char*         *inetAddrList = inetAddrs;
+  SBInetAddress*      inetAddr;
+  SBInetAddress*      lastInetAddr;
+  
+  while ( *inetAddrList ) {
+    lastInetAddr = inetAddr;
+    inetAddr = [SBInetAddress inetAddressWithCString:*inetAddrList];
+    
+    printf("Initialize an SBInetAddress from `%s` ... ", *inetAddrList);
+    if ( inetAddr ) {
+      printf("SUCCESS:\n");
+      [inetAddr summarizeToStream:stdout];
+    } else {
+      printf("FAILED!\n");
+    }
+    inetAddrList++;
+  }
+  printf("Compare last two addresses: %d\n\n", [inetAddr compareToInetAddress:lastInetAddr]);
+
+  SBData*           inetData = [inetAddr inetAddressAsData];
+
+  if ( inetData ) {
+    printf("Last internet address = "); [inetData summarizeToStream:stdout]; printf("\n\n");
+  }
+  
+  SBMACAddress*     macAddress = [SBMACAddress macAddressWithCString:"001451.110bd2"];
+  
+  if ( macAddress ) {
+    SBString*       macManuf = [macAddress manufacturerName];
+    
+    [macAddress summarizeToStream:stdout];
+    if ( macManuf ) {
+      printf("Manufacturer of interface: "); [macManuf writeToStream:stdout]; printf("\n\n");
+    }
+  }
+  
+  
+  
+  SBMemoryPoolRef     aMemPool = SBMemoryPoolCreate(0);
+  
+  if ( aMemPool ) {
+    SBMemoryPoolAlloc(aMemPool, 1026);
+    SBMemoryPoolSummarizeToStream(aMemPool, stdout);
+    SBMemoryPoolAlloc(aMemPool, 1023);
+    SBMemoryPoolSummarizeToStream(aMemPool, stdout);
+    SBMemoryPoolDrain(aMemPool);
+    SBMemoryPoolSummarizeToStream(aMemPool, stdout);
+    SBMemoryPoolRelease(aMemPool);
+  }
+  
+#if 1
+  SBPostgresDatabase*       ourDB = [[SBPostgresDatabase alloc] initWithConnectionString:@"dbname=template1 user=postgres"];
+  
+  if ( ourDB ) {
+    SBPostgresQuery*        ourQuery;
+    SBPostgresQueryResult*  queryResult;
+    
+    printf("Database connection opened successfully!\n\n");
+    
+    [ourDB executeQuery:@"SELECT true AS doesItWork"];
+    
+    ourQuery = [[SBPostgresQuery alloc] initWithQueryString:@"SELECT $1 AS doesItWork" parameterCount:1];
+    if ( ourQuery ) {
+      const char*     utf8Str = "Testing ünter garbáge";
+      double          floatVal = 3.14159;
+      
+      [ourQuery bindUTF8String:utf8Str byteSize:0 toParameter:1];
+      [ourDB executeQuery:ourQuery];
+
+      printf("\n== Let's try something that needs byte-swapping -- %lg\n", floatVal);
+      [ourQuery bindDoubleValue:floatVal toParameter:1];
+      if ( (queryResult = [ourDB executeQuery:ourQuery]) ) {
+        id      dbObj = [queryResult objectForRow:0 fieldNum:0];
+        
+        if ( dbObj ) {
+          printf("\nResult coming from database:\n\n");[dbObj summarizeToStream:stdout];
+        }
+      }
+
+      printf("\n== How about a MAC address?\n");
+      [macAddress summarizeToStream:stdout];
+      [ourQuery bindObject:macAddress toParameter:1];
+      if ( (queryResult = [ourDB executeQuery:ourQuery]) ) {
+        id      dbObj = [queryResult objectForRow:0 fieldNum:0];
+        
+        if ( dbObj ) {
+          printf("\nResult coming from database:\n\n");[dbObj summarizeToStream:stdout];
+        }
+      }
+
+      printf("\n== And how about an INET address?\n");
+      [inetAddr summarizeToStream:stdout];
+      [ourQuery bindObject:inetAddr toParameter:1];
+      if ( (queryResult = [ourDB executeQuery:ourQuery]) ) {
+        id      dbObj = [queryResult objectForRow:0 fieldNum:0];
+        
+        if ( dbObj ) {
+          printf("\nResult coming from database:\n\n");[dbObj summarizeToStream:stdout];
+        }
+      }
+
+      printf("\nA date?\n");
+      aDate = [SBDate date];
+      [aDate summarizeToStream:stdout];
+      [ourQuery bindObject:aDate toParameter:1];
+      [ourDB executeQuery:ourQuery];
+      
+      [ourQuery release];
+    }
+    
+    
+    ourQuery = [[SBPostgresQuery alloc] initWithQueryString:@"INSERT INTO timetest (thetime) VALUES ($1)" parameterCount:1];
+    if ( ourQuery ) {
+      printf("\nDate insertion query prepared!  Test date insertion:\n");
+      
+      aDate = [SBDate date];
+      [aDate summarizeToStream:stdout];
+      [ourQuery bindObject:aDate toParameter:1];
+      
+      if ( [ourDB prepareQuery:ourQuery] ) {
+        [ourDB executeQuery:ourQuery];
+        
+        sleep(2);
+        
+        if ( [ourDB beginTransaction] ) {
+          aDate = [SBDate date];
+          [aDate summarizeToStream:stdout];
+          [ourQuery bindObject:aDate toParameter:1];
+          [ourDB executeQuery:ourQuery];
+        
+          sleep(2);
+          
+          if ( [ourDB beginTransaction] ) {
+            aDate = [SBDate date];
+            [aDate summarizeToStream:stdout];
+            [ourQuery bindObject:aDate toParameter:1];
+            [ourDB executeQuery:ourQuery];
+            
+            sleep(2);
+            
+            if ( [ourDB beginTransaction] ) {
+              if ( [ourQuery bindObject:inetAddr toParameter:1] ) {
+                printf("Hmmm...we shouldn't be able to bind an SBInetAddress to parameter 1 :-\\\n\n");
+              } else {
+                printf("Yeee-haw!  We weren't allowed to bind an SBInetAddress to parameter 1!\n\n");
+              }
+              
+              [ourDB discardLastTransaction];
+            }
+            
+            [ourDB commitLastTransaction];
+          }
+          
+          [ourDB commitLastTransaction];
+        }
+      }
+      [ourQuery release];
+    }
+    
+    [ourDB release];
+  }
+
+#endif
+
+  return 0;
+}

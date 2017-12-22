@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="faq.xsl"?>
+<faq>
+  <item>
+    <q>What is the purpose of SHUEBox?</q>
+    <a><![CDATA[SHUEBox — for Shared Hierarchical Upload and Edit — is a file storage system that was designed to fulfill several unique needs:
+<ul>
+  <li>A centrally-supported file server with revision control capabilities.</li>
+  <li>A service for file exchange with both UD and non-UD users with an arbitrary data lifespan (unlike Dropbox which has a limited lifespan for dropoffs).</li>
+  <li>A self-service administrative interface for end users.</li>
+</ul>
+Another design consideration was keeping the service as accessible as possible across the Internet (to avoid the need for VPN usage).]]></a>
+  </item>
+  <item>
+    <q><![CDATA[What is a <i>collaboration</i>?]]></q>
+    <a><![CDATA[A <i>collaboration</i> is the basic unit of organization in SHUEBox.  Each collaboration consists of a unique set of UD and non-UD <i>users</i> (grouped in two or more <i>roles</i>) who will be sharing data and zero or more <i>repositories</i> that will contain the shared information.]]></a>
+    <a><![CDATA[A collaboration has a succinct name that identifies it; the name must use lowercase letters, numbers, dot (.), dash (-), or underscore (_) and should be at least four characters long.]]></a>
+    <a><![CDATA[The collaboration name forms the base URL for accessing data, e.g. <tt>https://shuebox.nss.udel.edu/my-collaboration/</tt>.]]></a>
+  </item>
+  <item>
+    <q><![CDATA[What is a <i>repository</i>?]]></q>
+    <a><![CDATA[A <i>repository</i> is a container into which data can be uploaded/edited.  There are different kinds of repositories available on SHUEBox.]]></a>
+    <a><![CDATA[In the simplest case, a WebDAV repository operates like a regular disk on your desktop.  You (and the other users) can drag and drop to copy files to/from the disk, etc.]]></a>
+    <a><![CDATA[For those looking for revision control capabilities, SHUEBox supports both Subversion (SVN) and Git repository types.]]></a>
+    <a><![CDATA[Remember, a single collaboration can have many repositories, so your collaboration could have a WebDAV respository to hold PDF journal articles associated with your project; a Subversion repository for the text and images for the journal article you're authoring; and a Git repository to hold the program you wrote to process the data in the article.]]></a>
+    <a><![CDATA[Like its parent collaboration, a repository has an identifying name (using the same rules as for collaborations) that forms its base URL, e.g. <tt>https://shuebox.nss.udel.edu/my-collaboration/svn-repos/</tt>.]]></a>
+  </item>
+  <item>
+    <q><![CDATA[What is a <i>role</i>?]]></q>
+    <a><![CDATA[SHUEBox allows a collaboration administrator to define sub-groups of the users who have access to the collaboration.  Since some of these sub-groups convey privileged behavior to their members, they are called <i>roles</i>.]]></a>
+    <a><![CDATA[Every collaboration has at least two roles defined by default:  <i>everyone</i> and <i>administrator</i>.  These roles cannot be deleted.  Adding a user to the collaboration automatically places them in the <i>everyone</i> role.  Assigning a user to the <i>administrator</i> role grants him/her the ability to manage the collaboration.]]></a>
+  </item>
+  <item>
+    <q><![CDATA[How do I control which users have access to the repositories?]]></q>
+    <a><![CDATA[At this time, access control in SHUEBox is very basic.  Each repository you create can have any of the parent collaboration's roles added to its <i>access control list</i> (ACL).  Any user who is a member of at least one of the roles in the ACL then has read-write access to the repository.  There is currently no capablity for granting read-only access or unauthenticated access to the contents of a repository.]]></a>
+    <a><![CDATA[When a repository is created its ACL contains just the <i>everyone</i> role — meaning all members of the collaboration have access to the repository.]]></a>
+  </item>
+  <item>
+    <q>Can my outside collaborator without a UDelNetId use SHUEBox?</q>
+    <a>Yes!  SHUEBox contains its own guest account system, so you need not solicit a "real" UD IT guest user account in order for your coworker to collaborate via SHUEBox.  Each guest is identified by his/her email address and has a password that is only valid on the SHUEBox system.</a>
+  </item>
+  <item>
+    <q>How do I request a collaboration?</q>
+    <a><![CDATA[To request a collaboration on the SHUEBox system, please first decide on an appropriate name for your collaboration (adhering to the format outlined above).  For example, a faculty member may want to have a collaboration created in his/her name so that:
+<ul>
+  <li>he/she is the administrator</li>
+  <li>there are roles for <i>postdoc</i>, <i>grad-student</i>, and <i>undergrad-student</i></li>
+  <li>there is a WebDAV repository accessible only by the "administrator" role for his/her private data</li>
+  <li>all projects can have their own repository(s) with access restricted as necessary</li>
+</ul>
+    IT asks that requestors avoid asking for multiple collaborations where a single one with several repositories is appropriate. 
+    ]]></a>
+    <a>Please send your collaboration requests to the IT Help Desk.  Include the name you wish to use for the collaboration and a list of users' UDelNetIds or (for non-UD folks) an appropriate email address.  For non-UD users from academia, for example, institutional email addresses are the most appropriate choice.  IT will review the information and may need to ask for an alternate collaboration name if your chosen name is invalid or already in-use.</a>
+  </item>
+</faq>

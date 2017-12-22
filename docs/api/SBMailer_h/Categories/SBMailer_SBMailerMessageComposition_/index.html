@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBMailer(SBMailerMessageComposition)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cat; uid=//apple_ref/occ/cat/SBMailer(SBMailerMessageComposition);  name=SBMailer(SBMailerMessageComposition)-->
+<a name="//apple_ref/occ/cat/SBMailer(SBMailerMessageComposition)"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBMailer(SBMailerMessageComposition)">SBMailer(SBMailerMessageComposition)</a></h1>
+</td></tr></table><hr><p><b>Extends&nbsp;Class:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBMailer" -->SBMailer<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBMailer.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Category that groups functions that actually compose a message for delivery.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendDataPart:" target="_top">-sendDataPart:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendDataPart:mimeType:" target="_top">-sendDataPart:mimeType:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendDataPart:mimeType:filename:" target="_top">-sendDataPart:mimeType:filename:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendFromAddress:" target="_top">-sendFromAddress:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessage:withProperties:" target="_top">-sendMessage:withProperties:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessage:withSubject:" target="_top">-sendMessage:withSubject:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessageHeaders:" target="_top">-sendMessageHeaders:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessageWithComposer:properties:" target="_top">-sendMessageWithComposer:properties:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessageWithComposerFunction:context:properties:" target="_top">-sendMessageWithComposerFunction:context:properties:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendRecipient:" target="_top">-sendRecipient:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendRecipients:" target="_top">-sendRecipients:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendTextPart:" target="_top">-sendTextPart:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendTextPart:mimeType:" target="_top">-sendTextPart:mimeType:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendDataPart:;   name=SBMailer(SBMailerMessageComposition)::sendDataPart: -->
+<a name="//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendDataPart:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendDataPart:">sendDataPart:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendDataPart //apple_ref/occ/clm/sendDataPart //apple_ref/occ/intfcm/sendDataPart //apple_ref/occ/intfm/sendDataPart //apple_ref/occ/func/sendDataPart //apple_ref/occ/ftmplt/sendDataPart //apple_ref/occ/defn/sendDataPart //apple_ref/occ/macro/sendDataPart" --><span class="function">sendDataPart</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/data //apple_ref/occ/data/data" --><span class="var">data</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Invoke this method after message headers have been sent in order to add a MIME
+part containing the given binary data.  The MIME part has a content type of
+"application/octet-stream" associated with it.
+</p>
+<p>The content-disposition will be set to "inline".
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendDataPart:mimeType:;   name=SBMailer(SBMailerMessageComposition)::sendDataPart:mimeType: -->
+<a name="//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendDataPart:mimeType:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendDataPart:mimeType:">sendDataPart:mimeType:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendDataPart //apple_ref/occ/clm/sendDataPart //apple_ref/occ/intfcm/sendDataPart //apple_ref/occ/intfm/sendDataPart //apple_ref/occ/func/sendDataPart //apple_ref/occ/ftmplt/sendDataPart //apple_ref/occ/defn/sendDataPart //apple_ref/occ/macro/sendDataPart" --><span class="function">sendDataPart</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<span class="param">data</span> <!-- a logicalPath="//apple_ref/occ/instm/mimeType //apple_ref/occ/clm/mimeType //apple_ref/occ/intfcm/mimeType //apple_ref/occ/intfm/mimeType //apple_ref/occ/func/mimeType //apple_ref/occ/ftmplt/mimeType //apple_ref/occ/defn/mimeType //apple_ref/occ/macro/mimeType" --><span class="function">mimeType</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/mimeType //apple_ref/occ/data/mimeType" --><span class="var">mimeType</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Invoke this method after message headers have been sent in order to add a MIME
+part containing the given binary data.  An explicit mimeType can be provided (e.g.
+"application/zip"); if mimeType is nil, the content type will be set to
+"application/octet-stream".
+</p>
+<p>The content-disposition will be set to "inline".
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendDataPart:mimeType:filename:;   name=SBMailer(SBMailerMessageComposition)::sendDataPart:mimeType:filename: -->
+<a name="//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendDataPart:mimeType:filename:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendDataPart:mimeType:filename:">sendDataPart:mimeType:filename:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendDataPart //apple_ref/occ/clm/sendDataPart //apple_ref/occ/intfcm/sendDataPart //apple_ref/occ/intfm/sendDataPart //apple_ref/occ/func/sendDataPart //apple_ref/occ/ftmplt/sendDataPart //apple_ref/occ/defn/sendDataPart //apple_ref/occ/macro/sendDataPart" --><span class="function">sendDataPart</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<span class="param">data</span> <!-- a logicalPath="//apple_ref/occ/instm/mimeType //apple_ref/occ/clm/mimeType //apple_ref/occ/intfcm/mimeType //apple_ref/occ/intfm/mimeType //apple_ref/occ/func/mimeType //apple_ref/occ/ftmplt/mimeType //apple_ref/occ/defn/mimeType //apple_ref/occ/macro/mimeType" --><span class="function">mimeType</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">mimeType</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/filename //apple_ref/occ/clm/filename //apple_ref/occ/intfcm/filename //apple_ref/occ/intfm/filename //apple_ref/occ/func/filename //apple_ref/occ/ftmplt/filename //apple_ref/occ/defn/filename //apple_ref/occ/macro/filename" --><span class="function">filename</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/filename //apple_ref/occ/data/filename" --><span class="var">filename</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Invoke this method after message headers have been sent in order to add a MIME
+part containing the given binary data.  An explicit mimeType can be provided (e.g.
+"application/zip"); if mimeType is nil, the content type will be set to
+"application/octet-stream".
+</p>
+<p>The content-disposition will be set to "attachment" as long as filename is a valid
+string.  Otherwise (or if filename is nil) the "inline" disposition is used.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendFromAddress:;   name=SBMailer(SBMailerMessageComposition)::sendFromAddress: -->
+<a name="//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendFromAddress:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendFromAddress:">sendFromAddress:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendFromAddress //apple_ref/occ/clm/sendFromAddress //apple_ref/occ/intfcm/sendFromAddress //apple_ref/occ/intfm/sendFromAddress //apple_ref/occ/func/sendFromAddress //apple_ref/occ/ftmplt/sendFromAddress //apple_ref/occ/defn/sendFromAddress //apple_ref/occ/macro/sendFromAddress" --><span class="function">sendFromAddress</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/fromAddress //apple_ref/occ/data/fromAddress" --><span class="var">fromAddress</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Invoke this method one time only after a new SMTP session has been setup to
+send the "MAIL FROM" command with the given email address.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessage:withProperties:;   name=SBMailer(SBMailerMessageComposition)::sendMessage:withProperties: -->
+<a name="//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessage:withProperties:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendMessage:withProperties:">sendMessage:withProperties:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendMessage //apple_ref/occ/clm/sendMessage //apple_ref/occ/intfcm/sendMessage //apple_ref/occ/intfm/sendMessage //apple_ref/occ/func/sendMessage //apple_ref/occ/ftmplt/sendMessage //apple_ref/occ/defn/sendMessage //apple_ref/occ/macro/sendMessage" --><span class="function">sendMessage</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">message</span> <!-- a logicalPath="//apple_ref/occ/instm/withProperties //apple_ref/occ/clm/withProperties //apple_ref/occ/intfcm/withProperties //apple_ref/occ/intfm/withProperties //apple_ref/occ/func/withProperties //apple_ref/occ/ftmplt/withProperties //apple_ref/occ/defn/withProperties //apple_ref/occ/macro/withProperties" --><span class="function">withProperties</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/messageProps //apple_ref/occ/data/messageProps" --><span class="var">messageProps</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Convenience method which sends the given message body using the receiver's
+default SMTP host/port.  Message meta data are drawn from the messageProps
+dictionary, including recipients, sender adddress, subject, etc.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessage:withSubject:;   name=SBMailer(SBMailerMessageComposition)::sendMessage:withSubject: -->
+<a name="//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessage:withSubject:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendMessage:withSubject:">sendMessage:withSubject:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendMessage //apple_ref/occ/clm/sendMessage //apple_ref/occ/intfcm/sendMessage //apple_ref/occ/intfm/sendMessage //apple_ref/occ/func/sendMessage //apple_ref/occ/ftmplt/sendMessage //apple_ref/occ/defn/sendMessage //apple_ref/occ/macro/sendMessage" --><span class="function">sendMessage</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">message</span> <!-- a logicalPath="//apple_ref/occ/instm/withSubject //apple_ref/occ/clm/withSubject //apple_ref/occ/intfcm/withSubject //apple_ref/occ/intfm/withSubject //apple_ref/occ/func/withSubject //apple_ref/occ/ftmplt/withSubject //apple_ref/occ/defn/withSubject //apple_ref/occ/macro/withSubject" --><span class="function">withSubject</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/subject //apple_ref/occ/data/subject" --><span class="var">subject</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Convenience method which sends the given message body and subject to the
+receiver's default recipient using the default SMTP host/port and the default
+sender address.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessageHeaders:;   name=SBMailer(SBMailerMessageComposition)::sendMessageHeaders: -->
+<a name="//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessageHeaders:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendMessageHeaders:">sendMessageHeaders:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendMessageHeaders //apple_ref/occ/clm/sendMessageHeaders //apple_ref/occ/intfcm/sendMessageHeaders //apple_ref/occ/intfm/sendMessageHeaders //apple_ref/occ/func/sendMessageHeaders //apple_ref/occ/ftmplt/sendMessageHeaders //apple_ref/occ/defn/sendMessageHeaders //apple_ref/occ/macro/sendMessageHeaders" --><span class="function">sendMessageHeaders</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/messageProps //apple_ref/occ/data/messageProps" --><span class="var">messageProps</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Given an SBDictionary containing message meta data keyed by the string constants
+defined at the end of this header file, send the DATA command followed by all
+applicable SMTP headers.
+</p>
+<p>This method should be invoked one time only after at least one of the recipient
+sending methods have been invoked.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessageWithComposer:properties:;   name=SBMailer(SBMailerMessageComposition)::sendMessageWithComposer:properties: -->
+<a name="//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessageWithComposer:properties:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendMessageWithComposer:properties:">sendMessageWithComposer:properties:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendMessageWithComposer //apple_ref/occ/clm/sendMessageWithComposer //apple_ref/occ/intfcm/sendMessageWithComposer //apple_ref/occ/intfm/sendMessageWithComposer //apple_ref/occ/func/sendMessageWithComposer //apple_ref/occ/ftmplt/sendMessageWithComposer //apple_ref/occ/defn/sendMessageWithComposer //apple_ref/occ/macro/sendMessageWithComposer" --><span class="function">sendMessageWithComposer</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">composer</span> <!-- a logicalPath="//apple_ref/occ/instm/properties //apple_ref/occ/clm/properties //apple_ref/occ/intfcm/properties //apple_ref/occ/intfm/properties //apple_ref/occ/func/properties //apple_ref/occ/ftmplt/properties //apple_ref/occ/defn/properties //apple_ref/occ/macro/properties" --><span class="function">properties</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/messageProps //apple_ref/occ/data/messageProps" --><span class="var">messageProps</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Akin to sendMessage:withProperties:, this method acts as a message-building driver.
+It opens a session, sends all sender and recipient information and meta data as
+drawn from the messageProps dictionary.  If successful to that point, it invokes the
+addMessagePartsToMailer: method on the composer object.
+</p>
+<p>The composer object must conform to the SBMailerComposer protocol and is responsible
+for adding content parts to the message.  It should keep track of errors as it proceeds
+and return an SBError object if it needs to signal that the message could not be
+composed properly.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessageWithComposerFunction:context:properties:;   name=SBMailer(SBMailerMessageComposition)::sendMessageWithComposerFunction:context:properties: -->
+<a name="//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendMessageWithComposerFunction:context:properties:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendMessageWithComposerFunction:context:properties:">sendMessageWithComposerFunction:context:properties:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendMessageWithComposerFunction //apple_ref/occ/clm/sendMessageWithComposerFunction //apple_ref/occ/intfcm/sendMessageWithComposerFunction //apple_ref/occ/intfm/sendMessageWithComposerFunction //apple_ref/occ/func/sendMessageWithComposerFunction //apple_ref/occ/ftmplt/sendMessageWithComposerFunction //apple_ref/occ/defn/sendMessageWithComposerFunction //apple_ref/occ/macro/sendMessageWithComposerFunction" --><span class="function">sendMessageWithComposerFunction</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBMailerMultipartComposerFunction //apple_ref/occ/tdef/SBMailerMultipartComposerFunction //apple_ref/occ/tag/SBMailerMultipartComposerFunction //apple_ref/occ/econst/SBMailerMultipartComposerFunction //apple_ref/occ/struct/SBMailerMultipartComposerFunction //apple_ref/occ/clconst/SBMailerMultipartComposerFunction //apple_ref/occ/intf/SBMailerMultipartComposerFunction" --><span class="type">SBMailerMultipartComposerFunction</span><!-- /a -->)<span class="param">composer</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/context //apple_ref/occ/clm/context //apple_ref/occ/intfcm/context //apple_ref/occ/intfm/context //apple_ref/occ/func/context //apple_ref/occ/ftmplt/context //apple_ref/occ/defn/context //apple_ref/occ/macro/context" --><span class="function">context</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a --><span class="type">*</span>)<span class="param">composerContext</span> <!-- a logicalPath="//apple_ref/occ/instm/properties //apple_ref/occ/clm/properties //apple_ref/occ/intfcm/properties //apple_ref/occ/intfm/properties //apple_ref/occ/func/properties //apple_ref/occ/ftmplt/properties //apple_ref/occ/defn/properties //apple_ref/occ/macro/properties" --><span class="function">properties</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDictionary //apple_ref/occ/tdef/SBDictionary //apple_ref/occ/tag/SBDictionary //apple_ref/occ/econst/SBDictionary //apple_ref/occ/struct/SBDictionary //apple_ref/occ/clconst/SBDictionary //apple_ref/occ/intf/SBDictionary" --><span class="type">SBDictionary</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/messageProps //apple_ref/occ/data/messageProps" --><span class="var">messageProps</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Akin to sendMessage:withProperties:, this method acts as a message-building driver.
+It opens a session, sends all sender and recipient information and meta data as
+drawn from the messageProps dictionary.  If successful to that point, it calls the
+composer function.
+</p>
+<p>The composer function is responsible for adding content parts to the message.  It
+should keep track of errors as it proceeds and return an SBError object if it needs
+to signal that the message could not be composed properly.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendRecipient:;   name=SBMailer(SBMailerMessageComposition)::sendRecipient: -->
+<a name="//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendRecipient:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendRecipient:">sendRecipient:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendRecipient //apple_ref/occ/clm/sendRecipient //apple_ref/occ/intfcm/sendRecipient //apple_ref/occ/intfm/sendRecipient //apple_ref/occ/func/sendRecipient //apple_ref/occ/ftmplt/sendRecipient //apple_ref/occ/defn/sendRecipient //apple_ref/occ/macro/sendRecipient" --><span class="function">sendRecipient</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/toAddress //apple_ref/occ/data/toAddress" --><span class="var">toAddress</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Invoke this method after the sendFromAddress: method has been invoked to send a
+"RCPT TO" command with the provided email address.  Can be invoked multiple times.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendRecipients:;   name=SBMailer(SBMailerMessageComposition)::sendRecipients: -->
+<a name="//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendRecipients:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendRecipients:">sendRecipients:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendRecipients //apple_ref/occ/clm/sendRecipients //apple_ref/occ/intfcm/sendRecipients //apple_ref/occ/intfm/sendRecipients //apple_ref/occ/func/sendRecipients //apple_ref/occ/ftmplt/sendRecipients //apple_ref/occ/defn/sendRecipients //apple_ref/occ/macro/sendRecipients" --><span class="function">sendRecipients</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/toAddresses //apple_ref/occ/data/toAddresses" --><span class="var">toAddresses</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Invoke this method after the sendFromAddress: method has been invoked to send a
+"RCPT TO" command for each of the provided email addresses in the toAddresses
+array.  Can be invoked multiple times.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendTextPart:;   name=SBMailer(SBMailerMessageComposition)::sendTextPart: -->
+<a name="//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendTextPart:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendTextPart:">sendTextPart:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendTextPart //apple_ref/occ/clm/sendTextPart //apple_ref/occ/intfcm/sendTextPart //apple_ref/occ/intfm/sendTextPart //apple_ref/occ/func/sendTextPart //apple_ref/occ/ftmplt/sendTextPart //apple_ref/occ/defn/sendTextPart //apple_ref/occ/macro/sendTextPart" --><span class="function">sendTextPart</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/text //apple_ref/occ/data/text" --><span class="var">text</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Invoke this method after message headers have been sent in order to add a MIME
+part containing the given text.  The MIME part has a content type of "text/plain"
+associated with it.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendTextPart:mimeType:;   name=SBMailer(SBMailerMessageComposition)::sendTextPart:mimeType: -->
+<a name="//apple_ref/occ/instm/SBMailer(SBMailerMessageComposition)/sendTextPart:mimeType:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sendTextPart:mimeType:">sendTextPart:mimeType:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBError //apple_ref/occ/tdef/SBError //apple_ref/occ/tag/SBError //apple_ref/occ/econst/SBError //apple_ref/occ/struct/SBError //apple_ref/occ/clconst/SBError //apple_ref/occ/intf/SBError" --><span class="type">SBError</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/sendTextPart //apple_ref/occ/clm/sendTextPart //apple_ref/occ/intfcm/sendTextPart //apple_ref/occ/intfm/sendTextPart //apple_ref/occ/func/sendTextPart //apple_ref/occ/ftmplt/sendTextPart //apple_ref/occ/defn/sendTextPart //apple_ref/occ/macro/sendTextPart" --><span class="function">sendTextPart</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">text</span> <!-- a logicalPath="//apple_ref/occ/instm/mimeType //apple_ref/occ/clm/mimeType //apple_ref/occ/intfcm/mimeType //apple_ref/occ/intfm/mimeType //apple_ref/occ/func/mimeType //apple_ref/occ/ftmplt/mimeType //apple_ref/occ/defn/mimeType //apple_ref/occ/macro/mimeType" --><span class="function">mimeType</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/mimeType //apple_ref/occ/data/mimeType" --><span class="var">mimeType</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Invoke this method after message headers have been sent in order to add a MIME
+part containing the given text.  An explicit mimeType can be provided (e.g.
+"text/html"); if mimeType is nil, the content type will be set to "text/plain".
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

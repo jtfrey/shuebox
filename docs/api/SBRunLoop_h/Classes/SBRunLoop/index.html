@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBRunLoop</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBRunLoop;  name=SBRunLoop-->
+<a name="//apple_ref/occ/cl/SBRunLoop"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBRunLoop">SBRunLoop</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBRunLoop.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Each thread within a process is assigned an instance of SBRunLoop the first time
+the currentRunLoop class method is invoked from within that thread.  The runloop
+manages all timed execution and i/o multiplexing for a thread.
+</p>
+<p>A runloop classifies i/o sources and timers by a mode string.  The default mode
+is accessed by using the SBRunLoopDefaultMode constant.  Modes can be selectively
+targetted when CPU time is given to the runloop; thus, only certain i/o sources
+and timers will be considered for CPU time.
+</p>
+<p>There are essentially two kinds of timed execution which a runloop will perform.
+Instances of SBTimer can be added to a specific mode for a runloop, and will be
+"scheduled" to fire so long as the runloop is given CPU time in that mode.  This
+class also augments SBObject to allow for delayed invocation of a selector on an
+object.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRunLoop/acceptInputForMode:beforeDate:" target="_top">-acceptInputForMode:beforeDate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRunLoop/addTimer:forMode:" target="_top">-addTimer:forMode:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRunLoop/cancelPerformSelector:target:argument:" target="_top">-cancelPerformSelector:target:argument:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRunLoop/cancelPerformSelectorsWithTarget:" target="_top">-cancelPerformSelectorsWithTarget:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRunLoop/currentMode" target="_top">-currentMode</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBRunLoop/currentRunLoop" target="_top">+currentRunLoop</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRunLoop/limitDateForMode:" target="_top">-limitDateForMode:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBRunLoop/mainRunLoop" target="_top">+mainRunLoop</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRunLoop/performSelector:target:argument:order:modes:" target="_top">-performSelector:target:argument:order:modes:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRunLoop/run" target="_top">-run</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRunLoop/runMode:beforeDate:" target="_top">-runMode:beforeDate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRunLoop/runUntilDate:" target="_top">-runUntilDate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBRunLoop/setEarlyExit:" target="_top">-setEarlyExit:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRunLoop/acceptInputForMode:beforeDate:;   name=SBRunLoop::acceptInputForMode:beforeDate: -->
+<a name="//apple_ref/occ/instm/SBRunLoop/acceptInputForMode:beforeDate:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="acceptInputForMode:beforeDate:">acceptInputForMode:beforeDate:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/acceptInputForMode //apple_ref/occ/clm/acceptInputForMode //apple_ref/occ/intfcm/acceptInputForMode //apple_ref/occ/intfm/acceptInputForMode //apple_ref/occ/func/acceptInputForMode //apple_ref/occ/ftmplt/acceptInputForMode //apple_ref/occ/defn/acceptInputForMode //apple_ref/occ/macro/acceptInputForMode" --><span class="function">acceptInputForMode</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">aMode</span> <!-- a logicalPath="//apple_ref/occ/instm/beforeDate //apple_ref/occ/clm/beforeDate //apple_ref/occ/intfcm/beforeDate //apple_ref/occ/intfm/beforeDate //apple_ref/occ/func/beforeDate //apple_ref/occ/ftmplt/beforeDate //apple_ref/occ/defn/beforeDate //apple_ref/occ/macro/beforeDate" --><span class="function">beforeDate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/endDate //apple_ref/occ/data/endDate" --><span class="var">endDate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Runs the receiver loop once or until the specified date, accepting input only for the
+specified mode.  If no input sources or timers are attached to the run loop, this method exits
+immediately.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRunLoop/addTimer:forMode:;   name=SBRunLoop::addTimer:forMode: -->
+<a name="//apple_ref/occ/instm/SBRunLoop/addTimer:forMode:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="addTimer:forMode:">addTimer:forMode:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/addTimer //apple_ref/occ/clm/addTimer //apple_ref/occ/intfcm/addTimer //apple_ref/occ/intfm/addTimer //apple_ref/occ/func/addTimer //apple_ref/occ/ftmplt/addTimer //apple_ref/occ/defn/addTimer //apple_ref/occ/macro/addTimer" --><span class="function">addTimer</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBTimer //apple_ref/occ/tdef/SBTimer //apple_ref/occ/tag/SBTimer //apple_ref/occ/econst/SBTimer //apple_ref/occ/struct/SBTimer //apple_ref/occ/clconst/SBTimer //apple_ref/occ/intf/SBTimer" --><span class="type">SBTimer</span><!-- /a --><span class="type">*</span>)<span class="param">aTimer</span> <!-- a logicalPath="//apple_ref/occ/instm/forMode //apple_ref/occ/clm/forMode //apple_ref/occ/intfcm/forMode //apple_ref/occ/intfm/forMode //apple_ref/occ/func/forMode //apple_ref/occ/ftmplt/forMode //apple_ref/occ/defn/forMode //apple_ref/occ/macro/forMode" --><span class="function">forMode</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/aMode //apple_ref/occ/data/aMode" --><span class="var">aMode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Schedule aTimer for periodic execution in the receiver runloop when
+the runloop is given time in mode aMode.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRunLoop/cancelPerformSelector:target:argument:;   name=SBRunLoop::cancelPerformSelector:target:argument: -->
+<a name="//apple_ref/occ/instm/SBRunLoop/cancelPerformSelector:target:argument:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="cancelPerformSelector:target:argument:">cancelPerformSelector:target:argument:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/cancelPerformSelector //apple_ref/occ/clm/cancelPerformSelector //apple_ref/occ/intfcm/cancelPerformSelector //apple_ref/occ/intfm/cancelPerformSelector //apple_ref/occ/func/cancelPerformSelector //apple_ref/occ/ftmplt/cancelPerformSelector //apple_ref/occ/defn/cancelPerformSelector //apple_ref/occ/macro/cancelPerformSelector" --><span class="function">cancelPerformSelector</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SEL //apple_ref/occ/tdef/SEL //apple_ref/occ/tag/SEL //apple_ref/occ/econst/SEL //apple_ref/occ/struct/SEL //apple_ref/occ/clconst/SEL //apple_ref/occ/intf/SEL" --><span class="type">SEL</span><!-- /a -->)<span class="param">aSelector</span> <!-- a logicalPath="//apple_ref/occ/instm/target //apple_ref/occ/clm/target //apple_ref/occ/intfcm/target //apple_ref/occ/intfm/target //apple_ref/occ/func/target //apple_ref/occ/ftmplt/target //apple_ref/occ/defn/target //apple_ref/occ/macro/target" --><span class="function">target</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">target</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/argument //apple_ref/occ/clm/argument //apple_ref/occ/intfcm/argument //apple_ref/occ/intfm/argument //apple_ref/occ/func/argument //apple_ref/occ/ftmplt/argument //apple_ref/occ/defn/argument //apple_ref/occ/macro/argument" --><span class="function">argument</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/anArgument //apple_ref/occ/data/anArgument" --><span class="var">anArgument</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Remove all queued invocations with the specific combination of target, selector, and
+argument to the method.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRunLoop/cancelPerformSelectorsWithTarget:;   name=SBRunLoop::cancelPerformSelectorsWithTarget: -->
+<a name="//apple_ref/occ/instm/SBRunLoop/cancelPerformSelectorsWithTarget:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="cancelPerformSelectorsWithTarget:">cancelPerformSelectorsWithTarget:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/cancelPerformSelectorsWithTarget //apple_ref/occ/clm/cancelPerformSelectorsWithTarget //apple_ref/occ/intfcm/cancelPerformSelectorsWithTarget //apple_ref/occ/intfm/cancelPerformSelectorsWithTarget //apple_ref/occ/func/cancelPerformSelectorsWithTarget //apple_ref/occ/ftmplt/cancelPerformSelectorsWithTarget //apple_ref/occ/defn/cancelPerformSelectorsWithTarget //apple_ref/occ/macro/cancelPerformSelectorsWithTarget" --><span class="function">cancelPerformSelectorsWithTarget</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/target //apple_ref/occ/data/target" --><span class="var">target</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Remove all queued invocations for the given target object.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRunLoop/currentMode;   name=SBRunLoop::currentMode -->
+<a name="//apple_ref/occ/instm/SBRunLoop/currentMode"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="currentMode">currentMode</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/currentMode //apple_ref/occ/data/currentMode" --><span class="var">currentMode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the string that identifies the current mode in which the receiver is running.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBRunLoop/currentRunLoop;   name=SBRunLoop::currentRunLoop -->
+<a name="//apple_ref/occ/clm/SBRunLoop/currentRunLoop"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="currentRunLoop">currentRunLoop</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBRunLoop //apple_ref/occ/tdef/SBRunLoop //apple_ref/occ/tag/SBRunLoop //apple_ref/occ/econst/SBRunLoop //apple_ref/occ/struct/SBRunLoop //apple_ref/occ/clconst/SBRunLoop //apple_ref/occ/intf/SBRunLoop" --><span class="type">SBRunLoop</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/currentRunLoop //apple_ref/occ/data/currentRunLoop" --><span class="var">currentRunLoop</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the run loop currently in scope in the current thread.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRunLoop/limitDateForMode:;   name=SBRunLoop::limitDateForMode: -->
+<a name="//apple_ref/occ/instm/SBRunLoop/limitDateForMode:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="limitDateForMode:">limitDateForMode:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/limitDateForMode //apple_ref/occ/clm/limitDateForMode //apple_ref/occ/intfcm/limitDateForMode //apple_ref/occ/intfm/limitDateForMode //apple_ref/occ/func/limitDateForMode //apple_ref/occ/ftmplt/limitDateForMode //apple_ref/occ/defn/limitDateForMode //apple_ref/occ/macro/limitDateForMode" --><span class="function">limitDateForMode</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/mode //apple_ref/occ/data/mode" --><span class="var">mode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Performs one pass through the receiver runloop in the specified mode and returns the
+date at which the next timer is scheduled to fire.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBRunLoop/mainRunLoop;   name=SBRunLoop::mainRunLoop -->
+<a name="//apple_ref/occ/clm/SBRunLoop/mainRunLoop"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="mainRunLoop">mainRunLoop</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/SBRunLoop //apple_ref/occ/tdef/SBRunLoop //apple_ref/occ/tag/SBRunLoop //apple_ref/occ/econst/SBRunLoop //apple_ref/occ/struct/SBRunLoop //apple_ref/occ/clconst/SBRunLoop //apple_ref/occ/intf/SBRunLoop" --><span class="type">SBRunLoop</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/mainRunLoop //apple_ref/occ/data/mainRunLoop" --><span class="var">mainRunLoop</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the primary loop for the current thread.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRunLoop/performSelector:target:argument:order:modes:;   name=SBRunLoop::performSelector:target:argument:order:modes: -->
+<a name="//apple_ref/occ/instm/SBRunLoop/performSelector:target:argument:order:modes:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="performSelector:target:argument:order:modes:">performSelector:target:argument:order:modes:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/performSelector //apple_ref/occ/clm/performSelector //apple_ref/occ/intfcm/performSelector //apple_ref/occ/intfm/performSelector //apple_ref/occ/func/performSelector //apple_ref/occ/ftmplt/performSelector //apple_ref/occ/defn/performSelector //apple_ref/occ/macro/performSelector" --><span class="function">performSelector</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SEL //apple_ref/occ/tdef/SEL //apple_ref/occ/tag/SEL //apple_ref/occ/econst/SEL //apple_ref/occ/struct/SEL //apple_ref/occ/clconst/SEL //apple_ref/occ/intf/SEL" --><span class="type">SEL</span><!-- /a -->)<span class="param">aSelector</span> <!-- a logicalPath="//apple_ref/occ/instm/target //apple_ref/occ/clm/target //apple_ref/occ/intfcm/target //apple_ref/occ/intfm/target //apple_ref/occ/func/target //apple_ref/occ/ftmplt/target //apple_ref/occ/defn/target //apple_ref/occ/macro/target" --><span class="function">target</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">target</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/argument //apple_ref/occ/clm/argument //apple_ref/occ/intfcm/argument //apple_ref/occ/intfm/argument //apple_ref/occ/func/argument //apple_ref/occ/ftmplt/argument //apple_ref/occ/defn/argument //apple_ref/occ/macro/argument" --><span class="function">argument</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">anArgument</span> <!-- a logicalPath="//apple_ref/occ/instm/order //apple_ref/occ/clm/order //apple_ref/occ/intfcm/order //apple_ref/occ/intfm/order //apple_ref/occ/func/order //apple_ref/occ/ftmplt/order //apple_ref/occ/defn/order //apple_ref/occ/macro/order" --><span class="function">order</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<span class="param">order</span> <!-- a logicalPath="//apple_ref/occ/instm/modes //apple_ref/occ/clm/modes //apple_ref/occ/intfcm/modes //apple_ref/occ/intfm/modes //apple_ref/occ/func/modes //apple_ref/occ/ftmplt/modes //apple_ref/occ/defn/modes //apple_ref/occ/macro/modes" --><span class="function">modes</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/modes //apple_ref/occ/data/modes" --><span class="var">modes</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Queues the invocation of aSelector on the target object with priority over other
+queued invocations dictated by order:  lower order implies earlier execution.  The selector
+should refer to a void-type method that takes a single argument of type id.
+</p>
+<p>When the receiver runloop gets time in any of the selected modes, it will invoke
+</p>
+<p>[target performSelector:aSelector object:anArgument]
+</p>
+<p>and remove the invocation from the queue.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRunLoop/run;   name=SBRunLoop::run -->
+<a name="//apple_ref/occ/instm/SBRunLoop/run"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="run">run</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/run //apple_ref/occ/data/run" --><span class="var">run</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Puts the receiver into a permanent loop in SBRunLoopDefaultMode, during which time it processes
+data from all attached input sources.  Timers and queued invocations will also be processed.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRunLoop/runMode:beforeDate:;   name=SBRunLoop::runMode:beforeDate: -->
+<a name="//apple_ref/occ/instm/SBRunLoop/runMode:beforeDate:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="runMode:beforeDate:">runMode:beforeDate:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/runMode //apple_ref/occ/clm/runMode //apple_ref/occ/intfcm/runMode //apple_ref/occ/intfm/runMode //apple_ref/occ/func/runMode //apple_ref/occ/ftmplt/runMode //apple_ref/occ/defn/runMode //apple_ref/occ/macro/runMode" --><span class="function">runMode</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">mode</span> <!-- a logicalPath="//apple_ref/occ/instm/beforeDate //apple_ref/occ/clm/beforeDate //apple_ref/occ/intfcm/beforeDate //apple_ref/occ/intfm/beforeDate //apple_ref/occ/func/beforeDate //apple_ref/occ/ftmplt/beforeDate //apple_ref/occ/defn/beforeDate //apple_ref/occ/macro/beforeDate" --><span class="function">beforeDate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/endDate //apple_ref/occ/data/endDate" --><span class="var">endDate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Runs the receiver loop once, blocking for input in the specified mode until a given date.  Timers
+and queue invocations will be processed, as well.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRunLoop/runUntilDate:;   name=SBRunLoop::runUntilDate: -->
+<a name="//apple_ref/occ/instm/SBRunLoop/runUntilDate:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="runUntilDate:">runUntilDate:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/runUntilDate //apple_ref/occ/clm/runUntilDate //apple_ref/occ/intfcm/runUntilDate //apple_ref/occ/intfm/runUntilDate //apple_ref/occ/func/runUntilDate //apple_ref/occ/ftmplt/runUntilDate //apple_ref/occ/defn/runUntilDate //apple_ref/occ/macro/runUntilDate" --><span class="function">runUntilDate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBDate //apple_ref/occ/tdef/SBDate //apple_ref/occ/tag/SBDate //apple_ref/occ/econst/SBDate //apple_ref/occ/struct/SBDate //apple_ref/occ/clconst/SBDate //apple_ref/occ/intf/SBDate" --><span class="type">SBDate</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/endDate //apple_ref/occ/data/endDate" --><span class="var">endDate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Similar to the run method but with a terminal date/time specified.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBRunLoop/setEarlyExit:;   name=SBRunLoop::setEarlyExit: -->
+<a name="//apple_ref/occ/instm/SBRunLoop/setEarlyExit:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setEarlyExit:">setEarlyExit:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setEarlyExit //apple_ref/occ/clm/setEarlyExit //apple_ref/occ/intfcm/setEarlyExit //apple_ref/occ/intfm/setEarlyExit //apple_ref/occ/func/setEarlyExit //apple_ref/occ/ftmplt/setEarlyExit //apple_ref/occ/defn/setEarlyExit //apple_ref/occ/macro/setEarlyExit" --><span class="function">setEarlyExit</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/earlyExit //apple_ref/occ/data/earlyExit" --><span class="var">earlyExit</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If earlyExit is YES, then the receiver should exit from its loop as soon as possible. 
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

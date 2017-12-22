@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBOrderedSet</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBOrderedSet;  name=SBOrderedSet-->
+<a name="//apple_ref/occ/cl/SBOrderedSet"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBOrderedSet">SBOrderedSet</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBOrderedSet.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>An SBOrderedSet is a mutable array of objects.  Objects are kept sorted
+in that array by means of a sorting method or function.  Objects that sort
+equivalent to an object already in the array replace that object (making
+the array single-occupancy w.r.t. object values).
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/addObject:" target="_top">-addObject:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/addObjectsFromArray:" target="_top">-addObjectsFromArray:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/addObjectsFromSet:" target="_top">-addObjectsFromSet:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/containsObject:" target="_top">-containsObject:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/count" target="_top">-count</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/indexOfObject:" target="_top">-indexOfObject:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/initWithArray:andComparator:" target="_top">-initWithArray:andComparator:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/initWithArray:andSelector:" target="_top">-initWithArray:andSelector:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/initWithComparator:" target="_top">-initWithComparator:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/initWithSelector:" target="_top">-initWithSelector:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/objectAtIndex:" target="_top">-objectAtIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/objectEnumerator" target="_top">-objectEnumerator</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/removeAllObjects" target="_top">-removeAllObjects</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/removeObject:" target="_top">-removeObject:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/removeObjectAtIndex:" target="_top">-removeObjectAtIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/removeObjectsInArray:" target="_top">-removeObjectsInArray:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/removeObjectsInSet:" target="_top">-removeObjectsInSet:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBOrderedSet/reverseObjectEnumerator" target="_top">-reverseObjectEnumerator</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/addObject:;   name=SBOrderedSet::addObject: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/addObject:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="addObject:">addObject:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/addObject //apple_ref/occ/clm/addObject //apple_ref/occ/intfcm/addObject //apple_ref/occ/intfm/addObject //apple_ref/occ/func/addObject //apple_ref/occ/ftmplt/addObject //apple_ref/occ/defn/addObject //apple_ref/occ/macro/addObject" --><span class="function">addObject</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/object //apple_ref/occ/data/object" --><span class="var">object</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to insert object into the receiver's array.  If the receiver's selector/comparator
+function indicates that object already exists in the array, it is replaced with the incoming
+object.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/addObjectsFromArray:;   name=SBOrderedSet::addObjectsFromArray: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/addObjectsFromArray:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="addObjectsFromArray:">addObjectsFromArray:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/addObjectsFromArray //apple_ref/occ/clm/addObjectsFromArray //apple_ref/occ/intfcm/addObjectsFromArray //apple_ref/occ/intfm/addObjectsFromArray //apple_ref/occ/func/addObjectsFromArray //apple_ref/occ/ftmplt/addObjectsFromArray //apple_ref/occ/defn/addObjectsFromArray //apple_ref/occ/macro/addObjectsFromArray" --><span class="function">addObjectsFromArray</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/anArray //apple_ref/occ/data/anArray" --><span class="var">anArray</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to insert the objects contained in anArray into the receiver's array.  Behaves
+similar to "n" invocations of the addObject: method.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/addObjectsFromSet:;   name=SBOrderedSet::addObjectsFromSet: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/addObjectsFromSet:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="addObjectsFromSet:">addObjectsFromSet:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/addObjectsFromSet //apple_ref/occ/clm/addObjectsFromSet //apple_ref/occ/intfcm/addObjectsFromSet //apple_ref/occ/intfm/addObjectsFromSet //apple_ref/occ/func/addObjectsFromSet //apple_ref/occ/ftmplt/addObjectsFromSet //apple_ref/occ/defn/addObjectsFromSet //apple_ref/occ/macro/addObjectsFromSet" --><span class="function">addObjectsFromSet</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBOrderedSet //apple_ref/occ/tdef/SBOrderedSet //apple_ref/occ/tag/SBOrderedSet //apple_ref/occ/econst/SBOrderedSet //apple_ref/occ/struct/SBOrderedSet //apple_ref/occ/clconst/SBOrderedSet //apple_ref/occ/intf/SBOrderedSet" --><span class="type">SBOrderedSet</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherSet //apple_ref/occ/data/otherSet" --><span class="var">otherSet</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to insert the objects contained in otherSet into the receiver's array.  Behaves
+similar to "n" invocations of the addObject: method.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/containsObject:;   name=SBOrderedSet::containsObject: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/containsObject:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="containsObject:">containsObject:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/containsObject //apple_ref/occ/clm/containsObject //apple_ref/occ/intfcm/containsObject //apple_ref/occ/intfm/containsObject //apple_ref/occ/func/containsObject //apple_ref/occ/ftmplt/containsObject //apple_ref/occ/defn/containsObject //apple_ref/occ/macro/containsObject" --><span class="function">containsObject</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/object //apple_ref/occ/data/object" --><span class="var">object</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Similar to indexOfObject:, but returns YES if the object was present.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/count;   name=SBOrderedSet::count -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/count"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="count">count</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/count //apple_ref/occ/data/count" --><span class="var">count</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the number of objects contained in the receiver's array.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/indexOfObject:;   name=SBOrderedSet::indexOfObject: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/indexOfObject:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="indexOfObject:">indexOfObject:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/indexOfObject //apple_ref/occ/clm/indexOfObject //apple_ref/occ/intfcm/indexOfObject //apple_ref/occ/intfm/indexOfObject //apple_ref/occ/func/indexOfObject //apple_ref/occ/ftmplt/indexOfObject //apple_ref/occ/defn/indexOfObject //apple_ref/occ/macro/indexOfObject" --><span class="function">indexOfObject</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/object //apple_ref/occ/data/object" --><span class="var">object</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If object is present in the receiver's array, returns its index.  Equality is established
+using the selector or comparator function associated with the receiver.
+</p>
+<p>SBNotFound is returned if object was not present.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/initWithArray:andComparator:;   name=SBOrderedSet::initWithArray:andComparator: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/initWithArray:andComparator:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithArray:andComparator:">initWithArray:andComparator:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithArray //apple_ref/occ/clm/initWithArray //apple_ref/occ/intfcm/initWithArray //apple_ref/occ/intfm/initWithArray //apple_ref/occ/func/initWithArray //apple_ref/occ/ftmplt/initWithArray //apple_ref/occ/defn/initWithArray //apple_ref/occ/macro/initWithArray" --><span class="function">initWithArray</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>)<span class="param">array</span> <!-- a logicalPath="//apple_ref/occ/instm/andComparator //apple_ref/occ/clm/andComparator //apple_ref/occ/intfcm/andComparator //apple_ref/occ/intfm/andComparator //apple_ref/occ/func/andComparator //apple_ref/occ/ftmplt/andComparator //apple_ref/occ/defn/andComparator //apple_ref/occ/macro/andComparator" --><span class="function">andComparator</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBOrderedSetComparator //apple_ref/occ/tdef/SBOrderedSetComparator //apple_ref/occ/tag/SBOrderedSetComparator //apple_ref/occ/econst/SBOrderedSetComparator //apple_ref/occ/struct/SBOrderedSetComparator //apple_ref/occ/clconst/SBOrderedSetComparator //apple_ref/occ/intf/SBOrderedSetComparator" --><span class="type">SBOrderedSetComparator</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/comparator //apple_ref/occ/data/comparator" --><span class="var">comparator</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The receiver is initialized to initially contain the objects in array.  Object
+ordering is established by means of a comparator function (see SBOrderedSetComparator).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/initWithArray:andSelector:;   name=SBOrderedSet::initWithArray:andSelector: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/initWithArray:andSelector:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithArray:andSelector:">initWithArray:andSelector:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithArray //apple_ref/occ/clm/initWithArray //apple_ref/occ/intfcm/initWithArray //apple_ref/occ/intfm/initWithArray //apple_ref/occ/func/initWithArray //apple_ref/occ/ftmplt/initWithArray //apple_ref/occ/defn/initWithArray //apple_ref/occ/macro/initWithArray" --><span class="function">initWithArray</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>)<span class="param">array</span> <!-- a logicalPath="//apple_ref/occ/instm/andSelector //apple_ref/occ/clm/andSelector //apple_ref/occ/intfcm/andSelector //apple_ref/occ/intfm/andSelector //apple_ref/occ/func/andSelector //apple_ref/occ/ftmplt/andSelector //apple_ref/occ/defn/andSelector //apple_ref/occ/macro/andSelector" --><span class="function">andSelector</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SEL //apple_ref/occ/tdef/SEL //apple_ref/occ/tag/SEL //apple_ref/occ/econst/SEL //apple_ref/occ/struct/SEL //apple_ref/occ/clconst/SEL //apple_ref/occ/intf/SEL" --><span class="type">SEL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/selector //apple_ref/occ/data/selector" --><span class="var">selector</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The receiver is initialized to initially contain the objects in array.  Object
+ordering is established by means of a selector corresponding to an instance method
+that is prototyped as:
+</p>
+<p>- (SBComparisonResult) compareToObject:(id)otherObject
+</p>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/initWithComparator:;   name=SBOrderedSet::initWithComparator: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/initWithComparator:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithComparator:">initWithComparator:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithComparator //apple_ref/occ/clm/initWithComparator //apple_ref/occ/intfcm/initWithComparator //apple_ref/occ/intfm/initWithComparator //apple_ref/occ/func/initWithComparator //apple_ref/occ/ftmplt/initWithComparator //apple_ref/occ/defn/initWithComparator //apple_ref/occ/macro/initWithComparator" --><span class="function">initWithComparator</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBOrderedSetComparator //apple_ref/occ/tdef/SBOrderedSetComparator //apple_ref/occ/tag/SBOrderedSetComparator //apple_ref/occ/econst/SBOrderedSetComparator //apple_ref/occ/struct/SBOrderedSetComparator //apple_ref/occ/clconst/SBOrderedSetComparator //apple_ref/occ/intf/SBOrderedSetComparator" --><span class="type">SBOrderedSetComparator</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/comparator //apple_ref/occ/data/comparator" --><span class="var">comparator</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The receiver is initialized to an empty set.  Object ordering is established
+by means of a comparator function (see SBOrderedSetComparator).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/initWithSelector:;   name=SBOrderedSet::initWithSelector: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/initWithSelector:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithSelector:">initWithSelector:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithSelector //apple_ref/occ/clm/initWithSelector //apple_ref/occ/intfcm/initWithSelector //apple_ref/occ/intfm/initWithSelector //apple_ref/occ/func/initWithSelector //apple_ref/occ/ftmplt/initWithSelector //apple_ref/occ/defn/initWithSelector //apple_ref/occ/macro/initWithSelector" --><span class="function">initWithSelector</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SEL //apple_ref/occ/tdef/SEL //apple_ref/occ/tag/SEL //apple_ref/occ/econst/SEL //apple_ref/occ/struct/SEL //apple_ref/occ/clconst/SEL //apple_ref/occ/intf/SEL" --><span class="type">SEL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/selector //apple_ref/occ/data/selector" --><span class="var">selector</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The receiver is initialized to an empty set.  Object ordering is established
+by means of a selector corresponding to an instance method that is prototyped
+as:
+</p>
+<p>- (SBComparisonResult) compareToObject:(id)otherObject
+</p>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/objectAtIndex:;   name=SBOrderedSet::objectAtIndex: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/objectAtIndex:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="objectAtIndex:">objectAtIndex:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/objectAtIndex //apple_ref/occ/clm/objectAtIndex //apple_ref/occ/intfcm/objectAtIndex //apple_ref/occ/intfm/objectAtIndex //apple_ref/occ/func/objectAtIndex //apple_ref/occ/ftmplt/objectAtIndex //apple_ref/occ/defn/objectAtIndex //apple_ref/occ/macro/objectAtIndex" --><span class="function">objectAtIndex</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the object at the given index in the receiver's array.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/objectEnumerator;   name=SBOrderedSet::objectEnumerator -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/objectEnumerator"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="objectEnumerator">objectEnumerator</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBEnumerator //apple_ref/occ/tdef/SBEnumerator //apple_ref/occ/tag/SBEnumerator //apple_ref/occ/econst/SBEnumerator //apple_ref/occ/struct/SBEnumerator //apple_ref/occ/clconst/SBEnumerator //apple_ref/occ/intf/SBEnumerator" --><span class="type">SBEnumerator</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/objectEnumerator //apple_ref/occ/data/objectEnumerator" --><span class="var">objectEnumerator</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an SBEnumerator that iterates over the objects in the receiver's array from first to
+last.  Do not attempt to modify the receiver while using the enumerator!
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/removeAllObjects;   name=SBOrderedSet::removeAllObjects -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/removeAllObjects"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeAllObjects">removeAllObjects</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/removeAllObjects //apple_ref/occ/data/removeAllObjects" --><span class="var">removeAllObjects</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Remove all objects from the receiver's array.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/removeObject:;   name=SBOrderedSet::removeObject: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/removeObject:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeObject:">removeObject:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/removeObject //apple_ref/occ/clm/removeObject //apple_ref/occ/intfcm/removeObject //apple_ref/occ/intfm/removeObject //apple_ref/occ/func/removeObject //apple_ref/occ/ftmplt/removeObject //apple_ref/occ/defn/removeObject //apple_ref/occ/macro/removeObject" --><span class="function">removeObject</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/object //apple_ref/occ/data/object" --><span class="var">object</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If object is present in the receiver's array, remove it.  Equality is established using
+the receiver's selector/comparator function.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/removeObjectAtIndex:;   name=SBOrderedSet::removeObjectAtIndex: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/removeObjectAtIndex:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeObjectAtIndex:">removeObjectAtIndex:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/removeObjectAtIndex //apple_ref/occ/clm/removeObjectAtIndex //apple_ref/occ/intfcm/removeObjectAtIndex //apple_ref/occ/intfm/removeObjectAtIndex //apple_ref/occ/func/removeObjectAtIndex //apple_ref/occ/ftmplt/removeObjectAtIndex //apple_ref/occ/defn/removeObjectAtIndex //apple_ref/occ/macro/removeObjectAtIndex" --><span class="function">removeObjectAtIndex</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Remove the object present at index in the receiver's array.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/removeObjectsInArray:;   name=SBOrderedSet::removeObjectsInArray: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/removeObjectsInArray:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeObjectsInArray:">removeObjectsInArray:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/removeObjectsInArray //apple_ref/occ/clm/removeObjectsInArray //apple_ref/occ/intfcm/removeObjectsInArray //apple_ref/occ/intfm/removeObjectsInArray //apple_ref/occ/func/removeObjectsInArray //apple_ref/occ/ftmplt/removeObjectsInArray //apple_ref/occ/defn/removeObjectsInArray //apple_ref/occ/macro/removeObjectsInArray" --><span class="function">removeObjectsInArray</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBArray //apple_ref/occ/tdef/SBArray //apple_ref/occ/tag/SBArray //apple_ref/occ/econst/SBArray //apple_ref/occ/struct/SBArray //apple_ref/occ/clconst/SBArray //apple_ref/occ/intf/SBArray" --><span class="type">SBArray</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/anArray //apple_ref/occ/data/anArray" --><span class="var">anArray</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>All objects in anArray which are found in the receiver's array are removed from the
+receiver's array.  Equality is established using the receiver's selector/comparator function.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/removeObjectsInSet:;   name=SBOrderedSet::removeObjectsInSet: -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/removeObjectsInSet:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeObjectsInSet:">removeObjectsInSet:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/removeObjectsInSet //apple_ref/occ/clm/removeObjectsInSet //apple_ref/occ/intfcm/removeObjectsInSet //apple_ref/occ/intfm/removeObjectsInSet //apple_ref/occ/func/removeObjectsInSet //apple_ref/occ/ftmplt/removeObjectsInSet //apple_ref/occ/defn/removeObjectsInSet //apple_ref/occ/macro/removeObjectsInSet" --><span class="function">removeObjectsInSet</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBOrderedSet //apple_ref/occ/tdef/SBOrderedSet //apple_ref/occ/tag/SBOrderedSet //apple_ref/occ/econst/SBOrderedSet //apple_ref/occ/struct/SBOrderedSet //apple_ref/occ/clconst/SBOrderedSet //apple_ref/occ/intf/SBOrderedSet" --><span class="type">SBOrderedSet</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/otherSet //apple_ref/occ/data/otherSet" --><span class="var">otherSet</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>All objects in otherSet which are found in the receiver's array are removed from the
+receiver's array.  Equality is established using the receiver's selector/comparator function.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBOrderedSet/reverseObjectEnumerator;   name=SBOrderedSet::reverseObjectEnumerator -->
+<a name="//apple_ref/occ/instm/SBOrderedSet/reverseObjectEnumerator"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="reverseObjectEnumerator">reverseObjectEnumerator</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBEnumerator //apple_ref/occ/tdef/SBEnumerator //apple_ref/occ/tag/SBEnumerator //apple_ref/occ/econst/SBEnumerator //apple_ref/occ/struct/SBEnumerator //apple_ref/occ/clconst/SBEnumerator //apple_ref/occ/intf/SBEnumerator" --><span class="type">SBEnumerator</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/reverseObjectEnumerator //apple_ref/occ/data/reverseObjectEnumerator" --><span class="var">reverseObjectEnumerator</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an SBEnumerator that iterates over the objects in the receiver's array from last to
+first.  Do not attempt to modify the receiver while using the enumerator!
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

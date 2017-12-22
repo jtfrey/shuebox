@@ -1,0 +1,379 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBFileManager</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBFileManager;  name=SBFileManager-->
+<a name="//apple_ref/occ/cl/SBFileManager"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBFileManager">SBFileManager</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBObject" -->SBObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBFileManager.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The SBFileManager class is designed to streamline interactions with file attributes.  A
+single shared instance is provided, so consumer code should never need to directly
+allocate an instance of this class.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/contentsAtPath:" target="_top">-contentsAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/createDirectoryAtPath:" target="_top">-createDirectoryAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/createDirectoryAtPath:mode:" target="_top">-createDirectoryAtPath:mode:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/createFileAtPath:contents:" target="_top">-createFileAtPath:contents:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/directoryExistsAtPath:" target="_top">-directoryExistsAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/enumeratorAtPath:" target="_top">-enumeratorAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/fileExistsAtPath:" target="_top">-fileExistsAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/isExecutableFileAtPath:" target="_top">-isExecutableFileAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/isReadableFileAtPath:" target="_top">-isReadableFileAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/isWritableFileAtPath:" target="_top">-isWritableFileAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/movePath:toPath:" target="_top">-movePath:toPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/openPath:asCFileStreamWithMode:" target="_top">-openPath:asCFileStreamWithMode:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/openPath:withFlags:mode:" target="_top">-openPath:withFlags:mode:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/ownerGIdAtPath:" target="_top">-ownerGIdAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/ownerUIdAtPath:" target="_top">-ownerUIdAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/pathExists:" target="_top">-pathExists:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/posixPermissionsAtPath:" target="_top">-posixPermissionsAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/removeFileAtPath:" target="_top">-removeFileAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/removeItemAtPath:" target="_top">-removeItemAtPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/setOwnerUId:andGId:atPath:" target="_top">-setOwnerUId:andGId:atPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/setOwnerUId:andGId:posixMode:atPath:" target="_top">-setOwnerUId:andGId:posixMode:atPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/setOwnerUId:atPath:" target="_top">-setOwnerUId:atPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/setPosixPermissions:atPath:" target="_top">-setPosixPermissions:atPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/setWorkingDirectoryPath:" target="_top">-setWorkingDirectoryPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/SBFileManager/sharedFileManager" target="_top">+sharedFileManager</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileManager/workingDirectoryPath" target="_top">-workingDirectoryPath</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/contentsAtPath:;   name=SBFileManager::contentsAtPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/contentsAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="contentsAtPath:">contentsAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/contentsAtPath //apple_ref/occ/clm/contentsAtPath //apple_ref/occ/intfcm/contentsAtPath //apple_ref/occ/intfm/contentsAtPath //apple_ref/occ/func/contentsAtPath //apple_ref/occ/ftmplt/contentsAtPath //apple_ref/occ/defn/contentsAtPath //apple_ref/occ/macro/contentsAtPath" --><span class="function">contentsAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to open the file at path and read its content into memory.  If successful,
+an SBData object containing the file's content is returned.  Otherwise, nil is
+returned.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/createDirectoryAtPath:;   name=SBFileManager::createDirectoryAtPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/createDirectoryAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="createDirectoryAtPath:">createDirectoryAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/createDirectoryAtPath //apple_ref/occ/clm/createDirectoryAtPath //apple_ref/occ/intfcm/createDirectoryAtPath //apple_ref/occ/intfm/createDirectoryAtPath //apple_ref/occ/func/createDirectoryAtPath //apple_ref/occ/ftmplt/createDirectoryAtPath //apple_ref/occ/defn/createDirectoryAtPath //apple_ref/occ/macro/createDirectoryAtPath" --><span class="function">createDirectoryAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If path is not an extant UNIX file path, create a new directory at path with default
+permissions and ownership.  Returns YES if successful.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/createDirectoryAtPath:mode:;   name=SBFileManager::createDirectoryAtPath:mode: -->
+<a name="//apple_ref/occ/instm/SBFileManager/createDirectoryAtPath:mode:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="createDirectoryAtPath:mode:">createDirectoryAtPath:mode:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/createDirectoryAtPath //apple_ref/occ/clm/createDirectoryAtPath //apple_ref/occ/intfcm/createDirectoryAtPath //apple_ref/occ/intfm/createDirectoryAtPath //apple_ref/occ/func/createDirectoryAtPath //apple_ref/occ/ftmplt/createDirectoryAtPath //apple_ref/occ/defn/createDirectoryAtPath //apple_ref/occ/macro/createDirectoryAtPath" --><span class="function">createDirectoryAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">path</span> <!-- a logicalPath="//apple_ref/occ/instm/mode //apple_ref/occ/clm/mode //apple_ref/occ/intfcm/mode //apple_ref/occ/intfm/mode //apple_ref/occ/func/mode //apple_ref/occ/ftmplt/mode //apple_ref/occ/defn/mode //apple_ref/occ/macro/mode" --><span class="function">mode</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/mode_t //apple_ref/occ/tdef/mode_t //apple_ref/occ/tag/mode_t //apple_ref/occ/econst/mode_t //apple_ref/occ/struct/mode_t //apple_ref/occ/clconst/mode_t //apple_ref/occ/intf/mode_t" --><span class="type">mode_t</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/mode //apple_ref/occ/data/mode" --><span class="var">mode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If path is not an extant UNIX file path, create a new directory at path with default
+ownership and permissions specified by mode.  Returns YES if successful.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/createFileAtPath:contents:;   name=SBFileManager::createFileAtPath:contents: -->
+<a name="//apple_ref/occ/instm/SBFileManager/createFileAtPath:contents:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="createFileAtPath:contents:">createFileAtPath:contents:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/createFileAtPath //apple_ref/occ/clm/createFileAtPath //apple_ref/occ/intfcm/createFileAtPath //apple_ref/occ/intfm/createFileAtPath //apple_ref/occ/func/createFileAtPath //apple_ref/occ/ftmplt/createFileAtPath //apple_ref/occ/defn/createFileAtPath //apple_ref/occ/macro/createFileAtPath" --><span class="function">createFileAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">path</span> <!-- a logicalPath="//apple_ref/occ/instm/contents //apple_ref/occ/clm/contents //apple_ref/occ/intfcm/contents //apple_ref/occ/intfm/contents //apple_ref/occ/func/contents //apple_ref/occ/ftmplt/contents //apple_ref/occ/defn/contents //apple_ref/occ/macro/contents" --><span class="function">contents</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBData //apple_ref/occ/tdef/SBData //apple_ref/occ/tag/SBData //apple_ref/occ/econst/SBData //apple_ref/occ/struct/SBData //apple_ref/occ/clconst/SBData //apple_ref/occ/intf/SBData" --><span class="type">SBData</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/data //apple_ref/occ/data/data" --><span class="var">data</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to open the file at path for writing (creating it if not present) and
+writes the contents of the data object to the file.  Returns YES if successful.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/directoryExistsAtPath:;   name=SBFileManager::directoryExistsAtPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/directoryExistsAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="directoryExistsAtPath:">directoryExistsAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/directoryExistsAtPath //apple_ref/occ/clm/directoryExistsAtPath //apple_ref/occ/intfcm/directoryExistsAtPath //apple_ref/occ/intfm/directoryExistsAtPath //apple_ref/occ/func/directoryExistsAtPath //apple_ref/occ/ftmplt/directoryExistsAtPath //apple_ref/occ/defn/directoryExistsAtPath //apple_ref/occ/macro/directoryExistsAtPath" --><span class="function">directoryExistsAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver represents an extant UNIX file path and the entity
+is a directory (not a socket, file, symlink, etc.).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/enumeratorAtPath:;   name=SBFileManager::enumeratorAtPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/enumeratorAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="enumeratorAtPath:">enumeratorAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBDirectoryEnumerator //apple_ref/occ/tdef/SBDirectoryEnumerator //apple_ref/occ/tag/SBDirectoryEnumerator //apple_ref/occ/econst/SBDirectoryEnumerator //apple_ref/occ/struct/SBDirectoryEnumerator //apple_ref/occ/clconst/SBDirectoryEnumerator //apple_ref/occ/intf/SBDirectoryEnumerator" --><span class="type">SBDirectoryEnumerator</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/enumeratorAtPath //apple_ref/occ/clm/enumeratorAtPath //apple_ref/occ/intfcm/enumeratorAtPath //apple_ref/occ/intfm/enumeratorAtPath //apple_ref/occ/func/enumeratorAtPath //apple_ref/occ/ftmplt/enumeratorAtPath //apple_ref/occ/defn/enumeratorAtPath //apple_ref/occ/macro/enumeratorAtPath" --><span class="function">enumeratorAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns an SBDirectoryEnumerator that walks the contents of the directory at
+path.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/fileExistsAtPath:;   name=SBFileManager::fileExistsAtPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/fileExistsAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fileExistsAtPath:">fileExistsAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/fileExistsAtPath //apple_ref/occ/clm/fileExistsAtPath //apple_ref/occ/intfcm/fileExistsAtPath //apple_ref/occ/intfm/fileExistsAtPath //apple_ref/occ/func/fileExistsAtPath //apple_ref/occ/ftmplt/fileExistsAtPath //apple_ref/occ/defn/fileExistsAtPath //apple_ref/occ/macro/fileExistsAtPath" --><span class="function">fileExistsAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver represents an extant UNIX file path and the entity
+is a file (not a socket, directory, symlink, etc.).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/isExecutableFileAtPath:;   name=SBFileManager::isExecutableFileAtPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/isExecutableFileAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isExecutableFileAtPath:">isExecutableFileAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/isExecutableFileAtPath //apple_ref/occ/clm/isExecutableFileAtPath //apple_ref/occ/intfcm/isExecutableFileAtPath //apple_ref/occ/intfm/isExecutableFileAtPath //apple_ref/occ/func/isExecutableFileAtPath //apple_ref/occ/ftmplt/isExecutableFileAtPath //apple_ref/occ/defn/isExecutableFileAtPath //apple_ref/occ/macro/isExecutableFileAtPath" --><span class="function">isExecutableFileAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver represents a UNIX file path that is deemed "executable"
+by the program (via the access() function).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/isReadableFileAtPath:;   name=SBFileManager::isReadableFileAtPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/isReadableFileAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isReadableFileAtPath:">isReadableFileAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/isReadableFileAtPath //apple_ref/occ/clm/isReadableFileAtPath //apple_ref/occ/intfcm/isReadableFileAtPath //apple_ref/occ/intfm/isReadableFileAtPath //apple_ref/occ/func/isReadableFileAtPath //apple_ref/occ/ftmplt/isReadableFileAtPath //apple_ref/occ/defn/isReadableFileAtPath //apple_ref/occ/macro/isReadableFileAtPath" --><span class="function">isReadableFileAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver represents a UNIX file path that is deemed "readable"
+by the program (via the access() function).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/isWritableFileAtPath:;   name=SBFileManager::isWritableFileAtPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/isWritableFileAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="isWritableFileAtPath:">isWritableFileAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/isWritableFileAtPath //apple_ref/occ/clm/isWritableFileAtPath //apple_ref/occ/intfcm/isWritableFileAtPath //apple_ref/occ/intfm/isWritableFileAtPath //apple_ref/occ/func/isWritableFileAtPath //apple_ref/occ/ftmplt/isWritableFileAtPath //apple_ref/occ/defn/isWritableFileAtPath //apple_ref/occ/macro/isWritableFileAtPath" --><span class="function">isWritableFileAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver represents a UNIX file path that is deemed "writable"
+by the program (via the access() function).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/movePath:toPath:;   name=SBFileManager::movePath:toPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/movePath:toPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="movePath:toPath:">movePath:toPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/movePath //apple_ref/occ/clm/movePath //apple_ref/occ/intfcm/movePath //apple_ref/occ/intfm/movePath //apple_ref/occ/func/movePath //apple_ref/occ/ftmplt/movePath //apple_ref/occ/defn/movePath //apple_ref/occ/macro/movePath" --><span class="function">movePath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">src</span> <!-- a logicalPath="//apple_ref/occ/instm/toPath //apple_ref/occ/clm/toPath //apple_ref/occ/intfcm/toPath //apple_ref/occ/intfm/toPath //apple_ref/occ/func/toPath //apple_ref/occ/ftmplt/toPath //apple_ref/occ/defn/toPath //apple_ref/occ/macro/toPath" --><span class="function">toPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/dest //apple_ref/occ/data/dest" --><span class="var">dest</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to rename the entity at src to dest.  Note that this method will fail
+and return NO if the two paths reside on different filesystems!
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/openPath:asCFileStreamWithMode:;   name=SBFileManager::openPath:asCFileStreamWithMode: -->
+<a name="//apple_ref/occ/instm/SBFileManager/openPath:asCFileStreamWithMode:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="openPath:asCFileStreamWithMode:">openPath:asCFileStreamWithMode:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/FILE //apple_ref/occ/tdef/FILE //apple_ref/occ/tag/FILE //apple_ref/occ/econst/FILE //apple_ref/occ/struct/FILE //apple_ref/occ/clconst/FILE //apple_ref/occ/intf/FILE" --><span class="type">FILE</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/openPath //apple_ref/occ/clm/openPath //apple_ref/occ/intfcm/openPath //apple_ref/occ/intfm/openPath //apple_ref/occ/func/openPath //apple_ref/occ/ftmplt/openPath //apple_ref/occ/defn/openPath //apple_ref/occ/macro/openPath" --><span class="function">openPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">path</span> <!-- a logicalPath="//apple_ref/occ/instm/asCFileStreamWithMode //apple_ref/occ/clm/asCFileStreamWithMode //apple_ref/occ/intfcm/asCFileStreamWithMode //apple_ref/occ/intfm/asCFileStreamWithMode //apple_ref/occ/func/asCFileStreamWithMode //apple_ref/occ/ftmplt/asCFileStreamWithMode //apple_ref/occ/defn/asCFileStreamWithMode //apple_ref/occ/macro/asCFileStreamWithMode" --><span class="function">asCFileStreamWithMode</span><!-- /a -->:(<span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/econst/char //apple_ref/occ/data/char" --><span class="var">char</span><!-- /a --><span class="var">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/mode //apple_ref/occ/data/mode" --><span class="var">mode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to open the file at the UNIX file path represented by the receiver.
+Returns NULL if the file could not be opened.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/openPath:withFlags:mode:;   name=SBFileManager::openPath:withFlags:mode: -->
+<a name="//apple_ref/occ/instm/SBFileManager/openPath:withFlags:mode:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="openPath:withFlags:mode:">openPath:withFlags:mode:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/openPath //apple_ref/occ/clm/openPath //apple_ref/occ/intfcm/openPath //apple_ref/occ/intfm/openPath //apple_ref/occ/func/openPath //apple_ref/occ/ftmplt/openPath //apple_ref/occ/defn/openPath //apple_ref/occ/macro/openPath" --><span class="function">openPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<span class="param">path</span> <!-- a logicalPath="//apple_ref/occ/instm/withFlags //apple_ref/occ/clm/withFlags //apple_ref/occ/intfcm/withFlags //apple_ref/occ/intfm/withFlags //apple_ref/occ/func/withFlags //apple_ref/occ/ftmplt/withFlags //apple_ref/occ/defn/withFlags //apple_ref/occ/macro/withFlags" --><span class="function">withFlags</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<span class="param">openFlags</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/mode //apple_ref/occ/clm/mode //apple_ref/occ/intfcm/mode //apple_ref/occ/intfm/mode //apple_ref/occ/func/mode //apple_ref/occ/ftmplt/mode //apple_ref/occ/defn/mode //apple_ref/occ/macro/mode" --><span class="function">mode</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/mode_t //apple_ref/occ/tdef/mode_t //apple_ref/occ/tag/mode_t //apple_ref/occ/econst/mode_t //apple_ref/occ/struct/mode_t //apple_ref/occ/clconst/mode_t //apple_ref/occ/intf/mode_t" --><span class="type">mode_t</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/mode //apple_ref/occ/data/mode" --><span class="var">mode</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to open the file at the UNIX file path represented by the receiver.
+Returns NULL if the file could not be opened.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/ownerGIdAtPath:;   name=SBFileManager::ownerGIdAtPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/ownerGIdAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="ownerGIdAtPath:">ownerGIdAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/gid_t //apple_ref/occ/tdef/gid_t //apple_ref/occ/tag/gid_t //apple_ref/occ/econst/gid_t //apple_ref/occ/struct/gid_t //apple_ref/occ/clconst/gid_t //apple_ref/occ/intf/gid_t" --><span class="type">gid_t</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/ownerGIdAtPath //apple_ref/occ/clm/ownerGIdAtPath //apple_ref/occ/intfcm/ownerGIdAtPath //apple_ref/occ/intfm/ownerGIdAtPath //apple_ref/occ/func/ownerGIdAtPath //apple_ref/occ/ftmplt/ownerGIdAtPath //apple_ref/occ/defn/ownerGIdAtPath //apple_ref/occ/macro/ownerGIdAtPath" --><span class="function">ownerGIdAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the UNIX group id number of the group-owner of the entity at path.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/ownerUIdAtPath:;   name=SBFileManager::ownerUIdAtPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/ownerUIdAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="ownerUIdAtPath:">ownerUIdAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/uid_t //apple_ref/occ/tdef/uid_t //apple_ref/occ/tag/uid_t //apple_ref/occ/econst/uid_t //apple_ref/occ/struct/uid_t //apple_ref/occ/clconst/uid_t //apple_ref/occ/intf/uid_t" --><span class="type">uid_t</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/ownerUIdAtPath //apple_ref/occ/clm/ownerUIdAtPath //apple_ref/occ/intfcm/ownerUIdAtPath //apple_ref/occ/intfm/ownerUIdAtPath //apple_ref/occ/func/ownerUIdAtPath //apple_ref/occ/ftmplt/ownerUIdAtPath //apple_ref/occ/defn/ownerUIdAtPath //apple_ref/occ/macro/ownerUIdAtPath" --><span class="function">ownerUIdAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the UNIX user id number of the user-owner of the entity at path.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/pathExists:;   name=SBFileManager::pathExists: -->
+<a name="//apple_ref/occ/instm/SBFileManager/pathExists:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="pathExists:">pathExists:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/pathExists //apple_ref/occ/clm/pathExists //apple_ref/occ/intfcm/pathExists //apple_ref/occ/intfm/pathExists //apple_ref/occ/func/pathExists //apple_ref/occ/ftmplt/pathExists //apple_ref/occ/defn/pathExists //apple_ref/occ/macro/pathExists" --><span class="function">pathExists</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns YES if the receiver represents an extant UNIX file path.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/posixPermissionsAtPath:;   name=SBFileManager::posixPermissionsAtPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/posixPermissionsAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="posixPermissionsAtPath:">posixPermissionsAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/mode_t //apple_ref/occ/tdef/mode_t //apple_ref/occ/tag/mode_t //apple_ref/occ/econst/mode_t //apple_ref/occ/struct/mode_t //apple_ref/occ/clconst/mode_t //apple_ref/occ/intf/mode_t" --><span class="type">mode_t</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/posixPermissionsAtPath //apple_ref/occ/clm/posixPermissionsAtPath //apple_ref/occ/intfcm/posixPermissionsAtPath //apple_ref/occ/intfm/posixPermissionsAtPath //apple_ref/occ/func/posixPermissionsAtPath //apple_ref/occ/ftmplt/posixPermissionsAtPath //apple_ref/occ/defn/posixPermissionsAtPath //apple_ref/occ/macro/posixPermissionsAtPath" --><span class="function">posixPermissionsAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If path is an extant UNIX file path, returns the permissions mask of the entity.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/removeFileAtPath:;   name=SBFileManager::removeFileAtPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/removeFileAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeFileAtPath:">removeFileAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/removeFileAtPath //apple_ref/occ/clm/removeFileAtPath //apple_ref/occ/intfcm/removeFileAtPath //apple_ref/occ/intfm/removeFileAtPath //apple_ref/occ/func/removeFileAtPath //apple_ref/occ/ftmplt/removeFileAtPath //apple_ref/occ/defn/removeFileAtPath //apple_ref/occ/macro/removeFileAtPath" --><span class="function">removeFileAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to delete the entity at the given UNIX file path.  Returns YES if
+the entity is not a directory and the current user had permission to delete
+the entity.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/removeItemAtPath:;   name=SBFileManager::removeItemAtPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/removeItemAtPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeItemAtPath:">removeItemAtPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/removeItemAtPath //apple_ref/occ/clm/removeItemAtPath //apple_ref/occ/intfcm/removeItemAtPath //apple_ref/occ/intfm/removeItemAtPath //apple_ref/occ/func/removeItemAtPath //apple_ref/occ/ftmplt/removeItemAtPath //apple_ref/occ/defn/removeItemAtPath //apple_ref/occ/macro/removeItemAtPath" --><span class="function">removeItemAtPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempts to delete the entity at the given UNIX file path.  For non-directory
+entities, behaves just like removeFileAtPath:.  For a directory, the directory
+and all of its content (sub-directories and files) are removed.  Returns YES if
+successful.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/setOwnerUId:andGId:atPath:;   name=SBFileManager::setOwnerUId:andGId:atPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/setOwnerUId:andGId:atPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setOwnerUId:andGId:atPath:">setOwnerUId:andGId:atPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setOwnerUId //apple_ref/occ/clm/setOwnerUId //apple_ref/occ/intfcm/setOwnerUId //apple_ref/occ/intfm/setOwnerUId //apple_ref/occ/func/setOwnerUId //apple_ref/occ/ftmplt/setOwnerUId //apple_ref/occ/defn/setOwnerUId //apple_ref/occ/macro/setOwnerUId" --><span class="function">setOwnerUId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/uid_t //apple_ref/occ/tdef/uid_t //apple_ref/occ/tag/uid_t //apple_ref/occ/econst/uid_t //apple_ref/occ/struct/uid_t //apple_ref/occ/clconst/uid_t //apple_ref/occ/intf/uid_t" --><span class="type">uid_t</span><!-- /a -->)<span class="param">userId</span> <!-- a logicalPath="//apple_ref/occ/instm/andGId //apple_ref/occ/clm/andGId //apple_ref/occ/intfcm/andGId //apple_ref/occ/intfm/andGId //apple_ref/occ/func/andGId //apple_ref/occ/ftmplt/andGId //apple_ref/occ/defn/andGId //apple_ref/occ/macro/andGId" --><span class="function">andGId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/gid_t //apple_ref/occ/tdef/gid_t //apple_ref/occ/tag/gid_t //apple_ref/occ/econst/gid_t //apple_ref/occ/struct/gid_t //apple_ref/occ/clconst/gid_t //apple_ref/occ/intf/gid_t" --><span class="type">gid_t</span><!-- /a -->)<span class="param">groupId</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/atPath //apple_ref/occ/clm/atPath //apple_ref/occ/intfcm/atPath //apple_ref/occ/intfm/atPath //apple_ref/occ/func/atPath //apple_ref/occ/ftmplt/atPath //apple_ref/occ/defn/atPath //apple_ref/occ/macro/atPath" --><span class="function">atPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If path is an extant UNIX file path, attempts to set the user-owner of the
+entity to userId and the group-owner to groupId.  Returns YES if successful.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/setOwnerUId:andGId:posixMode:atPath:;   name=SBFileManager::setOwnerUId:andGId:posixMode:atPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/setOwnerUId:andGId:posixMode:atPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setOwnerUId:andGId:posixMode:atPath:">setOwnerUId:andGId:posixMode:atPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setOwnerUId //apple_ref/occ/clm/setOwnerUId //apple_ref/occ/intfcm/setOwnerUId //apple_ref/occ/intfm/setOwnerUId //apple_ref/occ/func/setOwnerUId //apple_ref/occ/ftmplt/setOwnerUId //apple_ref/occ/defn/setOwnerUId //apple_ref/occ/macro/setOwnerUId" --><span class="function">setOwnerUId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/uid_t //apple_ref/occ/tdef/uid_t //apple_ref/occ/tag/uid_t //apple_ref/occ/econst/uid_t //apple_ref/occ/struct/uid_t //apple_ref/occ/clconst/uid_t //apple_ref/occ/intf/uid_t" --><span class="type">uid_t</span><!-- /a -->)<span class="param">userId</span> <!-- a logicalPath="//apple_ref/occ/instm/andGId //apple_ref/occ/clm/andGId //apple_ref/occ/intfcm/andGId //apple_ref/occ/intfm/andGId //apple_ref/occ/func/andGId //apple_ref/occ/ftmplt/andGId //apple_ref/occ/defn/andGId //apple_ref/occ/macro/andGId" --><span class="function">andGId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/gid_t //apple_ref/occ/tdef/gid_t //apple_ref/occ/tag/gid_t //apple_ref/occ/econst/gid_t //apple_ref/occ/struct/gid_t //apple_ref/occ/clconst/gid_t //apple_ref/occ/intf/gid_t" --><span class="type">gid_t</span><!-- /a -->)<span class="param">groupId</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/posixMode //apple_ref/occ/clm/posixMode //apple_ref/occ/intfcm/posixMode //apple_ref/occ/intfm/posixMode //apple_ref/occ/func/posixMode //apple_ref/occ/ftmplt/posixMode //apple_ref/occ/defn/posixMode //apple_ref/occ/macro/posixMode" --><span class="function">posixMode</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/mode_t //apple_ref/occ/tdef/mode_t //apple_ref/occ/tag/mode_t //apple_ref/occ/econst/mode_t //apple_ref/occ/struct/mode_t //apple_ref/occ/clconst/mode_t //apple_ref/occ/intf/mode_t" --><span class="type">mode_t</span><!-- /a -->)<span class="param">mode</span> <!-- a logicalPath="//apple_ref/occ/instm/atPath //apple_ref/occ/clm/atPath //apple_ref/occ/intfcm/atPath //apple_ref/occ/intfm/atPath //apple_ref/occ/func/atPath //apple_ref/occ/ftmplt/atPath //apple_ref/occ/defn/atPath //apple_ref/occ/macro/atPath" --><span class="function">atPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If path is an extant UNIX file path, attempts to set the user-owner of the
+entity to userId and the group-owner to groupId.  Also sets the permissions
+mask to mode.  Returns YES if successful.
+</p>
+<p>Computationally more efficient than separate calls to setOwnerUId:andGId:atPath:
+and setPosixPermissions:atPath:.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/setOwnerUId:atPath:;   name=SBFileManager::setOwnerUId:atPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/setOwnerUId:atPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setOwnerUId:atPath:">setOwnerUId:atPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setOwnerUId //apple_ref/occ/clm/setOwnerUId //apple_ref/occ/intfcm/setOwnerUId //apple_ref/occ/intfm/setOwnerUId //apple_ref/occ/func/setOwnerUId //apple_ref/occ/ftmplt/setOwnerUId //apple_ref/occ/defn/setOwnerUId //apple_ref/occ/macro/setOwnerUId" --><span class="function">setOwnerUId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/uid_t //apple_ref/occ/tdef/uid_t //apple_ref/occ/tag/uid_t //apple_ref/occ/econst/uid_t //apple_ref/occ/struct/uid_t //apple_ref/occ/clconst/uid_t //apple_ref/occ/intf/uid_t" --><span class="type">uid_t</span><!-- /a -->)<span class="param">userId</span> <!-- a logicalPath="//apple_ref/occ/instm/atPath //apple_ref/occ/clm/atPath //apple_ref/occ/intfcm/atPath //apple_ref/occ/intfm/atPath //apple_ref/occ/func/atPath //apple_ref/occ/ftmplt/atPath //apple_ref/occ/defn/atPath //apple_ref/occ/macro/atPath" --><span class="function">atPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If path is an extant UNIX file path, attempts to set the user-owner of the
+entity to userId.  Returns YES if successful.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/setPosixPermissions:atPath:;   name=SBFileManager::setPosixPermissions:atPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/setPosixPermissions:atPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setPosixPermissions:atPath:">setPosixPermissions:atPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setPosixPermissions //apple_ref/occ/clm/setPosixPermissions //apple_ref/occ/intfcm/setPosixPermissions //apple_ref/occ/intfm/setPosixPermissions //apple_ref/occ/func/setPosixPermissions //apple_ref/occ/ftmplt/setPosixPermissions //apple_ref/occ/defn/setPosixPermissions //apple_ref/occ/macro/setPosixPermissions" --><span class="function">setPosixPermissions</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/mode_t //apple_ref/occ/tdef/mode_t //apple_ref/occ/tag/mode_t //apple_ref/occ/econst/mode_t //apple_ref/occ/struct/mode_t //apple_ref/occ/clconst/mode_t //apple_ref/occ/intf/mode_t" --><span class="type">mode_t</span><!-- /a -->)<span class="param">mode</span> <!-- a logicalPath="//apple_ref/occ/instm/atPath //apple_ref/occ/clm/atPath //apple_ref/occ/intfcm/atPath //apple_ref/occ/intfm/atPath //apple_ref/occ/func/atPath //apple_ref/occ/ftmplt/atPath //apple_ref/occ/defn/atPath //apple_ref/occ/macro/atPath" --><span class="function">atPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If path is an extant UNIX file path, attempts to set the entity's permissions
+mask to mode.  Returns YES if successful.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/setWorkingDirectoryPath:;   name=SBFileManager::setWorkingDirectoryPath: -->
+<a name="//apple_ref/occ/instm/SBFileManager/setWorkingDirectoryPath:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="setWorkingDirectoryPath:">setWorkingDirectoryPath:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/setWorkingDirectoryPath //apple_ref/occ/clm/setWorkingDirectoryPath //apple_ref/occ/intfcm/setWorkingDirectoryPath //apple_ref/occ/intfm/setWorkingDirectoryPath //apple_ref/occ/func/setWorkingDirectoryPath //apple_ref/occ/ftmplt/setWorkingDirectoryPath //apple_ref/occ/defn/setWorkingDirectoryPath //apple_ref/occ/macro/setWorkingDirectoryPath" --><span class="function">setWorkingDirectoryPath</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/path //apple_ref/occ/data/path" --><span class="var">path</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Attempt to set the program's current working directory to path.  Returns
+YES if successful.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/SBFileManager/sharedFileManager;   name=SBFileManager::sharedFileManager -->
+<a name="//apple_ref/occ/clm/SBFileManager/sharedFileManager"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="sharedFileManager">sharedFileManager</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+ (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/sharedFileManager //apple_ref/occ/data/sharedFileManager" --><span class="var">sharedFileManager</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the shared instance of SBFileManager.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileManager/workingDirectoryPath;   name=SBFileManager::workingDirectoryPath -->
+<a name="//apple_ref/occ/instm/SBFileManager/workingDirectoryPath"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="workingDirectoryPath">workingDirectoryPath</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/SBString //apple_ref/occ/tdef/SBString //apple_ref/occ/tag/SBString //apple_ref/occ/econst/SBString //apple_ref/occ/struct/SBString //apple_ref/occ/clconst/SBString //apple_ref/occ/intf/SBString" --><span class="type">SBString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/workingDirectoryPath //apple_ref/occ/data/workingDirectoryPath" --><span class="var">workingDirectoryPath</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns a string containing the current working directory for the program.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

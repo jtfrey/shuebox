@@ -1,0 +1,26 @@
+
+#import "SBFoundation.h"
+#import "SBObjectCache.h"
+#import "SBPostgres.h"
+#import "SHUEBoxRole.h"
+#import "SHUEBoxCGI.h"
+
+int
+main()
+{
+  SBAutoreleasePool*      pool = [[SBAutoreleasePool alloc] init];
+  SBPostgresDatabase*     shueboxDB = [[SBPostgresDatabase alloc] initWithConnectionString:@"user=postgres dbname=shuebox"];
+
+  
+  SHUEBoxCGI*             cgi = [[SHUEBoxCGI alloc] initWithDatabase:shueboxDB];
+  
+  if ( cgi ) {
+    SBXMLDocument*        doc = [cgi xmlDocumentFromStdin];
+    
+    if ( doc )
+      [doc summarizeToStream:stdout];
+  }
+	
+  [pool release]; 
+  return 0;
+}

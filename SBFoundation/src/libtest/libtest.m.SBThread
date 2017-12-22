@@ -1,0 +1,80 @@
+#import "SBFoundation.h"
+
+@interface Action : SBThread
+{
+  SBAutoreleasePool*    _pool;
+}
+
+@end
+
+@implementation Action
+
+  - (void) threadMain
+  {
+    printf("Action@%p :: Enter thread\n", self);fflush(stdout);
+    printf("isMainThread : %d\n", [SBThread isMainThread]);
+    
+    // Make ourselves an autorelease pool:
+    _pool = [[SBAutoreleasePool alloc] init];
+    
+    // Setup signaling:
+    sigset_t            sigmask;
+    
+    sigemptyset(&sigmask);
+    sigaddset(&sigmask, SIGINT);
+    sigaddset(&sigmask, SIGHUP);
+    sigaddset(&sigmask, SIGALRM);
+    [self setRespondsToSignals:&sigmask];
+    
+    while ( ! [self isCancelled] && ! [self lastSignalCaught] ) {
+      sleep(3600);
+      printf("...finished sleep loop...\n");
+    }
+    printf("Action@%p :: Exit thread\n", self);fflush(stdout);
+    
+    // Get rid of that autorelease pool:
+    [_pool release];
+    _pool = nil;
+  }
+
+//
+
+  - (void) hasBeenCancelled
+  {
+    printf("Action@%p :: Cleanup from cancel...\n", self); fflush(stdout);
+    sleep(4);
+    if ( _pool )
+      [_pool release];
+  }
+
+@end
+
+//
+
+int
+main()
+{
+  SBAutoreleasePool*      basePool = [[SBAutoreleasePool alloc] init];
+  Action                  *a1, *a2;
+  
+  a1 = [[Action alloc] init]; [a1 start];
+  a2 = [[Action alloc] init]; [a2 start];
+  
+  sleep(1);
+  printf("Sending kills...\n");
+  [a1 kill:SIGALRM];
+  [a2 kill:SIGALRM];
+  sleep(5);
+  
+  printf("\n\nisMainThread : %d\n", [SBThread isMainThread]);
+  
+  printf("Cleaning up...\n"); fflush(stdout);
+  [a1 release];
+  [a2 release];
+  [basePool release];
+  printf("Exiting...\n"); fflush(stdout);
+  
+  return 0;
+}
+
+

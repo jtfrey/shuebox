@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBMutableArray</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/SBMutableArray;  name=SBMutableArray-->
+<a name="//apple_ref/occ/cl/SBMutableArray"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBMutableArray">SBMutableArray</a></h1>
+</td></tr></table><hr><p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBArray" -->SBArray<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBArray.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Instances of SBMutableArray represent a collection of objects, keyed by integral indices just
+as SBArray is.  The only difference is that a mutable array can be modified after it is
+initialized:  objects can be added, removed, and moved.
+</p>
+<p>Subclasses of SBMutableArray must <i>at least</i> implement the following primary methods:
+</p>
+<ul>
+<li>- (void) insertObject:(id)object atIndex:(SBUInteger)index;</li>
+<li>- (void) removeObjectAtIndex:(SBUInteger)index;</li>
+<li>- (void) addObject:(id)object;</li>
+<li>- (void) removeLastObject;</li>
+<li>- (void) replaceObject:(id)object atIndex:(SBUInteger)index;</li>
+</ul>
+<p>Any subclass that implements these five methods will automatically inherit functional versions
+of the methods in the SBExtendedMutableArray category; the default implementations of these methods
+<i>only</i> make use of the aforementioned primary methods (as well as each other).  Of
+course, subclasses can also override any of the methods in the SBExtendedMutableArray category with
+their own optimal implementations.  Subclasses are responsible for providing their own object
+creation methods.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableArray/addObject:" target="_top">-addObject:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableArray/insertObject:atIndex:" target="_top">-insertObject:atIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableArray/removeLastObject" target="_top">-removeLastObject</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableArray/removeObjectAtIndex:" target="_top">-removeObjectAtIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBMutableArray/replaceObject:atIndex:" target="_top">-replaceObject:atIndex:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableArray/addObject:;   name=SBMutableArray::addObject: -->
+<a name="//apple_ref/occ/instm/SBMutableArray/addObject:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="addObject:">addObject:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/addObject //apple_ref/occ/clm/addObject //apple_ref/occ/intfcm/addObject //apple_ref/occ/intfm/addObject //apple_ref/occ/func/addObject //apple_ref/occ/ftmplt/addObject //apple_ref/occ/defn/addObject //apple_ref/occ/macro/addObject" --><span class="function">addObject</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/object //apple_ref/occ/data/object" --><span class="var">object</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempts to add "object" at the next highest index in the receiver array.  If the array has a
+fixed capacity which has been reached, the object is not added.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableArray/insertObject:atIndex:;   name=SBMutableArray::insertObject:atIndex: -->
+<a name="//apple_ref/occ/instm/SBMutableArray/insertObject:atIndex:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="insertObject:atIndex:">insertObject:atIndex:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/insertObject //apple_ref/occ/clm/insertObject //apple_ref/occ/intfcm/insertObject //apple_ref/occ/intfm/insertObject //apple_ref/occ/func/insertObject //apple_ref/occ/ftmplt/insertObject //apple_ref/occ/defn/insertObject //apple_ref/occ/macro/insertObject" --><span class="function">insertObject</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">object</span> <!-- a logicalPath="//apple_ref/occ/instm/atIndex //apple_ref/occ/clm/atIndex //apple_ref/occ/intfcm/atIndex //apple_ref/occ/intfm/atIndex //apple_ref/occ/func/atIndex //apple_ref/occ/ftmplt/atIndex //apple_ref/occ/defn/atIndex //apple_ref/occ/macro/atIndex" --><span class="function">atIndex</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>Attempts to insert a new object into the receiver array at the specified index.  If the array has
+a fixed capacity which has been reached, the object is not added.  If the provided index lies
+outside the range of zero up to and including the number of objects in the array already, then
+the object will be added at the end of the array.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableArray/removeLastObject;   name=SBMutableArray::removeLastObject -->
+<a name="//apple_ref/occ/instm/SBMutableArray/removeLastObject"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeLastObject">removeLastObject</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/removeLastObject //apple_ref/occ/data/removeLastObject" --><span class="var">removeLastObject</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>If the receiver contains at least one object, remove the object at the highest defined index.</p><!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableArray/removeObjectAtIndex:;   name=SBMutableArray::removeObjectAtIndex: -->
+<a name="//apple_ref/occ/instm/SBMutableArray/removeObjectAtIndex:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="removeObjectAtIndex:">removeObjectAtIndex:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/removeObjectAtIndex //apple_ref/occ/clm/removeObjectAtIndex //apple_ref/occ/intfcm/removeObjectAtIndex //apple_ref/occ/intfm/removeObjectAtIndex //apple_ref/occ/func/removeObjectAtIndex //apple_ref/occ/ftmplt/removeObjectAtIndex //apple_ref/occ/defn/removeObjectAtIndex //apple_ref/occ/macro/removeObjectAtIndex" --><span class="function">removeObjectAtIndex</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>If the provided index lies within the range of valid indices in the receiver, the object at
+that index will be removed and all objects at indices above it will shift down accordingly.<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBMutableArray/replaceObject:atIndex:;   name=SBMutableArray::replaceObject:atIndex: -->
+<a name="//apple_ref/occ/instm/SBMutableArray/replaceObject:atIndex:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="replaceObject:atIndex:">replaceObject:atIndex:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/replaceObject //apple_ref/occ/clm/replaceObject //apple_ref/occ/intfcm/replaceObject //apple_ref/occ/intfm/replaceObject //apple_ref/occ/func/replaceObject //apple_ref/occ/ftmplt/replaceObject //apple_ref/occ/defn/replaceObject //apple_ref/occ/macro/replaceObject" --><span class="function">replaceObject</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->)<span class="param">object</span> <!-- a logicalPath="//apple_ref/occ/instm/atIndex //apple_ref/occ/clm/atIndex //apple_ref/occ/intfcm/atIndex //apple_ref/occ/intfm/atIndex //apple_ref/occ/func/atIndex //apple_ref/occ/ftmplt/atIndex //apple_ref/occ/defn/atIndex //apple_ref/occ/macro/atIndex" --><span class="function">atIndex</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/SBUInteger //apple_ref/occ/tdef/SBUInteger //apple_ref/occ/tag/SBUInteger //apple_ref/occ/econst/SBUInteger //apple_ref/occ/struct/SBUInteger //apple_ref/occ/clconst/SBUInteger //apple_ref/occ/intf/SBUInteger" --><span class="type">SBUInteger</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/index //apple_ref/occ/data/index" --><span class="var">index</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion -->
+<p>If the provided index lies within the range of valid indices in the receiver, the object at
+that index will be removed and replaced with "object".<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>

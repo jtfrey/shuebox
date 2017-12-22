@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>SBFileHandle(SBFileHandleUnixSpecific)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cat; uid=//apple_ref/occ/cat/SBFileHandle(SBFileHandleUnixSpecific);  name=SBFileHandle(SBFileHandleUnixSpecific)-->
+<a name="//apple_ref/occ/cat/SBFileHandle(SBFileHandleUnixSpecific)"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="SBFileHandle(SBFileHandleUnixSpecific)">SBFileHandle(SBFileHandleUnixSpecific)</a></h1>
+</td></tr></table><hr><p><b>Extends&nbsp;Class:</b> <!-- a logicalPath="//apple_ref/occ/cl/SBFileHandle" -->SBFileHandle<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">SBFileHandle.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Methods of SBFileHandle that are particular to Unix OSes.
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileHandle(SBFileHandleUnixSpecific)/fileDescriptor" target="_top">-fileDescriptor</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileHandle(SBFileHandleUnixSpecific)/initWithFileDescriptor:" target="_top">-initWithFileDescriptor:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/SBFileHandle(SBFileHandleUnixSpecific)/initWithFileDescriptor:closeOnDealloc:" target="_top">-initWithFileDescriptor:closeOnDealloc:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileHandle(SBFileHandleUnixSpecific)/fileDescriptor;   name=SBFileHandle(SBFileHandleUnixSpecific)::fileDescriptor -->
+<a name="//apple_ref/occ/instm/SBFileHandle(SBFileHandleUnixSpecific)/fileDescriptor"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fileDescriptor">fileDescriptor</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/fileDescriptor //apple_ref/occ/data/fileDescriptor" --><span class="var">fileDescriptor</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the Unix file descriptor associated with the receiver.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileHandle(SBFileHandleUnixSpecific)/initWithFileDescriptor:;   name=SBFileHandle(SBFileHandleUnixSpecific)::initWithFileDescriptor: -->
+<a name="//apple_ref/occ/instm/SBFileHandle(SBFileHandleUnixSpecific)/initWithFileDescriptor:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithFileDescriptor:">initWithFileDescriptor:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithFileDescriptor //apple_ref/occ/clm/initWithFileDescriptor //apple_ref/occ/intfcm/initWithFileDescriptor //apple_ref/occ/intfm/initWithFileDescriptor //apple_ref/occ/func/initWithFileDescriptor //apple_ref/occ/ftmplt/initWithFileDescriptor //apple_ref/occ/defn/initWithFileDescriptor //apple_ref/occ/macro/initWithFileDescriptor" --><span class="function">initWithFileDescriptor</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/fd //apple_ref/occ/data/fd" --><span class="var">fd</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initialize the receiver to wrap the given file descriptor, fd, with implicit read and write
+capabilities.
+</p>
+<p>When the receiver is deallocated the file descriptor will NOT be closed.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/SBFileHandle(SBFileHandleUnixSpecific)/initWithFileDescriptor:closeOnDealloc:;   name=SBFileHandle(SBFileHandleUnixSpecific)::initWithFileDescriptor:closeOnDealloc: -->
+<a name="//apple_ref/occ/instm/SBFileHandle(SBFileHandleUnixSpecific)/initWithFileDescriptor:closeOnDealloc:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithFileDescriptor:closeOnDealloc:">initWithFileDescriptor:closeOnDealloc:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithFileDescriptor //apple_ref/occ/clm/initWithFileDescriptor //apple_ref/occ/intfcm/initWithFileDescriptor //apple_ref/occ/intfm/initWithFileDescriptor //apple_ref/occ/func/initWithFileDescriptor //apple_ref/occ/ftmplt/initWithFileDescriptor //apple_ref/occ/defn/initWithFileDescriptor //apple_ref/occ/macro/initWithFileDescriptor" --><span class="function">initWithFileDescriptor</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/econst/int //apple_ref/occ/struct/int //apple_ref/occ/clconst/int //apple_ref/occ/intf/int" --><span class="type">int</span><!-- /a -->)<span class="param">fd</span> <!-- a logicalPath="//apple_ref/occ/instm/closeOnDealloc //apple_ref/occ/clm/closeOnDealloc //apple_ref/occ/intfcm/closeOnDealloc //apple_ref/occ/intfm/closeOnDealloc //apple_ref/occ/func/closeOnDealloc //apple_ref/occ/ftmplt/closeOnDealloc //apple_ref/occ/defn/closeOnDealloc //apple_ref/occ/macro/closeOnDealloc" --><span class="function">closeOnDealloc</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/BOOL //apple_ref/occ/tdef/BOOL //apple_ref/occ/tag/BOOL //apple_ref/occ/econst/BOOL //apple_ref/occ/struct/BOOL //apple_ref/occ/clconst/BOOL //apple_ref/occ/intf/BOOL" --><span class="type">BOOL</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/econst/shouldClose //apple_ref/occ/data/shouldClose" --><span class="var">shouldClose</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Initialize the receiver to wrap the given file descriptor, fd, with implicit read and write
+capabilities.
+</p>
+<p>When the receiver is deallocated the file descriptor will only be closed if shouldClose is
+YES.
+<!-- end discussion -->
+<p></p><p>Last Updated: Tuesday, May 28, 2013
+</p></body></html>
